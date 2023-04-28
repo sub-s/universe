@@ -619,11 +619,52 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .table .txt-blue {color:#749ff7;}
 
 
+
+
+.top-wrap {display: flex;  margin-top: 10rem;}
+.top-wrap .box {display: flex; margin-bottom: 30rem; margin-top: 10rem;}
+.top-wrap .tit-box {display: flex; justify-content: space-between; flex-wrap: wrap; flex-direction: row; font-size: 14rem; width: 82rem; height: 82rem; border-right: 1rem solid #141820;}
+.top-wrap .tit-box::after {display: block; content:''; width: 57rem; height: 13rem; background: url(../images/icon/tit_arrow.svg) no-repeat;}
+
+
+/* 탑 그래프  */
+/* .top-chart:first-of-type::before {display: block; content: ''; width: 1rem; height: 100%; background: #343f56;} */
+.top-chart{margin-left: 20rem; position: relative; width: 64rem;}
+.top-chart .inner { position: relative; width: 64rem; overflow: hidden; box-sizing: border-box;}
+.top-chart .s-tit {font-size: 11rem; color:#a5a7ac; text-align: center;}
+.top-chart .inner::before {display: block; content:''; position: absolute; top:0; left:0; height:56rem; width: 100%; border-radius: 50% 50% 0 0; background: #181b22;}
+.top-chart .inner .chart-wrap { position: relative; width: 56rem; height: 28rem; margin:4rem auto 0; overflow: hidden;}
+.top-chart .inner .needle {position: absolute; left: calc(50% - 2.59rem);  bottom: calc(0rem); width: 5.18rem; height: 21.14rem; background: url(../images/icon/needle.svg) no-repeat; z-index: 1;}
+.top-chart .chart {transform: rotate(-90deg); position: relative; width: 56rem; height: 56rem; border-radius: 50%; background:lightgray; display:inline-block;}
+.top-chart .chart:after{ content:''; background: #1c202b; position: absolute; top:50%; left:50%; width:25rem; height:25rem; border-radius: 50%; transform: translate(-50%, -50%);}
+.top-chart .chart-bar{ width: inherit; height: inherit; border-radius: 50%; position: relative;}
+.top-chart .text {background: url(../images/icon/dot_line.svg)no-repeat center top; padding-top: 3rem; text-align: center; margin-top: 4rem; font-size: 18rem; color: #a5a7ac;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 도넛 그래프 */
 .donut-chart {width: 190rem; height: 190rem; background: url(../images/common/donut_chartBg.svg) no-repeat; }
 .donut-chart .chart {position: relative; top: calc(50% - 75rem);  left: calc(50% - 75rem);  width: 150px; height: 150px; border-radius: 50%; transition: 0.3s; background:lightgray; display:inline-flex;}
 .donut-chart .chart:after{content:''; background: #202531; position: absolute; top: 50%; left: 50%; width:90px; height:90px; border-radius: 50%; transform: translate(-50%, -50%);}
 .donut-chart .chart-bar{width: inherit; height: inherit; border-radius: 50%; background: conic-gradient(#db4e59 160deg, #57DED2 50deg); /* 차트 설정 */}
+
+
+
+
+
+
+
 
 /* 페이징 */
 .page-area {display: flex; justify-content: space-between; align-items: center; width: 208rem; margin: 0 auto;}
