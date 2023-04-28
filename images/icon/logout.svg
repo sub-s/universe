@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_3364" data-name="사각형 3364" width="40" height="40" transform="translate(1278)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="nomal" transform="translate(-1278)" clip-path="url(#clip-path)">
+    <g id="로그인_" data-name="로그인 " transform="translate(0 0.5)">
+      <path id="빼기_47" data-name="빼기 47" d="M12,13H6.4V11.212h3.8V9.455H12V13ZM.4,13H0V0H12V3.152H10.2V1.788H.8v.969H.4V13Z" transform="translate(1292 13)" fill="#24D7CB"/>
+      <path id="패스_5463_-_윤곽선" data-name="패스 5463 - 윤곽선" d="M1.792,3.014V11.8l2.82,1.273V4.141L1.792,3.014M0,0,6.4,2.608V15.683L0,13.074Z" transform="translate(1292 13)" fill="#24D7CB"/>
+      <path id="선_540" data-name="선 540" d="M4.943-.208H-.6A.4.4,0,0,1-1-.6.4.4,0,0,1-.6-1H4.943a.4.4,0,0,1,.4.4A.4.4,0,0,1,4.943-.208Z" transform="translate(1302.311 20.141)" fill="#24D7CB"/>
+      <path id="선_541" data-name="선 541" d="M1.377,1.773a.4.4,0,0,1-.28-.116L-.884-.324a.4.4,0,0,1,0-.56.4.4,0,0,1,.56,0L1.657,1.1a.4.4,0,0,1-.28.676Z" transform="translate(1305.876 18.16)" fill="#24D7CB"/>
+      <path id="선_542" data-name="선 542" d="M-.6,1.773a.4.4,0,0,1-.28-.116.4.4,0,0,1,0-.56L1.1-.884a.4.4,0,0,1,.56,0,.4.4,0,0,1,0,.56L-.324,1.657A.4.4,0,0,1-.6,1.773Z" transform="translate(1305.876 20.141)" fill="#24D7CB"/>
+    </g>
+  </g>
+</svg>

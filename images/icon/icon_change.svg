@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_1226" data-name="사각형 1226" width="20" height="20" transform="translate(237 18)" fill="#fff" opacity="0.34"/>
+    </clipPath>
+  </defs>
+  <g id="마스크_그룹_45" data-name="마스크 그룹 45" transform="translate(-237 -18)" clip-path="url(#clip-path)">
+    <g id="이동" transform="translate(252 24) rotate(90)">
+      <path id="선_615" data-name="선 615" d="M7.517,1H.483A.492.492,0,0,1,0,.5.492.492,0,0,1,.483,0H7.517A.492.492,0,0,1,8,.5.492.492,0,0,1,7.517,1Z" transform="translate(0 5)" fill="#fff"/>
+      <path id="선_616" data-name="선 616" d="M7.5,1H.5a.5.5,0,0,1,0-1h7a.5.5,0,0,1,0,1Z" transform="translate(0.5 3)" fill="#fff"/>
+      <path id="선_617" data-name="선 617" d="M.5,4a.5.5,0,0,1-.354-.854l3-3a.5.5,0,0,1,.707.707l-3,3A.5.5,0,0,1,.5,4Z" transform="translate(0 9) rotate(-90)" fill="#fff"/>
+      <path id="선_618" data-name="선 618" d="M.5,4a.5.5,0,0,1-.354-.854l3-3a.5.5,0,0,1,.707.707l-3,3A.5.5,0,0,1,.5,4Z" transform="translate(4.5 4) rotate(-90)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
