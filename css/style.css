@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url(./swiper8.4.4.min.css);
+@import url(style2.css);
 /* @import url(./pretendard.css); */
 /* @import url(./used.css); */
 
@@ -478,7 +479,7 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .wrap .main .content > .inner .graph-wrap .top .date::before {display: block; content: ''; width: 11rem; height: 9.5rem; background: url(../images/icon/calendar.svg) no-repeat; margin-right: 6rem}
 
 .wrap .main .content > .inner .graph-wrap .middle {margin-top: 25rem; height: calc(100% - 43.23rem); box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; flex-direction: column; }
-.wrap .main .content > .inner .graph-wrap .middle .item {flex: 1;}
+.wrap .main .content > .inner .graph-wrap .middle > .item {display: flex; align-items: center; flex: 1}
 .wrap .main .content > .inner .graph-wrap .middle .donut-chart{margin: 0 auto; position: relative;}
 .wrap .main .content > .inner .graph-wrap .middle .donut-chart .success-failure {position: absolute; top:30rem; right: -40rem; }
 .wrap .main .content > .inner .graph-wrap .middle .donut-chart .success-failure li {color:#a2a2a2; display: flex; align-items: center; font-size: 11rem; margin-bottom: 5rem;}
@@ -569,28 +570,28 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .btn-set {}
     /* default btn */
 .btn {background: #49CDC6; font-size: 14rem; display: inline-flex; align-items: center; justify-content: center; color:#000; width: 145rem; height: 42rem;}
-.btn:hover {background: #82F1EB; color:#23243B }
+.btn:hover {background: #82F1EB; color:#23243B; transition: all 0.5s;}
 
     /* big btn */
 .btn.big { font-size: 16rem; color:#000; width: 308rem; height: 42rem; border-radius: 3rem;;}
-.btn.big:hover {background: #82F1EB; }
+.btn.big:hover {background: #82F1EB; transition: all 0.5s; }
 
     /* round btn */
 .btn.round { font-size: 11rem; color:#000; width: auto; padding: 16rem; height: 31rem; border-radius: 15rem;;}
-.btn.round:hover {background: #82F1EB; }
+.btn.round:hover {background: #82F1EB; transition: all 0.5s;}
 
     /* small btn */
 .btn.small {border: 1px solid #000; font-size:12rem; width: 60rem; height: 31rem;}
 
     /* back btn */
 .btn.back {background: url(../images/icon/back.svg) no-repeat; width: 25rem; height: 25rem; opacity: 0.7;}
-.btn.back:hover {opacity: 1;}
+.btn.back:hover {opacity: 1; transition: all 0.5s;}
 
 .btn.a {background: #333A48; color:#fff;}
-.btn.a:hover {background: #576071;}
+.btn.a:hover {background: #576071;  transition: all 0.5s;}
 
 .btn.b {background: #49CDC6; color:#000;}
-.btn.b:hover {background: #82F1EB;}
+.btn.b:hover {background: #82F1EB; transition: all 0.5s;}
 
 
 
@@ -674,7 +675,7 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .page-area span:first-of-type {font-weight: 700; opacity: 1;}
 .page-area span {opacity: 0.6;}
 .page-area button {width: 26rem; height: 26rem; opacity: 0.6;}
-.page-area button:hover {opacity: 1;}
+.page-area button:hover {opacity: 1; transition: all 0.5s;}
 .page-area button.first {background: url(../images/icon/pageFrist.svg) no-repeat; }
 .page-area button.prev {background: url(../images/icon/pagePrev.svg) no-repeat; }
 .page-area button.next {background: url(../images/icon/pageNext.svg) no-repeat; }
