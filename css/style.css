@@ -819,7 +819,32 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .calendar-wrap .day table tbody tr td.active .fail::before  {display: inline-flex; vertical-align: middle; margin-right: 10rem; content: ''; background: url(../images/common/icon_fail.svg) no-repeat; background-size: cover; width: 13rem; height: 13rem;}
 
 .calendar-wrap .day table tbody tr td.active .item {position: relative;}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop {position: absolute; background: #252B37; top:24rem; left:0;}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop {position: absolute; background: #252B37; top:24rem; left:0; border: 1px solid #12151d; width: 490rem; z-index: 2; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5)}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .top {background: #232b38; display: flex; justify-content: space-between; height: 28rem; padding:0 10rem; position: relative;border-bottom: 1px solid #12141c}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .top .tit {color:#00d1c7; font-size: 12rem;}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .top .btn-closed {display: flex; justify-content: center; align-items: center; width: 26rem; height: 26rem; position: absolute; top:0; right: 0;}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .top .btn-closed::before {display: block; content: ''; width: 10rem; height: 10rem; background: url(../images/common/closed.svg) no-repeat; background-size: cover;}
+
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .result  { display: flex; padding-right: 35rem;}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .result .icon-fail {font-size: 10rem; color:#ff5059;}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .result .icon-fail::before {display: inline-flex; vertical-align: middle; margin-right: 5rem; content: ''; background: url(../images/common/icon_fail.svg) no-repeat; background-size: cover; width: 13rem; height: 13rem;}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .result .icon-fail + .icon-success {margin-left: 10rem;}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .result .icon-success {font-size: 10rem; color:#00d1c7;}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .result .icon-success::before {display: inline-flex; vertical-align: middle; margin-right: 5rem; content: ''; background: url(../images/common/icon_success.svg) no-repeat; background-size: cover; width: 13rem; height: 13rem;}
+/* .calendar-wrap .day table tbody tr td.active .item .detail-pop .result .btn {width: 67rem; height: 30rem;} */
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont {overflow-y: scroll; height: 200rem;}
+/* .calendar-wrap .day table tbody tr td.active .item .detail-pop .cont ul  {width: 462rem;} */
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont ul li:nth-child(odd) {background: #1f242f;}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont ul li {background: #252b37; color:#fff; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #12141c;  padding: 5rem 10rem 5rem;}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont ul li.active {background: #434f67;}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont ul li:hover {background: #434f67; transition: all 0.5s;}
+
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont .txt {display: flex; align-items: center; justify-content: space-between;}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont .txt p + p {margin-left: 10rem;}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont .icon-fail {display: block; background: url(../images/common/icon_fail.svg) no-repeat; background-size: cover; width: 23rem; height: 23rem;}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont .icon-success {display: block; background: url(../images/common/icon_success.svg) no-repeat; background-size: cover; width: 23rem; height: 23rem;}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont .btn {width: 67rem; height: 30rem; border-radius: 3rem; font-size: 12rem;;}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop::after {display: block; content: ''; height: 15rem;}
 
 
 
