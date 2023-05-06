@@ -471,13 +471,14 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 /* .wrap .main .content .inner .situation-box .situation:nth-child(3n + 1) { background: red;} */
 /* .wrap .main .content .inner .situation-box .situation + .situation {margin-left: 7rem;} */
 
-.wrap .main .content > .inner .graph-wrap {width: 316rem; padding: 40rem 9rem; box-sizing: border-box; }
+.wrap .main .content > .inner .graph-wrap {width: 316rem; padding: 40rem 9rem; box-sizing: border-box; min-height: 100%; }
 .wrap .main .content > .inner .graph-wrap .top {text-align: center;}
 .wrap .main .content > .inner .graph-wrap .top .tit {font-size: 14rem;}
 .wrap .main .content > .inner .graph-wrap .top .date {font-size: 11rem; color:#a5a7ac; display: flex; justify-content: center; align-items: center; margin-top: 10rem}
 .wrap .main .content > .inner .graph-wrap .top .date::before {display: block; content: ''; width: 11rem; height: 9.5rem; background: url(../images/icon/calendar.svg) no-repeat; margin-right: 6rem}
 
-.wrap .main .content > .inner .graph-wrap .middle {margin-top: 25rem;}
+.wrap .main .content > .inner .graph-wrap .middle {margin-top: 25rem; height: calc(100% - 43.23rem); box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; flex-direction: column; }
+.wrap .main .content > .inner .graph-wrap .middle .item {flex: 1;}
 .wrap .main .content > .inner .graph-wrap .middle .donut-chart{margin: 0 auto; position: relative;}
 .wrap .main .content > .inner .graph-wrap .middle .donut-chart .success-failure {position: absolute; top:30rem; right: -40rem; }
 .wrap .main .content > .inner .graph-wrap .middle .donut-chart .success-failure li {color:#a2a2a2; display: flex; align-items: center; font-size: 11rem; margin-bottom: 5rem;}
@@ -621,9 +622,9 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 
-.top-wrap {display: flex;  margin-top: 10rem;}
+.top-wrap {display: flex; justify-content: space-between; margin-top: 10rem;}
 .top-wrap .box {display: flex; margin-bottom: 30rem; margin-top: 10rem;}
-.top-wrap .box + .box {margin-left: 70rem;}
+/* .top-wrap .box + .box {margin-left: 70rem;} */
 .top-wrap .tit-box {display: flex; justify-content: space-between; flex-wrap: wrap; flex-direction: row; font-size: 14rem; width: 82rem; height: 82rem; border-right: 1rem solid #141820;}
 .top-wrap .tit-box::after {display: block; content:''; width: 57rem; height: 13rem; background: url(../images/icon/tit_arrow.svg) no-repeat;}
 
