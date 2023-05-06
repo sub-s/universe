@@ -1,0 +1,32 @@
+<svg id="구성_요소_54_1" data-name="구성 요소 54 – 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="63" height="37.346" viewBox="0 0 63 37.346">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.529" y1="1" x2="0.528" y2="0.023" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-opacity="0.071"/>
+      <stop offset="1" stop-color="#101010" stop-opacity="0.471"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <path id="패스_5099" data-name="패스 5099" d="M477.369,516.512h-10.7a16.624,16.624,0,1,0-33.249,0h-10.7a27.32,27.32,0,1,1,54.64,0Z" transform="translate(-416.838 -484.66)" fill="#63e0d4"/>
+    </clipPath>
+  </defs>
+  <path id="빼기_27" data-name="빼기 27" d="M63,32H0A32.165,32.165,0,0,1,9.226,9.373,31.393,31.393,0,0,1,19.24,2.515a31.146,31.146,0,0,1,24.521,0A31.382,31.382,0,0,1,53.774,9.373,32.154,32.154,0,0,1,63,32Z" fill="url(#linear-gradient)"/>
+  <g id="그룹_3213" data-name="그룹 3213" transform="translate(7.444 35.886)">
+    <g id="그룹_3087" data-name="그룹 3087" transform="translate(0 0)">
+      <line id="선_444" data-name="선 444" y2="1.46" fill="none" stroke="#59595d" stroke-width="2"/>
+      <line id="선_445" data-name="선 445" y2="1.46" transform="translate(6.499)" fill="none" stroke="#59595d" stroke-width="2"/>
+      <line id="선_446" data-name="선 446" y2="1.46" transform="translate(12.998)" fill="none" stroke="#59595d" stroke-width="2"/>
+      <line id="선_447" data-name="선 447" y2="1.46" transform="translate(19.497)" fill="none" stroke="#59595d" stroke-width="2"/>
+    </g>
+    <g id="그룹_3088" data-name="그룹 3088" transform="translate(31.276 0)">
+      <line id="선_448" data-name="선 448" y2="1.46" fill="none" stroke="#59595d" stroke-width="2"/>
+      <line id="선_449" data-name="선 449" y2="1.46" transform="translate(6.499)" fill="none" stroke="#59595d" stroke-width="2"/>
+      <line id="선_450" data-name="선 450" y2="1.46" transform="translate(12.998)" fill="none" stroke="#59595d" stroke-width="2"/>
+      <line id="선_451" data-name="선 451" y2="1.46" transform="translate(19.497)" fill="none" stroke="#59595d" stroke-width="2"/>
+    </g>
+  </g>
+  <g id="마스크_그룹_4" data-name="마스크 그룹 4" transform="translate(-1.365 -0.428)" clip-path="url(#clip-path)">
+    <path id="패스_5470" data-name="패스 5470" d="M33.628,32.008V-2.639L5.7,8.874Z" transform="translate(-0.004 -0.156)" fill="#bdf89c"/>
+    <path id="패스_5473" data-name="패스 5473" d="M27.927,34.646V0L0,11.512Z" transform="translate(-10.497 30.826) rotate(-51)" fill="#6be1d5"/>
+    <path id="패스_5471" data-name="패스 5471" d="M27.927,34.646V0L0,11.512Z" transform="translate(41.992 -11.479) rotate(51)" fill="#ffdc8a"/>
+    <path id="패스_5472" data-name="패스 5472" d="M27.927,34.646V0L0,11.512Z" transform="translate(72.112 11.659) rotate(102)" fill="#ff6a93"/>
+  </g>
+</svg>

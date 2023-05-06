@@ -1,1 +1,15 @@
 @charset "utf-8";
+
+.half-chart{ position:relative; display:inline-block; width:63rem; height:37.35rem; background:url(../images/icon/half-chart-bg.svg)}
+.half-chart-needle{position:absolute; left:13rem; bottom:3rem; display:inline-block; width: 22rem; height: 6rem; transform:rotate(0deg); transform-origin:19rem 3rem; transition:transform ease 1.5s; background: url(../images/icon/needle.svg) no-repeat;}
+.half-chart-txt{padding-top:39rem; font-size:18rem; text-align:center; color:#a5a7ac;}
+
+.half-chart-tooltop{position:absolute; right:-9px; bottom:-19px; width:15rem; height:15rem;}
+.half-chart-tooltop > i{display:block; width:100%; height:100%; border-radius:100%; background:url(../images/icon/tooltip_icon_alert.svg) no-repeat center;}
+
+
+
+
+/* style.css 삭제 */
+.top-chart .inner::before{display:none !important;}
+.top-chart .inner{overflow:visible !important;}
