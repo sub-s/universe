@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="description" content="한국항공우주연구원">
     
+    <head>
+        <meta charset="UTF-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="description" content="한국항공우주연구원">
     <title>한국항공우주연구원</title>
 
     <!-- Style -->
@@ -60,10 +59,14 @@
                             <div class="half-chart" p="50">
                                 <span class="half-chart-needle"></span>
                                 <p class="half-chart-txt"></p>
-                                <div class="half-chart-tooltop">
+                                <div class="half-chart-tooltip">
                                     <i></i>
-                                    <div class="content">
-                                        
+                                    <div class="half-chart-tooltipcontent">
+                                        <ul class="simple-dot-list">
+                                            <li>Used : 1000GB</li>
+                                            <li>Avaliable : 4000GB</li>
+                                            <li>Total : 5000GB</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +82,6 @@
                                 <p class="half-chart-txt"></p>
                             </div>
                         </div>
-                        <p class="text">50%</p>
                     </div>
                     <!-- // 차트 -->
                      <!-- 차트 -->
@@ -172,11 +174,11 @@
             <!-- 콘텐츠 탭-->
             <div class="main-tap">
                 <div class="menu">
-                    <div>대기정보</div>
-                    <div class="on">부가산출물</div>
+                    <div onclick="tabOnClick()">대기정보</div>
+                    <div onclick="tabOnClick()" class="on">부가산출물</div>
                 </div>
                 <div class="content">
-                    <div class="inner" style="display:none;">
+                    <div class="inner">
                         <div class="cont">
                             <!-- 탑 타이틀 -->
                             <div class="top">
@@ -529,12 +531,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="inner">
+                    <div class="inner on">
                         
                         <div class="cont">
                             <!-- 탑 타이틀 -->
                             <div class="top">
-                                <p class="tit">일현황</p>
+                                <p class="tit">부가산출물</p>
                                 <!-- 현황 컴포넌트 -->
                                 <div class="situation-icon">
                                     <div class="icon complete">완료</div>

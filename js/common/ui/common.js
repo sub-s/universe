@@ -2,6 +2,21 @@ var _chart = document.querySelectorAll('.top-chart .chart');
 var _chartBar = document.querySelectorAll('.chart-bar');
 var color = ['#9986dd','#fbb871','#bd72ac','#f599dc'] //색상
 var newDeg = []; //차트 deg
+
+HTMLElement.prototype.getIndex = function(){
+    let temp = -1;
+    const _p = this.parentNode;
+    const _c = _p.children;
+    for(let i=0; i<_c.length; i++){
+        const c = _c[i];
+        if(c === this){
+            temp = i;
+            break;
+        }
+    }
+    return temp;
+}
+
 function chartDraw(){ 
 for( var i=0;i<_chartBar.length;i++){
     var _num = _chartBar[i].dataset.deg
@@ -53,13 +68,31 @@ function getHalfNoodle(el){
     const deg = 180 * 0.01 * p;
     const styleRotate = "rotate("+ deg +"deg)";
     _txt.innerText = "0%";
+    _needle.style.transform = "rotate(0deg)";
     setTimeout(()=>{
         _needle.style.transform = styleRotate;
         if(p > 0) getCounting()
     },500);
-    
-    
 }
+function tabOnClick(){
+    const _this = event.currentTarget;
+    const _idx = _this.getIndex();
+    const _topChildren = _this.parentNode.children;
+    const _conChildren = _this.parentNode.parentNode.querySelectorAll(".content > .inner");
+    for(let i=0; i<_topChildren.length; i++){
+        const t = _topChildren[i];
+        const c = _conChildren[i];
+        if(i !== _idx){
+            t.classList.remove("on");
+            c.classList.remove("on");
+        }else{
+            t.classList.add("on");
+            c.classList.add("on");
+        }
+    }
+}
+
+// init
 const _halfChart = document.querySelectorAll(".half-chart");
 _halfChart.forEach((c,i)=>{
     const p = Math.floor(Math.random() * 100);
