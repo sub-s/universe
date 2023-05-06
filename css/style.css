@@ -796,4 +796,34 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 
-/*  */
+/* 캘린더 */
+.calendar-wrap {}
+.calendar-wrap .day {}
+.calendar-wrap .day table {width: 100%; }
+.calendar-wrap .day table thead th {padding: 0.5rem; height: 20rem; }
+.calendar-wrap .day table thead th .hour {font-size: 10rem; color:#6C6C70; }
+.calendar-wrap .day table thead th .tit {font-size: 8rem; color:#fff; background: #195F78; width: 100%; height: 100%; border-radius: 3rem; line-height: 20rem;}
+.calendar-wrap .day table tbody th {padding: 0.5rem; height: 24rem;}
+.calendar-wrap .day table tbody td {padding: 0.5rem; height: 24rem;}
+
+.calendar-wrap .day table tbody th .time {font-size: 10rem; color:#fff; background: #252b37; height: 100%; line-height: 24rem;}
+.calendar-wrap .day table tbody td .item {border-radius: 3rem; background: #252B37; width: 100%; height: 100%; line-height: 24rem; font-size: 12rem; text-align: center; }
+
+
+.calendar-wrap .day table tbody tr.old .item {background: #205062;}
+.calendar-wrap .day table tbody tr.now .item {background: #213f52;}
+
+.calendar-wrap .day table tbody tr .fail {color: #fc6060;}
+.calendar-wrap .day table tbody tr .fail::before {display: inline-flex; vertical-align: middle; margin-right: 10rem; content: ''; background: url(../images/common/icon_fail.svg) no-repeat; background-size: cover; width: 13rem; height: 13rem;}
+.calendar-wrap .day table tbody tr td.active .fail {background: #fc6060 !important; color:#12141C}
+.calendar-wrap .day table tbody tr td.active .fail::before  {display: inline-flex; vertical-align: middle; margin-right: 10rem; content: ''; background: url(../images/common/icon_fail.svg) no-repeat; background-size: cover; width: 13rem; height: 13rem;}
+
+.calendar-wrap .day table tbody tr td.active .item {position: relative;}
+.calendar-wrap .day table tbody tr td.active .item .detail-pop {position: absolute; background: #252B37; top:24rem; left:0;}
+
+
+
+.calendar-wrap .day table tbody tr.pm {position: relative;}
+.calendar-wrap .day table tbody tr.pm::after {display: block; content: ''; border-bottom: 1rem solid #6d848b; position: absolute; left:0; right:0; bottom: 0;}
+.calendar-wrap .day table tbody tr.now {position: relative;}
+.calendar-wrap .day table tbody tr.now::after {display: block; content: ''; border-bottom: 2rem solid #4a9573; position: absolute; left:0; right:0; bottom: 0;}

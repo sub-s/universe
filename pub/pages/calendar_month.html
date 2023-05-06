@@ -48,38 +48,331 @@
         <main class="main">
             
             <div class="calendar-wrap">
-                <dl>
-                    <dt>hour</dt>
-                    <dd>CLO</dd>
-                    <dd>AWV</dd>
-                    <dd>RCR</dd>
-                    <dd>AOT</dd>
-                    <dd>ACR</dd>
-                    <dd>BAR</dd>
-                    <dd>BVI</dd>
-                    <dd>INS</dd>
-                    <dd>INS</dd>
-                    <dt>00 ~ 01</dt>
-                    <dd>1</dd>
-                    <dd>2</dd>
-                    <dd>3</dd>
-                    <dd>4</dd>
-                    <dd>5</dd>
-                    <dd>6</dd>
-                    <dd>7</dd>
-                    <dd>8</dd>
-                    <dd>9</dd>
-                    <dt>01 ~ 02</dt>
-                    <dd>1</dd>
-                    <dd>2</dd>
-                    <dd>3</dd>
-                    <dd>4</dd>
-                    <dd>5</dd>
-                    <dd>6</dd>
-                    <dd>7</dd>
-                    <dd>8</dd>
-                    <dd>9</dd>
-                </dl>
+                <div class="day">
+                    <table>
+                        <colgroup>
+                            <col style="width: 45rem">
+                            <col />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th><div class="hour">hour</div></th>
+                                <th><div class="tit">CLO</div></th>
+                                <th><div class="tit">AWV</div></th>
+                                <th><div class="tit">RCR</div></th>
+                                <th><div class="tit">AOT</div></th>
+                                <th><div class="tit">ACR</div></th>
+                                <th><div class="tit">BAR</div></th>
+                                <th><div class="tit">BVI</div></th>
+                                <th><div class="tit">INS</div></th>
+                                <th><div class="tit">INS</div></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="old">
+                                <th><div class="time">00 ~ 01</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr class="old">
+                                <th><div class="time">01 ~ 02</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr class="old">
+                                <th><div class="time">02 ~ 03</div></th>
+                                <td><div class="item fail">실패 5건</div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr class="now">
+                                <th><div class="time">03 ~ 04</div></th>
+                                <td><div class="item"></div></td>
+                                <td class="active">
+                                    <div class="item fail">실패 5건
+                                        <!-- 팝업 -->
+                                        <div class="detail-pop">
+                                            <div class="top">
+                                                <div class="tit">20221215  P.M.11:00 ~ 11:59 산출물 현황</div>
+                                                <div class="result">
+                                                    <p>fail</p>
+                                                    <p>success</p>
+                                                </div>
+                                            </div>
+                                            <div class="cont">
+                                                <ul>
+                                                    <li>
+                                                        <p>11:30</p>
+                                                        <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                                                    </li>
+                                                </ul>
+                                                <button class="btn b" type="button"><span>초기화</span></button>
+                                            </div>
+                                        </div>
+                                        <!-- // 팝업 -->
+                                    </div>
+                                </td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item fail">실패 5건</div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>      
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">04 ~ 05</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">05 ~ 06</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">06 ~ 07</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">07 ~ 08</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">08 ~ 09</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">09 ~ 10</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">10 ~ 11</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">11 ~ 12</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr class="pm">
+                                <th><div class="time">12 ~ 13</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">13 ~ 14</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">14 ~ 15</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">15 ~ 16</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">16 ~ 17</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">17 ~ 18</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">18 ~ 19</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">19 ~ 20</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">20 ~ 21</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">21 ~ 22</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                            <tr>
+                                <th><div class="time">22 ~ 23</div></th>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                                <td><div class="item"></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+             
             </div>
         </main>
 
