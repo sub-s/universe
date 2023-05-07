@@ -166,9 +166,7 @@
 /* 트리 3depth */
 .tree-area .tree li > ul > li > ul > li > ul > li::before{left:71rem;;}
 .tree-area .tree li > ul > li > ul > li > ul > li > label{padding-left:78rem;}
-<<<<<<< HEAD
-.tree-area .tree li > ul > li > ul > li > ul > li > .tree_arr_btn{left:65rem;}
-=======
+
 .tree-area .tree li > ul > li > ul > li > ul > li > .tree_arr_btn{left:65rem;}
 
 
@@ -212,6 +210,3 @@
 .slide-pop .popup::after {display: block; content: ''; height: 15rem;}
 
 
-
-
->>>>>>> 27afd87917a76315dc5b8d363f37640ba2a0707d
