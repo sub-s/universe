@@ -772,10 +772,12 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .calendar-wrap .month table thead th .tit.sun {color:#FC6060;}
 .calendar-wrap .month table thead th .tit.sat {color:#49CDC6;}
 
-.calendar-wrap .month table tbody td {padding: 0.5rem; }
+.calendar-wrap .month table tbody td {padding: 0.5rem; position: relative;}
 
-.calendar-wrap .month table tbody td .day {border-radius: 10rem;  background: #252b37; width: 100%; height: 100%; line-height: 24rem; font-size: 12rem; text-align: left; position: relative;}
-.calendar-wrap .month table tbody td .day::after:hover {border: 2px solid #49cdc6; position: absolute; top:-2rem; right: -2rem; bottom:-2rem; left:-2rem; }
+.calendar-wrap .month table tbody td .active::after {display: block; content:''; border-radius: 10rem;  border: 2px solid #8cff80; position: absolute; top:0; right: 0; bottom:0; left:0; }
+.calendar-wrap .month table tbody td .day {border-radius: 10rem;  background: #252b37; width: 100%; height: 100%; line-height: 24rem; font-size: 12rem; text-align: left; }
+.calendar-wrap .month table tbody td:hover .day::after {display: block; content:''; border-radius: 10rem;  border: 2px solid #49cdc6; position: absolute; top:0; right: 0; bottom:0; left:0; }
+
 /* .calendar-wrap .month table tbody td .day:hover {border: 2px solid #49cdc6; position: absolute; top:-2rem; right: -2rem; bottom:-2rem; left:-2rem; } */
 .calendar-wrap .month table tbody td .day.on {background: #195f78; border: 1px solid #195f78;}
 .calendar-wrap .month table tbody td .day.on .item {background: #205062;}
