@@ -760,34 +760,6 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 
-/* 트리메뉴 */
-.tree-area .tree{margin-top: 55px; padding-bottom: 20rem;}
-.tree-area .tree, 
-.tree-area .tree ul{padding-left:20rem;}
-.tree-area .tree li {padding:10rem 0 10rem; position: relative;}
-.tree-area .tree li::before {content: ''; display: block; position: absolute; top:30rem; left:-10rem; bottom:0; border-left: 1px dotted #fff }
-.tree-area .tree li:last-of-type::before {display: none;}
-.tree-area .tree label{cursor: pointer; font-size: 12rem; color: #fff; ;}
-.tree-area .tree label:before{content: ''; width:13rem; height: 13rem;}
-.tree-area .tree label.lastTree:before{content:'';}
-.tree-area .tree label span::before {display: inline-flex; content: ''; width: 13rem; height: 13rem; background: url(../images/icon/tree_folder.svg) no-repeat; margin: 0 7rem 0}
-
-.tree-area .tree input[type="checkbox"] { -moz-appearance: none; -webkit-appearance: none; -ms-appearance: none; appearance: none; display: inline-flex; margin-right: -2em; opacity: 0; width: 1em; z-index: -1; } 
-.tree-area .tree input[type="checkbox"] + label { text-decoration: none; color: #fff; cursor: pointer; display: inline-flex;  position: relative; } 
-.tree-area .tree input[type="checkbox"] + label:before { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; display: inline-flex; font-style: normal; font-variant: normal; text-rendering: auto; line-height: 1; text-transform: none !important;} 
-.tree-area .tree input[type="checkbox"] + label:before { background: rgba(0, 0, 0, 0.05);  border: solid 1px rgba(255, 255, 255, 1); content: ''; display: inline-flex;  left: -1rem; top: -1rem; width: 13rem; height: 13rem; background: url(../images/icon/tree_chk.svg) no-repeat;} 
-.tree-area .tree input[type="checkbox"]:checked + label:before {color: #fff; content: ''; border: solid 1px rgba(255, 255, 255, 0.7); background: none; } 
-/* .tree-area .tree input[type="checkbox"]:focus + label:before { box-shadow: 0 0 0 1px #666;} */
-
-.tree-area .tree input[type="checkbox"] + label {padding:0;}
-.tree-area .tree input[type="checkbox"] {display: none;}
-.tree-area .tree input[type="checkbox"]:checked ~ ul {display: none;}
-
-
-
-
-
-
 
 
 
