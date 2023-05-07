@@ -201,6 +201,44 @@ function treeDelClick(){
     console.log("dkdkdkdkdk")
 }
 
+/* calendar */
+function calendarPopupClick(){
+    const _this = event.currentTarget;
+    const _pop = document.querySelector(".leftFlayingpopUp");
+    const w = _pop.scrollWidth;
+    const checked = _pop.classList.contains("open");
+    if(!checked){
+        _pop.style.width = w + "px";
+    }else{
+        _pop.style.width = "0px";
+
+    }
+    _pop.classList.toggle("open")
+    console.log("_this : ",_this)
+    console.log("_pop : ",_pop)
+    console.log("w : ",w)
+}
+function toggleModal(el){
+    const _this = el;
+    if(_this.delay) return;
+    const checked = _this.classList.contains("open");
+    const _wrap = _this.querySelector(".modal_innerWrap");
+    _this.delay = true;
+    _this.classList.toggle("open");
+    if(checked){
+        _wrap.classList.add("openModal");
+    }else{
+        _wrap.classList.add("closeModal");
+    }
+    console.log("this : ",_this)
+    setTimeout(()=>{
+        _wrap.classList.remove("closeModal");
+        _wrap.classList.remove("openModal");
+        _this.delay = null;
+    },1500)
+}
+
+
 /* init */
 function init(){
     // 차트 바늘 움직이는 함수

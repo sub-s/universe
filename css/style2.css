@@ -90,7 +90,7 @@
 
 
 /* 트리메뉴  */
-.tree-area .tree{padding-top: 11rem; padding-bottom: 20rem; border:1rem solid #141820; background:#252b37;}
+.tree-area .tree{height:100%; padding-top: 11rem; padding-bottom: 20rem; border:1rem solid #141820; overflow:auto; background:#252b37;}
 .tree-area .tree, 
 .tree-area .tree li {position: relative;}
 .tree-area .tree li.closed ul{display:none;}
@@ -140,6 +140,9 @@
 .tree-area .tree ul li.file:last-child > .tree_arr_btn:before{top:-3rem; bottom:7rem; left:6rem; border-left:1rem dotted #fff;}
 .tree-area .tree ul li.file:last-child > .tree_arr_btn:after{top:50%; right:0; left:6rem; border-top:1rem dotted #fff;}
 
+.addDottedLine::after{content:""; position:absolute; top:22rem; bottom:0; border-left:1px dotted #fff;}
+.tree-area .tree ul li:not(.closed):not(.file) > label::after{content:""; position:absolute; top:22rem; bottom:0; border-left:1px dotted #fff;}
+
 /* 트리 삭제 */
 .tree-area .tree .tree_del_btn{position:absolute; top:0; right:0; display:none; width:23rem; height:23rem; font-size:0; background:url(../../images/icon/tree_del_btn.svg) no-repeat center center;}
 .tree-area .tree .tree_del_btn.on{display:block;}
@@ -163,19 +166,24 @@
 .tree-area .tree li > ul > li > ul > li > label{padding-left:62rem;}
 .tree-area .tree li > ul > li > ul > li > .tree_arr_btn{left:49rem;}
 
-/* 트리 3depth */
+/* 트리 4depth */
 .tree-area .tree li > ul > li > ul > li > ul > li::before{left:71rem;;}
 .tree-area .tree li > ul > li > ul > li > ul > li > label{padding-left:78rem;}
-
 .tree-area .tree li > ul > li > ul > li > ul > li > .tree_arr_btn{left:65rem;}
+.tree-area .tree li > ul > li > ul > li > ul > li > label::after{left:86rem;}
 
+/* 트리 5depth */
+.tree-area .tree li > ul > li > ul > li > ul > li > ul > li::before{left:87rem;;}
+.tree-area .tree li > ul > li > ul > li > ul > li > ul > li > label{padding-left:94rem;}
+.tree-area .tree li > ul > li > ul > li > ul > li > ul > li >  .tree_arr_btn{left:81rem;}
 
 
 
 
 /* 캘린더 팝업 */
-.slide-pop {position: fixed; right:0; bottom:5rem; width: 475px; height: calc(100% - 120rem); background: red; z-index: 3;}
-.slide-pop .popup {position: absolute; background: #252B37; top:0; left:0; border: 1px solid #12151d; width: 100%; height: 100%; z-index: 2; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5)}
+.leftFlayingpopUp{transition:width ease 0.5s;}
+.slide-pop {position: fixed; right:0; bottom:5rem; width: 0px; height: calc(100% - 120rem); overflow:hidden; background: red; z-index: 3;}
+.slide-pop .popup {position: absolute; background: #252B37; top:0; left:0; border: 1px solid #12151d;  width: 475px; height: 100%; z-index: 2; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5)}
 .slide-pop .popup .top {background: #232b38; display: flex; justify-content: space-between; align-items: center; height: 31rem; padding:0 10rem; position: relative;border-bottom: 1px solid #12141c}
 .slide-pop .popup .top .tit {color:#00d1c7; font-size: 12rem;}
 .slide-pop .popup .top .btn-closed {display: flex; justify-content: center; align-items: center; width: 31rem; height: 31rem; position: absolute; top:0; right: 0;}
@@ -210,3 +218,33 @@
 .slide-pop .popup::after {display: block; content: ''; height: 15rem;}
 
 
+
+
+
+/* modal */
+.modal-popup{position:fixed; top:0; right:0; bottom:0; left:0; z-index:100; display:none; align-items:center; justify-content:center;  background:rgba(0,0,0,0.3);}
+.modal-popup.open{display:flex;}
+.modal-popup .modal_innerWrap{ padding:20rem; border:1px solid #000; background:#252B37;}
+.comparison-layout-box > ul{display:flex; align-items:stretch; height:100%;}
+.comparison-layout-box > ul > li{height:100%;}
+.comparison-layout-box > ul > li .tree-area{height:100%;}
+.comparison-layout-box > ul > li:not(:nth-child(2)){flex:1;}
+.comparison-layout-box > ul > li:nth-child(2){display:flex; align-items:center; justify-content:center; width:60rem;}
+
+.openModal{animation:modal ease-in-out 1.5s forwards;}
+@keyframes modal{
+    0%{transform:scale(1); opacity:0;}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1); opacity:1;}
+}
+
+.modal_both_btns{display:flex; justify-content:center; padding:15rem 0 0;}
+.modal_both_btns .btn + .btn{margin-left:5rem;}
+
+.sub-tit{display: flex; align-items: center; margin-bottom: 15rem;}
+.sub-tit:before{display: block;content: '';background: url(../images/icon/label.svg) no-repeat;width: 5.4rem;height: 6.22rem;margin-right: 7rem;}
+
+
+/* rect btn */
+.btnRect{width:25rem; height:25rem; font-size:0; border:1px solid #7D8595;}
+.btnRect.icon_arr{background:url(../../images/icon/icon_rectBtn_arr.svg) no-repeat center;}

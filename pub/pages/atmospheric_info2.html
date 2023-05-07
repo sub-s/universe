@@ -72,8 +72,8 @@
                 </div> -->
 
                 <div class="right">
-                    <button class="btn round" type="button"><span>부가산출물생성</span></button>
-                    <button class="btn menu" type="button"><span class="blind">메뉴펼침</span></button>
+                    <button class="btn round" type="button" onclick="toggleModal(document.querySelector('.modal-popup'))"><span>부가산출물생성</span></button>
+                    <button class="btn menu" type="button" onclick="calendarPopupClick()"><span class="blind">메뉴펼침</span></button>
                 </div>
             </div>
             <!-- // 타이틀 박스 -->
@@ -524,10 +524,9 @@
                     <button class="next" type="button"><span class="blind">다음</span></button>
                     <button class="end" type="button"><span class="blind">마지막</span></button>
                 </div>
-                
             </div>
         </main>
-        <div class="slide-pop">
+        <div class="slide-pop leftFlayingpopUp">
              <!-- 팝업 -->
             <div class="popup">
                 <div class="top">
@@ -535,7 +534,7 @@
                     <div class="btn-log">
                         <button class="btn small a" type="button"><span>실패건수만  보기</span></button>
                     </div>
-                    <button class="btn-closed">
+                    <button class="btn-closed" onclick="calendarPopupClick()">
                         <span class="blind">닫기</span>
                     </button>
                 </div>
@@ -684,7 +683,218 @@
         <!-- // 팝업 -->
     </div>
 
-  
+    <!-- modal -->
+    <div class="modal-popup">
+        <div class="modal_innerWrap">
+            <div class="sub-tit">부가산출물 생성</div>
+            <div class="comparison-layout-box" style="width:700px; height:450px;">
+                <ul>
+                    <li>
+                        <!-- 트리메뉴 -->
+                        <div class="tree-area">
+                            <ul class="tree">
+                                <li>
+                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth1</span></label>
+                                    <ul>
+                                        <li class="file">
+                                            <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth2</span></label>
+                                        </li>
+                                        <li>
+                                            <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth2</span></label>
+                                            <ul>
+                                                <li class="file">
+                                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth3</span></label>
+                                                </li>
+                                            </ul>
+                                        <li>
+                                            <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth2</span></label>
+                                            <ul>
+                                                <li class="file">
+                                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth3</span></label>
+                                                </li>
+                                                <li>
+                                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth3</span></label>
+                                                    <ul>
+                                                        <li class="file">
+                                                            <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth4</span></label>
+                                                        </li>
+                                                        <li class="file">
+                                                            <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth4</span></label>
+                                                        </li>
+                                                        <li class="file">
+                                                            <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4</span></label>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="file">
+                                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth3</span></label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth1</span></label>
+                                    <ul>
+                                        <li class="file">
+                                            <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth1-1</span></label>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- // 트리메뉴 -->
+                    </li>
+                    <li>
+                        <button class="btnRect icon_arr">arr</button>
+                    </li>
+                    <li>
+                        <!-- 트리메뉴 -->
+                        <div class="tree-area">
+                            <ul class="tree">
+                                <li>
+                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth1</span></label>
+                                    <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                    <ul>
+                                        <li class="file">
+                                            <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth2</span></label>
+                                                    <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                        </li>
+                                        <li>
+                                            <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth2</span></label>
+                                                    <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                            <ul>
+                                                <li class="file">
+                                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth3</span></label>
+                                                    <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                                </li>
+                                            </ul>
+                                        <li>
+                                            <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth2</span></label>
+                                                    <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                            <ul>
+                                                <li class="file">
+                                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth3</span></label>
+                                                        <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                                </li>
+                                                <li>
+                                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth3</span></label>
+                                                        <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                                    <ul>
+                                                        <li class="file">
+                                                            <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth4</span></label>
+                                                            <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                                        </li>
+                                                        <li class="file">
+                                                            <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth4</span></label>
+                                                            <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                                        </li>
+                                                        <li>
+                                                            <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4</span></label>
+                                                            <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                                            <ul>
+                                                                <li class="file">
+                                                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth5</span></label>
+                                                                    <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                                                </li>
+                                                                <li class="file">
+                                                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5</span></label>
+                                                                    <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                                                </li>
+                                                                <li class="file">
+                                                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth5</span></label>
+                                                                    <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4</span></label>
+                                                            <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                                            <ul>
+                                                                <li class="file">
+                                                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth5</span></label>
+                                                                    <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                                                </li>
+                                                                <li class="file">
+                                                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5Depth5</span></label>
+                                                                    <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                                                </li>
+                                                                <li class="file">
+                                                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth5</span></label>
+                                                                    <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="file">
+                                                            <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth4</span></label>
+                                                            <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="file">
+                                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth3</span></label>
+                                                    <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                    <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth1</span></label>
+                                    <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                    <ul>
+                                        <li class="file">
+                                            <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth1-1</span></label>
+                                            <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- // 트리메뉴 -->                    
+                    </li>
+                </ul>
+            </div>
+            <div class="modal_both_btns">
+                <button class="btn small b" type="button"><span onclick="toggleModal(document.querySelector('.modal-popup'))">생성</span></button>
+                <button class="btn small a" type="button"><span onclick="toggleModal(document.querySelector('.modal-popup'))">취소</span></button>
+            </div>
+        </div>
+    </div>
 
 
     <script src="../../js/common/ui/common.js"></script>
