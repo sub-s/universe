@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="description" content="한국항공우주연구원">
+    
+    <title>한국항공우주연구원</title>
+
+    <!-- Style -->
+    <!-- <link rel="stylesheet" href="../../../css/ui_common_pub.css"> -->
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <!-- 본문 바로가기 -->
+    <div class="skip-navigation">
+        <a href="#main_content">본문 바로가기</a>
+    </div>
+
+    <div class="wrap">
+        <!-- 헤더 -->
+        <header class="header">
+            <div class="top">
+                <div class="logo">
+                    <h1><img src="../../images/logo.svg" alt="한국항공우주연구원"></h1>
+                </div>
+                <ul class="menu-item">
+                    <li class="on"><button>대시보드</button></li>
+                    <li><button>대기정보</button></li>
+                    <li><button>부가산출물</button></li>
+                    <li><button>딥러닝</button></li>
+                </ul>
+            </div>
+            <div class="user-area">
+                <ul>
+                    <li><button><span class="blind">로그아웃</span></button></li>
+                    <li><button><span class="blind">설정</span></button></li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- 본문 -->
+        <main class="main">
+            <!-- 타이틀 박스 -->
+            <div class="title-box">
+                <div class="left">
+                    <p class="tit">System Setting</p>
+                </div>
+                <!-- 
+                <div class="year-wrap">
+                    <div class="box">
+                        <button type="button" class="btn-prev">
+                            <span class="blind">이전</span>
+                        </button>
+                        <div class="year">
+                            <span>January 2023</span>
+                        </div>
+                        <button type="button" class="btn-next">
+                            <span class="blind">다음</span>
+                        </button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn">
+                            <span>this month</span>
+                        </button>
+                    </div>
+                </div> -->
+
+                <!-- <div class="right">
+                    <button class="btn round" type="button"><span>부가산출물생성</span></button>
+                    <button class="btn menu" type="button"><span class="blind">메뉴펼침</span></button>
+                </div> -->
+            </div>
+            <!-- // 타이틀 박스 -->
+            <div class="setting-wrap">
+                <div class="setting">
+                    <div class="field">
+                        <label for="nn">작업데이터 갱신 주기</label>
+                        <input type="text" name="nn" id="nn" placeholder="0">
+                    </div>
+                    <div class="field">
+                        <label for="dd">시스템상태 데이터 갱신 주기</label>
+                        <input type="text" name="dd" id="dd" placeholder="0">
+                    </div>
+                </div>
+                <div class="btn-set">
+                    <!-- default btn -->
+                    <button class="btn a" type="button"><span>초기화</span></button>
+                    <button class="btn b" type="button"><span>생성</span></button>
+                </div>
+            </div>
+              
+        </main>
+       
+    </div>
+
+  
+
+
+    <script src="../../js/common/ui/common.js"></script>
+</body>
+
+</html>
