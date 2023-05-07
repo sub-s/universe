@@ -3,6 +3,8 @@ var _chartBar = document.querySelectorAll('.chart-bar');
 var color = ['#9986dd','#fbb871','#bd72ac','#f599dc'] //색상
 var newDeg = []; //차트 deg
 
+
+// elemet index return
 HTMLElement.prototype.getIndex = function(){
     let temp = -1;
     const _p = this.parentNode;
@@ -17,28 +19,8 @@ HTMLElement.prototype.getIndex = function(){
     return temp;
 }
 
-function chartDraw(){ 
-for( var i=0;i<_chartBar.length;i++){
-    var _num = _chartBar[i].dataset.deg
-    newDeg.push( _num )
-}
-var num = newDeg.length - newDeg.length;
-_chart.forEach((c,i)=>{
-    c.style.background = 'conic-gradient(#6be1d5 '+
-        newDeg[num] + 'deg, #bdf89c '+
-        newDeg[num] + 'deg ' + newDeg[num+1]+'deg, #ffdc8a '+
-        newDeg[1]+'deg '+newDeg[2]+'deg, #ff6a93 '+
-        newDeg[2]+'deg )';
-})
-
-// _chart.style.background = 'conic-gradient(#6be1d5 '+
-//     newDeg[num] + 'deg, #bdf89c '+
-//     newDeg[num] + 'deg ' + newDeg[num+1]+'deg, #ffdc8a '+
-//     newDeg[1]+'deg '+newDeg[2]+'deg, #ff6a93 '+
-//     newDeg[2]+'deg )';
-}
-
-function getHalfNoodle(el){
+// 차트 바늘 움직이게 하는 함수
+function getHalfNeedle(el){
     const _this = (el.classList.contains("half-chart"))?el:null;
     if(!_this) return;
     const _needle = _this.querySelector(".half-chart-needle");
@@ -60,7 +42,10 @@ function getHalfNoodle(el){
             time += num;
             txt = (txt + onePlus > p)?p:txt + onePlus;
             _txt.innerText = String(txt).replace(/(\.\d+)/g,'') + "%";
-            if(time >= totalTime) clearInterval(_this.counterTimer);
+            if(time >= totalTime){
+                clearInterval(_this.counterTimer);
+                _this.counterTimer = null;
+            }
         },num)
     }
     // const 
@@ -68,12 +53,44 @@ function getHalfNoodle(el){
     const deg = 180 * 0.01 * p;
     const styleRotate = "rotate("+ deg +"deg)";
     _txt.innerText = "0%";
+    _needle.style.transition = "none";
     _needle.style.transform = "rotate(0deg)";
     setTimeout(()=>{
+        _needle.style.transition = "transform ease 1.5s";
         _needle.style.transform = styleRotate;
         if(p > 0) getCounting()
     },500);
 }
+
+// 카운팅 함수
+const getNumberCounting = (a)=>{
+    const defaultData = {
+        _this : null,
+        totalTime : 1500,
+        len : 50,
+        p : 0,
+    }
+    const datas = Object.assign(defaultData,a);
+    const num = datas.totalTime / datas.len;
+    const onePlus = datas.p / (datas.len - 1);
+    let txt = 0;
+    let time = 0;
+    if(datas._this.counterTimer) clearSetInterval(datas._this.counterTimer);
+    datas._this.innerText = "0"
+    setTimeout(()=>{
+        datas._this.counterTimer = setInterval(()=>{
+            time += num;
+            txt = (txt + onePlus > datas.p)?datas.p:txt + onePlus;
+            datas._this.innerText = String(txt).replace(/(\.\d+)/g,'');
+            if(time >= datas.totalTime){
+                clearInterval(datas._this.counterTimer);
+                datas._this.counterTimer = null;
+            }
+        },num)
+    },500)
+}
+
+// 탭 클릭이벤트
 function tabOnClick(){
     const _this = event.currentTarget;
     const _idx = _this.getIndex();
@@ -90,13 +107,40 @@ function tabOnClick(){
             c.classList.add("on");
         }
     }
+    getTabHeight()
+}
+// 대시보드 탭 콘탠츠 height settong
+function getTabHeight(){
+    const _mainTab = document.querySelectorAll(".main-tap");
+    _mainTab.forEach((t,i)=>{
+        const _con = t.querySelector(".content");
+        const diff = _con.scrollHeight - window.innerHeight;
+        if(diff > 0){
+            _con.style.height = "calc(100% - 47rem)";
+        }else{
+            _con.removeAttribute("style");
+        }
+    })
 }
 
-// init
-const _halfChart = document.querySelectorAll(".half-chart");
-_halfChart.forEach((c,i)=>{
-    const p = Math.floor(Math.random() * 100);
-    c.setAttribute("p",p);
-    getHalfNoodle(c)
-})
-chartDraw();
+/* init */
+function init(){
+    // 차트 바늘 움직이는 함수
+    const _halfChart = document.querySelectorAll(".half-chart");
+    _halfChart.forEach((c,i)=>{
+        const p = Math.floor(Math.random() * 100);
+        c.setAttribute("p",p);
+        getHalfNeedle(c)
+    })
+
+    // 대시보드 주간집게 실패 총의뢰 카운팅
+    const _resultNum = document.querySelectorAll(".result-area .result");
+    _resultNum.forEach((r,i)=>{
+        const num = Math.floor(Math.random() * 10000);
+        getNumberCounting({_this:r,p:num});
+    })
+
+    // 대시보드 탭 높이값
+    getTabHeight();
+}
+init();
