@@ -18,6 +18,29 @@ HTMLElement.prototype.getIndex = function(){
     }
     return temp;
 }
+// parents
+HTMLElement.prototype.parent = function(t){
+    let temp = null;
+    const firstTxt = t.match(/^./g)[0];
+    const check = (firstTxt === ".")?"c":(firstTxt === "#")?"i":"t"
+    const txt = t.replace(/(^\.|^#)/g,'');
+    const innerFn = (e)=>{
+        switch(check) {
+            case "c" :
+                if(e.classList.contains(txt)) temp = e;
+                break;
+                case "i" :
+                if(e.id === txt) temp = e;
+                break
+            default :
+                if(e.tagName && e.tagName.toLowerCase() === txt) temp = e;
+                break
+        }
+        if(temp === null && e.parentNode.tagName) innerFn(e.parentNode);
+    }
+    innerFn(this);
+    return temp;
+}
 
 // 차트 바늘 움직이게 하는 함수
 function getHalfNeedle(el){
@@ -128,11 +151,54 @@ function treeArrClick(){
     const _this = event.currentTarget;
     const _li = _this.parentNode;
     _li.classList.toggle("closed");
-    console.log("_this : ",_this);
 }
-function treeLabelSpanClick(){
+function treeLabelClick(){
+    event.preventDefault();
+    if(event.stopPropagation){
+        event.stopPropagation()
+    }else{
+        event.cancleBubble = true;
+    }
     const _this = event.currentTarget;
-    console.log("_this : ",_this);
+    const tagName = _this.tagName.toLowerCase();
+    const _tree = _this.parent(".tree");
+    const _delBtn = _this.parent("li").querySelector(".tree_del_btn");
+    const _delBtns = _tree.querySelectorAll(".tree_del_btn.on");
+    let _thisLabel = _this;
+    if(tagName === 'span'){
+        const _checkbox = _this.parentNode.querySelector("input");
+        const checked = !_checkbox.checked;
+        _checkbox.checked = checked;
+        _thisLabel = _this.parent("label");
+    }
+    const _labels = _tree.querySelectorAll("label");
+    _labels.forEach((l,i)=>{
+        if(l !== _thisLabel){
+            l.classList.remove("active");
+        }else{
+            l.classList.add("active");
+        }
+    })
+    if(!_delBtn) return;
+    _delBtns.forEach((d,i)=>{
+        if(d !== _delBtn)d.classList.remove("on");
+    })
+    _delBtn.classList.add("on");
+}
+function treeLabelMouseOver(){
+    const _this = event.currentTarget;
+    const _del = _this.parent("li").querySelector(".tree_del_btn");
+    if(_del) _del.classList.add("on");
+}
+function treeLabelMouseOut(){
+    const _this = event.currentTarget;
+    const _li =  _this.parent("li");
+    const _del =_li.querySelector(".tree_del_btn");
+    const check = _li.querySelector("label").classList.contains("active");
+    if(_del && !check) _del.classList.remove("on");
+}
+function treeDelClick(){
+    console.log("dkdkdkdkdk")
 }
 
 /* init */
