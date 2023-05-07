@@ -921,9 +921,13 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .atmospheric-info .table.a table {width: 100%;} 
 .atmospheric-info .table.a th {border: 1px solid #19191b; text-align: center; color:#d9d8f1; font-size: 10rem; padding: 8rem 30rem 8rem;} 
 .atmospheric-info .table.a tbody tr {position: relative;}
-/* .atmospheric-info .table.a tbody tr:hover::after {display: block; content:''; position: absolute; left:0; right:0; top:0; bottom:0; box-shadow: 0rem 0rem 0rem 1rem #49cdc6 inset;} */
-.atmospheric-info .table.a tbody tr:hover::after {display: block; content:''; position: absolute; left:0; top:0; width: 100%; height: 100%; border: 1px solid #49cdc6;}
-/* .atmospheric-info .table.a tbody tr:hover td {box-shadow: 0rem 0rem 0rem 1rem #49cdc6 inset;} */
+
+.atmospheric-info .table.a tbody tr:hover td:after{content:""; position:absolute; top:0; left:0; right:0; height:1px; background:#49cdc6;}
+.atmospheric-info .table.a tbody tr:hover td:first-child{border-left:1px solid #49cdc6;}
+.atmospheric-info .table.a tbody tr:hover td:last-child{border-right:1px solid #49cdc6;}
+.atmospheric-info .table.a tbody tr:hover td{border-bottom:1px solid #49cdc6;}
+.atmospheric-info .table.a tbody tr:hover::after{display:none !important;}
+
 .atmospheric-info .table.a td {border: 1px solid #19191b; text-align: center; color:#fff; font-size: 11rem; padding: 8rem 30rem 8rem; box-sizing: border-box;} 
 
 
@@ -931,9 +935,9 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 
-.slide-pop {position: fixed; right:0; bottom:5rem; width: 475px; height: calc(100% - 120rem); background: red; z-index: 3;}
 
 /* 캘린더 팝업 */
+.slide-pop {position: fixed; right:0; bottom:5rem; width: 475px; height: calc(100% - 120rem); background: red; z-index: 3;}
 .slide-pop .popup {position: absolute; background: #252B37; top:0; left:0; border: 1px solid #12151d; width: 100%; height: 100%; z-index: 2; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5)}
 .slide-pop .popup .top {background: #232b38; display: flex; justify-content: space-between; align-items: center; height: 31rem; padding:0 10rem; position: relative;border-bottom: 1px solid #12141c}
 .slide-pop .popup .top .tit {color:#00d1c7; font-size: 12rem;}
