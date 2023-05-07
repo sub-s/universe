@@ -792,59 +792,93 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 
+/* 캘린더 Month */
+.calendar-wrap { height: 100%; }
+.calendar-wrap .month { height: 100%;}
+.calendar-wrap .month table {width: 100%;  height: 100%;}
+.calendar-wrap .month table thead th .tit {font-size: 11rem; color:#fff; text-align: left; padding: 10rem;}
+.calendar-wrap .month table thead th .tit.sun {color:#FC6060;}
+.calendar-wrap .month table thead th .tit.sat {color:#49CDC6;}
+
+.calendar-wrap .month table tbody td {padding: 0.5rem; }
+
+.calendar-wrap .month table tbody td .day {border-radius: 10rem;  background: #252b37; width: 100%; height: 100%; line-height: 24rem; font-size: 12rem; text-align: left; position: relative;}
+.calendar-wrap .month table tbody td .day::after:hover {border: 2px solid #49cdc6; position: absolute; top:-2rem; right: -2rem; bottom:-2rem; left:-2rem; }
+/* .calendar-wrap .month table tbody td .day:hover {border: 2px solid #49cdc6; position: absolute; top:-2rem; right: -2rem; bottom:-2rem; left:-2rem; } */
+.calendar-wrap .month table tbody td .day.on {background: #195f78; border: 1px solid #195f78;}
+.calendar-wrap .month table tbody td .day.on .item {background: #205062;}
+.calendar-wrap .month table tbody td .day .num {display: block; font-size: 12rem; padding: 10rem;}
+.calendar-wrap .month table tbody td .day .item {background: #20252e; border-radius: 10rem; height:calc(100% - 44rem); padding: 10rem; box-sizing: border-box;}
+.calendar-wrap .month table tbody td .day.sun .num{color:#FC6060}
+.calendar-wrap .month table tbody td .day.sat .num{color:#49CDC6}
+.calendar-wrap .month table tbody td.old .day.sun .num{color:#833d43}
+.calendar-wrap .month table tbody td.new .day.sat .num{color:#465c8b}
 
 
 
 
-/* 캘린더 */
-.calendar-wrap {}
-.calendar-wrap .day {}
-.calendar-wrap .day table {width: 100%; }
+.calendar-wrap .month table tbody td.old .day {background: #1d212c;}
+.calendar-wrap .month table tbody td.old .day .item {background: transparent;}
+
+
+.calendar-wrap .month table tbody td.new .day {background: #1e222d;}
+.calendar-wrap .month table tbody td.new .day .item {background: transparent;}
+
+
+
+
+
+
+/* 캘린더 Day */
+.calendar-wrap { height: 100%; }
+.calendar-wrap .day { height: 100%;}
+.calendar-wrap .day table {width: 100%;  height: 100%;}
 .calendar-wrap .day table thead th {padding: 0.5rem; height: 20rem; }
 .calendar-wrap .day table thead th .hour {font-size: 10rem; color:#6C6C70; }
 .calendar-wrap .day table thead th .tit {font-size: 8rem; color:#fff; background: #195F78; width: 100%; height: 100%; border-radius: 3rem; line-height: 20rem;}
 .calendar-wrap .day table tbody th {padding: 0.5rem; height: 24rem;}
 .calendar-wrap .day table tbody td {padding: 0.5rem; height: 24rem;}
 
-.calendar-wrap .day table tbody th .time {font-size: 10rem; color:#fff; background: #252b37; height: 100%; line-height: 24rem;}
-.calendar-wrap .day table tbody td .item {border-radius: 3rem; background: #252B37; width: 100%; height: 100%; line-height: 24rem; font-size: 12rem; text-align: center; }
+.calendar-wrap .day table tbody th .time {font-size: 10rem; color:#fff; background: #252b37; height: 100%; line-height: 24rem; display: flex; justify-content: center; align-items: center;}
+.calendar-wrap .day table tbody td .item {border-radius: 3rem; background: #252B37; width: 100%; height: 100%; line-height: 24rem; font-size: 12rem; text-align: center; display: flex; justify-content: center; align-items: center;}
 
 
 .calendar-wrap .day table tbody tr.old .item {background: #205062;}
 .calendar-wrap .day table tbody tr.now .item {background: #213f52;}
 
-.calendar-wrap .day table tbody tr .fail {color: #fc6060;}
+.calendar-wrap .day table tbody tr .fail {color: #fc6060; display: flex; justify-content: center; align-items: center;}
 .calendar-wrap .day table tbody tr .fail::before {display: inline-flex; vertical-align: middle; margin-right: 10rem; content: ''; background: url(../images/common/icon_fail.svg) no-repeat; background-size: cover; width: 13rem; height: 13rem;}
-.calendar-wrap .day table tbody tr td.active .fail {background: #fc6060 !important; color:#12141C}
+.calendar-wrap .day table tbody tr td.active .fail {background: #fc6060 !important; color:#12141C; display: flex; justify-content: center; align-items: center;}
 .calendar-wrap .day table tbody tr td.active .fail::before  {display: inline-flex; vertical-align: middle; margin-right: 10rem; content: ''; background: url(../images/common/icon_fail.svg) no-repeat; background-size: cover; width: 13rem; height: 13rem;}
 
-.calendar-wrap .day table tbody tr td.active .item {position: relative;}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop {position: absolute; background: #252B37; top:24rem; left:0; border: 1px solid #12151d; width: 490rem; z-index: 2; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5)}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .top {background: #232b38; display: flex; justify-content: space-between; height: 28rem; padding:0 10rem; position: relative;border-bottom: 1px solid #12141c}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .top .tit {color:#00d1c7; font-size: 12rem;}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .top .btn-closed {display: flex; justify-content: center; align-items: center; width: 26rem; height: 26rem; position: absolute; top:0; right: 0;}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .top .btn-closed::before {display: block; content: ''; width: 10rem; height: 10rem; background: url(../images/common/closed.svg) no-repeat; background-size: cover;}
 
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .result  { display: flex; padding-right: 35rem;}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .result .icon-fail {font-size: 10rem; color:#ff5059;}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .result .icon-fail::before {display: inline-flex; vertical-align: middle; margin-right: 5rem; content: ''; background: url(../images/common/icon_fail.svg) no-repeat; background-size: cover; width: 13rem; height: 13rem;}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .result .icon-fail + .icon-success {margin-left: 10rem;}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .result .icon-success {font-size: 10rem; color:#00d1c7;}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .result .icon-success::before {display: inline-flex; vertical-align: middle; margin-right: 5rem; content: ''; background: url(../images/common/icon_success.svg) no-repeat; background-size: cover; width: 13rem; height: 13rem;}
-/* .calendar-wrap .day table tbody tr td.active .item .detail-pop .result .btn {width: 67rem; height: 30rem;} */
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont {overflow-y: scroll; height: 200rem;}
-/* .calendar-wrap .day table tbody tr td.active .item .detail-pop .cont ul  {width: 462rem;} */
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont ul li:nth-child(odd) {background: #1f242f;}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont ul li {background: #252b37; color:#fff; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #12141c;  padding: 5rem 10rem 5rem;}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont ul li.active {background: #434f67;}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont ul li:hover {background: #434f67; transition: all 0.5s;}
 
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont .txt {display: flex; align-items: center; justify-content: space-between;}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont .txt p + p {margin-left: 10rem;}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont .icon-fail {display: block; background: url(../images/common/icon_fail.svg) no-repeat; background-size: cover; width: 23rem; height: 23rem;}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont .icon-success {display: block; background: url(../images/common/icon_success.svg) no-repeat; background-size: cover; width: 23rem; height: 23rem;}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop .cont .btn {width: 67rem; height: 30rem; border-radius: 3rem; font-size: 12rem;;}
-.calendar-wrap .day table tbody tr td.active .item .detail-pop::after {display: block; content: ''; height: 15rem;}
+/* 캘린더 팝업 */
+.calendar-pop {position: absolute; background: #252B37; top:25rem; left:0; border: 1px solid #12151d; width: 490rem; z-index: 2; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5)}
+.calendar-pop .top {background: #232b38; display: flex; justify-content: space-between; height: 28rem; padding:0 10rem; position: relative;border-bottom: 1px solid #12141c}
+.calendar-pop .top .tit {color:#00d1c7; font-size: 12rem;}
+.calendar-pop .top .btn-closed {display: flex; justify-content: center; align-items: center; width: 26rem; height: 26rem; position: absolute; top:0; right: 0;}
+.calendar-pop .top .btn-closed::before {display: block; content: ''; width: 10rem; height: 10rem; background: url(../images/common/closed.svg) no-repeat; background-size: cover;}
+
+.calendar-pop .result  { display: flex; padding-right: 35rem;}
+.calendar-pop .result .icon-fail {font-size: 10rem; color:#ff5059;}
+.calendar-pop .result .icon-fail::before {display: inline-flex; vertical-align: middle; margin-right: 5rem; content: ''; background: url(../images/common/icon_fail.svg) no-repeat; background-size: cover; width: 13rem; height: 13rem;}
+.calendar-pop .result .icon-fail + .icon-success {margin-left: 10rem;}
+.calendar-pop .result .icon-success {font-size: 10rem; color:#00d1c7;}
+.calendar-pop .result .icon-success::before {display: inline-flex; vertical-align: middle; margin-right: 5rem; content: ''; background: url(../images/common/icon_success.svg) no-repeat; background-size: cover; width: 13rem; height: 13rem;}
+.calendar-pop .cont {overflow-y: scroll; height: 200rem;}
+.calendar-pop .cont ul li:nth-child(odd) {background: #1f242f;}
+.calendar-pop .cont ul li {background: #252b37; color:#fff; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #12141c;  padding: 5rem 10rem 5rem;}
+.calendar-pop .cont ul li.active {background: #434f67;}
+.calendar-pop .cont ul li:hover {box-shadow: 0 0 0 2px #33797a inset; transition: all 0.5s;}
+
+.calendar-pop .cont .txt {display: flex; align-items: center; justify-content: space-between;}
+.calendar-pop .cont .txt p {font-size: 12rem;}
+.calendar-pop .cont .txt p + p {margin-left: 10rem;}
+.calendar-pop .cont .icon-fail {display: block; background: url(../images/common/icon_fail.svg) no-repeat; background-size: cover; width: 23rem; height: 23rem;}
+.calendar-pop .cont .icon-success {display: block; background: url(../images/common/icon_success.svg) no-repeat; background-size: cover; width: 23rem; height: 23rem;}
+.calendar-pop .cont .btn {width: 67rem; height: 30rem; border-radius: 3rem; font-size: 12rem;;}
+.calendar-pop::after {display: block; content: ''; height: 15rem;}
 
 
 

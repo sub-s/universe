@@ -48,380 +48,248 @@
         <main class="main">
             
             <div class="calendar-wrap">
-                <div class="day">
+                <div class="month">
                     <table>
                         <colgroup>
-                            <col style="width: 45rem">
-                            <col />
+                            <col style="width: 14.28%">
+                            <col style="width: 14.28%">
+                            <col style="width: 14.28%">
+                            <col style="width: 14.28%">
+                            <col style="width: 14.28%">
+                            <col style="width: 14.28%">
+                            <col style="width: 14.28%">
                         </colgroup>
                         <thead>
                             <tr>
-                                <th><div class="hour">hour</div></th>
-                                <th><div class="tit">CLO</div></th>
-                                <th><div class="tit">AWV</div></th>
-                                <th><div class="tit">RCR</div></th>
-                                <th><div class="tit">AOT</div></th>
-                                <th><div class="tit">ACR</div></th>
-                                <th><div class="tit">BAR</div></th>
-                                <th><div class="tit">BVI</div></th>
-                                <th><div class="tit">INS</div></th>
-                                <th><div class="tit">INS</div></th>
+                                <th><div class="tit sun">SUN</div></th>
+                                <th><div class="tit">MON</div></th>
+                                <th><div class="tit">TUE</div></th>
+                                <th><div class="tit">WED</div></th>
+                                <th><div class="tit">THU</div></th>
+                                <th><div class="tit">FRI</div></th>
+                                <th><div class="tit sat">SAT</div></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="old">
-                                <th><div class="time">00 ~ 01</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr class="old">
-                                <th><div class="time">01 ~ 02</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr class="old">
-                                <th><div class="time">02 ~ 03</div></th>
-                                <td><div class="item fail">실패 5건</div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr class="now">
-                                <th><div class="time">03 ~ 04</div></th>
-                                <td><div class="item"></div></td>
-                                <td class="active">
-                                    <div class="item fail">실패 5건
-                                        <!-- 팝업 -->
-                                        <div class="detail-pop">
-                                            <div class="top">
-                                                <div class="tit">20221215  P.M.11:00 ~ 11:59 산출물 현황</div>
-                                                <div class="result">
-                                                    <p class="icon-fail">fail</p>
-                                                    <p class="icon-success">success</p>
-                                                </div>
-                                                <button class="btn-closed">
-                                                    <span class="blind">닫기</span>
-                                                </button>
-                                            </div>
-                                            <div class="cont">
-                                                <ul>
-                                                    <li>
-                                                        <div class="txt">
-                                                            <p>11:30</p>
-                                                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
-                                                        </div>
-                                                        <p><i class="icon-fail"></i></p>
-                                                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
-                                                    </li>
-                                                    <li>
-                                                        <div class="txt">
-                                                            <p>11:30</p>
-                                                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
-                                                        </div>
-                                                        <p><i class="icon-success"></i></p>
-                                                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
-                                                    </li>
-                                                    <li>
-                                                        <div class="txt">
-                                                            <p>11:30</p>
-                                                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
-                                                        </div>
-                                                        <p><i class="icon-fail"></i></p>
-                                                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
-                                                    </li>
-                                                    <li class="active">
-                                                        <div class="txt">
-                                                            <p>11:30</p>
-                                                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
-                                                        </div>
-                                                        <p><i class="icon-success"></i></p>
-                                                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
-                                                    </li>
-                                                    <li>
-                                                        <div class="txt">
-                                                            <p>11:30</p>
-                                                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
-                                                        </div>
-                                                        <p><i class="icon-success"></i></p>
-                                                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
-                                                    </li>
-                                                    <li class="active">
-                                                        <div class="txt">
-                                                            <p>11:30</p>
-                                                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
-                                                        </div>
-                                                        <p><i class="icon-success"></i></p>
-                                                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
-                                                    </li>
-                                                    <li>
-                                                        <div class="txt">
-                                                            <p>11:30</p>
-                                                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
-                                                        </div>
-                                                        <p><i class="icon-success"></i></p>
-                                                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
-                                                    </li>
-                                                </ul>
-                                                
-                                            </div>
-                                        </div>
-                                        <!-- // 팝업 -->
+                            <tr>
+                                <td class="old">
+                                    <div class="day sun">
+                                        <span class="num">30</span>
+                                        <div class="item">d</div>
                                     </div>
                                 </td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item fail">실패 5건</div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>      
-                                <td><div class="item"></div></td>
+                                <td class="old">
+                                    <div class="day">
+                                        <span class="num">31</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day on">
+                                        <span class="num">1</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day on">
+                                        <span class="num">2</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day on">
+                                        <span class="num">3</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">4</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day sat">
+                                        <span class="num">5</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <th><div class="time">04 ~ 05</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
+                                <td>
+                                    <div class="day sun">
+                                        <span class="num">6</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">7</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">8</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">9</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">10</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">11</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day sat">
+                                        <span class="num">12</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <th><div class="time">05 ~ 06</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
+                                <td>
+                                    <div class="day sun">
+                                        <span class="num">13</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">14</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">15</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">16</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">17</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">18</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day sat">
+                                        <span class="num">19</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <th><div class="time">06 ~ 07</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
+                                <td>
+                                    <div class="day sun">
+                                        <span class="num">20</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">21</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">22</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">23</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">24</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">25</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day sat">
+                                        <span class="num">26</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <th><div class="time">07 ~ 08</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr>
-                                <th><div class="time">08 ~ 09</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr>
-                                <th><div class="time">09 ~ 10</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr>
-                                <th><div class="time">10 ~ 11</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr>
-                                <th><div class="time">11 ~ 12</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr class="pm">
-                                <th><div class="time">12 ~ 13</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr>
-                                <th><div class="time">13 ~ 14</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr>
-                                <th><div class="time">14 ~ 15</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr>
-                                <th><div class="time">15 ~ 16</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr>
-                                <th><div class="time">16 ~ 17</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr>
-                                <th><div class="time">17 ~ 18</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr>
-                                <th><div class="time">18 ~ 19</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr>
-                                <th><div class="time">19 ~ 20</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr>
-                                <th><div class="time">20 ~ 21</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr>
-                                <th><div class="time">21 ~ 22</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                            </tr>
-                            <tr>
-                                <th><div class="time">22 ~ 23</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
+                                <td>
+                                    <div class="day sun">
+                                        <span class="num">27</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">28</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">29</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day">
+                                        <span class="num">30</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td class="new">
+                                    <div class="day">
+                                        <span class="num">1</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td class="new">
+                                    <div class="day">
+                                        <span class="num">2</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
+                                <td class="new">
+                                    <div class="day sat">
+                                        <span class="num">3</span>
+                                        <div class="item">d</div>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -431,6 +299,81 @@
             </div>
         </main>
 
+        <!-- 팝업 -->
+        <div class="calendar-pop" style="display: none;">
+            <div class="top">
+                <div class="tit">20221215  P.M.11:00 ~ 11:59 산출물 현황</div>
+                <div class="result">
+                    <p class="icon-fail">fail</p>
+                    <p class="icon-success">success</p>
+                </div>
+                <button class="btn-closed">
+                    <span class="blind">닫기</span>
+                </button>
+            </div>
+            <div class="cont">
+                <ul>
+                    <li>
+                        <div class="txt">
+                            <p>11:30</p>
+                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                        </div>
+                        <p><i class="icon-fail"></i></p>
+                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                    </li>
+                    <li>
+                        <div class="txt">
+                            <p>11:30</p>
+                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                        </div>
+                        <p><i class="icon-success"></i></p>
+                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                    </li>
+                    <li>
+                        <div class="txt">
+                            <p>11:30</p>
+                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                        </div>
+                        <p><i class="icon-fail"></i></p>
+                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                    </li>
+                    <li class="active">
+                        <div class="txt">
+                            <p>11:30</p>
+                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                        </div>
+                        <p><i class="icon-success"></i></p>
+                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                    </li>
+                    <li>
+                        <div class="txt">
+                            <p>11:30</p>
+                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                        </div>
+                        <p><i class="icon-success"></i></p>
+                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                    </li>
+                    <li class="active">
+                        <div class="txt">
+                            <p>11:30</p>
+                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                        </div>
+                        <p><i class="icon-success"></i></p>
+                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                    </li>
+                    <li>
+                        <div class="txt">
+                            <p>11:30</p>
+                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                        </div>
+                        <p><i class="icon-success"></i></p>
+                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+        <!-- // 팝업 -->
     </div>
 
     <script src="../../js/common/ui/common.js"></script>
