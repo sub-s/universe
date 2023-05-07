@@ -123,6 +123,18 @@ function getTabHeight(){
     })
 }
 
+// tree
+function treeArrClick(){
+    const _this = event.currentTarget;
+    const _li = _this.parentNode;
+    _li.classList.toggle("closed");
+    console.log("_this : ",_this);
+}
+function treeLabelSpanClick(){
+    const _this = event.currentTarget;
+    console.log("_this : ",_this);
+}
+
 /* init */
 function init(){
     // 차트 바늘 움직이는 함수
