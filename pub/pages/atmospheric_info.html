@@ -59,6 +59,17 @@
                             <div class="half-chart" p="50">
                                 <span class="half-chart-needle"></span>
                                 <p class="half-chart-txt"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 차트 -->
+                     <!-- 차트 -->
+                    <div class="top-chart">
+                        <p class="s-tit">RAM</p>
+                        <div class="inner">
+                            <div class="half-chart" p="75">
+                                <span class="half-chart-needle"></span>
+                                <p class="half-chart-txt"></p>
                                 <div class="half-chart-tooltip">
                                     <i></i>
                                     <div class="half-chart-tooltipcontent">
@@ -75,28 +86,27 @@
                     <!-- // 차트 -->
                      <!-- 차트 -->
                     <div class="top-chart">
-                        <p class="s-tit">RAM</p>
-                        <div class="inner">
-                            <div class="half-chart" p="75">
-                                <span class="half-chart-needle"></span>
-                                <p class="half-chart-txt"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- // 차트 -->
-                     <!-- 차트 -->
-                    <div class="top-chart">
                         <p class="s-tit">DISK</p>
                         <div class="half-chart" p="15">
                             <span class="half-chart-needle"></span>
                             <p class="half-chart-txt"></p>
+                            <div class="half-chart-tooltip">
+                                <i></i>
+                                <div class="half-chart-tooltipcontent">
+                                    <ul class="simple-dot-list">
+                                        <li>Used : 1000GB</li>
+                                        <li>Avaliable : 4000GB</li>
+                                        <li>Total : 5000GB</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- // 차트 -->
                 </div>
                 <div class="box">
                     <div class="tit-box">
-                        대기정보 <br />
+                        부가산출물 <br />
                         장비
                     </div>
                     <!-- 차트 -->
@@ -114,6 +124,16 @@
                         <div class="half-chart" p="15">
                             <span class="half-chart-needle"></span>
                             <p class="half-chart-txt"></p>
+                            <div class="half-chart-tooltip">
+                                <i></i>
+                                <div class="half-chart-tooltipcontent">
+                                    <ul class="simple-dot-list">
+                                        <li>Used : 1000GB</li>
+                                        <li>Avaliable : 4000GB</li>
+                                        <li>Total : 5000GB</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- // 차트 -->
@@ -123,13 +143,23 @@
                         <div class="half-chart" p="15">
                             <span class="half-chart-needle"></span>
                             <p class="half-chart-txt"></p>
+                            <div class="half-chart-tooltip">
+                                <i></i>
+                                <div class="half-chart-tooltipcontent">
+                                    <ul class="simple-dot-list">
+                                        <li>Used : 1000GB</li>
+                                        <li>Avaliable : 4000GB</li>
+                                        <li>Total : 5000GB</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- // 차트 -->
                 </div>
                 <div class="box">
                     <div class="tit-box">
-                        대기정보 <br />
+                        딥러닝 <br />
                         장비
                     </div>
                     <!-- 차트 -->
@@ -156,6 +186,16 @@
                         <div class="half-chart" p="15">
                             <span class="half-chart-needle"></span>
                             <p class="half-chart-txt"></p>
+                            <div class="half-chart-tooltip">
+                                <i></i>
+                                <div class="half-chart-tooltipcontent">
+                                    <ul class="simple-dot-list">
+                                        <li>Used : 1000GB</li>
+                                        <li>Avaliable : 4000GB</li>
+                                        <li>Total : 5000GB</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- // 차트 -->
@@ -165,6 +205,16 @@
                         <div class="half-chart" p="15">
                             <span class="half-chart-needle"></span>
                             <p class="half-chart-txt"></p>
+                            <div class="half-chart-tooltip right">
+                                <i></i>
+                                <div class="half-chart-tooltipcontent">
+                                    <ul class="simple-dot-list">
+                                        <li>Used : 1000GB</li>
+                                        <li>Avaliable : 4000GB</li>
+                                        <li>Total : 5000GB</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- // 차트 -->
@@ -174,11 +224,11 @@
             <!-- 콘텐츠 탭-->
             <div class="main-tap">
                 <div class="menu">
-                    <div onclick="tabOnClick()">대기정보</div>
-                    <div onclick="tabOnClick()" class="on">부가산출물</div>
+                    <div onclick="tabOnClick()" class="on">대기정보</div>
+                    <div onclick="tabOnClick()">부가산출물</div>
                 </div>
                 <div class="content">
-                    <div class="inner">
+                    <div class="inner on">
                         <div class="cont">
                             <!-- 탑 타이틀 -->
                             <div class="top">
@@ -192,243 +242,236 @@
                             </div>
                             <!-- 현황판 -->
                             <div class="situation-box">
-                                <div class="situation">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">완료</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">0</p>
-                                                </li>
-                                            </ul>
+                                <div class="inner">
+                                    <div class="situation">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">0</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">완료</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">0</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">0</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">완료</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">0</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">0</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">완료</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">0</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">0</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">0</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">0</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">0</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">0</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">0</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">0</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">완료</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">0</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">0</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation progress">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation progress">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">55</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation progress">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">완료</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation progress">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">55</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">55</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation failed">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation failed">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">55</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation failed">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">완료</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation failed">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">55</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">55</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
                                 </div>
-                                <div class="situation"></div>
-                                <div class="situation"></div>
-                                <div class="situation"></div>
-                                <div class="situation"></div>
-                               
                             </div>
                         </div>
                         <div class="graph-wrap">
@@ -468,61 +511,26 @@
                                             </colgroup>
                                             <tbody>
                                                 <tr>
-                                                    <td>2월</td>
-                                                    <td>
-                                                        <div class="graph">
-                                                            <p style="height: 40%"><span class="blind">10%</span></p>
-                                                            <p style="height: 20%"><span class="blind">10%</span></p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="graph">
-                                                            <p style="height: 40%"><span class="blind">10%</span></p>
-                                                            <p style="height: 20%"><span class="blind">10%</span></p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="graph">
-                                                            <p style="height: 80%"><span class="blind">10%</span></p>
-                                                            <p style="height: 20%"><span class="blind">10%</span></p>
-                                                        </div>
-                                                    </td>
-                                                    <td>3월</td>
-                                                    <td>
-                                                        <div class="graph">
-                                                            <p style="height: 40%"><span class="blind">10%</span></p>
-                                                            <p style="height: 20%"><span class="blind">10%</span></p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="graph">
-                                                            <p style="height: 60%"><span class="blind">10%</span></p>
-                                                            <p style="height: 20%"><span class="blind">10%</span></p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="graph">
-                                                            <p style="height: 40%"><span class="blind">10%</span></p>
-                                                            <p style="height: 20%"><span class="blind">10%</span></p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="graph">
-                                                            <p style="height: 70%"><span class="blind">10%</span></p>
-                                                            <p style="height: 20%"><span class="blind">10%</span></p>
-                                                        </div>
-                                                    </td>
+                                                    <td colspan="3" class="th_type02">4월</td>
+                                                    <td colspan="4" class="th_type02">5월</td>
                                                 </tr>
                                                 <tr class="bt-font">
-                                                    <td></td>
-                                                    <td>28일</td>
-                                                    <td>29일</td>
-                                                    <td>30일</td>
-                                                    <td></td>
-                                                    <td>1일</td>
-                                                    <td>2일</td>
-                                                    <td>3일</td>
-                                                    <td>4일</td>
+                                                    <td>28 일</td>
+                                                    <td>29 일</td>
+                                                    <td>30 일</td>
+                                                    <td>1 일</td>
+                                                    <td>2 일</td>
+                                                    <td>3 일</td>
+                                                    <td>4 일</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><i class="icon-circle-type x"></i></td>
+                                                    <td><i class="icon-circle-type o"></i></td>
+                                                    <td><i class="icon-circle-type o"></i></td>
+                                                    <td><i class="icon-circle-type o"></i></td>
+                                                    <td><i class="icon-circle-type o"></i></td>
+                                                    <td><i class="icon-circle-type o"></i></td>
+                                                    <td><i class="icon-circle-type o"></i></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -531,12 +539,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="inner on">
+                    <div class="inner">
                         
                         <div class="cont">
                             <!-- 탑 타이틀 -->
                             <div class="top">
-                                <p class="tit">부가산출물</p>
+                                <p class="tit">일현황</p>
                                 <!-- 현황 컴포넌트 -->
                                 <div class="situation-icon">
                                     <div class="icon complete">완료</div>
@@ -546,243 +554,244 @@
                             </div>
                             <!-- 현황판 -->
                             <div class="situation-box">
-                                <div class="situation">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">완료</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">0</p>
-                                                </li>
-                                            </ul>
+                                <div class="inner">
+                                    <div class="situation">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">의뢰</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">0</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">완료</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">0</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">의뢰</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">0</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">완료</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">0</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">의뢰</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">0</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">완료</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">0</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">의뢰</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">0</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">0</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">의뢰</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">0</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">0</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">의뢰</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">0</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">0</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">의뢰</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">0</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">완료</p>
-                                                    <p class="count">278</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">0</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">의뢰</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">278</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">0</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation progress">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation progress">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">의뢰</p>
+                                                        <p class="count">55</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">55</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation progress">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">완료</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation progress">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">의뢰</p>
+                                                        <p class="count">55</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">55</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">55</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation failed">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation failed">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">의뢰</p>
+                                                        <p class="count">55</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">55</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="situation failed">
-                                    <div class="inner"> 
-                                        <p class="tit">CMS</p>
-                                        <div class="current">
-                                            <ul>
-                                                <li>
-                                                    <p class="tit">의뢰</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">완료</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                                <li>
-                                                    <p class="tit">실패</p>
-                                                    <p class="count">55</p>
-                                                </li>
-                                            </ul>
+                                    <div class="situation failed">
+                                        <div class="inner"> 
+                                            <p class="tit">CMS</p>
+                                            <div class="current">
+                                                <ul>
+                                                    <li>
+                                                        <p class="tit">의뢰</p>
+                                                        <p class="count">55</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">완료</p>
+                                                        <p class="count">55</p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="tit">실패</p>
+                                                        <p class="count">55</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
+                                    <div class="situation"></div>
                                 </div>
-                                <div class="situation"></div>
-                                <div class="situation"></div>
-                                <div class="situation"></div>
-                                <div class="situation"></div>
-                               
                             </div>
                         </div>
                         <div class="graph-wrap">
