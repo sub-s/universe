@@ -613,6 +613,8 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .table.a table {width: 100%;} 
 .table.a th {border: 1px solid #19191b; text-align: center; color:#d9d8f1; font-size: 10rem; padding: 8rem 30rem 8rem;} 
 .table.a td {border: 1px solid #19191b; text-align: center; color:#fff; font-size: 11rem; padding: 8rem 30rem 8rem;} 
+/* .table.a tr:hover {border: 1px solid #49cdc6;} */
+
 /* 테블 그래프 */
 .table .graph {height: 2rem; width: 100%; background: #19191b; position: relative;} 
 .table .graph p {position: absolute; left:0; top:0; bottom:0; height: 100%; background: #49cdc6; } 
@@ -796,6 +798,7 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .title-box .right .swhitech .off {left: initial; right: 17rem; color: #9a9da8;}
 
 .title-box .right .btn.menu {width: 31rem; height: 31rem; background: url(../images/icon/r_btn_bg.svg) no-repeat; margin-left: 10rem; overflow: hidden; border-radius: 50%; }
+.title-box .right .btn.menu:hover {background: url(../images/icon/r_btn_bg2.svg) no-repeat;}
 
 
 
@@ -917,7 +920,11 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .atmospheric-info .table.a{} 
 .atmospheric-info .table.a table {width: 100%;} 
 .atmospheric-info .table.a th {border: 1px solid #19191b; text-align: center; color:#d9d8f1; font-size: 10rem; padding: 8rem 30rem 8rem;} 
-.atmospheric-info .table.a td {border: 1px solid #19191b; text-align: center; color:#fff; font-size: 11rem; padding: 8rem 30rem 8rem;} 
+.atmospheric-info .table.a tbody tr {position: relative;}
+/* .atmospheric-info .table.a tbody tr:hover::after {display: block; content:''; position: absolute; left:0; right:0; top:0; bottom:0; box-shadow: 0rem 0rem 0rem 1rem #49cdc6 inset;} */
+.atmospheric-info .table.a tbody tr:hover::after {display: block; content:''; position: absolute; left:0; top:0; width: 100%; height: 100%; border: 1px solid #49cdc6;}
+/* .atmospheric-info .table.a tbody tr:hover td {box-shadow: 0rem 0rem 0rem 1rem #49cdc6 inset;} */
+.atmospheric-info .table.a td {border: 1px solid #19191b; text-align: center; color:#fff; font-size: 11rem; padding: 8rem 30rem 8rem; box-sizing: border-box;} 
 
 
 
