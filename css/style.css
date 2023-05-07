@@ -414,7 +414,7 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .wrap .header .user-area > ul > li:first-of-type button {background: url(../images/icon/logout.svg) no-repeat; }
 .wrap .header .user-area > ul > li button {background: url(../images/icon/setting.svg) no-repeat; height: 40rem; width: 40rem; opacity: 0.6;}
 .wrap .header .user-area > ul > li button:hover {opacity: 1;}
-.wrap .header .user-area > ul > li .setting {position: absolute; right:0; top: 43rem; width: 115rem;;}
+.wrap .header .user-area > ul > li .setting {position: absolute; right:0; top: 43rem; width: 115rem; z-index: 3;;}
 .wrap .header .user-area > ul > li .setting ul > li {width: 100%; background: #252b37;  height: 31rem; border:1px solid #12141c;}
 .wrap .header .user-area > ul > li .setting ul > li a {display: block; height: 100%; width: 100%; display: flex; justify-content: center; align-items: center;  font-size: 12rem;}
 .wrap .header .user-area > ul > li .setting ul > li:hover a {background: #434f67; transition: all 0.5s;}
