@@ -772,6 +772,7 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .calendar-wrap .month table thead th .tit.sun {color:#FC6060;}
 .calendar-wrap .month table thead th .tit.sat {color:#49CDC6;}
 
+
 .calendar-wrap .month table tbody td {padding: 0.5rem; position: relative;}
 
 .calendar-wrap .month table tbody td .active::after {display: block; content:''; border-radius: 10rem;  border: 2px solid #8cff80; position: absolute; top:0; right: 0; bottom:0; left:0; }
@@ -783,6 +784,15 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .calendar-wrap .month table tbody td .day.on .item {background: #205062;}
 .calendar-wrap .month table tbody td .day .num {display: block; font-size: 12rem; padding: 10rem;}
 .calendar-wrap .month table tbody td .day .item {background: #20252e; border-radius: 10rem; height:calc(100% - 44rem); padding: 10rem; box-sizing: border-box;}
+.calendar-wrap .month table tbody td .day .item .fail {color:#fc6060; display: flex; align-items: center;}
+.calendar-wrap .month table tbody td .day .item .fail::before  {display: inline-flex; margin-right: 10rem; content: ''; background: url(../images/common/icon_fail.svg) no-repeat; background-size: cover; width: 13rem; height: 13rem;}
+
+.calendar-wrap.w4 .month table tbody tr{height:calc(100% / 4);}
+.calendar-wrap.w5 .month table tbody tr{height:calc(100% / 5);}
+.calendar-wrap.w6 .month table tbody tr{height:calc(100% / 6);}
+.calendar-wrap.w7 .month table tbody tr{height:calc(100% / 7);}
+
+
 .calendar-wrap .month table tbody td .day.sun .num{color:#FC6060}
 .calendar-wrap .month table tbody td .day.sat .num{color:#49CDC6}
 .calendar-wrap .month table tbody td.old .day.sun .num{color:#833d43}
