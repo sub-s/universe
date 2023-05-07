@@ -90,16 +90,18 @@
 
 
 /* 트리메뉴  */
-.tree-area .tree{margin-top: 55rem; padding-bottom: 20rem; border:1px solid #141820; background:#252b37;}
+.tree-area .tree{padding-top: 11rem; padding-bottom: 20rem; border:1rem solid #141820; background:#252b37;}
 .tree-area .tree, 
 .tree-area .tree li {position: relative;}
 .tree-area .tree li.closed ul{display:none;}
 
 
+
+
 .tree-area .tree li:last-of-type::before {display: none;}
 
 
-.tree-area .tree label{position:relative; display:flex; align-items:center; height:23rem; padding:0 0 0 30rem; cursor: pointer; font-size: 12rem; color: #fff; border:1px solid transparent;}
+.tree-area .tree label{position:relative; display:block; min-height:23rem; padding:0 40rem 5rem 30rem; cursor: pointer; font-size: 12rem; color: #fff; border:1px solid transparent;}
 .tree-area .tree label.lastTree:before{content:'';}
 
 .tree-area .tree label span{padding:0 0 0 33rem;}
@@ -109,7 +111,7 @@
 
 
 .tree-area .tree input[type="checkbox"] { -moz-appearance: none; -webkit-appearance: none; -ms-appearance: none; appearance: none; display: inline-flex; margin-right: -2em; opacity: 0; width: 1em; z-index: -1; } 
-.tree-area .tree input[type="checkbox"] + span { text-decoration: none; color: #fff; cursor: pointer; display: inline-flex;  position: relative; } 
+.tree-area .tree input[type="checkbox"] + span {position: relative; top:3rem; display:inline-block; white-space:pre-line; word-break:break-all; color: #fff; cursor: pointer;} 
 .tree-area .tree input[type="checkbox"] + span:before {content:""; position:absolute; top:0; left:0; display: inline-flex; width: 13rem; height: 13rem; background: rgba(0, 0, 0, 0.05) url(../images/icon/tree_chk.svg) no-repeat;}
 .tree-area .tree input[type="checkbox"]:checked + span:before {color: #fff; border: none; background: url(../images/icon/tree_chked.svg) no-repeat;} 
 
@@ -120,20 +122,36 @@
 
 /* hover */
 /* .tree-area .tree li:hover:after{background-color:#1F242F;} */
-.tree-area .tree label:hover{border-color:#49cdc6; background-color:#1F242F;}
-.tree-area .tree label:after:hover{content:""; position:absolute; top:-1rem; left:-1rem; right:-1rem; bottom:-1rem; z-index:20; border:1px solid #49cdc6;}
+.tree-area .tree label:hover{background-color:#1F242F;}
+.tree-area .tree label.active{border-color:#49cdc6; background-color:#1F242F;}
+.tree-area .tree label:after:hover{content:""; position:absolute; top:-1rem; left:-1rem; right:-1rem; bottom:-1rem; z-index:20; border:1rem solid #49cdc6;}
 .tree-area .tree .tree_arr_btn{background-color:#1F242F;}
 /* .tree-area .tree li:hover > .tree_arr_btn:after{background-color:#1F242F;} */
 
 /* 트리 왼쪽 라인 */
-/* .tree-area .tree li::before {content: ''; position: absolute; top:0rem; left:21rem; bottom:0; z-index:10; border-left: 1rem dotted #fff;} */
+.tree-area .tree li::before {content: ''; position: absolute; top:23rem; left:21rem; bottom:0; z-index:10; border-left: 1rem dotted #fff;}
+.tree-area .tree ul li.file > .tree_arr_btn:before{content:""; position:absolute; top:-2rem; bottom:-7rem; left:6rem; border-left:1rem dotted #fff;}
+.tree-area .tree ul li.file:first-child > .tree_arr_btn:before{top:-3rem}
+.tree-area .tree ul li.file:last-child > .tree_arr_btn:before,
+.tree-area .tree ul li.file:last-child > .tree_arr_btn:after{
+    content:"";
+    position:absolute;
+}
+.tree-area .tree ul li.file:last-child > .tree_arr_btn:before{top:-3rem; bottom:7rem; left:6rem; border-left:1rem dotted #fff;}
+.tree-area .tree ul li.file:last-child > .tree_arr_btn:after{top:50%; right:0; left:6rem; border-top:1rem dotted #fff;}
+
+/* 트리 삭제 */
+.tree-area .tree .tree_del_btn{position:absolute; top:0; right:0; display:none; width:23rem; height:23rem; font-size:0; background:url(../../images/icon/tree_del_btn.svg) no-repeat center center;}
+.tree-area .tree .tree_del_btn.on{display:block;}
+/* .tree-area .tree .tree_del_btn:hover{background-color:red;} */
+
 
 
 /* 트리 버튼  */
 .tree-area .tree .tree_arr_btn{position:absolute; top:4rem; left:15rem; z-index:10; display:inline-block; width:13rem; height: 13rem; font-size:0; vertical-align:middle; transform-origin:50%; background: url(../../images/icon/tree_arrow.svg) no-repeat;}
 .tree-area .tree li.closed .tree_arr_btn{transform:rotate(-90deg);}
 .tree-area .tree li.file .tree_arr_btn{background-image:none;}
-/* .tree-area .tree .tree_arr_btn:after{content:""; position:absolute; top:calc(-100% - 5px); left:0; width:100%; height:calc(100% + 5px); background:#252b37;} */
+/* .tree-area .tree .tree_arr_btn:after{content:""; position:absolute; top:calc(-100% - 5rem); left:0; width:100%; height:calc(100% + 5rem); background:#252b37;} */
 
 /* 트리 2depth */
 .tree-area .tree li > ul > li::before{left:39rem;}
