@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="description" content="한국항공우주연구원">
+    
+    <title>한국항공우주연구원</title>
+
+    <!-- Style -->
+    <!-- <link rel="stylesheet" href="../../../css/ui_common_pub.css"> -->
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <!-- 본문 바로가기 -->
+    <div class="skip-navigation">
+        <a href="#main_content">본문 바로가기</a>
+    </div>
+
+    <div class="wrap">
+        <!-- 헤더 -->
+        <header class="header">
+            <div class="top">
+                <div class="logo">
+                    <h1><img src="../../images/logo.svg" alt="한국항공우주연구원"></h1>
+                </div>
+                <ul class="menu-item">
+                    <li class="on"><button>대시보드</button></li>
+                    <li><button>대기정보</button></li>
+                    <li><button>부가산출물</button></li>
+                    <li><button>딥러닝</button></li>
+                </ul>
+            </div>
+            <div class="user-area">
+                <ul>
+                    <li><button><span class="blind">로그아웃</span></button></li>
+                    <li><button><span class="blind">설정</span></button></li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- 본문 -->
+        <main class="main">
+            <!-- 타이틀 박스 -->
+            <div class="title-box">
+                <div class="left">
+                    <p class="tit">부가산출물 상세조회</p>
+                </div>
+                <!-- 
+                <div class="year-wrap">
+                    <div class="box">
+                        <button type="button" class="btn-prev">
+                            <span class="blind">이전</span>
+                        </button>
+                        <div class="year">
+                            <span>January 2023</span>
+                        </div>
+                        <button type="button" class="btn-next">
+                            <span class="blind">다음</span>
+                        </button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn">
+                            <span>this month</span>
+                        </button>
+                    </div>
+                </div> -->
+
+                <div class="right">
+                    <button class="btn round" type="button"><span>부가산출물생성</span></button>
+                    <button class="btn menu" type="button"><span class="blind">메뉴펼침</span></button>
+                </div>
+            </div>
+            <!-- // 타이틀 박스 -->
+            <div class="atmospheric-info">
+                <div class="sc">
+                    <div class="table a">
+                        <table>
+                            <colgroup>
+                                <col style="width: 12%">
+                                <col style="width: 8%">
+                                <col style="width: 20%">
+                                <col style="width:auto">
+                                <col style="width: 10%">
+                                <col style="width: 10%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Create Time</th>
+                                    <th>Satellite</th>
+                                    <th>Period</th>
+                                    <th>Progress</th>
+                                    <th>진행률</th>
+                                    <th>성공/실패/잔량</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span class="txt-red">2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span>2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span class="txt-red">2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span>2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span class="txt-red">2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span>2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span class="txt-red">2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span>2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span class="txt-red">2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span>2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span class="txt-red">2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span>2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span class="txt-red">2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span>2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span class="txt-red">2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span>2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span class="txt-red">2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span>2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span class="txt-red">2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span>2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span class="txt-red">2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span>2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span class="txt-red">2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span>2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span class="txt-red">2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span>2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span class="txt-red">2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span>2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span class="txt-red">2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span>2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span class="txt-red">2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span>2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span class="txt-red">2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2022.12.30  16:11:12</td>
+                                    <td>CMS</td>
+                                    <td>2022.12.30  16:11:12 ~ 2022.12.30  16:11:12</td>
+                                    <td>
+                                        <div class="graph">
+                                            <p style="width: 40%"><span class="blind">10%</span></p>
+                                        </div>
+                                    </td>
+                                    <td>75%</td>
+                                    <td><span class="txt-green">30</span> / <span>2</span> / <span class="txt-blue">13</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="page-area">
+                    <button class="first" type="button"><span class="blind">처음</span></button>
+                    <button class="prev" type="button"><span class="blind">이전</span></button>
+                    <div class="number">
+                        <span>1</span>
+                        /
+                        <span>100</span>
+                    </div>
+                    <button class="next" type="button"><span class="blind">다음</span></button>
+                    <button class="end" type="button"><span class="blind">마지막</span></button>
+                </div>
+                
+            </div>
+        </main>
+        <div class="slide-pop">
+             <!-- 팝업 -->
+            <div class="popup">
+                <div class="top">
+                    <div class="tit">2022.12.30 16:11:12 ~ 2022.12.30 16:11:12</div>
+                    <div class="btn-log">
+                        <button class="btn small a" type="button"><span>실패건수만  보기</span></button>
+                    </div>
+                    <button class="btn-closed">
+                        <span class="blind">닫기</span>
+                    </button>
+                </div>
+                <div class="cont">
+                    <ul>
+                        <li>
+                            <div class="txt">
+                                <p>11:30</p>
+                                <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                            </div>
+                            <p><i class="icon-fail"></i></p>
+                            <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                        </li>
+                        <li>
+                            <div class="txt">
+                                <p>11:30</p>
+                                <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                            </div>
+                            <p><i class="icon-success"></i></p>
+                            <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                        </li>
+                        <li>
+                            <div class="txt">
+                                <p>11:30</p>
+                                <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                            </div>
+                            <p><i class="icon-fail"></i></p>
+                            <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                        </li>
+                        <li class="active">
+                            <div class="txt">
+                                <p>11:30</p>
+                                <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                            </div>
+                            <p><i class="icon-success"></i></p>
+                            <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                        </li>
+                        <li>
+                            <div class="txt">
+                                <p>11:30</p>
+                                <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                            </div>
+                            <p><i class="icon-success"></i></p>
+                            <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                        </li>
+                        <li class="active">
+                            <div class="txt">
+                                <p>11:30</p>
+                                <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                            </div>
+                            <p><i class="icon-success"></i></p>
+                            <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                        </li>
+                        <li>
+                            <div class="txt">
+                                <p>11:30</p>
+                                <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                            </div>
+                            <p><i class="icon-success"></i></p>
+                            <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <div class="result">
+                    <p class="icon-fail">fail</p>
+                    <p class="icon-success">success</p>
+                </div>
+            </div>
+            <!-- // 팝업 -->
+        </div>
+        <!-- 팝업 -->
+        <div class="calendar-pop" style="display: none;">
+            <div class="top">
+                <div class="tit">20221215  P.M.11:00 ~ 11:59 산출물 현황</div>
+                <div class="result">
+                    <p class="icon-fail">fail</p>
+                    <p class="icon-success">success</p>
+                </div>
+                <button class="btn-closed">
+                    <span class="blind">닫기</span>
+                </button>
+            </div>
+            <div class="cont">
+                <ul>
+                    <li>
+                        <div class="txt">
+                            <p>11:30</p>
+                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                        </div>
+                        <p><i class="icon-fail"></i></p>
+                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                    </li>
+                    <li>
+                        <div class="txt">
+                            <p>11:30</p>
+                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                        </div>
+                        <p><i class="icon-success"></i></p>
+                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                    </li>
+                    <li>
+                        <div class="txt">
+                            <p>11:30</p>
+                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                        </div>
+                        <p><i class="icon-fail"></i></p>
+                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                    </li>
+                    <li class="active">
+                        <div class="txt">
+                            <p>11:30</p>
+                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                        </div>
+                        <p><i class="icon-success"></i></p>
+                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                    </li>
+                    <li>
+                        <div class="txt">
+                            <p>11:30</p>
+                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                        </div>
+                        <p><i class="icon-success"></i></p>
+                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                    </li>
+                    <li class="active">
+                        <div class="txt">
+                            <p>11:30</p>
+                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                        </div>
+                        <p><i class="icon-success"></i></p>
+                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                    </li>
+                    <li>
+                        <div class="txt">
+                            <p>11:30</p>
+                            <p>cvpps_cms_lev2_cid_2022121535675.log</p>
+                        </div>
+                        <p><i class="icon-success"></i></p>
+                        <p><button class="btn" type="button"><span>로그보기</span></button></p>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+        <!-- // 팝업 -->
+    </div>
+
+  
+
+
+    <script src="../../js/common/ui/common.js"></script>
+</body>
+
+</html>
