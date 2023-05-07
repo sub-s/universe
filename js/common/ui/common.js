@@ -214,9 +214,6 @@ function calendarPopupClick(){
 
     }
     _pop.classList.toggle("open")
-    console.log("_this : ",_this)
-    console.log("_pop : ",_pop)
-    console.log("w : ",w)
 }
 function toggleModal(el){
     const _this = el;
@@ -224,20 +221,28 @@ function toggleModal(el){
     const checked = _this.classList.contains("open");
     const _wrap = _this.querySelector(".modal_innerWrap");
     _this.delay = true;
-    _this.classList.toggle("open");
     if(checked){
-        _wrap.classList.add("openModal");
-    }else{
-        _wrap.classList.add("closeModal");
-    }
-    console.log("this : ",_this)
-    setTimeout(()=>{
-        _wrap.classList.remove("closeModal");
         _wrap.classList.remove("openModal");
+        _wrap.classList.add("closeModal");
+    }else{
+        _wrap.classList.remove("closeModal");
+        _wrap.classList.add("openModal");
+        _this.classList.toggle("open");
+    }
+    setTimeout(()=>{
         _this.delay = null;
-    },1500)
+        if(checked){
+            _this.classList.toggle("open");
+        }
+    },1300)
 }
-
+// setting
+function onSettingClick(){
+    console.log(00000)
+    const _this = document.querySelector(".setting");
+    console.log("_this : ",_this)
+    _this.classList.toggle("open");
+}
 
 /* init */
 function init(){

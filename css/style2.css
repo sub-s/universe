@@ -224,18 +224,24 @@
 /* modal */
 .modal-popup{position:fixed; top:0; right:0; bottom:0; left:0; z-index:100; display:none; align-items:center; justify-content:center;  background:rgba(0,0,0,0.3);}
 .modal-popup.open{display:flex;}
-.modal-popup .modal_innerWrap{ padding:20rem; border:1px solid #000; background:#252B37;}
+.modal-popup .modal_innerWrap{ padding:20rem; border:1px solid #000; opacity:0; background:#252B37;}
 .comparison-layout-box > ul{display:flex; align-items:stretch; height:100%;}
 .comparison-layout-box > ul > li{height:100%;}
 .comparison-layout-box > ul > li .tree-area{height:100%;}
 .comparison-layout-box > ul > li:not(:nth-child(2)){flex:1;}
 .comparison-layout-box > ul > li:nth-child(2){display:flex; align-items:center; justify-content:center; width:60rem;}
 
-.openModal{animation:modal ease-in-out 1.5s forwards;}
-@keyframes modal{
+.openModal{animation:modalOpen ease-in-out 1.5s forwards;}
+@keyframes modalOpen{
     0%{transform:scale(1); opacity:0;}
     50%{transform:scale(1.2);}
     100%{transform:scale(1); opacity:1;}
+}
+.closeModal{animation:modalClose ease-in-out 1.5s forwards;}
+@keyframes modalClose{
+    00%{transform:scale(1); opacity:1;}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1); opacity:0;}
 }
 
 .modal_both_btns{display:flex; justify-content:center; padding:15rem 0 0;}
@@ -248,3 +254,9 @@
 /* rect btn */
 .btnRect{width:25rem; height:25rem; font-size:0; border:1px solid #7D8595;}
 .btnRect.icon_arr{background:url(../../images/icon/icon_rectBtn_arr.svg) no-repeat center;}
+
+
+/* style1 합치기 */
+.wrap .header .user-area > ul > li .setting > .innerWrao{position: relative; right:0; top: 0; width: 115rem; height:0; transition:height linear .2s; overflow:hidden;}
+.wrap .header .user-area > ul > li .setting.open > .innerWrao{height:62px;}
+.wrap .header .user-area > ul > li .setting > .innerWrao > ul{position:absolute; bottom:0; width:100%;}

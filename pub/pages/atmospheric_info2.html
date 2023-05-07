@@ -40,12 +40,14 @@
                 <ul>
                     <li><button><span class="blind">로그아웃</span></button></li>
                     <li>
-                        <button><span class="blind">설정</span></button>
+                        <button onclick="onSettingClick()"><span class="blind">설정</span></button>
                         <div class="setting">
-                            <ul>
-                                <li><a href="javascript: viod(0)">Account Setting</a></li>
-                                <li><a href="javascript: viod(0)">System Setting</a></li>
-                            </ul>
+                            <div class="innerWrao">
+                                <ul>
+                                    <li><a href="javascript: viod(0)">Account Setting</a></li>
+                                    <li><a href="javascript: viod(0)">System Setting</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -80,7 +82,7 @@
                 </div> -->
 
                 <div class="right">
-                    <button class="btn round" type="button" onclick="toggleModal(document.querySelector('.modal-popup'))"><span>부가산출물생성</span></button>
+                    <button class="btn round" type="button" onclick="toggleModal(document.querySelector('.modal-popup'));"><span>부가산출물생성</span></button>
                     <button class="btn menu" type="button" onclick="calendarPopupClick()"><span class="blind">메뉴펼침</span></button>
                 </div>
             </div>
