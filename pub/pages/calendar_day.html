@@ -127,15 +127,15 @@
                         <tbody>
                             <tr class="old">
                                 <th><div class="time">00 ~ 01</div></th>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
-                                <td><div class="item"></div></td>
+                                <td onclick="logPopOpen()"><div class="item"></div></td>
+                                <td onclick="logPopOpen()"><div class="item"></div></td>
+                                <td onclick="logPopOpen()"><div class="item"></div></td>
+                                <td onclick="logPopOpen()"><div class="item"></div></td>
+                                <td onclick="logPopOpen()"><div class="item"></div></td>
+                                <td onclick="logPopOpen()"><div class="item"></div></td>
+                                <td onclick="logPopOpen()"><div class="item"></div></td>
+                                <td onclick="logPopOpen()"><div class="item"></div></td>
+                                <td onclick="logPopOpen()"><div class="item"></div></td>
                             </tr>
                             <tr class="old">
                                 <th><div class="time">01 ~ 02</div></th>
@@ -413,14 +413,14 @@
             </div>
         </main>
         <!-- 팝업 -->
-        <div class="calendar-pop" style="display: none;">
+        <div class="calendar-pop" style="position:fixed; display:none;">
             <div class="top">
                 <div class="tit">20221215  P.M.11:00 ~ 11:59 산출물 현황</div>
                 <div class="result">
                     <p class="icon-fail">fail</p>
                     <p class="icon-success">success</p>
                 </div>
-                <button class="btn-closed">
+                <button class="btn-closed" onclick="logPopClose()">
                     <span class="blind">닫기</span>
                 </button>
             </div>

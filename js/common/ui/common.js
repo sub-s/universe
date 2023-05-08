@@ -234,13 +234,11 @@ function toggleModal(el){
         if(checked){
             _this.classList.toggle("open");
         }
-    },1300)
+    },1000)
 }
 // setting
 function onSettingClick(){
-    console.log(00000)
     const _this = document.querySelector(".setting");
-    console.log("_this : ",_this)
     _this.classList.toggle("open");
 }
 // range
@@ -323,6 +321,24 @@ function getRange(){
         window.addEventListener("resize",getFirstSet)
 
     })
+}
+/* calendar day */
+function logPopOpen(){
+    const _this = event.currentTarget;
+    const _pop = document.querySelector(".calendar-pop");
+    _pop.style.display = "block";
+    const style = _this.getBoundingClientRect();
+    const popStyle = _pop.getBoundingClientRect();
+    const dis = (_pop.style.display === "block")?"none":"block";
+    const l = ((style.left + popStyle.width) >= window.innerWidth)?style.right - popStyle.width:style.left;
+    const t = ((style.bottom + popStyle.height) >= window.innerHeight)?style.top - popStyle.height:style.bottom;
+    _pop.style.left = l + "px";
+    _pop.style.top = t + "px";
+}
+function logPopClose(){
+    const _this = event.currentTarget;
+    const _pop = document.querySelector(".calendar-pop");
+    _pop.style.display = "none";
 }
 
 /* init */
