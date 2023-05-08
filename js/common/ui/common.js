@@ -198,7 +198,7 @@ function treeLabelMouseOut(){
     if(_del && !check) _del.classList.remove("on");
 }
 function treeDelClick(){
-    console.log("dkdkdkdkdk")
+    console.log("treeDelClick")
 }
 
 /* calendar */
@@ -243,6 +243,87 @@ function onSettingClick(){
     console.log("_this : ",_this)
     _this.classList.toggle("open");
 }
+// range
+function getRange(){
+    const _inputs = document.querySelectorAll("input[range]");
+    _inputs.forEach((r,i)=>{
+        const _box = document.createElement("div");
+        const _trail = document.createElement("div");
+        const _thumb = document.createElement("span");
+        const _gage = document.createElement("span");
+        const _txt = document.createElement("span");
+        const w = (r.style.width === "")?"150rem":r.style.width;
+        r.removeAttribute("style");
+        const getFirstSet = ()=>{
+            const firstVal = Number(r.value.replace(/\D/g,''));
+            const temp = (firstVal <= _box.minInput)?_box.minInput:(firstVal <= _box.min)?_box.min:(firstVal >= _box.maxInput)?_box.maxInput:(firstVal >= _box.max)?_box.max:firstVal;
+            r.value = temp;
+            _txt.innerText = temp + _box.unit;
+            const left = ((_trail.clientWidth - _thumb.clientWidth) / (_box.max - _box.min)) * (temp - _box.min);
+            const width = distance(0,left,0,0);
+            _thumb.style.left = left + "rem";
+            _gage.style.width = width + "rem";
+        }
+        const distance = (x1, x2, y1, y2)=>{
+            const diffX = x2 - x1;
+            const diffY = y2 - y1;
+            const dis = Math.sqrt(diffX * diffX + diffY * diffY);
+            return dis;
+        }
+        const windowMouseUpEv = ()=>{
+            window.removeEventListener("mousemove",windowMoveEv);
+            window.removeEventListener("mouseup",windowMouseUpEv);
+        }
+        const windowMoveEv = ()=>{
+            const minInputPosition = Math.ceil((_box.leftMax / (_box.max - _box.min)) * _box.minInput);
+            const maxInputPosition = Math.ceil((_box.leftMax / (_box.max - _box.min)) * _box.maxInput);
+            _box.diffX = event.pageX - _box.sX;
+            _box.diffY = event.pageY - _box.sY;
+            _box.calcX = _box.left + _box.diffX;
+            _box.calcY = _box.top + _box.diffY;
+            const l = (maxInputPosition <= _box.calcX)?maxInputPosition:(_box.leftMax <= _box.calcX)?_box.leftMax:(_box.calcX <= minInputPosition)?minInputPosition:(_box.calcX <= 0)?0:_box.calcX;
+            const w = distance(0,_thumb.offsetLeft,0,_thumb.offsetTop) + (_thumb.clientWidth / 2);
+            _gage.style.width = w + "rem";
+            _thumb.style.left = l + "rem";
+            const val = (((_box.max - _box.min) / _box.leftMax) * l) + _box.min;
+            r.value = Math.floor(val);
+            _txt.innerText = Math.floor(val) + _box.unit;
+        }
+        const thumbMouseDownEv = ()=>{
+            event.preventDefault();
+            window.addEventListener("mousemove",windowMoveEv);
+            window.addEventListener("mouseup",windowMouseUpEv);
+            _box.sX = event.pageX;
+            _box.sY = event.pageY;
+            _box.left = _thumb.offsetLeft;
+            _box.top = _thumb.offsetTop;
+            _box.leftMax = _trail.clientWidth - _thumb.clientWidth;
+            _box.toptMax = _trail.clientHeight - _thumb.clientHeight;
+        }
+        _box.classList.add("range-box");
+        _trail.classList.add("trail");
+        _thumb.classList.add("thumb");
+        _gage.classList.add("rect_left");
+        _txt.classList.add("txt");
+        r.parentNode.insertBefore(_box,r);
+        _box.appendChild(_trail);
+        _box.appendChild(_thumb);
+        _box.appendChild(_gage);
+        _box.appendChild(_txt);
+        _box.appendChild(r);
+        _box.style.width = w;
+        r.setAttribute("readonly","");
+        _box.min = (r.getAttribute("min"))?Number(r.getAttribute("min")):0;
+        _box.max = (r.getAttribute("max"))?Number(r.getAttribute("max")):100;
+        _thumb.addEventListener("mousedown",thumbMouseDownEv);
+        _box.unit = (r.getAttribute("unit") !== null)?r.getAttribute("unit"):"%";
+        _box.minInput = (r.getAttribute("mininput") !== null)?Number(r.getAttribute("mininput")):_box.min;
+        _box.maxInput = (r.getAttribute("maxinput") !== null)?Number(r.getAttribute("maxinput")):_box.max;
+        getFirstSet();
+        window.addEventListener("resize",getFirstSet)
+
+    })
+}
 
 /* init */
 function init(){
@@ -263,5 +344,8 @@ function init(){
 
     // 대시보드 탭 높이값
     getTabHeight();
+
+    // range
+    getRange();
 }
 init();
