@@ -1060,6 +1060,8 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .satellite .left-item .menu-btn::after {display: block; content:''; width: 15.16rem; height: 14rem; background: url(../images/sate/icon_btn.svg) no-repeat; background-size: cover;}
 .satellite .left-item .menu-btn:hover {background: rgba(0, 0, 0, 0.7);}
 
+.satellite .left-item .tab-area {border: 1px solid red;}
+
 
 
 

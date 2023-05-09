@@ -84,68 +84,94 @@
 
 
 
-            <div>
-                <div class="layer-area">
-                    <div class="item">
-                        <div class="view">
-                            <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
+            <div class="tab-area">
+                <div class="outer-menu">
+                    <div class="">
+                        <button>대기정보</button>
+                    </div>
+                    <div class="">
+                        <button>부가산출물</button>
+                    </div>
+                </div>
+                <div class="outer-cont">
+                    <div class="inner-menu">
+                        <div class="menu">
+                            <button>산출물</button>
                         </div>
-                        <div class="info">
-                            <div class="inner">
-                                <div class="text">
-                                    <p>구름 영역 탐지</p>
-                                    <p>CLD / GK2A</p>
+                        <div class="">
+                            <button>비교</button>
+                        </div>
+                        <div class="">
+                            <button>검증</button>
+                        </div>
+                    </div>
+                    <div class="inner-cont">
+                        <div class="layer-area">
+                            <div class="item">
+                                <div class="view">
+                                    <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
                                 </div>
-                                <div class="set">
-                                    <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
-                                    <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
-                                    <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                                <div class="info">
+                                    <div class="inner">
+                                        <div class="text">
+                                            <p>구름 영역 탐지</p>
+                                            <p>CLD / GK2A</p>
+                                        </div>
+                                        <div class="set">
+                                            <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
+                                            <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
+                                            <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="opacity">
+                                        <p class="tit">Opacity</p>
+                                        <div class="range_area">
+                                            <input type="text" min="0" max="100" range value="0" unit="" style="width:100%"/>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="opacity">
-                                <p class="tit">Opacity</p>
-                                <div class="range_area">
-                                    <input type="text" min="0" max="100" range value="0" unit="" style="width:100%"/>
+                            <div class="item off">
+                                <div class="view">
+                                    <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
+                                </div>
+                                <div class="info">
+                                    <div class="inner">
+                                        <div class="text">
+                                            <p>구름 영역 탐지</p>
+                                            <p>CLD / GK2A</p>
+                                        </div>
+                                        <div class="set">
+                                            <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
+                                            <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
+                                            <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="view">
+                                    <button class="off"><span onclick="treeLabelClick()" class="blind"></span></button>
+                                </div>
+                                <div class="info">
+                                    <div class="inner">
+                                        <div class="text">
+                                            <p>구름 영역 탐지</p>
+                                            <p>CLD / GK2A</p>
+                                        </div>
+                                        <div class="set">
+                                            <button class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
+                                            <button class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
+                                            <button class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item off">
-                        <div class="view">
-                            <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
-                        </div>
-                        <div class="info">
-                            <div class="inner">
-                                <div class="text">
-                                    <p>구름 영역 탐지</p>
-                                    <p>CLD / GK2A</p>
-                                </div>
-                                <div class="set">
-                                    <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
-                                    <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
-                                    <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="view">
-                            <button class="off"><span onclick="treeLabelClick()" class="blind"></span></button>
-                        </div>
-                        <div class="info">
-                            <div class="inner">
-                                <div class="text">
-                                    <p>구름 영역 탐지</p>
-                                    <p>CLD / GK2A</p>
-                                </div>
-                                <div class="set">
-                                    <button class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
-                                    <button class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
-                                    <button class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                <div class="outer-cont">
+                    
                 </div>
             </div>
             
