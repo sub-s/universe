@@ -23,36 +23,132 @@
     </div>
 
     <div class="satellite">
+        <!-- 지도 확대 축소 -->
+        <div class="zoom-area">
+            <button type="button" class="plus-btn">
+                <span class="blind">메뉴</span>
+            </button>
+            <button type="button" class="minus-btn">
+                <span class="blind">메뉴</span>
+            </button>
+        </div>
+
         <!-- 헤더 -->
         <div class="header-item">
             <div class="left">
-                <div class="logo">
-                    <h1><img src="../../images/logo.svg" alt="한국항공우주연구원"></h1>
+                <h1><img src="../../images/logo.svg" alt="한국항공우주연구원"></h1>
+                <div class="item">
+                    <p class="tit">초소형군집위성가시화시스템</p>
+                    <div class="btn-menu">
+                        <div>
+                            <button type="button" class="menu-location">
+                                <span class="blind">메뉴</span>
+                            </button>
+                        </div>
+                        <div>
+                            <button type="button" class="menu-point">
+                                <span class="blind">메뉴</span>
+                            </button>
+                        </div>
+                        <div>
+                            <button type="button" class="menu-zoom">
+                                <span class="blind">메뉴</span>
+                            </button>
+                        </div>
+                        <div>
+                            <button type="button" class="menu-select">
+                                <span class="blind">메뉴</span>
+                            </button>
+                        </div>
+                        <div>
+                            <button type="button" class="menu-ruler">
+                                <span class="blind">메뉴</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <p>초소형군집위성가시화시스템</p>
             </div>
             <div class="right">
                 <div class="latitude">127.40582395572939, 36.38283986808149</div>
+                
             </div>
         </div>
 
         <!-- 좌측 아이템 -->
         <div class="left-item">
-            좌측
+            
             <!-- 버튼 -->
             <button type="button" class="menu-btn">
                 <span class="blind">메뉴</span>
             </button>
 
 
-            <div class="zoom-area">
-                <button type="button" class="plus-btn">
-                    <span class="blind">메뉴</span>
-                </button>
-                <button type="button" class="minus-btn">
-                    <span class="blind">메뉴</span>
-                </button>
+
+            <div>
+                <div class="layer-area">
+                    <div class="item">
+                        <div class="view">
+                            <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
+                        </div>
+                        <div class="info">
+                            <div class="inner">
+                                <div class="text">
+                                    <p>구름 영역 탐지</p>
+                                    <p>CLD / GK2A</p>
+                                </div>
+                                <div class="set">
+                                    <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
+                                    <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
+                                    <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                                </div>
+                            </div>
+                            <div class="opacity">
+                                <p class="tit">Opacity</p>
+                                <div class="range_area">
+                                    <input type="text" min="0" max="100" range value="0" unit="" style="width:100%"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item off">
+                        <div class="view">
+                            <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
+                        </div>
+                        <div class="info">
+                            <div class="inner">
+                                <div class="text">
+                                    <p>구름 영역 탐지</p>
+                                    <p>CLD / GK2A</p>
+                                </div>
+                                <div class="set">
+                                    <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
+                                    <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
+                                    <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="view">
+                            <button class="off"><span onclick="treeLabelClick()" class="blind"></span></button>
+                        </div>
+                        <div class="info">
+                            <div class="inner">
+                                <div class="text">
+                                    <p>구름 영역 탐지</p>
+                                    <p>CLD / GK2A</p>
+                                </div>
+                                <div class="set">
+                                    <button class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
+                                    <button class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
+                                    <button class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
 
         </div>
         

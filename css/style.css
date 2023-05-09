@@ -998,10 +998,45 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 /* 가시화 */
 .satellite {height: 100%; position: relative; }
 
+
+/* 확대 축소 버튼 */
+.satellite .zoom-area {border: 1px solid #000; position: absolute; top:51rem; right: 15rem; border-radius: 3rem; overflow: hidden;}
+.satellite .zoom-area .plus-btn {width: 24rem; height: 24rem; background: #fff; display: flex; justify-content: center; align-items: center;}
+.satellite .zoom-area .minus-btn {width: 24rem; height: 24rem; background: #fff; border-top: 1rem solid #000;  display: flex; justify-content: center; align-items: center;}
+.satellite .zoom-area .plus-btn::after {display: block; content:''; width: 7.55rem; height: 7.55rem; background: url(../images/sate/icon_plus.svg) no-repeat; background-size: cover;}
+.satellite .zoom-area .minus-btn::after {display: block; content:''; width: 7.55rem; height: 2rem; background: url(../images/sate/icon_minus.svg) no-repeat; background-size: cover;}
+
+
+
 /* 헤더 */
-.satellite .header-item {position: absolute; top:0; left:0; background: #12141c; width: 100%; height: 41rem; border:1px solid red; display: flex; justify-content: space-between; align-items: center;}
-.satellite .header-item .logo {height:22.21rem; padding: 0 10rem 0; }
-.satellite .header-item .logo h1 {width: 93.67rem; height:22.21rem; padding: 0 10rem 0; }
+.satellite .header-item {position: absolute; top:0; left:0; right:0; background: #12141c; width: 100%; height: 41rem; display: flex; justify-content: space-between; align-items: center;}
+.satellite .header-item .left {display: flex; justify-content: flex-start; align-items: center; padding: 0 10rem 0; height: 100%; }
+.satellite .header-item .left .item {margin-left: 10rem; border-left: 1rem solid #1D222C;  display: flex; justify-content: flex-start; align-items: center;  height: 100%;}
+.satellite .header-item .left .item .tit {font-size: 12rem; padding-left: 10rem;}
+
+.satellite .header-item .btn-menu {display: flex; justify-content: flex-start; align-items: center; margin-left: 50rem;}
+.satellite .header-item [class*="menu-"] {width: 33rem; height: 41rem; display: flex; justify-content: center; align-items: center;}
+.satellite .header-item [class*="menu-"]:hover {background: #242a36; transition: all 0.5s;}
+.satellite .header-item [class*="menu-"]:after {background: #242a36; display: block; content:''; width: 12rem; height: 16rem; background-size: cover;}
+
+.satellite .header-item .menu-location::after { background: url(../images/sate/icon_location.svg) no-repeat; background-size: cover;}
+.satellite .header-item .menu-location:hover::after {background: url(../images/sate/icon_location2.svg); background-size: cover;}
+
+.satellite .header-item .menu-point::after { width: 16rem; height: 16rem; background: url(../images/sate/icon_point.svg) no-repeat; background-size: cover;}
+.satellite .header-item .menu-point:hover::after {background: url(../images/sate/icon_point2.svg); background-size: cover;}
+
+.satellite .header-item .menu-zoom::after {width: 15rem; height: 15rem; background: url(../images/sate/icon_zoom.svg) no-repeat; background-size: cover;}
+.satellite .header-item .menu-zoom:hover::after {background: url(../images/sate/icon_zoom2.svg); background-size: cover;}
+
+.satellite .header-item .menu-select::after { width: 16rem; height: 16rem; background: url(../images/sate/icon_select.svg) no-repeat; background-size: cover;}
+.satellite .header-item .menu-select:hover::after {background: url(../images/sate/icon_select2.svg); background-size: cover;}
+
+.satellite .header-item .menu-ruler::after {width: 16.26rem; height: 16.26rem; background: url(../images/sate/icon_ruler.svg) no-repeat; background-size: cover;}
+.satellite .header-item .menu-ruler:hover::after {background: url(../images/sate/icon_ruler2.svg); background-size: cover;}
+
+
+.satellite .header-item .right  {  height: 100%;}
+.satellite .header-item .right  .latitude{background: #040406; padding:0 10rem; height: 100%; display: flex; justify-content: flex-start; align-items: center; padding: 0 10rem 0; font-size: 11rem;}
 /* .satellite .header-item .log {width: 93.67rem; height:22.21rem; } */
 /* .satellite .header-item h1 svg {width: 100%; height:100%; } */
 
@@ -1018,22 +1053,15 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 /* 좌측 */
-.satellite .left-item {border: 1px solid red; position: absolute; top:50rem; left:0;}
+.satellite .left-item {position: absolute; top:41rem; left:0; width: 300rem; height: calc(100% - 200rem); background: #1d222c; }
 
 /* 메뉴 버튼 */
-.satellite .left-item .menu-btn {border: 1px solid #000; background: rgba(0, 0, 0, 1); width: 37rem; height: 37rem; display: flex; justify-content: center; align-items: center; position: absolute; top: 40rem; left:40rem; border-radius: 3rem;}
+.satellite .left-item .menu-btn {border: 1px solid #000; background: rgba(0, 0, 0, 1); width: 37rem; height: 37rem; display: flex; justify-content: center; align-items: center; position: absolute; top: 10rem; right:-50rem; border-radius: 3rem;}
 .satellite .left-item .menu-btn::after {display: block; content:''; width: 15.16rem; height: 14rem; background: url(../images/sate/icon_btn.svg) no-repeat; background-size: cover;}
 .satellite .left-item .menu-btn:hover {background: rgba(0, 0, 0, 0.7);}
 
 
 
-
-/* 확대 축소 버튼 */
-.satellite .left-item .zoom-area {border: 1px solid #000; position: absolute; top:50rem; left: 100rem; border-radius: 3rem; overflow: hidden;}
-.satellite .left-item .zoom-area .plus-btn {width: 24rem; height: 24rem; background: #fff; display: flex; justify-content: center; align-items: center;}
-.satellite .left-item .zoom-area .minus-btn {width: 24rem; height: 24rem; background: #fff; border-top: 1rem solid #000;  display: flex; justify-content: center; align-items: center;}
-.satellite .left-item .zoom-area .plus-btn::after {display: block; content:''; width: 7.55rem; height: 7.55rem; background: url(../images/sate/icon_plus.svg) no-repeat; background-size: cover;}
-.satellite .left-item .zoom-area .minus-btn::after {display: block; content:''; width: 7.55rem; height: 2rem; background: url(../images/sate/icon_minus.svg) no-repeat; background-size: cover;}
 
 
 
