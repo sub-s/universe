@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11">
+  <g id="icon" transform="translate(0 0)">
+    <g id="빼기_41" data-name="빼기 41" transform="translate(0 0)" fill="none">
+      <path d="M10,11H0V0H6.924L10,2.961V11Z" stroke="none"/>
+      <path d="M 9 10 L 9 3.386810779571533 L 6.520712852478027 1 L 1 1 L 1 10 L 9 10 M 10 11 L 0 11 L 0 -8.881784197001252e-16 L 6.923830032348633 -8.881784197001252e-16 L 10 2.961430072784424 L 10 11 Z" stroke="none" fill="#fff"/>
+    </g>
+    <path id="빼기_42" data-name="빼기 42" d="M3,3H0V0H1V2H3V3Z" transform="translate(5 2)" fill="#fff"/>
+  </g>
+</svg>
