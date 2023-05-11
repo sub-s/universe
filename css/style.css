@@ -694,23 +694,23 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 /* 스위치 버튼 */
-.swhitech {display: inline-block; }
-.swhitech p {font-size: 9rem; margin-top: 5rem; color:#a0a1a4}
-.swhitech label {display: block; width: 50rem; height: 25rem; position: relative;}
-.swhitech input {display: none;}
-.swhitech div:after {content: ""; position: absolute; display: block; height: 25rem; width: 50rem; left: 0rem; top: 0rem; border-radius: 25rem; background: #626267; transition: .20s;}
-.swhitech i {display: block; width: 21rem; height: 21rem; position: absolute;  top: 2rem; left: 2rem; background: #fff; border-radius: 50%; box-shadow: 0 5rem 10rem 0 rgba(0, 0, 0, 0.7); transition: .25s;}
-.swhitech input:checked ~ i {top: 2rem; left: 27rem;}
-.swhitech input:checked + div:after {background: #49cdc6; }
-.swhitech input:checked + div > .off {color: transparent; }
-.swhitech input:checked + div > .on {color: #000; }
-.swhitech label:hover {cursor: pointer;}
-.swhitech label:focus,
-.swhitech label:active {outline: 0;}
-.swhitech .on,
-.swhitech .off {position: absolute; left: 6rem; top: 7rem; font-size: 9rem; z-index: 2; transition: .25s;}
-.swhitech .on {color: transparent; }
-.swhitech .off {left: initial; right: 6rem; color: #fff;}
+.switch {display: inline-block; }
+.switch p {font-size: 9rem; margin-top: 5rem; color:#a0a1a4}
+.switch label {display: block; width: 50rem; height: 25rem; position: relative;}
+.switch input {display: none;}
+.switch div:after {content: ""; position: absolute; display: block; height: 25rem; width: 50rem; left: 0rem; top: 0rem; border-radius: 25rem; background: #626267; transition: .20s;}
+.switch i {display: block; width: 21rem; height: 21rem; position: absolute;  top: 2rem; left: 2rem; background: #fff; border-radius: 50%; box-shadow: 0 5rem 10rem 0 rgba(0, 0, 0, 0.7); transition: .25s;}
+.switch input:checked ~ i {top: 2rem; left: 27rem;}
+.switch input:checked + div:after {background: #49cdc6; }
+.switch input:checked + div > .off {color: transparent; }
+.switch input:checked + div > .on {color: #000; }
+.switch label:hover {cursor: pointer;}
+.switch label:focus,
+.switch label:active {outline: 0;}
+.switch .on,
+.switch .off {position: absolute; left: 6rem; top: 7rem; font-size: 9rem; z-index: 2; transition: .25s;}
+.switch .on {color: transparent; }
+.switch .off {left: initial; right: 6rem; color: #fff;}
 
 
 
@@ -780,23 +780,23 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 /* 상단 우측 스위치 버튼 */
 .title-box .right {align-items: center; display: flex;}
-.title-box .right .swhitech {display: inline-block; }
-.title-box .right .swhitech p {font-size: 9rem; margin-top: 5rem; color:#a0a1a4}
-.title-box .right .swhitech label {display: block; width: 110rem; height: 31rem; position: relative;}
-.title-box .right .swhitech input {display: none;}
-.title-box .right .swhitech div:after {content: ""; position: absolute; display: block; height: 31rem; width: 110rem; left: 0rem; top: 0rem; border-radius: 25rem; background: #626267; transition: .20s;}
-.title-box .right .swhitech i {display: block; width: 55rem; height: 31rem; position: absolute;  top: 0rem; left: 0rem; background: #49cdc6; border-radius: 15.5rem; box-shadow: 0 5rem 10rem 0 rgba(0, 0, 0, 0.7); transition: .25s;}
-.title-box .right .swhitech input:checked ~ i {top: 0rem; left: 55rem; background: #49cdc6;}
-.title-box .right .swhitech input:checked + div:after {background: #626267; }
-.title-box .right .swhitech label:hover {cursor: pointer;}
-.title-box .right .swhitech label:focus,
-.title-box .right .swhitech label:active {outline: 0;}
-.title-box .right .swhitech input:checked + div > .off  {color: #12141c; }
-.title-box .right .swhitech input:checked + div > .on {color: #9a9da8; }
-.title-box .right .swhitech .on,
-.title-box .right .swhitech .off {position: absolute; left: 14rem; top: 9rem; font-size: 11rem; z-index: 2; transition: .25s;}
-.title-box .right .swhitech .on {color: #12141c; }
-.title-box .right .swhitech .off {left: initial; right: 17rem; color: #9a9da8;}
+.title-box .right .switch {display: inline-block; }
+.title-box .right .switch p {font-size: 9rem; margin-top: 5rem; color:#a0a1a4}
+.title-box .right .switch label {display: block; width: 110rem; height: 31rem; position: relative;}
+.title-box .right .switch input {display: none;}
+.title-box .right .switch div:after {content: ""; position: absolute; display: block; height: 31rem; width: 110rem; left: 0rem; top: 0rem; border-radius: 25rem; background: #626267; transition: .20s;}
+.title-box .right .switch i {display: block; width: 55rem; height: 31rem; position: absolute;  top: 0rem; left: 0rem; background: #49cdc6; border-radius: 15.5rem; box-shadow: 0 5rem 10rem 0 rgba(0, 0, 0, 0.7); transition: .25s;}
+.title-box .right .switch input:checked ~ i {top: 0rem; left: 55rem; background: #49cdc6;}
+.title-box .right .switch input:checked + div:after {background: #626267; }
+.title-box .right .switch label:hover {cursor: pointer;}
+.title-box .right .switch label:focus,
+.title-box .right .switch label:active {outline: 0;}
+.title-box .right .switch input:checked + div > .off  {color: #12141c; }
+.title-box .right .switch input:checked + div > .on {color: #9a9da8; }
+.title-box .right .switch .on,
+.title-box .right .switch .off {position: absolute; left: 14rem; top: 9rem; font-size: 11rem; z-index: 2; transition: .25s;}
+.title-box .right .switch .on {color: #12141c; }
+.title-box .right .switch .off {left: initial; right: 17rem; color: #9a9da8;}
 
 .title-box .right .btn.menu {width: 31rem; height: 31rem; background: url(../images/icon/r_btn_bg.svg) no-repeat; margin-left: 10rem; overflow: hidden; border-radius: 50%; }
 .title-box .right .btn.menu:hover {background: url(../images/icon/r_btn_bg2.svg) no-repeat;}
@@ -974,23 +974,23 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 /* 상단 우측 스위치 버튼 */
 
-.account-setting .swhitech {display: inline-block; }
-.account-setting .swhitech p {font-size: 9rem; margin-top: 5rem; color:#a0a1a4}
-.account-setting .swhitech label {display: block; width: 110rem; height: 24rem; position: relative;}
-.account-setting .swhitech input {display: none;}
-.account-setting .swhitech div:after {content: ""; position: absolute; display: block; height: 24rem; width: 110rem; left: 0rem; top: 0rem; border-radius: 25rem; background: #202531; transition: .20s; border: 1px solid #49cdc6}
-.account-setting .swhitech i {display: block; width: 55rem; height: 18rem; position: absolute;  top: 3rem; left: 3rem; background: #49cdc6; border-radius: 15.5rem; box-shadow: 0 5rem 10rem 0 rgba(0, 0, 0, 0.7); transition: .25s;}
-.account-setting .swhitech input:checked ~ i {top: 3rem; left: 52rem; background: #49cdc6;}
-.account-setting .swhitech input:checked + div:after {background: #202531; }
-.account-setting .swhitech label:hover {cursor: pointer;}
-.account-setting .swhitech label:focus,
-.account-setting .swhitech label:active {outline: 0;}
-.account-setting .swhitech input:checked + div > .off  {color: #12141c; }
-.account-setting .swhitech input:checked + div > .on {color: #9a9da8; }
-.account-setting .swhitech .on,
-.account-setting .swhitech .off {position: absolute; left: 21rem; top: 6rem; font-size: 11rem; z-index: 2; transition: .25s;}
-.account-setting .swhitech .on {color: #12141c; }
-.account-setting .swhitech .off {left: initial; right: 21rem; color: #9a9da8;}
+.account-setting .switch {display: inline-block; }
+.account-setting .switch p {font-size: 9rem; margin-top: 5rem; color:#a0a1a4}
+.account-setting .switch label {display: block; width: 110rem; height: 24rem; position: relative;}
+.account-setting .switch input {display: none;}
+.account-setting .switch div:after {content: ""; position: absolute; display: block; height: 24rem; width: 110rem; left: 0rem; top: 0rem; border-radius: 25rem; background: #202531; transition: .20s; border: 1px solid #49cdc6}
+.account-setting .switch i {display: block; width: 55rem; height: 18rem; position: absolute;  top: 3rem; left: 3rem; background: #49cdc6; border-radius: 15.5rem; box-shadow: 0 5rem 10rem 0 rgba(0, 0, 0, 0.7); transition: .25s;}
+.account-setting .switch input:checked ~ i {top: 3rem; left: 52rem; background: #49cdc6;}
+.account-setting .switch input:checked + div:after {background: #202531; }
+.account-setting .switch label:hover {cursor: pointer;}
+.account-setting .switch label:focus,
+.account-setting .switch label:active {outline: 0;}
+.account-setting .switch input:checked + div > .off  {color: #12141c; }
+.account-setting .switch input:checked + div > .on {color: #9a9da8; }
+.account-setting .switch .on,
+.account-setting .switch .off {position: absolute; left: 21rem; top: 6rem; font-size: 11rem; z-index: 2; transition: .25s;}
+.account-setting .switch .on {color: #12141c; }
+.account-setting .switch .off {left: initial; right: 21rem; color: #9a9da8;}
 
 
 
@@ -1057,7 +1057,7 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 /* 좌측 */
-.satellite .left-item {position: absolute; top:41rem; left:0; width: 300rem; height: calc(100% - 200rem); background: #1d222c; }
+.satellite .left-item {position: absolute; top:41rem; left:0; width: 300rem; height: calc(100% - 111rem); background: #1d222c; }
 
 /* 메뉴 버튼 */
 .satellite .left-item .menu-btn {border: 1px solid #000; background: rgba(0, 0, 0, 1); width: 37rem; height: 37rem; display: flex; justify-content: center; align-items: center; position: absolute; top: 10rem; right:-50rem; border-radius: 3rem;}
@@ -1092,8 +1092,37 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 /* 하단 */
-.satellite .bottom-item {border: 1px solid red; position: absolute; left:0; bottom:0; width: 100%;;}
-.satellite .bottom-item .distance {font-size: 11rem; color:#000; background: #fff; border:1px solid #000; border-top: 0; width: 54rem; height: 16rem; position: absolute; left:0; bottom: 20rem;}
-.satellite .bottom-item .foot-info {position: absolute; bottom:20rem; right:0; display: flex; align-items: center; justify-content: center;}
+.satellite .bottom-item {position: absolute; left:0; bottom:0; width: 100%; height: 75rem; display: flex; justify-content: space-between; align-items: center; background: #1d222c; }
+.satellite .bottom-item .distance {font-size: 11rem; color:#000; background: #fff; border:1px solid #000; border-top: 0; width: 54rem; height: 16rem; position: absolute; left:320rem; bottom: 90rem; padding-left: 3rem;}
+.satellite .bottom-item .foot-info {position: absolute; bottom: 75rem; right:0; display: flex; align-items: center; justify-content: center;}
 .satellite .bottom-item .foot-info .data {display: flex; align-items: center; justify-content: center; padding: 0 20rem 0; height: 20rem; font-size: 11rem; color:#fff; white-space: nowrap; background: rgba(0, 0, 0, 0.7);}
 .satellite .bottom-item .foot-info .copy {display: flex; align-items: center; justify-content: center; padding: 0 20rem 0; height: 20rem; font-size: 11rem; color:#000; white-space: nowrap; background: rgba(255, 255, 255, 0.7);}
+
+
+.satellite .bottom-item .bottom-calendar {height: 100%;  border-right: 1px solid #323844; border-top: 1px solid #323844; padding: 15rem; width: 300rem;  box-sizing: border-box; }
+.satellite .bottom-item .bottom-calendar .tit {font-size: 10rem; margin-bottom: 5rem;}
+
+.satellite .bottom-item .date-area {display: flex; justify-content: flex-start; align-items: center; position: relative; flex:1;}
+.satellite .bottom-item .date-area .btn-play {width: 27rem; height: 27rem; position: absolute; top: calc(50% - 13.5rem); right: 0; border-radius: 3rem; border: 1px solid #000; display: flex; justify-content: center; align-items: center; background: linear-gradient(180deg, rgba(100,104,128,1) 0%, rgba(56,59,75,1) 100%);}
+.satellite .bottom-item .date-area .btn-play:hover {border-color: #49cdc6; background: linear-gradient(180deg, rgba(72,76,92,1) 0%, rgba(52,55,68,1) 100%);}
+.satellite .bottom-item .date-area .btn-play::before {display: block; content:''; width: 8rem; height: 9rem; background: url(../images/sate/icon_play.svg) no-repeat; background-size: cover;}
+
+
+.satellite .bottom-item .date-area .space {margin: 0 24rem 0;}
+.satellite .bottom-item .date-area .calendar {display: flex; justify-content: center; align-items: center; }
+.satellite .bottom-item .date-area .calendar::before {display: block; content:''; width: 11rem; height: 9.5rem; background: url(../images/sate/icon_calendar.svg) no-repeat; background-size: cover; margin-right: 5rem;}
+
+
+
+.satellite .bottom-ruler { width: 100%; height: 100%; flex:2; padding: 23rem;}
+.satellite .bottom-ruler .ruler {height: 100%; border-top: 1rem solid #585e78; position: relative;}
+.satellite .bottom-ruler .ruler ul {display: flex; justify-content: space-between; align-items: center; position: relative; width: 100%; height: 100%;}
+.satellite .bottom-ruler .ruler ul li {width: 100%; height: 100%; background: #333b4f; display: flex; justify-content: center; align-items: center; position: relative;}
+.satellite .bottom-ruler .ruler ul li .time {position: absolute; top: -20rem; left: 0; font-size: 8rem;}
+.satellite .bottom-ruler .ruler ul li::before {display: block; content:''; width: 1rem; height: 10rem; background: #585e78; position: absolute; left:0; top:0;;}
+.satellite .bottom-ruler .ruler ul li::after {display: block; content:''; width: 1rem; height: 7rem; background: #585e78; position: absolute; right:50%; top:0;;}
+.satellite .bottom-ruler .ruler .btn-a {position: absolute; left:100rem; top: -60rem; width: 20rem; height: 20rem; z-index: 2; background: red;}
+.satellite .bottom-ruler .ruler .btn-b {position: absolute; left:140rem; top: -60rem; width: 20rem; height: 20rem; z-index: 2; background: red;}
+
+
+.satellite .bottom-switch {padding: 0 25rem 0; }
