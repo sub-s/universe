@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21.49" height="24.277" viewBox="0 0 21.49 24.277">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.104" stop-color="#e7f4f9"/>
+      <stop offset="1" stop-color="#b7d1de"/>
+    </linearGradient>
+  </defs>
+  <g id="B" transform="translate(-501.755 -684.279)">
+    <path id="패스_4767" data-name="패스 4767" d="M9533.823,1040.6a5.759,5.759,0,0,1-1.606,3.951l-6.51,5.372a2.635,2.635,0,0,1-3.209.005l-6.558-5.382a5.739,5.739,0,0,1-1.607-3.944v-10.331a1.832,1.832,0,0,1,2.054-2.077h15.383a1.832,1.832,0,0,1,2.054,2.077Z" transform="translate(-9011.578 -342.912)" fill="url(#linear-gradient)"/>
+    <path id="패스_4767_-_윤곽선" data-name="패스 4767 - 윤곽선" d="M9524.1,1050.468a2.536,2.536,0,0,0,1.608-.547l6.51-5.372a5.759,5.759,0,0,0,1.606-3.951v-10.33a1.832,1.832,0,0,0-2.054-2.077h-15.383a1.832,1.832,0,0,0-2.054,2.077V1040.6a5.739,5.739,0,0,0,1.607,3.944l6.558,5.382a2.531,2.531,0,0,0,1.6.542m0,1a3.521,3.521,0,0,1-2.235-.769l-6.558-5.382a6.637,6.637,0,0,1-1.973-4.717v-10.331a2.817,2.817,0,0,1,3.054-3.077h15.383a2.817,2.817,0,0,1,3.054,3.077v10.33a6.658,6.658,0,0,1-1.97,4.722l-6.51,5.372A3.524,3.524,0,0,1,9524.1,1051.468Z" transform="translate(-9011.578 -342.912)" fill="#242439"/>
+    <text id="B-2" data-name="B" transform="translate(508 699.279)" fill="#0d0d0d" font-size="14" font-family="Helvetica-Bold, Helvetica" font-weight="700" letter-spacing="-0.06em"><tspan x="0" y="0">B</tspan></text>
+  </g>
+</svg>

@@ -1083,6 +1083,26 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 
+.satellite .left-item .tab-area .outer-cont .date-menu {display: flex; justify-content: space-between; align-items: center;  height: 35rem; border-bottom: 1px solid #1d222c; }
+.satellite .left-item .tab-area .outer-cont .date-menu > .btn-tab {width: 100%; height: 100%; text-align: center; display: flex; justify-content: center; align-items: center; border-bottom: 1rem solid #49CDC6; }
+.satellite .left-item .tab-area .outer-cont .date-menu > .btn-tab.active {background: #49CDC6;}
+
+
+.satellite .left-item .tab-area .outer-cont .date-menu > .btn-tab [class*="icon-"] {display: flex; justify-content: center; align-items: center; font-size: 12rem; width: 100%; height: 31rem; color: #49CDC6; }
+.satellite .left-item .tab-area .outer-cont .date-menu > .btn-tab.active [class*="icon-"] {color: #1D222C}
+.satellite .left-item .tab-area .outer-cont .date-menu > .btn-tab.active [class*="icon-"]::before {border: 1px solid #1D222C;}
+.satellite .left-item .tab-area .outer-cont .date-menu > .btn-tab .icon-a::before {display: block; content:'A'; font-size: 10rem; margin-right: 5rem; width: 14rem; height: 14rem; border: 1px solid #49CDC6;}
+.satellite .left-item .tab-area .outer-cont .date-menu > .btn-tab .icon-b::before {display: block; content:'B'; font-size: 10rem; margin-right: 5rem; width: 14rem; height: 14rem; border: 1px solid #49CDC6;}
+
+
+.satellite .left-item .bottom-menu {position: absolute; bottom: 15rem; left: 10rem; right: 10rem;}
+.satellite .left-item .bottom-menu .bottom-btn .btn {height: 27rem; font-size: 11rem; border-radius: 3rem;}
+
+
+
+
+
+
 
 
 
@@ -1121,8 +1141,10 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .satellite .bottom-ruler .ruler ul li .time {position: absolute; top: -20rem; left: 0; font-size: 8rem;}
 .satellite .bottom-ruler .ruler ul li::before {display: block; content:''; width: 1rem; height: 10rem; background: #585e78; position: absolute; left:0; top:0;;}
 .satellite .bottom-ruler .ruler ul li::after {display: block; content:''; width: 1rem; height: 7rem; background: #585e78; position: absolute; right:50%; top:0;;}
-.satellite .bottom-ruler .ruler .btn-a {position: absolute; left:100rem; top: -60rem; width: 20rem; height: 20rem; z-index: 2; background: red;}
-.satellite .bottom-ruler .ruler .btn-b {position: absolute; left:140rem; top: -60rem; width: 20rem; height: 20rem; z-index: 2; background: red;}
+
+.satellite .bottom-ruler .ruler .btn-a {position: absolute; left:100rem; top: -60rem; width: 19.49rem; height: 22.28rem; z-index: 2; background: url(../images/sate/icon_a.svg) no-repeat; background-size: cover;}
+.satellite .bottom-ruler .ruler .btn-b {position: absolute; left:140rem; top: -60rem; width: 19.49rem; height: 22.28rem; z-index: 2; background: url(../images/sate/icon_b.svg) no-repeat; background-size: cover;}
+.satellite .bottom-ruler .ruler .btn-c {position: absolute; left:170rem; top: -60rem; width: 19.49rem; height: 22.28rem; z-index: 2; background: url(../images/sate/icon_c.svg) no-repeat; background-size: cover;}
 
 
 .satellite .bottom-switch {padding: 0 25rem 0; }
