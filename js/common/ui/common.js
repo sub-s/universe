@@ -204,7 +204,6 @@ function treeDelClick(){
 
 /* calendar */
 function calendarPopupClick(){
-    const _this = event.currentTarget;
     const _pop = document.querySelector(".leftFlayingpopUp");
     const w = _pop.scrollWidth;
     const checked = _pop.classList.contains("open");

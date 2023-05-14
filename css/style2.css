@@ -306,6 +306,7 @@ input[type = text][name = date] {padding-left:30rem; color:#fff; background-imag
 
 /* 안내 글씨 */
 .info-text-right{height:25rem; padding:7rem 0; font-size:11rem; color:#49CDC6; text-align:right;}
+.info-text-left{height:25rem; padding:5rem 0; font-size:11rem; color:#49CDC6; text-align:left;}
 
 
 /* layout */
