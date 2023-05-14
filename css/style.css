@@ -1128,10 +1128,19 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 
-.satellite .left-item .left-checked {padding: 10rem}
-.satellite .left-item .left-checked .checkbox:hover {background: red;}
-/* .satellite .left-item .left-checked .menu-wrap .checkbox {display: flex; justify-content: flex-start; align-items: center;} */
-/* .satellite .left-item .left-checked .menu-wrap .checkbox::before {display: block; content: ''; width: 20rem; height: 20rem; border:1px solid red;;} */
+.satellite .left-item .left-checked {}
+.satellite .left-item .left-checked .checkbox {padding: 10rem; position: relative;}
+
+.satellite .left-item .left-checked .checkbox::before {display: block; content: ''; width: 9rem; height: 9rem;  position: absolute; top: calc(50% - 4.5rem); left: 35rem;}
+.satellite .left-item .left-checked .checkbox.a::before {border:1px solid #ffe53b;}
+.satellite .left-item .left-checked .checkbox.b::before {border:1px solid #3bb1ff;}
+.satellite .left-item .left-checked .checkbox.c::before {border:1px solid #3bffde;}
+.satellite .left-item .left-checked .checkbox.d::before {border:1px solid #ff3b3b;}
+.satellite .left-item .left-checked .checkbox.e::before {border:1px solid #a74cdf;}
+.satellite .left-item .left-checked .checkbox:hover {background: #434f67;}
+.satellite .left-item .left-checked .checkbox input[type="checkbox"] + label {color:#8B8B97}
+
+.satellite .left-item .left-checked .checkbox input[type="checkbox"] + label, .radio input[type="radio"]+label {padding-left: 45rem;}
 
 
 

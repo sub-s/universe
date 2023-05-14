@@ -179,20 +179,42 @@
                             </div>
                         </div>
 
-
+                        <!-- 체크 메뉴 -->
                         <div class="left-checked">
                             <div class="menu-wrap">
                                 <div class="item">
-                                    <div class="checkbox">
-                                        <input type="checkbox" id="btm-menu1" name="btm-menu1" checked>
-                                        <label for="btm-menu1">구름 영역 탐지</label>
+                                    <div class="checkbox a">
+                                        <input type="checkbox" id="menu1" name="menu1" onchange="checkHandler()">
+                                        <label for="menu1">초소형군집위성</label>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="checkbox b">
+                                        <input type="checkbox" id="menu2" name="menu2" onchange="checkHandler()">
+                                        <label for="menu2">다목적시험위성</label>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="checkbox c">
+                                        <input type="checkbox" id="menu3" name="menu3" onchange="checkHandler()">
+                                        <label for="menu3">GK-2A</label>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="checkbox d">
+                                        <input type="checkbox" id="menu4" name="menu4" onchange="checkHandler()">
+                                        <label for="menu4">MODIS</label>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="checkbox e">
+                                        <input type="checkbox" id="menu5" name="menu5" onchange="checkHandler()">
+                                        <label for="menu5">Plane Scope</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
-
-
+                        <!-- // 체크 메뉴 -->
                     </div>
                 </div>
 
@@ -409,20 +431,21 @@
     <script>
         const showBtn = () => {
             let _this = event.currentTarget;
-            // let btn = document.querySelector('.menu-btn')
             let wrap = _this.closest('.satellite');
-
             let check = wrap.classList.contains('active')
-
-            console.log(check, " 있나? ")
-
-            wrap.classList.add("active");
-            if(check === true) {
-                wrap.classList.remove("active");
-            }
-        
+            check ? wrap.classList.remove("active") : wrap.classList.add("active");
         }
         
+
+        const checkHandler = () => {
+            let _this = event.currentTarget;
+            let bg = (_this.checked) ? '#434f67' : 'transparent';
+            let _color = (_this.checked) ? '#fff' : '#8B8B97';
+
+            _this.closest('.checkbox').style.background = bg;
+            _this.nextElementSibling.style.color = _color;
+        }
+
     </script>
 
 
