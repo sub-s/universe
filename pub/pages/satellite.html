@@ -24,7 +24,7 @@
 
     <div class="satellite">
         <!-- 버튼 -->
-        <button type="button" class="menu-btn">
+        <button type="button" class="menu-btn" onclick="showBtn()">
             <span class="blind">메뉴</span>
         </button>
 
@@ -388,18 +388,193 @@
     </div>
 
     <!-- 차트 팝업 -->
-    <div class="fixed-pop">
-        <div class="tit">
-            <h3>AOT</h3>
-            <button type="button" class="btn-table"></button>
-        
+    <div class="fixed-pop" style="width: 542rem; height: 320rem; ">
+        <div class="chart-pop">
+            <div class="tit">
+                <div class="flex">
+                    <h3>AOT</h3>
+                    <button class="btn small a" type="button" onclick="popCall()">
+                        <span>Table</span>
+                    </button>
+                </div>
+            </div>
+            <div class="cont">
+                <!-- 차트 그래프 영역 -->
+            </div>
         </div>
-        <div class="cont"></div>
     </div>
+    
+    <div class="fixed-pop none pop2" style="width: 380rem;">
+        <div class="table-pop">
+            <div class="thead">
+                <div class="tr">
+                    <div class="th">시간</div>
+                    <div class="th">관측값 1</div>
+                    <div class="th">관측값 2</div>
+                </div>
+            </div>
+            <div class="tbody" style="height: 260rem;">
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="fixed-pop posi-none" style="width: 380rem; top: 200rem; left: 100rem;">
+        <div class="setting open">
+            <div class="innerWrao">
+                <ul>
+                    <li><a href="javascript: void(0)">Download</a></li>
+                    <li><a href="javascript: void(0)">Menu name</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="fixed-pop posi-none" style="width: 238rem; top: 120rem; left: 200rem;">
+        <div class="thum-layer">
+            <div class="item">
+                <div class="pic">
+                    <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                </div>
+                <div class="txt">
+                    <ul>
+                        <li class="satellite">초소형군집위성</li>
+                        <li class="calendar">2023.03.03</li>
+                        <li class="time">01:7:35  UTC</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
+    <div class="fixed-pop posi-none" style="top: 60rem; right: 60rem;">
+        <div class="info-layer">
+            <ul>
+                <li>
+                    거리와 면적 측정
+                    <div class="txt-box">
+                        마지막 점 <br><br>
+                        37° 29' 51.1" N  /  127° 01' 44.75" E  <br>
+                        37.497529 / 127.029097
+                    </div>
+                </li>
+                <li>
+                    거리 469 미터(0.47킬로미터)
+                </li>
+                <li>
+                    16.408 평방 미터 (4.963.40 평)
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="fixed-pop"  style="width: 320rem; ">
+        <div class="down-layer">
+            <div class="top">
+                <h3>위도 : 33.3 / 경도 : 124.5</h3>
+                <button type="button" class="close-btn">
+                    <span class="blind">닫기</span>
+                </button>
+            </div>
+            <div class="cont">
+                <ul>
+                    <li>
+                        KOMPSAT-3A / LSR
+                    </li>
+                    <li>
+                        2020년 5월 1일 14시 20분 ~ 2020년 5월 10일 15시 40분
+                    </li>
+                </ul>
+                <button type="button" class="down-btn">
+                    <span>다운로드</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
 
     <script src="../../js/common/ui/common.js"></script>
     <script type="text/javascript">
+        const popCall = () => {
+            document.querySelector('.fixed-pop.pop2').classList.toggle('none')
+        }
 
+        const showBtn = () => {
+            let _this = event.currentTarget;
+            let wrap = _this.closest('.satellite');
+            let check = wrap.classList.contains('active')
+            check ? wrap.classList.remove("active") : wrap.classList.add("active");
+        }
+        
+
+        const checkHandler = () => {
+            let _this = event.currentTarget;
+            let bg = (_this.checked) ? '#434f67' : 'transparent';
+            let _color = (_this.checked) ? '#fff' : '#8B8B97';
+
+            _this.closest('.checkbox').style.background = bg;
+            _this.nextElementSibling.style.color = _color;
+        }
     </script>
 </body>
 
