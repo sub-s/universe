@@ -22,7 +22,12 @@
         <a href="#main_content">본문 바로가기</a>
     </div>
 
-    <div class="satellite">
+    <div class="satellite active">
+        <!-- 버튼 -->
+        <button type="button" class="menu-btn" onclick="showBtn()">
+            <span class="blind">메뉴</span>
+        </button>
+
         <!-- 지도 확대 축소 -->
         <div class="zoom-area">
             <button type="button" class="plus-btn">
@@ -76,12 +81,7 @@
 
         <!-- 좌측 아이템 -->
         <div class="left-item">
-            
-            <!-- 버튼 -->
-            <button type="button" class="menu-btn" onclick="showBtn()">
-                <span class="blind">메뉴</span>
-            </button>
-
+          
             <!-- 텝 메뉴 -->
             <div class="tab-area">
                 <!-- 텝 메뉴  -->
@@ -107,7 +107,6 @@
                         </div>
                     </div>
                     <div class="inner-cont">
-                        
                         <!-- 텝 메뉴  -->
                         <div class="date-menu">
                             <div class="btn-tab ">
@@ -116,9 +115,7 @@
                             <div class="btn-tab active">
                                 <button type="button" class="icon-b">2023.DEC.25</button>
                             </div>
-                           
                         </div>
-
                         <div class="layer-area">
                             <div class="item">
                                 <div class="view">
@@ -181,12 +178,26 @@
                                 </div>
                             </div>
                         </div>
+
+
+                        <div class="left-checked">
+                            <div class="menu-wrap">
+                                <div class="item">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="btm-menu1" name="btm-menu1" checked>
+                                        <label for="btm-menu1">구름 영역 탐지</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+
                     </div>
                 </div>
 
 
                 <div class="outer-cont">
-
                 </div>
             </div>
             <!-- // 텝 메뉴 -->
