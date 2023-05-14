@@ -1006,7 +1006,7 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .satellite.active {}
 
 .satellite.active .header-item {top:0; left:0; right:0; }
-.satellite.active .left-item   {top:41rem; left:0;}
+.satellite.active .left-item   {top:41rem; left:0; height: calc(100% - 41rem);}
 .satellite.active .bottom-item {left:300rem; bottom:0;}
 .satellite.active .zoom-area {top:51rem; right: 15rem;}
 .satellite.active .menu-btn {top: 50rem; left: 320rem;}
@@ -1073,7 +1073,7 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 /* 좌측 */
-.satellite .left-item {position: absolute; top:41rem; left:-300rem; width: 300rem; height: calc(100% - 41rem); background: #1d222c; transition: all 0.5s;}
+.satellite .left-item {position: absolute; top:0rem; left:-300rem; width: 300rem; height: 100%; background: #1d222c; transition: all 0.5s;}
 
 /* .satellite .left-item .tab-area {border: 1px solid red;} */
 .satellite .left-item .tab-area .outer-menu {display: flex; justify-content: space-between; align-items: center;  height: 35rem; border-bottom: 1px solid #1d222c;}
@@ -1092,8 +1092,6 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .satellite .left-item .tab-area .outer-cont .inner-menu > .btn-tab .icon-verify::before {display: block; content:''; width: 12.73rem; height: 12.36rem; background: url(../images/sate/icon_verify.svg) no-repeat; background-size: cover; margin-right: 5rem;}
 
 
-
-
 .satellite .left-item .tab-area .outer-cont .date-menu {display: flex; justify-content: space-between; align-items: center;  height: 35rem; border-bottom: 1px solid #1d222c; }
 .satellite .left-item .tab-area .outer-cont .date-menu > .btn-tab {width: 100%; height: 100%; text-align: center; display: flex; justify-content: center; align-items: center; border-bottom: 1rem solid #49CDC6; }
 .satellite .left-item .tab-area .outer-cont .date-menu > .btn-tab.active {background: #49CDC6;}
@@ -1105,32 +1103,30 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .satellite .left-item .tab-area .outer-cont .date-menu > .btn-tab .icon-a::before {display: block; content:'A'; font-size: 10rem; margin-right: 5rem; width: 14rem; height: 14rem; border: 1px solid #49CDC6;}
 .satellite .left-item .tab-area .outer-cont .date-menu > .btn-tab .icon-b::before {display: block; content:'B'; font-size: 10rem; margin-right: 5rem; width: 14rem; height: 14rem; border: 1px solid #49CDC6;}
 
-
 .satellite .left-item .bottom-menu {position: absolute; bottom: 80rem; left: 10rem; right: 10rem;}
 .satellite .left-item .bottom-menu .bottom-btn .btn {height: 27rem; font-size: 11rem; border-radius: 3rem;}
 
 
+/* 이미지 레이어 */
+.thum-layer {}
+.thum-layer .item {padding: 15rem; width: 100%; display: flex; justify-content: flex-start; align-items: flex-start; background: #252b37; border-bottom: 1px solid #1d222c; position: relative;}
+.thum-layer .item .pic {width: 77rem; height: 77rem; margin-right: 15rem;}
+.thum-layer .item .txt li {font-size: 11rem; margin-bottom: 5rem; display: flex; justify-content: flex-start; }
+.thum-layer .item .txt li::before {display: block; content: ''; margin-right: 5rem; }
+.thum-layer .item .txt li.satellite::before {width: 10.51rem; height: 10.67rem; background: url(../images/sate/icon_satellite.svg) no-repeat; background-size: cover;}
+.thum-layer .item .txt li.calendar::before {width: 11rem; height: 9.5rem; background: url(../images/sate/icon_calendar.svg) no-repeat; background-size: cover}
+.thum-layer .item .txt li.time::before {width: 11rem; height: 11rem; background: url(../images/sate/icon_time.svg) no-repeat; background-size: cover}
+
+.thum-layer .item .set {display: flex; justify-content: center; align-items: center; position: absolute; top: 15rem; right: 15rem; }
+.thum-layer .item .set button {width: 20rem; height: 20rem;}
+.thum-layer .item .set .icon-change {background: url(../images/icon/icon_change.svg) no-repeat; }
+.thum-layer .item .set .icon-change {opacity: 0.7;}
 
 
-.satellite .left-item .bottom-calendar {position: absolute; bottom:0; left:0; right:0; height: 75rem; border-right: 1px solid #323844; border-top: 1px solid #323844; padding: 15rem; width: 300rem;  box-sizing: border-box; }
-.satellite .left-item .bottom-calendar .tit {font-size: 10rem; margin-bottom: 5rem;}
 
-
-.satellite .left-item .date-area {display: flex; justify-content: flex-start; align-items: center; position: relative; flex:1;}
-.satellite .left-item .date-area .btn-play {width: 27rem; height: 27rem; position: absolute; top: calc(50% - 13.5rem); right: 0; border-radius: 3rem; border: 1px solid #000; display: flex; justify-content: center; align-items: center; background: linear-gradient(180deg, rgba(100,104,128,1) 0%, rgba(56,59,75,1) 100%);}
-.satellite .left-item .date-area .btn-play:hover {border-color: #49cdc6; background: linear-gradient(180deg, rgba(72,76,92,1) 0%, rgba(52,55,68,1) 100%);}
-.satellite .left-item .date-area .btn-play::before {display: block; content:''; width: 8rem; height: 9rem; background: url(../images/sate/icon_play.svg) no-repeat; background-size: cover;}
-
-
-.satellite .left-item .date-area .space {margin: 0 24rem 0;}
-.satellite .left-item .date-area .calendar {display: flex; justify-content: center; align-items: center; }
-.satellite .left-item .date-area .calendar::before {display: block; content:''; width: 11rem; height: 9.5rem; background: url(../images/sate/icon_calendar.svg) no-repeat; background-size: cover; margin-right: 5rem;}
-
-
-
+/* 좌측 체크  */
 .satellite .left-item .left-checked {}
 .satellite .left-item .left-checked .checkbox {padding: 10rem; position: relative;}
-
 .satellite .left-item .left-checked .checkbox::before {display: block; content: ''; width: 9rem; height: 9rem;  position: absolute; top: calc(50% - 4.5rem); left: 35rem;}
 .satellite .left-item .left-checked .checkbox.a::before {border:1px solid #ffe53b;}
 .satellite .left-item .left-checked .checkbox.b::before {border:1px solid #3bb1ff;}
@@ -1139,10 +1135,19 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .satellite .left-item .left-checked .checkbox.e::before {border:1px solid #a74cdf;}
 .satellite .left-item .left-checked .checkbox:hover {background: #434f67;}
 .satellite .left-item .left-checked .checkbox input[type="checkbox"] + label {color:#8B8B97}
-
 .satellite .left-item .left-checked .checkbox input[type="checkbox"] + label, .radio input[type="radio"]+label {padding-left: 45rem;}
 
 
+/* 하단 캘린더 */
+.satellite .left-item .bottom-calendar {position: absolute; bottom:0; left:0; right:0; height: 75rem; border-right: 1px solid #323844; border-top: 1px solid #323844; padding: 15rem; width: 300rem;  box-sizing: border-box; }
+.satellite .left-item .bottom-calendar .tit {font-size: 10rem; margin-bottom: 5rem;}
+.satellite .left-item .date-area {display: flex; justify-content: flex-start; align-items: center; position: relative; flex:1;}
+.satellite .left-item .date-area .btn-play {width: 27rem; height: 27rem; position: absolute; top: calc(50% - 13.5rem); right: 0; border-radius: 3rem; border: 1px solid #000; display: flex; justify-content: center; align-items: center; background: linear-gradient(180deg, rgba(100,104,128,1) 0%, rgba(56,59,75,1) 100%);}
+.satellite .left-item .date-area .btn-play:hover {border-color: #49cdc6; background: linear-gradient(180deg, rgba(72,76,92,1) 0%, rgba(52,55,68,1) 100%);}
+.satellite .left-item .date-area .btn-play::before {display: block; content:''; width: 8rem; height: 9rem; background: url(../images/sate/icon_play.svg) no-repeat; background-size: cover;}
+.satellite .left-item .date-area .space {margin: 0 24rem 0;}
+.satellite .left-item .date-area .calendar {display: flex; justify-content: center; align-items: center; }
+.satellite .left-item .date-area .calendar::before {display: block; content:''; width: 11rem; height: 9.5rem; background: url(../images/sate/icon_calendar.svg) no-repeat; background-size: cover; margin-right: 5rem;}
 
 
 
