@@ -408,15 +408,24 @@ function getRangeTime(el){
 }
 function timerRangeMouseEv(){
     const _this = event.currentTarget;
+    const checked = _this.parentNode.classList.contains("current")
     const _rangeGage = _this.closest(".range-time-box");
     const _ruler = _rangeGage.closest(".ruler");
     const _grid =  _ruler.querySelectorAll("ul > li");
     const gridLen = (_grid.length - 1) * 2;
     const val = _rangeGage.getAttribute("value").split(",");
     const windMoveEv = ()=>{
-        const diff = event.pageX - _this.sx;
-        console.log("diff : ",diff)
-        console.log("_rangeGage.unitOnePrice : ",_this.unitOnePrice)
+        const diff = (checked)?_this.sx - event.pageX:event.pageX - _this.sx;
+        const calc = Math.ceil(diff / _this.unitOnePrice);
+        let firstPrice = (checked)?(Number(val[0]) - calc > -1)?Number(val[0]) - calc:0:val[0];
+        if(firstPrice > _this.moveMax) firstPrice = _this.moveMax;
+        const secondPrice = (_this.moveMax <= Number(val[1]) + Number(calc))?_this.moveMax:(Number(val[1]) + Number(calc) < 0)?0:Number(val[1]) + Number(calc);
+        const applyTxt = firstPrice+","+secondPrice+","+val[2];
+
+
+
+        _rangeGage.setAttribute("value",applyTxt);
+        getRangeTime(_rangeGage);
 
     }
     const windUpEv = ()=>{
@@ -425,6 +434,7 @@ function timerRangeMouseEv(){
     }
     _this.sx = event.pageX;
     _this.unitOnePrice = _ruler.clientWidth / gridLen;
+    _this.moveMax = (checked)?Number(val[0]) + Number(val[1]):gridLen - Number(val[0]) - Number(val[2]);
     window.addEventListener("mousemove",windMoveEv)
     window.addEventListener("mouseup",windUpEv)
 

@@ -355,6 +355,9 @@ div.satellite .bottom-ruler > .ruler > ul li.selected:before{top:-3rem; height:c
 .satellite .bottom-ruler .ruler .range-time-box .btn-a{top:0; left:0; right:auto; transform:translate(calc(-50% - 3rem),calc(-100% - 36rem));}
 .satellite .bottom-ruler .ruler .range-time-box .btn-b{top:0; left:0; right:auto; transform:translate(calc(-50% - 3rem),calc(-100% - 36rem));}
 .satellite .bottom-ruler .ruler .range-time-box .btn-c{top:0; left:auto; right:0; transform:translate(50%,calc(-100% - 36rem));}
+.satellite .bottom-ruler .ruler .range-time-box .current .btn-c{right:auto; left:0; transform:translate(-50%,calc(-100% - 36rem))}
+.satellite .bottom-ruler .ruler .range-time-box .next .btn-c.l{right:auto; left:0; transform:translate(-50%,calc(-100% - 36rem))}
+.satellite .bottom-ruler .ruler .range-time-box .next .btn-c.r,.satellite .bottom-ruler .ruler .range-time-box .next .btn-b.r{right:0; left:auto; transform:translate(50%,calc(-100% - 36rem))}
 
 /* div.satellite .bottom-item{height:94rem}
 div.satellite .bottom-ruler{padding-top:52rem;} */
