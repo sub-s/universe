@@ -22,7 +22,7 @@
         <a href="#main_content">본문 바로가기</a>
     </div>
 
-    <div class="satellite">
+    <div class="satellite active">
         <!-- 버튼 -->
         <button type="button" class="menu-btn" onclick="showBtn()">
             <span class="blind">메뉴</span>
@@ -56,9 +56,58 @@
                             </button>
                         </div>
                         <div>
-                            <button type="button" class="menu-zoom">
+                            <button type="button" class="menu-zoom" onclick="xx()">
                                 <span class="blind">메뉴</span>
                             </button>
+                            <!-- 검색 팝업 -->
+                            <div class="search-pop">
+                                <ul>
+                                    <li>좌측상단
+                                        <div class="input-item">
+                                            <label>위도
+                                                <input type="text" />
+                                            </label>
+                                            <label>경도
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>우측상단
+                                        <div class="input-item">
+                                            <label>위도
+                                                <input type="text" />
+                                            </label>
+                                            <label>경도
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>좌측하단
+                                        <div class="input-item">
+                                            <label>위도
+                                                <input type="text" />
+                                            </label>
+                                            <label>경도
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>우측하단
+                                        <div class="input-item">
+                                            <label>위도
+                                                <input type="text" />
+                                            </label>
+                                            <label>경도
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button class="btn" type="button">
+                                    <span>검색</span>
+                                </button>
+                            </div>
+                            <!-- // 검색 팝업 -->
                         </div>
                         <div>
                             <button type="button" class="menu-select">
@@ -75,7 +124,6 @@
             </div>
             <div class="right">
                 <div class="latitude">127.40582395572939, 36.38283986808149</div>
-                
             </div>
         </div>
 
@@ -474,7 +522,7 @@
     </div>
     
 
-    <div class="fixed-pop posi-none" style="width: 380rem; top: 200rem; left: 100rem;">
+    <div class="fixed-pop posi-none" style="width: 380rem; top: 200rem; ">
         <div class="setting open">
             <div class="innerWrao">
                 <ul>
@@ -505,8 +553,6 @@
     </div>
 
 
-
-
     <div class="fixed-pop posi-none" style="top: 60rem; right: 60rem;">
         <div class="info-layer">
             <ul>
@@ -528,7 +574,7 @@
         </div>
     </div>
 
-    <div class="fixed-pop"  style="width: 320rem; ">
+    <div class="fixed-pop"  style="width: 320rem; top: 350rem; ">
         <div class="down-layer">
             <div class="top">
                 <h3>위도 : 33.3 / 경도 : 124.5</h3>
@@ -574,6 +620,13 @@
 
             _this.closest('.checkbox').style.background = bg;
             _this.nextElementSibling.style.color = _color;
+        }
+
+
+
+        const xx = () => {
+            let _this = event.currentTarget;
+            _this.classList.toggle('active');
         }
     </script>
 </body>

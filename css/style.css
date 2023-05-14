@@ -1011,7 +1011,7 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 /* 가시화 */
-.satellite {height: 100%; position: relative; }
+.satellite {height: 100%; position: relative; overflow: hidden;}
 
 
 .satellite.active {}
@@ -1046,6 +1046,22 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .satellite .header-item .left .item .tit {font-size: 12rem; padding-left: 10rem;}
 
 .satellite .header-item .btn-menu {display: flex; justify-content: flex-start; align-items: center; margin-left: 50rem;}
+.satellite .header-item .btn-menu > div {position: relative;}
+
+.satellite .header-item .btn-menu > div .search-pop {display: none; position: absolute; top:41rem; left: 0; transform:translate(-50%, 0); background: #252b37; z-index: 2; padding: 20rem; width: 220rem;  border: 1px solid #1d222c; }
+.satellite .header-item .btn-menu > div .search-pop .input-item {display: flex; justify-content: space-between; align-items: center; margin-top: 10rem;}
+.satellite .header-item .btn-menu > div .search-pop .input-item label {color: #707070; font-size: 12rem;display: flex; justify-content: flex-start; align-items: center;}
+.satellite .header-item .btn-menu > div .search-pop .input-item input {width: 50rem; background: transparent; border-bottom: 1px solid #999; border-radius: 0; font-size: 12rem; padding: 0 5rem 0; color: #fff; height: 20rem;}
+
+
+.satellite .header-item .btn-menu > div .search-pop > ul > li {position: relative; font-size: 12rem; padding-left: 10rem; margin-top: 25rem;}
+.satellite .header-item .btn-menu > div .search-pop > ul > li:first-of-type {margin-top: 0rem;}
+.satellite .header-item .btn-menu > div .search-pop > ul > li::before {display: block; content: ''; width: 3rem; height: 3rem; background: #fff; position: absolute; top: 5rem; left:0;}
+.satellite .header-item .btn-menu > div .search-pop .btn {width: 100%; height: 27rem; margin-top: 28rem; border-radius: 3rem;}
+
+
+
+
 .satellite .header-item [class*="menu-"] {width: 33rem; height: 41rem; display: flex; justify-content: center; align-items: center;}
 .satellite .header-item [class*="menu-"]:hover {background: #242a36; transition: all 0.5s;}
 .satellite .header-item [class*="menu-"]:after {background: #242a36; display: block; content:''; width: 12rem; height: 16rem; background-size: cover;}
@@ -1056,8 +1072,16 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .satellite .header-item .menu-point::after { width: 16rem; height: 16rem; background: url(../images/sate/icon_point.svg) no-repeat; background-size: cover;}
 .satellite .header-item .menu-point:hover::after {background: url(../images/sate/icon_point2.svg); background-size: cover;}
 
+
 .satellite .header-item .menu-zoom::after {width: 15rem; height: 15rem; background: url(../images/sate/icon_zoom.svg) no-repeat; background-size: cover;}
 .satellite .header-item .menu-zoom:hover::after {background: url(../images/sate/icon_zoom2.svg); background-size: cover;}
+
+
+.satellite .header-item .menu-zoom.active {background:#242a36}
+.satellite .header-item .menu-zoom.active + .search-pop {display: block;}
+.satellite .header-item .menu-zoom.active::after {width: 15rem; height: 15rem; background: url(../images/sate/icon_zoom2.svg) no-repeat; background-size: cover;}
+
+
 
 .satellite .header-item .menu-select::after { width: 16rem; height: 16rem; background: url(../images/sate/icon_select.svg) no-repeat; background-size: cover;}
 .satellite .header-item .menu-select:hover::after {background: url(../images/sate/icon_select2.svg); background-size: cover;}
@@ -1245,8 +1269,6 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .fixed-pop .info-layer > ul > li .txt-box {margin-top: 30rem; margin-bottom: 30rem;}
 .fixed-pop .info-layer > ul > li:first-of-type {margin-top: 0rem;}
 .fixed-pop .info-layer > ul > li::before {display: block; content: ''; width: 3rem; height: 3rem; background: #fff; position: absolute; top: 5rem; left:0;}
-
-
 
 
 .fixed-pop .down-layer {background: #252b37; padding: 20rem; }
