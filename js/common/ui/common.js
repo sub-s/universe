@@ -382,9 +382,15 @@ function getRangeTime(el){
     const _rangeGage = el;
     const _ruler = _rangeGage.closest(".ruler");
     const _grid =  _ruler.querySelectorAll("ul > li");
-    const gridLen = (_grid.length - 1) * 2;
     const _gageChildren = _ruler.querySelectorAll(".range-time-box > div");
+    const _timeSpan = _ruler.querySelectorAll("ul > li > .time")
+    const _tooltip_cu = _ruler.querySelector(".current .tooltip-range-time")
+    const _tooltip_next = _ruler.querySelector(".next .tooltip-range-time")
+    const gridLen = (_grid.length - 1) * 2;
     const val = _rangeGage.getAttribute("value").split(",");
+    const date = _rangeGage.getAttribute("date");
+    const gridStartNum = Number(val[0]) / 2;
+    const gridEnd = Number(val[1]) / 2;
     let nextLeft = 0;
     const childrenStyle = [];
     let totalVal = 0;
@@ -402,9 +408,24 @@ function getRangeTime(el){
             childrenStyle[1] = "left:calc(100% / " + gridLen + " * " + nextLeft +"); width:calc(100% / " + gridLen + " * " + v +")";
         }
     });
+    
     _gageChildren.forEach((g,i)=>{
         g.setAttribute("style",childrenStyle[i]);
     })
+    for(let i=0; i<_timeSpan.length; i++){
+        const _ts = _timeSpan[i];
+        if(i >= gridStartNum && i <=Math.floor(gridStartNum + gridEnd)){
+            _ts.classList.add("selected");
+        }else{
+            _ts.classList.remove("selected");
+        }
+    }
+
+    const tooltip2_num = Number(val[0]) + Number(val[1]);
+    const toolTipTxt1 = (Number(val[0]) % 2 === 0)?_timeSpan[Math.floor(Number(val[0])/2)].innerText:String(_timeSpan[Math.floor(Number(val[0])/2)].innerText).replace(/\d+$/g,'30');
+    const toolTipTxt2 = (tooltip2_num % 2 === 0)?_timeSpan[Math.floor(tooltip2_num/2)].innerText:String(_timeSpan[Math.floor(tooltip2_num/2)].innerText).replace(/\d+$/g,'30');
+    _tooltip_cu.innerText = date + "   " + toolTipTxt1;
+    _tooltip_next.innerText = date + "   " + toolTipTxt2;
 }
 function timerRangeMouseEv(){
     const _this = event.currentTarget;
@@ -421,23 +442,18 @@ function timerRangeMouseEv(){
         if(firstPrice > _this.moveMax) firstPrice = _this.moveMax;
         const secondPrice = (_this.moveMax <= Number(val[1]) + Number(calc))?_this.moveMax:(Number(val[1]) + Number(calc) < 0)?0:Number(val[1]) + Number(calc);
         const applyTxt = firstPrice+","+secondPrice+","+val[2];
-
-
-
         _rangeGage.setAttribute("value",applyTxt);
         getRangeTime(_rangeGage);
-
     }
     const windUpEv = ()=>{
-        window.removeEventListener("mousemove",windMoveEv)
-        window.removeEventListener("mouseup",windMoveEv)
+        window.removeEventListener("mousemove",windMoveEv);
+        window.removeEventListener("mouseup",windMoveEv);
     }
     _this.sx = event.pageX;
     _this.unitOnePrice = _ruler.clientWidth / gridLen;
     _this.moveMax = (checked)?Number(val[0]) + Number(val[1]):gridLen - Number(val[0]) - Number(val[2]);
-    window.addEventListener("mousemove",windMoveEv)
-    window.addEventListener("mouseup",windUpEv)
-
+    window.addEventListener("mousemove",windMoveEv);
+    window.addEventListener("mouseup",windUpEv);
 }
 
 
@@ -468,7 +484,13 @@ function init(){
     getRange();
 
     // set time range
+    const today = new Date();
+    const y = today.getFullYear();
+    const m = ((today.getMonth() + 1) > 9)?(today.getMonth() + 1):"0"+(today.getMonth() + 1);
+    const d = (today.getDate() > 9)?today.getDate():"0"+today.getDate();
+    const txtDate = y+"."+m+"."+d;
     const _timeRange = document.querySelectorAll(".range-time-box").forEach((t,i)=>{
+        t.setAttribute("date",txtDate)
         getRangeTime(t);
     })
 }
