@@ -362,6 +362,25 @@ function segmentClick(){
 /* tab */
 function tabClick(){
     const _this = event.currentTarget;
+    const _titParent = _this.closest(".tab-tit-wrap");
+    const _conParent = _titParent.parentNode.querySelector(".tab-con-wrap");
+    const idx = _this.getIndex();
+
+    console.log("_this ; ",_this);
+    console.log("_titParent ; ",_titParent);
+    console.log("_conParent ; ",_conParent);
+    console.log("idx ; ",idx);
+    for(let i=0; i<_titParent.children.length; i++){
+        const t = _titParent.children[i];
+        const c = _conParent.children[i];
+        if(i === idx){
+            t.classList.add("active");
+            c.classList.add("active");
+        }else{
+            t.classList.remove("active");
+            c.classList.remove("active");
+        }
+    }
 }
 /* init */
 function init(){

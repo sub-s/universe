@@ -330,3 +330,6 @@ input[type = text][name = date] {padding-left:30rem; color:#fff; background-imag
 .input-checkbox-layout > .menu-wrap > .item:nth-child(1n + 4){margin-top:11rem;}
 
 
+/* tab add */
+.tab-con-area{display:none;}
+.tab-con-area.active{display:block;}
