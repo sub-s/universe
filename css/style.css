@@ -1003,8 +1003,19 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .satellite {height: 100%; position: relative; }
 
 
+.satellite.active {}
+
+.satellite.active .header-item {top:0; left:0; right:0; }
+.satellite.active .left-item   {top:41rem; left:0;}
+.satellite.active .bottom-item {left:300rem; bottom:0;}
+.satellite.active .zoom-area {top:51rem; right: 15rem;}
+.satellite.active .left-item .menu-btn {top: 10rem; right:-50rem;}
+
+
+
+
 /* 확대 축소 버튼 */
-.satellite .zoom-area {border: 1px solid #000; position: absolute; top:51rem; right: 15rem; border-radius: 3rem; overflow: hidden;}
+.satellite .zoom-area {border: 1px solid #000; position: absolute; top:15rem; right: 15rem; border-radius: 3rem; overflow: hidden;}
 .satellite .zoom-area .plus-btn {width: 24rem; height: 24rem; background: #fff; display: flex; justify-content: center; align-items: center;}
 .satellite .zoom-area .minus-btn {width: 24rem; height: 24rem; background: #fff; border-top: 1rem solid #000;  display: flex; justify-content: center; align-items: center;}
 .satellite .zoom-area .plus-btn::after {display: block; content:''; width: 7.55rem; height: 7.55rem; background: url(../images/sate/icon_plus.svg) no-repeat; background-size: cover;}
@@ -1013,7 +1024,7 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 /* 헤더 */
-.satellite .header-item {position: absolute; top:0; left:0; right:0; background: #12141c; width: 100%; height: 41rem; display: flex; justify-content: space-between; align-items: center;}
+.satellite .header-item {position: absolute; top:-41rem; left:0; right:0; background: #12141c; width: 100%; height: 41rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.5s;}
 .satellite .header-item .left {display: flex; justify-content: flex-start; align-items: center; padding: 0 10rem 0; height: 100%; }
 .satellite .header-item .left .item {margin-left: 10rem; border-left: 1rem solid #1D222C;  display: flex; justify-content: flex-start; align-items: center;  height: 100%;}
 .satellite .header-item .left .item .tit {font-size: 12rem; padding-left: 10rem;}
@@ -1057,10 +1068,10 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 /* 좌측 */
-.satellite .left-item {position: absolute; top:41rem; left:0; width: 300rem; height: calc(100% - 111rem); background: #1d222c; }
+.satellite .left-item {position: absolute; top:41rem; left:-300rem; width: 300rem; height: calc(100% - 41rem); background: #1d222c; transition: all 0.5s;}
 
 /* 메뉴 버튼 */
-.satellite .left-item .menu-btn {border: 1px solid #000; background: rgba(0, 0, 0, 1); width: 37rem; height: 37rem; display: flex; justify-content: center; align-items: center; position: absolute; top: 10rem; right:-50rem; border-radius: 3rem;}
+.satellite .left-item .menu-btn {border: 1px solid #000; background: rgba(0, 0, 0, 1); width: 37rem; height: 37rem; display: flex; justify-content: center; align-items: center; position: absolute; top: -30rem; right:-50rem; border-radius: 3rem;}
 .satellite .left-item .menu-btn::after {display: block; content:''; width: 15.16rem; height: 14rem; background: url(../images/sate/icon_btn.svg) no-repeat; background-size: cover;}
 .satellite .left-item .menu-btn:hover {background: rgba(0, 0, 0, 0.7);}
 
@@ -1101,6 +1112,20 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 
+.satellite .left-item .bottom-calendar {position: absolute; bottom:0; left:0; right:0; height: 75rem; border-right: 1px solid #323844; border-top: 1px solid #323844; padding: 15rem; width: 300rem;  box-sizing: border-box; }
+.satellite .left-item .bottom-calendar .tit {font-size: 10rem; margin-bottom: 5rem;}
+
+
+.satellite .left-item .date-area {display: flex; justify-content: flex-start; align-items: center; position: relative; flex:1;}
+.satellite .left-item .date-area .btn-play {width: 27rem; height: 27rem; position: absolute; top: calc(50% - 13.5rem); right: 0; border-radius: 3rem; border: 1px solid #000; display: flex; justify-content: center; align-items: center; background: linear-gradient(180deg, rgba(100,104,128,1) 0%, rgba(56,59,75,1) 100%);}
+.satellite .left-item .date-area .btn-play:hover {border-color: #49cdc6; background: linear-gradient(180deg, rgba(72,76,92,1) 0%, rgba(52,55,68,1) 100%);}
+.satellite .left-item .date-area .btn-play::before {display: block; content:''; width: 8rem; height: 9rem; background: url(../images/sate/icon_play.svg) no-repeat; background-size: cover;}
+
+
+.satellite .left-item .date-area .space {margin: 0 24rem 0;}
+.satellite .left-item .date-area .calendar {display: flex; justify-content: center; align-items: center; }
+.satellite .left-item .date-area .calendar::before {display: block; content:''; width: 11rem; height: 9.5rem; background: url(../images/sate/icon_calendar.svg) no-repeat; background-size: cover; margin-right: 5rem;}
+
 
 
 
@@ -1112,17 +1137,14 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 /* 하단 */
-.satellite .bottom-item {position: absolute; left:0; bottom:0; width: 100%; height: 75rem; display: flex; justify-content: space-between; align-items: center; background: #1d222c; }
-.satellite .bottom-item .distance {font-size: 11rem; color:#000; background: #fff; border:1px solid #000; border-top: 0; width: 54rem; height: 16rem; position: absolute; left:320rem; bottom: 90rem; padding-left: 3rem;}
+.satellite .bottom-item {position: absolute; left:0; right:0; bottom:-75rem;  height: 75rem; display: flex; justify-content: space-between; align-items: center; background: #1d222c; transition: all 0.5s;}
+.satellite .bottom-item .distance {font-size: 11rem; color:#000; background: #fff; border:1px solid #000; border-top: 0; width: 54rem; height: 16rem; position: absolute; left:20rem; bottom: 90rem; padding-left: 3rem;}
 .satellite .bottom-item .foot-info {position: absolute; bottom: 75rem; right:0; display: flex; align-items: center; justify-content: center;}
 .satellite .bottom-item .foot-info .data {display: flex; align-items: center; justify-content: center; padding: 0 20rem 0; height: 20rem; font-size: 11rem; color:#fff; white-space: nowrap; background: rgba(0, 0, 0, 0.7);}
 .satellite .bottom-item .foot-info .copy {display: flex; align-items: center; justify-content: center; padding: 0 20rem 0; height: 20rem; font-size: 11rem; color:#000; white-space: nowrap; background: rgba(255, 255, 255, 0.7);}
 
 
-.satellite .bottom-item .bottom-calendar {height: 100%;  border-right: 1px solid #323844; border-top: 1px solid #323844; padding: 15rem; width: 300rem;  box-sizing: border-box; }
-.satellite .bottom-item .bottom-calendar .tit {font-size: 10rem; margin-bottom: 5rem;}
-
-.satellite .bottom-item .date-area {display: flex; justify-content: flex-start; align-items: center; position: relative; flex:1;}
+/* .satellite .bottom-item .date-area {display: flex; justify-content: flex-start; align-items: center; position: relative; flex:1;}
 .satellite .bottom-item .date-area .btn-play {width: 27rem; height: 27rem; position: absolute; top: calc(50% - 13.5rem); right: 0; border-radius: 3rem; border: 1px solid #000; display: flex; justify-content: center; align-items: center; background: linear-gradient(180deg, rgba(100,104,128,1) 0%, rgba(56,59,75,1) 100%);}
 .satellite .bottom-item .date-area .btn-play:hover {border-color: #49cdc6; background: linear-gradient(180deg, rgba(72,76,92,1) 0%, rgba(52,55,68,1) 100%);}
 .satellite .bottom-item .date-area .btn-play::before {display: block; content:''; width: 8rem; height: 9rem; background: url(../images/sate/icon_play.svg) no-repeat; background-size: cover;}
@@ -1131,7 +1153,7 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .satellite .bottom-item .date-area .space {margin: 0 24rem 0;}
 .satellite .bottom-item .date-area .calendar {display: flex; justify-content: center; align-items: center; }
 .satellite .bottom-item .date-area .calendar::before {display: block; content:''; width: 11rem; height: 9.5rem; background: url(../images/sate/icon_calendar.svg) no-repeat; background-size: cover; margin-right: 5rem;}
-
+ */
 
 
 .satellite .bottom-ruler { width: 100%; height: 100%; flex:2; padding: 23rem;}

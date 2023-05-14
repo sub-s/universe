@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="description" content="한국항공우주연구원">
+    
+    <title>한국항공우주연구원</title>
+
+    <!-- Style -->
+    <!-- <link rel="stylesheet" href="../../../css/ui_common_pub.css"> -->
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <!-- 본문 바로가기 -->
+    <div class="skip-navigation">
+        <a href="#main_content">본문 바로가기</a>
+    </div>
+
+    <div class="satellite">
+        <!-- 지도 확대 축소 -->
+        <div class="zoom-area">
+            <button type="button" class="plus-btn">
+                <span class="blind">메뉴</span>
+            </button>
+            <button type="button" class="minus-btn">
+                <span class="blind">메뉴</span>
+            </button>
+        </div>
+
+        <!-- 헤더 -->
+        <div class="header-item">
+            <div class="left">
+                <h1><img src="../../images/logo.svg" alt="한국항공우주연구원"></h1>
+                <div class="item">
+                    <p class="tit">초소형군집위성가시화시스템</p>
+                    <div class="btn-menu">
+                        <div>
+                            <button type="button" class="menu-location">
+                                <span class="blind">메뉴</span>
+                            </button>
+                        </div>
+                        <div>
+                            <button type="button" class="menu-point">
+                                <span class="blind">메뉴</span>
+                            </button>
+                        </div>
+                        <div>
+                            <button type="button" class="menu-zoom">
+                                <span class="blind">메뉴</span>
+                            </button>
+                        </div>
+                        <div>
+                            <button type="button" class="menu-select">
+                                <span class="blind">메뉴</span>
+                            </button>
+                        </div>
+                        <div>
+                            <button type="button" class="menu-ruler">
+                                <span class="blind">메뉴</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="latitude">127.40582395572939, 36.38283986808149</div>
+                
+            </div>
+        </div>
+
+        <!-- 좌측 아이템 -->
+        <div class="left-item">
+            
+            <!-- 버튼 -->
+            <button type="button" class="menu-btn" onclick="showBtn()">
+                <span class="blind">메뉴</span>
+            </button>
+
+            <!-- 텝 메뉴 -->
+            <div class="tab-area">
+                <!-- 텝 메뉴  -->
+                <div class="outer-menu">
+                    <div class="btn-tab active">
+                        <button type="button">대기정보</button>
+                    </div>
+                    <div class="btn-tab">
+                        <button type="button">부가산출물</button>
+                    </div>
+                </div>
+                <div class="outer-cont">
+                    <!-- 텝 메뉴  -->
+                    <div class="inner-menu">
+                        <div class="btn-tab active">
+                            <button type="button" class="icon-output">산출물</button>
+                        </div>
+                        <div class="btn-tab">
+                            <button type="button" class="icon-compare">비교</button>
+                        </div>
+                        <div class="btn-tab">
+                            <button type="button" class="icon-verify">검증</button>
+                        </div>
+                    </div>
+                    <div class="inner-cont">
+                        
+                        <!-- 텝 메뉴  -->
+                        <div class="date-menu">
+                            <div class="btn-tab ">
+                                <button type="button" class="icon-a">2023.DEC.25</button>
+                            </div>
+                            <div class="btn-tab active">
+                                <button type="button" class="icon-b">2023.DEC.25</button>
+                            </div>
+                           
+                        </div>
+
+                        <div class="layer-area">
+                            <div class="item">
+                                <div class="view">
+                                    <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
+                                </div>
+                                <div class="info">
+                                    <div class="inner">
+                                        <div class="text">
+                                            <p>구름 영역 탐지</p>
+                                            <p>CLD / GK2A</p>
+                                        </div>
+                                        <div class="set">
+                                            <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
+                                            <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
+                                            <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="opacity">
+                                        <p class="tit">Opacity</p>
+                                        <div class="range_area">
+                                            <input type="text" min="0" max="100" range value="0" unit="" style="width:100%"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item off">
+                                <div class="view">
+                                    <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
+                                </div>
+                                <div class="info">
+                                    <div class="inner">
+                                        <div class="text">
+                                            <p>구름 영역 탐지</p>
+                                            <p>CLD / GK2A</p>
+                                        </div>
+                                        <div class="set">
+                                            <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
+                                            <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
+                                            <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="view">
+                                    <button class="off"><span onclick="treeLabelClick()" class="blind"></span></button>
+                                </div>
+                                <div class="info">
+                                    <div class="inner">
+                                        <div class="text">
+                                            <p>구름 영역 탐지</p>
+                                            <p>CLD / GK2A</p>
+                                        </div>
+                                        <div class="set">
+                                            <button class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
+                                            <button class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
+                                            <button class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="outer-cont">
+
+                </div>
+            </div>
+            <!-- // 텝 메뉴 -->
+
+            <div class="bottom-calendar">
+                
+                <div class="date-area">
+                    <div>
+                        <p class="tit">Period selection</p>
+                        <div class="calendar">
+                            2022.08.12
+                        </div>
+                    </div>
+                    <p class="space">~</p>
+                    <div>
+                        <p class="tit">Period selection</p>
+                        <div class="calendar">
+                            2022.08.12
+                        </div>
+                    </div>
+                    <button type="button" class="btn-play">
+                        <span class="blind">버튼</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        
+
+        <!-- 하단 아이템 -->
+        <div class="bottom-item">
+            <!-- 하단 -->
+            <div class="distance">
+                222km
+            </div>
+            <div class="foot-info">
+                <div class="data"><span>2023. 04. 17. 15:30</span></div>
+                <div class="copy"><span>Leaflet | Map data © 항공우주연구원</span></div>
+            </div>
+            
+          
+            <div class="bottom-ruler">
+                <div class="ruler">
+                    <div class="btn-a">
+                        <button type="button"><span class="blind">A</span></button>
+                    </div>
+                    <div class="btn-b">
+                        <button type="button"><span class="blind">B</span></button>
+                    </div>
+                    <div class="btn-c">
+                        <button type="button"><span class="blind">B</span></button>
+                    </div>
+                    <ul>
+                        <li>
+                            <span class="time">08:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">09:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">10:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">11:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">12:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">13:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">14:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">15:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">16:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">17:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">18:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">19:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">20:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">21:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">22:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">23:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">24:00</span>
+                            <p></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom-switch">
+                <div class="switch">
+                    <label>
+                        <input type="checkbox" checked/>
+                        <div>
+                            <span class="on">ON</span>
+                            <span class="off">OFF</span>
+                        </div>  
+                        <i></i>
+                    </label>
+                    <p>Auto update</p>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <script>
+        const showBtn = () => {
+            let _this = event.currentTarget;
+            // let btn = document.querySelector('.menu-btn')
+            let wrap = _this.closest('.satellite');
+
+            let check = wrap.classList.contains('active')
+
+            console.log(check, " 있나? ")
+
+            wrap.classList.add("active");
+            if(check === true) {
+                wrap.classList.remove("active");
+            }
+        
+        }
+        
+    </script>
+
+
+    <script src="../../js/common/ui/common.js"></script>
+</body>
+
+</html>
