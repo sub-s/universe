@@ -82,7 +82,7 @@
                 </div> -->
 
                 <div class="right">
-                    <button class="btn round" type="button" onclick="toggleModal(document.querySelector('.modal-popup'));"><span>부가산출물생성</span></button>
+                    <button class="btn round" type="button" onclick="toggleModal(document.querySelector('.modal-popup.m1'));"><span>부가산출물생성</span></button>
                     <button class="btn menu" type="button" onclick="calendarPopupClick()"><span class="blind">메뉴펼침</span></button>
                 </div>
             </div>
@@ -694,7 +694,7 @@
     </div>
 
     <!-- modal -->
-    <div class="modal-popup">
+    <div class="modal-popup m1">
         <div class="modal_innerWrap">
             <div class="sub-tit">부가산출물 생성</div>
             <div class="comparison-layout-box" style="width:700px; height:450px;">
@@ -900,8 +900,182 @@
                 </ul>
             </div>
             <div class="modal_both_btns">
-                <button class="btn small b" type="button"><span onclick="toggleModal(document.querySelector('.modal-popup'))">생성</span></button>
-                <button class="btn small a" type="button"><span onclick="toggleModal(document.querySelector('.modal-popup'))">취소</span></button>
+                <button class="btn small b" type="button" onclick="toggleModal()"><span>생성</span></button>
+                <button class="btn small a" type="button" onclick="toggleModal()"><span>취소</span></button>
+            </div>
+        </div>
+    </div>
+    <!-- modal -->
+    <div class="modal-popup m2">
+        <div class="modal_innerWrap" style="width:700rem;">
+            <div class="modal_icon_close_btn" onclick="toggleModal()"></div>
+            <div class="dotted-range-layout">
+                <ul>
+                    <li class="start">
+                        <dl class="dotted-range-label">
+                            <dt class="tit">Start Date</dt>
+                            <dd class="date">2023. 04. 17. 15:30:21</dd>
+                        </dl>
+                    </li>
+                    <li class="con">
+                        <div class="con-wrap">
+                            <ul class="simple-dot-list t2">
+                                <li>CLD Algorithm Run Start</li>
+                                <li>CLD : GK-2A Satellite L1b Data Search Succeed</li>
+                                <li>CLD : GK-2A Satellite Lat-Lon Data Search Succeed</li>
+                                <li>CLD : Namelists Read Succeed</li>
+                                <li>CLD : GK-2A Satellite L1b Data Read Succeed</li>
+                                <li>CLD : GK-2A Satellite Lat-Lon Data Read Succeed</li>
+                                <li>CLD : Calculation Succeed</li>
+                                <li>CLD : Product Write Succeed</li>
+                                <li>CLD Algorithm Run End</li>
+                                <li>CLD : Product Write Succeed</li>
+                                <li>CLD Algorithm Run End</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="end">
+                        <dl class="dotted-range-label">
+                            <dt class="tit">Start Date</dt>
+                            <dd class="date">2023. 04. 17. 15:30:21</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- modal -->
+    <div class="modal-popup m3">
+        <div class="modal_innerWrap" style="width:290rem;">
+            <div class="modal_icon_close_btn" onclick="toggleModal()"></div>
+            <h3 class="modal-tit">
+                조회 기간 설정
+            </h3>
+            <!-- input area -->
+            <div class="input-area-layout">
+                <div class="sub-tit">조회 기간</div>
+                <div class="segment">
+                    <ul>
+                        <li onclick="segmentClick()" class="active">당일</li>
+                        <li onclick="segmentClick()">일주일</li>
+                        <li onclick="segmentClick()">한달</li>
+                    </ul>
+                </div>
+                <div class="range-input">
+                    <input type="text" name="date" readonly value="2023.02.22"/>
+                    <input type="text" name="date" readonly value="2023.02.22"/>
+                </div>
+                <div class="info-text-right">*최대 1달까지 가능</div>
+            </div>
+            <!-- input area -->
+            <div class="input-area-layout">
+                <div class="sub-tit">조회 기간</div>
+                <div class="segment">
+                    <ul>
+                        <li onclick="segmentClick()" class="active">전체</li>
+                        <li onclick="segmentClick()">완료</li>
+                        <li onclick="segmentClick()">진행</li>
+                        <li onclick="segmentClick()">실패</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- input area -->
+            <div class="input-area-layout">
+                <div class="sub-tit">위성</div>
+                <div class="input-checkbox-layout">
+                    <div class="menu-wrap">
+                        <div class="item">
+                            <div class="checkbox">
+                                <input type="checkbox" id="btm-menu1" name="btm-menu1" checked>
+                                <label for="btm-menu1">CMS1</label>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="checkbox">
+                                <input type="checkbox" id="btm-menu2" name="btm-menu2" checked>
+                                <label for="btm-menu2">CMS2</label>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="checkbox">
+                                <input type="checkbox" id="btm-menu3" name="btm-menu3" checked>
+                                <label for="btm-menu3">CMS3</label>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="checkbox">
+                                <input type="checkbox" id="btm-menu4" name="btm-menu4" checked>
+                                <label for="btm-menu4">CMS4</label>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="checkbox">
+                                <input type="checkbox" id="btm-menu5" name="btm-menu5" checked>
+                                <label for="btm-menu5">CMS5</label>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="checkbox">
+                                <input type="checkbox" id="btm-menu6" name="btm-menu6" checked>
+                                <label for="btm-menu6">CMS6</label>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="checkbox">
+                                <input type="checkbox" id="btm-menu7" name="btm-menu7" checked>
+                                <label for="btm-menu7">CMS7</label>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="checkbox">
+                                <input type="checkbox" id="btm-menu8" name="btm-menu8" checked>
+                                <label for="btm-menu8">CMS8</label>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="checkbox">
+                                <input type="checkbox" id="btm-menu9" name="btm-menu9" checked>
+                                <label for="btm-menu9">CMS9</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- both btn -->
+            <div class="btn-set">
+                <!-- default btn -->
+                <button class="btn a" type="button"><span onclick="toggleModal()">생성</span></button>
+                <button class="btn b" type="button"><span onclick="toggleModal()">초기화</span></button>
+            </div>
+        </div>
+    </div>
+    <!-- modal -->
+    <div class="modal-popup m4">
+        <div class="modal_innerWrap" style="width:290rem;">
+            <div class="modal_icon_close_btn" onclick="toggleModal()"></div>
+            <h3 class="modal-tit">
+                계정생성
+            </h3>
+            <!-- 인풋 모음 -->
+            <div class="fields">
+                <div class="field">
+                    <label for="id">ID</label>
+                    <input type="text" name="id" id="id" placeholder="ID" />
+                </div>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Password" />
+                </div>
+                <div class="field">
+                    <label for="confirm">Password Confirm</label>
+                    <input type="text" name="confirm" id="confirm" placeholder="Password Confirm" />
+                </div>
+            </div>
+            <!-- both btn -->
+            <div class="btn-set">
+                <!-- default btn -->
+                <button class="btn a" type="button"><span onclick="toggleModal()">생성</span></button>
+                <button class="btn b" type="button"><span onclick="toggleModal()">초기화</span></button>
             </div>
         </div>
     </div>

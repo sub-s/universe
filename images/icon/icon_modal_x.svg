@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.985" height="15.985" viewBox="0 0 15.985 15.985">
+  <g id="close" transform="translate(-826.293 -203.293)">
+    <g id="nomal" transform="translate(1613.5 -6507.5)">
+      <line id="선_441" data-name="선 441" x1="14.571" y2="14.571" transform="translate(-786.5 6711.5)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="1"/>
+      <line id="선_442" data-name="선 442" x2="14.571" y2="14.571" transform="translate(-786.5 6711.5)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="1"/>
+    </g>
+    <g id="over.click" transform="translate(1613.5 -6507.5)">
+      <line id="선_441-2" data-name="선 441" x1="14.571" y2="14.571" transform="translate(-786.5 6711.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+      <line id="선_442-2" data-name="선 442" x2="14.571" y2="14.571" transform="translate(-786.5 6711.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

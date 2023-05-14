@@ -217,7 +217,7 @@ function calendarPopupClick(){
     _pop.classList.toggle("open")
 }
 function toggleModal(el){
-    const _this = el;
+    const _this = (el)?el:event.currentTarget.parent(".modal-popup");
     if(_this.delay) return;
     const checked = _this.classList.contains("open");
     const _wrap = _this.querySelector(".modal_innerWrap");
@@ -348,7 +348,18 @@ function logPopClose(){
     const _pop = document.querySelector(".calendar-pop");
     _pop.style.display = "none";
 }
-
+function segmentClick(){
+    const _this = event.currentTarget;
+    const _wrap = _this.closest("ul");
+    const _children = _wrap.querySelectorAll("li");
+    _children.forEach((s,i)=>{
+        if(s !== _this){
+            s.classList.remove("active")
+        }else{
+            s.classList.add("active")
+        }
+    })
+}
 /* init */
 function init(){
     // 차트 바늘 움직이는 함수
