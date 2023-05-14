@@ -1,5 +1,19 @@
 @charset "utf-8";
 
+/* input 자동완성 스타일 */
+input[type="text"]:autofill,
+input[type="text"]:autofill:focus,
+input[type="text"]:autofill:hover,
+input[type="text"]:autofill:active{
+    -webkit-text-fill-color: #9BA5B9;
+}
+input[type="text"]:-webkit-autofill,
+input[type="text"]:-webkit-autofill:hover,
+input[type="text"]:-webkit-autofill:focus,
+input[type="text"]:-webkit-autofill:active{
+    -webkit-text-fill-color: #9BA5B9;
+}
+
 .half-chart{ position:relative; display:inline-block; width:63rem; height:37.35rem; background:url(../images/icon/half-chart-bg.svg)}
 .half-chart-needle{position:absolute; left:13rem; bottom:3rem; display:inline-block; width: 22rem; height: 6rem; transform:rotate(0deg); transform-origin:19rem 3rem; transition:transform ease 1.5s; background: url(../images/icon/needle.svg) no-repeat;}
 .half-chart-txt{padding-top:39rem; font-size:18rem; text-align:center; color:#a5a7ac;}
@@ -314,3 +328,5 @@ input[type = text][name = date] {padding-left:30rem; color:#fff; background-imag
 .input-checkbox-layout > .menu-wrap > .item{width:calc(100% / 3);}
 .input-checkbox-layout > .menu-wrap > .item .checkbox input[type="checkbox"] + label{white-space:pre-wrap; word-break:break-all;}
 .input-checkbox-layout > .menu-wrap > .item:nth-child(1n + 4){margin-top:11rem;}
+
+

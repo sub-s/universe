@@ -339,8 +339,8 @@ function logPopOpen(){
     const dis = (_pop.style.display === "block")?"none":"block";
     const l = ((style.left + popStyle.width) >= window.innerWidth)?style.right - popStyle.width:style.left;
     const t = ((style.bottom + popStyle.height) >= window.innerHeight)?style.top - popStyle.height:style.bottom;
-    _pop.style.left = l + "px";
-    _pop.style.top = t + "px";
+    _pop.style.left = l + "rem";
+    _pop.style.top = t + "rem";
 }
 function logPopClose(){
     const _this = event.currentTarget;
@@ -358,6 +358,10 @@ function segmentClick(){
             s.classList.add("active")
         }
     })
+}
+/* tab */
+function tabClick(){
+    const _this = event.currentTarget;
 }
 /* init */
 function init(){

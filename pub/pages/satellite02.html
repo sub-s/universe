@@ -116,7 +116,6 @@
                                 <button type="button" class="icon-b">2023.DEC.25</button>
                             </div>
                         </div>
-                        <!-- 레이어 -->
                         <div class="layer-area">
                             <div class="item">
                                 <div class="view">
@@ -179,79 +178,21 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- //레이어 -->
 
-                        <!-- 이미지 레이어 -->
-                        <div class="thum-layer">
-                            <div class="item">
-                                <div class="pic">
-                                    <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
-                                </div>
-                                <div class="txt">
-                                    <ul>
-                                        <li class="satellite">초소형군집위성</li>
-                                        <li class="calendar">2023.03.03</li>
-                                        <li class="time">01:7:35  UTC</li>
-                                    </ul>
-                                </div>
-                                <div class="set">
-                                    <button type="button" class="icon-change"><span class="blind">변경</span></button>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="pic">
-                                    <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
-                                </div>
-                                <div class="txt">
-                                    <ul>
-                                        <li class="satellite">초소형군집위성</li>
-                                        <li class="calendar">2023.03.03</li>
-                                        <li class="time">01:7:35  UTC</li>
-                                    </ul>
-                                </div>
-                                <div class="set">
-                                    <button type="button" class="icon-change"><span class="blind">변경</span></button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 이미지 레이어 -->
 
-                        <!-- 체크 메뉴 -->
                         <div class="left-checked">
                             <div class="menu-wrap">
                                 <div class="item">
-                                    <div class="checkbox a">
-                                        <input type="checkbox" id="menu1" name="menu1" onchange="checkHandler()">
-                                        <label for="menu1">초소형군집위성</label>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="checkbox b">
-                                        <input type="checkbox" id="menu2" name="menu2" onchange="checkHandler()">
-                                        <label for="menu2">다목적시험위성</label>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="checkbox c">
-                                        <input type="checkbox" id="menu3" name="menu3" onchange="checkHandler()">
-                                        <label for="menu3">GK-2A</label>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="checkbox d">
-                                        <input type="checkbox" id="menu4" name="menu4" onchange="checkHandler()">
-                                        <label for="menu4">MODIS</label>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="checkbox e">
-                                        <input type="checkbox" id="menu5" name="menu5" onchange="checkHandler()">
-                                        <label for="menu5">Plane Scope</label>
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="btm-menu1" name="btm-menu1" checked>
+                                        <label for="btm-menu1">구름 영역 탐지</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- // 체크 메뉴 -->
+                        
+
+
                     </div>
                 </div>
 
@@ -260,7 +201,6 @@
                 </div>
             </div>
             <!-- // 텝 메뉴 -->
-
 
             <!-- 좌측드롭다운 메뉴 -->
             <div class="bottom-menu">
@@ -325,8 +265,7 @@
                 </div>
             </div>
             <!-- // 좌측드롭다운 메뉴 -->
-            
-            <!-- 하단 날짜 캘린더 -->
+
             <div class="bottom-calendar">
                 
                 <div class="date-area">
@@ -348,7 +287,6 @@
                     </button>
                 </div>
             </div>
-            <!-- // 하단 날짜 캘린더 -->
 
         </div>
         
@@ -471,21 +409,20 @@
     <script>
         const showBtn = () => {
             let _this = event.currentTarget;
+            // let btn = document.querySelector('.menu-btn')
             let wrap = _this.closest('.satellite');
+
             let check = wrap.classList.contains('active')
-            check ? wrap.classList.remove("active") : wrap.classList.add("active");
+
+            console.log(check, " 있나? ")
+
+            wrap.classList.add("active");
+            if(check === true) {
+                wrap.classList.remove("active");
+            }
+        
         }
         
-
-        const checkHandler = () => {
-            let _this = event.currentTarget;
-            let bg = (_this.checked) ? '#434f67' : 'transparent';
-            let _color = (_this.checked) ? '#fff' : '#8B8B97';
-
-            _this.closest('.checkbox').style.background = bg;
-            _this.nextElementSibling.style.color = _color;
-        }
-
     </script>
 
 
