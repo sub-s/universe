@@ -878,7 +878,7 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 /* 캘린더 팝업 */
 .calendar-pop {position: absolute; background: #252B37; top:25rem; left:0; border: 1px solid #12151d; width: 490rem; z-index: 2; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5)}
-.calendar-pop .top {background: #232b38; display: flex; justify-content: space-between; height: 28rem; padding:0 10rem; position: relative;border-bottom: 1px solid #12141c}
+.calendar-pop .top {background: #232b38; display: flex; justify-content: space-between; align-items: center; height: 28rem; padding:0 10rem; position: relative;border-bottom: 1px solid #12141c; }
 .calendar-pop .top .tit {color:#00d1c7; font-size: 12rem;}
 .calendar-pop .top .btn-closed {display: flex; justify-content: center; align-items: center; width: 26rem; height: 26rem; position: absolute; top:0; right: 0;}
 .calendar-pop .top .btn-closed::before {display: block; content: ''; width: 10rem; height: 10rem; background: url(../images/common/closed.svg) no-repeat; background-size: cover;}
