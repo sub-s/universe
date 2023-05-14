@@ -140,7 +140,7 @@
                                                 <div class="opacity">
                                                     <p class="tit">Opacity</p>
                                                     <div class="range_area">
-                                                        <input type="text" min="0" max="100" range value="0" unit="" style="width:100%"/>
+                                                        <input type="text" min="0" max="100" range value="0" style="width:100%"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -269,7 +269,7 @@
                                                 <div class="opacity">
                                                     <p class="tit">Opacity</p>
                                                     <div class="range_area">
-                                                        <input type="text" min="0" max="100" range value="0" unit="" style="width:100%"/>
+                                                        <input type="text" min="0" max="100" range value="0" style="width:100%"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -398,7 +398,7 @@
                                                 <div class="opacity">
                                                     <p class="tit">Opacity</p>
                                                     <div class="range_area">
-                                                        <input type="text" min="0" max="100" range value="0" unit="" style="width:100%"/>
+                                                        <input type="text" min="0" max="100" range value="0" style="width:100%"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -527,7 +527,7 @@
                                                 <div class="opacity">
                                                     <p class="tit">Opacity</p>
                                                     <div class="range_area">
-                                                        <input type="text" min="0" max="100" range value="0" unit="" style="width:100%"/>
+                                                        <input type="text" min="0" max="100" range value="0" style="width:100%"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -764,29 +764,20 @@
           
             <div class="bottom-ruler">
                 <div class="ruler">
-                    <div class="btn-a">
-                        <button type="button"><span class="blind">A</span></button>
-                    </div>
-                    <div class="btn-b">
-                        <button type="button"><span class="blind">B</span></button>
-                    </div>
-                    <div class="btn-c">
-                        <button type="button"><span class="blind">B</span></button>
-                    </div>
                     <ul>
                         <li>
                             <span class="time">08:00</span>
                             <p></p>
                         </li>
-                        <li>
+                        <li class="selected">
                             <span class="time">09:00</span>
                             <p></p>
                         </li>
-                        <li>
+                        <li class="selected">
                             <span class="time">10:00</span>
                             <p></p>
                         </li>
-                        <li>
+                        <li class="selected">
                             <span class="time">11:00</span>
                             <p></p>
                         </li>
@@ -842,7 +833,34 @@
                             <span class="time">24:00</span>
                             <p></p>
                         </li>
+                        <li>
+                            <span class="time">24:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">01:00</span>
+                            <p></p>
+                        </li>
+                        <li>
+                            <span class="time">02:00</span>
+                            <p></p>
+                        </li>
                     </ul>
+                    <div class="range-time-box" value="5,5,3">
+                        <div class="current">
+                            <div class="btn-a" onmousedown="timerRangeMouseEv()">
+                                <button type="button"><span class="blind">A</span></button>
+                            </div>
+                        </div>
+                        <div class="next">
+                            <div class="btn-b" onmousedown="timerRangeMouseEv()">
+                                <button type="button"><span class="blind">B</span></button>
+                            </div>
+                            <div class="btn-c">
+                                <button type="button"><span class="blind">C</span></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="bottom-switch">

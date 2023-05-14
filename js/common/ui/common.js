@@ -365,11 +365,6 @@ function tabClick(){
     const _titParent = _this.closest(".tab-tit-wrap");
     const _conParent = _titParent.parentNode.querySelector(".tab-con-wrap");
     const idx = _this.getIndex();
-
-    console.log("_this ; ",_this);
-    console.log("_titParent ; ",_titParent);
-    console.log("_conParent ; ",_conParent);
-    console.log("idx ; ",idx);
     for(let i=0; i<_titParent.children.length; i++){
         const t = _titParent.children[i];
         const c = _conParent.children[i];
@@ -382,6 +377,63 @@ function tabClick(){
         }
     }
 }
+/* time range */
+function getRangeTime(el){
+    const _rangeGage = el;
+    const _ruler = _rangeGage.closest(".ruler");
+    const _grid =  _ruler.querySelectorAll("ul > li");
+    const gridLen = (_grid.length - 1) * 2;
+    const _gageChildren = _ruler.querySelectorAll(".range-time-box > div");
+    const val = _rangeGage.getAttribute("value").split(",");
+    let nextLeft = 0;
+    const childrenStyle = [];
+    let totalVal = 0;
+    val.forEach((v,i)=>{
+        totalVal += Number(v);
+    })
+    val.forEach((v,i)=>{
+        if(i === 0){
+            childrenStyle[0] = "left:calc(100% / " + gridLen + " * " + v +")";
+            nextLeft += Number(v);
+        }else if(i === 1){
+            childrenStyle[0] += "; width:calc(100% / " + gridLen + " * " + v +")";
+            nextLeft += Number(v);
+        }else{
+            childrenStyle[1] = "left:calc(100% / " + gridLen + " * " + nextLeft +"); width:calc(100% / " + gridLen + " * " + v +")";
+        }
+    });
+    _gageChildren.forEach((g,i)=>{
+        g.setAttribute("style",childrenStyle[i]);
+    })
+}
+function timerRangeMouseEv(){
+    const _this = event.currentTarget;
+    const _rangeGage = _this.closest(".range-time-box");
+    const _ruler = _rangeGage.closest(".ruler");
+    const _grid =  _ruler.querySelectorAll("ul > li");
+    const gridLen = (_grid.length - 1) * 2;
+    const val = _rangeGage.getAttribute("value").split(",");
+    const windMoveEv = ()=>{
+        const diff = event.pageX - _this.sx;
+        console.log("diff : ",diff)
+        console.log("_rangeGage.unitOnePrice : ",_this.unitOnePrice)
+
+    }
+    const windUpEv = ()=>{
+        window.removeEventListener("mousemove",windMoveEv)
+        window.removeEventListener("mouseup",windMoveEv)
+    }
+    _this.sx = event.pageX;
+    _this.unitOnePrice = _ruler.clientWidth / gridLen;
+    window.addEventListener("mousemove",windMoveEv)
+    window.addEventListener("mouseup",windUpEv)
+
+}
+
+
+
+
+
 /* init */
 function init(){
     // 차트 바늘 움직이는 함수
@@ -404,5 +456,10 @@ function init(){
 
     // range
     getRange();
+
+    // set time range
+    const _timeRange = document.querySelectorAll(".range-time-box").forEach((t,i)=>{
+        getRangeTime(t);
+    })
 }
 init();
