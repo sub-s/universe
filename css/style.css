@@ -430,13 +430,20 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .wrap .intro .center {position: absolute; top: calc(50% - 98rem); left: calc(50% - 307rem); text-align: center; }
 .wrap .intro .center .tit {font-size: 30rem; font-weight: 200; color:#fff; padding-bottom: 10rem; }
 .wrap .intro .center .flex {display: flex; align-items: center;}
-.wrap .intro .center .flex a {display: block; border:1px solid #82f1eb; background: linear-gradient(100deg, rgba(35,62,75,0.5) 0%, rgba(20,27,39,0.5) 20%, rgba(29,64,77,0.5) 80%, rgba(26,85,107,0.4990371148459384) 100%);}
+.wrap .intro .center .flex a {display: block; border:1px solid #46a8a8; background: linear-gradient(100deg, rgba(35,62,75,0.5) 0%, rgba(20,27,39,0.5) 20%, rgba(29,64,77,0.5) 80%, rgba(26,85,107,0.4990371148459384) 100%); }
+
+.wrap .intro .center .flex a:hover {border: 1px solid #82f1eb; background: linear-gradient(100deg, rgba(35,62,75,0.5) 0%, rgba(20,27,39,0.5) 20%, rgba(29,64,77,0.5) 80%, rgba(26,85,107,0.4990371148459384) 100%); transition: all 0.5s;}
 .wrap .intro .center .flex a + a {margin-left: 10rem;}
 
 .wrap .intro .center .flex dl {width: 300rem; height: 145rem; text-align: center; box-sizing: border-box;}
 .wrap .intro .center .flex dl dt {font-size: 11rem; color: rgba(255, 255, 255, 0.5); padding-top: 40rem;}
-.wrap .intro .center .flex dl dd {color:#49CDC6; font-size: 32rem; font-weight: 200;;}
-.wrap .intro .center .flex dl dd::after {display: block; content: ''; background: url(../images/main/arrow.svg) no-repeat; width: 35rem; height: 8rem; margin: 13rem auto;}
+.wrap .intro .center .flex dl dd {color:#fff; font-size: 32rem; font-weight: 200;;}
+.wrap .intro .center .flex dl:hover dd {color:#49CDC6; font-size: 32rem; font-weight: 200;  transition: all 0.5s;;}
+.wrap .intro .center .flex dl dd::after {display: block; content: ''; background: url(../images/main/arrow02.svg) no-repeat; width: 35rem; height: 8rem; margin: 13rem auto; }
+.wrap .intro .center .flex dl:hover dd::after {display: block; content: ''; background: url(../images/main/arrow.svg) no-repeat; width: 35rem; height: 8rem; margin: 13rem auto;}
+
+
+
 
 
 /* login */
