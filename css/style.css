@@ -837,9 +837,9 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .calendar-wrap .month table tbody td .day .num {display: block; font-size: 12rem; padding: 10rem;}
 .calendar-wrap .month table tbody td .day .item {background: #20252e; border-radius: 10rem; height:calc(100% - 44rem); padding: 10rem; box-sizing: border-box;}
 
-.calendar-wrap .month table tbody td .day .item .fail {color:#fc6060; display: flex; align-items: center;}
+.calendar-wrap .month table tbody td .day .item .fail {color:#fc6060; display: flex; align-items: center; cursor: pointer; position: relative; z-index: 2;}
 .calendar-wrap .month table tbody td .day .item .fail::before  {display: inline-flex; margin-right: 5rem; content: ''; background: url(../images/common/icon_fail.svg) no-repeat; background-size: cover; width: 13rem; height: 13rem;}
-.calendar-wrap .month table tbody td .day .item .success {color:#fc6060; display: flex; align-items: center; color:#00d1c7;}
+.calendar-wrap .month table tbody td .day .item .success {color:#fc6060; display: flex; align-items: center; color:#00d1c7; cursor: pointer; position: relative;  z-index: 2;}
 .calendar-wrap .month table tbody td .day .item .success::before {display: inline-flex; vertical-align: middle; margin-right: 5rem; content: ''; background: url(../images/common/icon_success.svg) no-repeat; background-size: cover; width: 13rem; height: 13rem;}
 
 
