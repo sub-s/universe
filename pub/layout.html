@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="description" content="한국항공우주연구원">
+    
+    <title>한국항공우주연구원</title>
+
+    <!-- Style -->
+    <!-- <link rel="stylesheet" href="../../css/ui_common_pub.css"> -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- 본문 바로가기 -->
+    <div class="skip-navigation">
+        <a href="#main_content">본문 바로가기</a>
+    </div>
+
+    <div class="wrap">
+        <!-- 헤더 -->
+        <header class="header">
+            <div class="top">
+                <div class="logo">
+                    <h1><img src="../images/logo.svg" alt="한국항공우주연구원"></h1>
+                </div>
+                <ul class="menu-item">
+                    <li class="on"><button>대시보드</button></li>
+                    <li><button>대기정보</button></li>
+                    <li><button>부가산출물</button></li>
+                    <li><button>딥러닝</button></li>
+                </ul>
+            </div>
+            <div class="user-area">
+                <ul>
+                    <li><button><span onclick="treeLabelClick()" class="blind">로그아웃</span></button></li>
+                    <li>
+                        <button onclick="onSettingClick()"><span class="blind">설정</span></button>
+                        <div class="setting">
+                            <div class="innerWrao">
+                                <ul>
+                                    <li><a href="javascript: viod(0)">Account Setting</a></li>
+                                    <li><a href="javascript: viod(0)">System Setting</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- 본문 -->
+        <main class="main">
+            <!-- 현황 컴포넌트 -->
+            <div class="situation-icon">
+                <div class="icon complete">완료</div>
+                <div class="icon failed">실패</div>
+                <div class="icon progress">진행</div>
+            </div>
+            <div class="range_area">
+                <input type="text" min="0" max="100" range value="0" unit="" style="width:100%"/><br />
+                <input type="text" min="0" max="100" range value="10" unit="$" style="width:100%"/><br />
+                <input type="text" min="0" max="100" range value="20" unit="*" style="width:100%"/><br />
+                <input type="text" min="0" max="100" range value="30" unit="#" style="width:100%"/><br />
+                <input type="text" min="0" max="100" range value="40" style="width:100%"/><br />
+                <input type="text" min="0" max="100" range value="50" style="width:100%"/><br />
+                <input type="text" min="0" max="100" range value="60" style="width:100%"/><br />
+                <input type="text" min="0" max="100" range value="70" style="width:100%"/><br />
+                <input type="text" min="0" max="100" range value="80" style="width:100%"/><br />
+                <input type="text" min="0" max="100" range value="90" style="width:100%"/><br />
+                <input type="text" min="0" max="100" range value="100" style="width:100%"/><br />
+                <input type="text" mininput="13" maxinput="79" min="0" max="100" range value="50" style="width:100%"/><br />
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="situation">
+                    <div class="inner"> 
+                        <p class="tit">CMS</p>
+                        <div class="current">
+                            <ul>
+                                <li>
+                                    <p class="tit">의뢰</p>
+                                    <p class="count">278</p>
+                                </li>
+                                <li>
+                                    <p class="tit">완료</p>
+                                    <p class="count">278</p>
+                                </li>
+                                <li>
+                                    <p class="tit">실패</p>
+                                    <p class="count">0</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="situation progress">
+                    <div class="inner"> 
+                        <p class="tit">CMS</p>
+                        <div class="current">
+                            <ul>
+                                <li>
+                                    <p class="tit">의뢰</p>
+                                    <p class="count">55</p>
+                                </li>
+                                <li>
+                                    <p class="tit">완료</p>
+                                    <p class="count">55</p>
+                                </li>
+                                <li>
+                                    <p class="tit">실패</p>
+                                    <p class="count">55</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="situation failed">
+                    <div class="inner"> 
+                        <p class="tit">CMS</p>
+                        <div class="current">
+                            <ul>
+                                <li>
+                                    <p class="tit">의뢰</p>
+                                    <p class="count">55</p>
+                                </li>
+                                <li>
+                                    <p class="tit">완료</p>
+                                    <p class="count">55</p>
+                                </li>
+                                <li>
+                                    <p class="tit">실패</p>
+                                    <p class="count">55</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // 현황 컴포넌트 -->
+            <!-- 인풋 모음 -->
+            <div class="fields">
+                <div class="field">
+                    <label for="id">ID</label>
+                    <input type="text" name="id" id="id" placeholder="ID" />
+                </div>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Password" />
+                </div>
+                <div class="field">
+                    <label for="confirm">Password Confirm</label>
+                    <input type="text" name="confirm" id="confirm" placeholder="Password Confirm" />
+                </div>
+            </div>
+
+
+            <div class="radio">
+                <input type="radio" id="demo-priority-high" name="demo-priority">
+                <label for="demo-priority-high">High</label>
+                <input type="radio" id="demo-priority-high2" name="demo-priority">
+                <label for="demo-priority-high2">High</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="demo-copy" name="demo-copy">
+                <label for="demo-copy">Email me a copy</label>
+                <input type="checkbox" id="demo-human" name="demo-human" checked="">
+                <label for="demo-human">Not a robot</label>
+            </div>
+         
+
+
+
+
+
+
+            <!-- // 인풋 모음 -->
+            <!-- 버튼 모음 -->
+            <div class="btn-set">
+                <!-- default btn -->
+                <button class="btn a" type="button"><span onclick="treeLabelClick()">생성</span></button>
+                <button class="btn b" type="button"><span onclick="treeLabelClick()">초기화</span></button>
+                
+                <!-- small btn -->
+                <button class="btn small a" type="button"><span onclick="treeLabelClick()">생성</span></button>
+                <button class="btn small b" type="button"><span onclick="treeLabelClick()">생성</span></button>
+                
+                <!-- big btn -->
+                <button class="btn big a" type="button"><span onclick="treeLabelClick()">생성</span></button>
+                <button class="btn big b" type="button"><span onclick="treeLabelClick()">생성</span></button>
+                
+                <!-- round btn -->
+                <button class="btn round a" type="button"><span onclick="treeLabelClick()">부가산출물생성</span></button>
+                <button class="btn round b" type="button"><span onclick="treeLabelClick()">부가산출물생성</span></button>
+                
+                <!-- back btn -->
+                <button class="btn back" type="button"><span onclick="treeLabelClick()" class="blind">뒤로가기</span></button>
+           
+
+                <div class="switch">
+                    <label>
+                        <input type="checkbox" checked/>
+                        <div>
+                            <span onclick="treeLabelClick()" class="on">ON</span>
+                            <span onclick="treeLabelClick()" class="off">OFF</span>
+                        </div>  
+                        <i></i>
+                    </label>
+                    <p>Auto update</p>
+                    
+                </div>
+
+
+
+
+
+
+            </div>
+            <!-- // 버튼 모음 -->
+            <!-- 페이징 -->
+            <div class="page-area">
+                <button class="first" type="button"><span onclick="treeLabelClick()" class="blind">처음</span></button>
+                <button class="prev" type="button"><span onclick="treeLabelClick()" class="blind">이전</span></button>
+                <div class="number">
+                    <span onclick="treeLabelClick()">1</span>
+                    /
+                    <span onclick="treeLabelClick()">100</span>
+                </div>
+                <button class="next" type="button"><span onclick="treeLabelClick()" class="blind">다음</span></button>
+                <button class="end" type="button"><span onclick="treeLabelClick()" class="blind">마지막</span></button>
+            </div>
+            <!-- 페이징 -->
+
+            <!-- 그래프 -->
+            <div class="graph-area">
+                <table>
+                    <colgroup>
+                        <col style="width:auto" />
+                    </colgroup>
+                    <tr>
+                        <td>2월</td>
+                        <td>
+                            <div class="graph">
+                                <p style="height: 40%"><span onclick="treeLabelClick()" class="blind">10%</span></p>
+                                <p style="height: 20%"><span onclick="treeLabelClick()" class="blind">10%</span></p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="graph">
+                                <p style="height: 40%"><span onclick="treeLabelClick()" class="blind">10%</span></p>
+                                <p style="height: 20%"><span onclick="treeLabelClick()" class="blind">10%</span></p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="graph">
+                                <p style="height: 40%"><span onclick="treeLabelClick()" class="blind">10%</span></p>
+                                <p style="height: 20%"><span onclick="treeLabelClick()" class="blind">10%</span></p>
+                            </div>
+                        </td>
+                        <td>3월</td>
+                        <td>
+                            <div class="graph">
+                                <p style="height: 40%"><span onclick="treeLabelClick()" class="blind">10%</span></p>
+                                <p style="height: 20%"><span onclick="treeLabelClick()" class="blind">10%</span></p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="graph">
+                                <p style="height: 40%"><span onclick="treeLabelClick()" class="blind">10%</span></p>
+                                <p style="height: 20%"><span onclick="treeLabelClick()" class="blind">10%</span></p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="graph">
+                                <p style="height: 40%"><span onclick="treeLabelClick()" class="blind">10%</span></p>
+                                <p style="height: 20%"><span onclick="treeLabelClick()" class="blind">10%</span></p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="graph">
+                                <p style="height: 40%"><span onclick="treeLabelClick()" class="blind">10%</span></p>
+                                <p style="height: 20%"><span onclick="treeLabelClick()" class="blind">10%</span></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>28일</td>
+                        <td>29일</td>
+                        <td>30일</td>
+                        <td></td>
+                        <td>1일</td>
+                        <td>2일</td>
+                        <td>3일</td>
+                        <td>4일</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- // 그래프 -->
+
+
+            <!-- 그래프 -->
+            <div class="table a">
+                <table>
+                    <colgroup>
+                        <col style="width:auto" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Create Time</th>
+                            <th>Satellite</th>
+                            <th>Period</th>
+                            <th>Progress</th>
+                            <th>진행률</th>
+                            <th>성공/실패/잔량</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2022.12.30  16:11:12</td>
+                            <td>CMS</td>
+                            <td>2022.12.30  16:11:12  ~   2022.12.30  16:11:12</td>
+                            <td>
+                                <div class="graph">
+                                    <p style="width: 40%"><span onclick="treeLabelClick()" class="blind">10%</span></p>
+                                </div>
+                            </td>
+                            <td>75%</td>
+                            <td><span onclick="treeLabelClick()" class="txt-green">30</span> / <span onclick="treeLabelClick()" class="txt-red">2</span> / <span onclick="treeLabelClick()" class="txt-blue">13</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- // 그래프 -->
+
+            <!-- 도넛 그래프 -->
+            <div class="donut-chart" style="margin-top: 45rem">
+                <div class="chart">
+                    <div class="chart-bar" data-deg="160"></div>
+                </div>
+            </div>
+            <!-- // 도넛 그래프 -->
+            <div class="layer-area">
+                <div class="item">
+                    <div class="view">
+                        <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
+                    </div>
+                    <div class="info">
+                        <div class="inner">
+                            <div class="text">
+                                <p>구름 영역 탐지</p>
+                                <p>CLD / GK2A</p>
+                            </div>
+                            <div class="set">
+                                <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
+                                <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
+                                <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                            </div>
+                        </div>
+                        <div class="opacity">
+                            <p class="tit">Opacity</p>
+                            <div class="slider">
+                                <div>
+
+                                </div>
+                                <div>
+                                    70%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item off">
+                    <div class="view">
+                        <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
+                    </div>
+                    <div class="info">
+                        <div class="inner">
+                            <div class="text">
+                                <p>구름 영역 탐지</p>
+                                <p>CLD / GK2A</p>
+                            </div>
+                            <div class="set">
+                                <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
+                                <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
+                                <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="view">
+                        <button class="off"><span onclick="treeLabelClick()" class="blind"></span></button>
+                    </div>
+                    <div class="info">
+                        <div class="inner">
+                            <div class="text">
+                                <p>구름 영역 탐지</p>
+                                <p>CLD / GK2A</p>
+                            </div>
+                            <div class="set">
+                                <button class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
+                                <button class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
+                                <button class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 트리메뉴 -->
+            <div class="tree-area">
+                <ul class="tree">
+                    <li>
+                        <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                        <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth1</span></label>
+                        <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                        <ul>
+                            <li class="file">
+                                <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth2</span></label>
+                                        <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                            </li>
+                            <li>
+                                <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth2</span></label>
+                                        <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                <ul>
+                                    <li class="file">
+                                        <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                        <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth3</span></label>
+                                        <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                    </li>
+                                </ul>
+                            <li>
+                                <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth2</span></label>
+                                        <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                <ul>
+                                    <li class="file">
+                                        <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                        <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth3</span></label>
+                                            <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                    </li>
+                                    <li>
+                                        <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                        <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth3</span></label>
+                                            <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                        <ul>
+                                            <li class="file">
+                                                <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth4</span></label>
+                                                <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                            </li>
+                                            <li class="file">
+                                                <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth4</span></label>
+                                                <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                            </li>
+                                            <li class="file">
+                                                <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4</span></label>
+                                                <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="file">
+                                        <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                        <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth3</span></label>
+                                        <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                        <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth1</span></label>
+                        <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                        <ul>
+                            <li class="file">
+                                <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth1-1</span></label>
+                                <button class="tree_del_btn" onclick="treeDelClick()">del</button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- // 트리메뉴 -->
+            <!-- 트리메뉴 -->
+            <div class="tree-area">
+                <ul class="tree">
+                    <li>
+                        <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                        <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth1</span></label>
+                        <ul>
+                            <li class="file">
+                                <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth2</span></label>
+                            </li>
+                            <li>
+                                <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth2</span></label>
+                                <ul>
+                                    <li class="file">
+                                        <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                        <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth3</span></label>
+                                    </li>
+                                </ul>
+                            <li>
+                                <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth2</span></label>
+                                <ul>
+                                    <li class="file">
+                                        <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                        <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth3</span></label>
+                                    </li>
+                                    <li>
+                                        <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                        <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth3</span></label>
+                                        <ul>
+                                            <li class="file">
+                                                <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth4</span></label>
+                                            </li>
+                                            <li class="file">
+                                                <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth4</span></label>
+                                            </li>
+                                            <li class="file">
+                                                <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                                <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4Depth4</span></label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="file">
+                                        <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                        <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth3</span></label>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                        <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth1</span></label>
+                        <ul>
+                            <li class="file">
+                                <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
+                                <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">Depth1-1</span></label>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- // 트리메뉴 -->
+
+            <!-- 좌측드롭다운 메뉴 -->
+            <div class="bottom-menu">
+                <div class="menu-wrap">
+                    <div class="item">
+                        <div class="checkbox">
+                            <input type="checkbox" id="btm-menu1" name="btm-menu1" checked>
+                            <label for="btm-menu1">구름 영역 탐지</label>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="checkbox">
+                            <input type="checkbox" id="btm-menu2" name="btm-menu2">
+                            <label for="btm-menu2">수증기</label>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="checkbox">
+                            <input type="checkbox" id="btm-menu3" name="btm-menu3">
+                            <label for="btm-menu3">레일레이 보정 지표반사도</label>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="checkbox">
+                            <input type="checkbox" id="btm-menu4" name="btm-menu4">
+                            <label for="btm-menu4">에어로졸 광학두께</label>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="checkbox">
+                            <input type="checkbox" id="btm-menu5" name="btm-menu5">
+                            <label for="btm-menu5">대기정보 지표반사도</label>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="checkbox">
+                            <input type="checkbox" id="btm-menu6" name="btm-menu6">
+                            <label for="btm-menu6">BRDF 지표반사도</label>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="checkbox">
+                            <input type="checkbox" id="btm-menu7" name="btm-menu7">
+                            <label for="btm-menu7">BAR NDVI</label>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="checkbox">
+                            <input type="checkbox" id="btm-menu8" name="btm-menu8">
+                            <label for="btm-menu8">일사량</label>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="checkbox">
+                            <input type="checkbox" id="btm-menu9" name="btm-menu9">
+                            <label for="btm-menu9">초단기 구름예보</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-btn">
+                    <button type="button" class="btn big">추가</button>
+                </div>
+            </div>
+            <!-- // 좌측드롭다운 메뉴 -->
+
+        
+        </main>
+
+    </div>
+
+    <script src="../js/common/ui/common.js"></script>
+</body>
+
+</html>
