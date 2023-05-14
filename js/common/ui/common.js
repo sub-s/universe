@@ -150,7 +150,8 @@ function getTabHeight(){
 function treeArrClick(){
     const _this = event.currentTarget;
     const _li = _this.parentNode;
-    _li.classList.toggle("closed");
+    const checked = _this.parentNode.classList.contains("file");
+    if(!checked) _li.classList.toggle("closed");
 }
 function treeLabelClick(){
     event.preventDefault();
@@ -273,19 +274,11 @@ function getRange(){
             window.removeEventListener("mouseup",windowMouseUpEv);
         }
         const windowMoveEv = ()=>{
-            const minInputPosition = Math.ceil((_box.leftMax / (_box.max - _box.min)) * _box.minInput);
-            const maxInputPosition = Math.ceil((_box.leftMax / (_box.max - _box.min)) * _box.maxInput);
-            _box.diffX = event.pageX - _box.sX;
-            _box.diffY = event.pageY - _box.sY;
-            _box.calcX = _box.left + _box.diffX;
-            _box.calcY = _box.top + _box.diffY;
-            const l = (maxInputPosition <= _box.calcX)?maxInputPosition:(_box.leftMax <= _box.calcX)?_box.leftMax:(_box.calcX <= minInputPosition)?minInputPosition:(_box.calcX <= 0)?0:_box.calcX;
-            const w = distance(0,_thumb.offsetLeft,0,_thumb.offsetTop) + (_thumb.clientWidth / 2);
-            _gage.style.width = w + "rem";
-            _thumb.style.left = l + "rem";
-            const val = (((_box.max - _box.min) / _box.leftMax) * l) + _box.min;
-            r.value = Math.floor(val);
-            _txt.innerText = Math.floor(val) + _box.unit;
+            getMadeRage()
+            if(event.pageX > window.innerWidth){
+                windowMouseUpEv();
+                getMadeRage()
+            }
         }
         const thumbMouseDownEv = ()=>{
             event.preventDefault();
@@ -297,6 +290,21 @@ function getRange(){
             _box.top = _thumb.offsetTop;
             _box.leftMax = _trail.clientWidth - _thumb.clientWidth;
             _box.toptMax = _trail.clientHeight - _thumb.clientHeight;
+        }
+        const getMadeRage = ()=>{
+            const minInputPosition = Math.ceil((_box.leftMax / (_box.max - _box.min)) * _box.minInput);
+            const maxInputPosition = Math.ceil((_box.leftMax / (_box.max - _box.min)) * _box.maxInput);
+            _box.diffX = event.pageX - _box.sX;
+            _box.diffY = event.pageY - _box.sY;
+            _box.calcX = _box.left + _box.diffX;
+            _box.calcY = _box.top + _box.diffY;
+            const l = (maxInputPosition <= _box.calcX)?maxInputPosition:(_box.leftMax <= _box.calcX)?_box.leftMax:(_box.calcX <= minInputPosition)?minInputPosition:(_box.calcX <= 0)?0:_box.calcX;
+            const w = distance(0,_thumb.offsetLeft,0,_thumb.offsetTop) + (_thumb.clientWidth / 2);
+            _gage.style.width = w + "rem";
+            _thumb.style.left = l + "rem";
+            const val = (((_box.max - _box.min) / _box.leftMax) * l) + _box.min;
+            r.value = Math.round(val);
+            _txt.innerText = Math.round(val) + _box.unit;
         }
         _box.classList.add("range-box");
         _trail.classList.add("trail");
