@@ -33,15 +33,20 @@
                     <ul>
                         <li>
                             <div class="field">
-                                <input type="text" name="id" id="id" placeholder="ID" />
+                                <input type="text" name="id" id="id" placeholder="ID" onkeyup="inputClearBtn()" />
                                 <p>아이디를 입력하세요.</p>
+                                <button class="clear-btn" type="button" onclick="clearBtn()">
+                                    <span class="blind">삭제</span>
+                                </button>
                             </div>
-                            
                         </li>
                         <li>
-                            <div class="field error">
-                                <input type="password" name="password" id="password" placeholder="PW" />
+                            <div class="field"> <!-- error 클래스 추가시 에러 체크 -->
+                                <input type="password" name="password" id="password" placeholder="PW" onkeyup="inputClearBtn()" />
                                 <p>비밀번호를 잘못 입력했습니다. </p>
+                                <button class="clear-btn" type="button" onclick="clearBtn()">
+                                    <span class="blind">삭제</span>
+                                </button>
                             </div>
                         </li>
                     </ul>
@@ -62,6 +67,31 @@
 
     </div>
 
+
+    <script>
+        const inputClearBtn = () => {
+            let _this = event.currentTarget;
+            let val = event.target.value
+            
+            var clear = _this.closest('.field').querySelector('.clear-btn')
+
+            if(val) {
+                clear.style.display = 'block'
+            } else {
+                clear.style.display = 'none'
+            }
+        }
+
+        const clearBtn = () => {
+            let _this = event.currentTarget;
+            let _input = _this.closest('.field').querySelector('input');
+
+            _input.value = '';
+            _input.focus()
+            _this.style.display = 'none';
+        }
+
+    </script>
     <!-- <script src="../../js/common/ui/common.js"></script> -->
 </body>
 
