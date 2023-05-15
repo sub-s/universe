@@ -294,14 +294,15 @@ input[type="text"]:-webkit-autofill:active{
 .btnRect.icon_arr{background:url(../../images/icon/icon_rectBtn_arr.svg) no-repeat center;}
 
 /* range */
-.range-box{position:relative; display:inline-block; height:26rem;}
+.range-wrap{position:relative; display:inline-block;}
+.range-box{position:relative; width:calc(100% - 50rem); height:26rem;}
+.range-wrap > .txt{position:absolute; top:0; right:0; width:25rem; height:26rem; padding:0; font-size:10rem; color:#49CDC6; font-weight:bold; text-align:left; line-height:2.5; background:transparent;}
 .trail, .range-box > .rect_left{position:absolute; top:calc(50% - 1rem); height:2rem; border-radius:5px;}
-.trail{left:0; right:30rem; background:#707070;}
+.trail{left:0; right:-12rem;; background:#707070;}
 .range-box > .rect_left{left:0; z-index:5; background:#49CDC6;}
 .range-box > .thumb{position:absolute; top:calc(50% - 6rem); left:0; z-index:10; width:12rem; height:12rem; border-radius:100%; background:#49CDC6;}
 .range-box > .thumb:after{content:""; position:absolute; top:calc(50% - 13rem); left:calc(50% - 13rem); width:26rem; height:26rem; border-radius:100%; box-shadow:inset 0 0 4px 1px #49CDC6;}
 .range-box > input[type = text]{position:absolute; top:0; right:20rem; transform:translate(100%,0); width:20rem; height:26rem; padding:0; font-size:10rem; color:#49CDC6; font-weight:bold; background:transparent; opacity:0;}
-.range-box > .txt{position:absolute; top:0; right:20rem; transform:translate(100%,0); width:20rem; height:26rem; padding:0; font-size:10rem; color:#49CDC6; font-weight:bold; line-height:2.5; background:transparent;}
 .tooltip-range-time{position:absolute; top:-100%; left:0; padding:5rem 10rem; font-size:10rem; color:#000; border:1rem solid #D8D8D8; border-radius:15rem; white-space:nowrap; transform:translate(-50%,calc(-100% - 50rem)); background:#fff;}
 .tooltip-range-time:after{content:""; position:absolute; bottom:-3rem; left:50%; width:9rem; height:6rem; border:1rem solid #D8D8D8; border-width:0 0 1rem 1rem; transform:translate(-50%,0) rotate(-45deg); background:#fff;}
 
@@ -365,3 +366,11 @@ div.satellite .bottom-ruler > .ruler > ul li.selected:before{top:-3rem; height:c
 
 /* div.satellite .bottom-item{height:94rem}
 div.satellite .bottom-ruler{padding-top:52rem;} */
+
+
+
+
+/*  */
+.layer-area .item .opacity{display:none;}
+.layer-area .item.open .opacity{display:block;}
+.shadowBox{position:fixed; width:150px; height:150px; transform:translate(-50%,-50%); background:#000;}

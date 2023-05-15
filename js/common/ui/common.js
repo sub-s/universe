@@ -245,6 +245,7 @@ function onSettingClick(){
 function getRange(){
     const _inputs = document.querySelectorAll("input[range]");
     _inputs.forEach((r,i)=>{
+        const _rangeWrap = document.createElement("div");
         const _box = document.createElement("div");
         const _trail = document.createElement("div");
         const _thumb = document.createElement("span");
@@ -257,10 +258,12 @@ function getRange(){
             const temp = (firstVal <= _box.minInput)?_box.minInput:(firstVal <= _box.min)?_box.min:(firstVal >= _box.maxInput)?_box.maxInput:(firstVal >= _box.max)?_box.max:firstVal;
             r.value = temp;
             _txt.innerText = temp + _box.unit;
-            const left = ((_trail.clientWidth - _thumb.clientWidth) / (_box.max - _box.min)) * (temp - _box.min);
-            const width = distance(0,left,0,0);
-            _thumb.style.left = left + "rem";
-            _gage.style.width = width + "rem";
+            const len = _box.max - _box.min;
+            const price = temp - _box.min;
+            const unit = 100 / len;
+            const per = price * unit;
+            _thumb.style.left = per + "%";
+            _gage.style.width = per + "%";
         }
         const distance = (x1, x2, y1, y2)=>{
             const diffX = x2 - x1;
@@ -291,32 +294,38 @@ function getRange(){
             _box.toptMax = _trail.clientHeight - _thumb.clientHeight;
         }
         const getMadeRage = ()=>{
-            const minInputPosition = Math.ceil((_box.leftMax / (_box.max - _box.min)) * _box.minInput);
-            const maxInputPosition = Math.ceil((_box.leftMax / (_box.max - _box.min)) * _box.maxInput);
+            const len = _box.max - _box.min;
+            const unit = 100 / len;
+            const unit2 = len * 0.01;
+            const trailUnit = _trail.clientWidth / len;
+            const minInputPer = unit * (_box.minInput - _box.min);
+            const maxInputPer = unit * (_box.maxInput - _box.min);
             _box.diffX = event.pageX - _box.sX;
             _box.diffY = event.pageY - _box.sY;
             _box.calcX = _box.left + _box.diffX;
             _box.calcY = _box.top + _box.diffY;
-            const l = (maxInputPosition <= _box.calcX)?maxInputPosition:(_box.leftMax <= _box.calcX)?_box.leftMax:(_box.calcX <= minInputPosition)?minInputPosition:(_box.calcX <= 0)?0:_box.calcX;
-            const w = distance(0,_thumb.offsetLeft,0,_thumb.offsetTop) + (_thumb.clientWidth / 2);
-            _gage.style.width = w + "rem";
-            _thumb.style.left = l + "rem";
-            const val = (((_box.max - _box.min) / _box.leftMax) * l) + _box.min;
-            r.value = Math.round(val);
+            const movePrice = _box.calcX / trailUnit;
+            const calcPer = (movePrice * unit >= maxInputPer)?maxInputPer:(movePrice * unit >= 100)?100:(movePrice * unit <= minInputPer)?minInputPer:(movePrice * unit <= 0 )?0:movePrice * unit;
+            const val = (calcPer * unit2) + _box.min;
+            _gage.style.width = calcPer + "%";
+            _thumb.style.left = calcPer + "%";
             _txt.innerText = Math.round(val) + _box.unit;
+            r.value = Math.round(val);
         }
+        _rangeWrap.classList.add("range-wrap");
         _box.classList.add("range-box");
         _trail.classList.add("trail");
         _thumb.classList.add("thumb");
         _gage.classList.add("rect_left");
         _txt.classList.add("txt");
-        r.parentNode.insertBefore(_box,r);
+        r.parentNode.insertBefore(_rangeWrap,r);
         _box.appendChild(_trail);
         _box.appendChild(_thumb);
         _box.appendChild(_gage);
-        _box.appendChild(_txt);
         _box.appendChild(r);
-        _box.style.width = w;
+        _rangeWrap.appendChild(_txt);
+        _rangeWrap.appendChild(_box);
+        _rangeWrap.style.width = w;
         r.setAttribute("readonly","");
         _box.min = (r.getAttribute("min"))?Number(r.getAttribute("min")):0;
         _box.max = (r.getAttribute("max"))?Number(r.getAttribute("max")):100;
@@ -457,6 +466,56 @@ function timerRangeMouseEv(){
 }
 
 
+/* 가시화 */
+function itemBoxToggleFn(){
+    const _this = event.currentTarget;
+    const _item = _this.closest(".item");
+    const checked = !_item.classList.contains("off");
+    if(checked){
+        _item.classList.add("off");
+        _item.classList.remove("open");
+    }else{
+        _item.classList.remove("off");
+
+    }
+}
+function itemBoxOpcityToggle(){
+    const _this = event.currentTarget;
+    const _item = _this.closest(".item");
+    const checked = _item.classList.contains("off");
+    if(!checked) _item.classList.toggle("open");
+
+}
+/* item move */
+function itemMove(){
+    const _this = event.currentTarget;
+    const _item = _this.closest(".item");
+    const idx = _item.getIndex();
+    // const _box = document.createElement("div");
+    // _box.classList.add("shadowBox");
+    // document.body.appendChild(_box);
+    // _this.shadowBox = _box;
+    const windMoveEv = ()=>{
+        // _this.shadowBox.style.left = event.pageX + "px";
+        // _this.shadowBox.style.top = event.pageY + "px";
+    }
+    const windowUpEv = ()=>{
+        console.log("----- mouse up ------")
+        console.log(event.target);
+        console.log(window.scrollY);
+        window.removeEventListener("mousemove",windMoveEv);
+        window.removeEventListener("mouseup",windowUpEv);
+        const _items = document.querySelectorAll(".item");
+        // _this.shadowBox.parentNode.removeChild(_this.shadowBox);
+        _items.forEach((b,i)=>{
+            const top = b.offsetTop;
+            console.log(i,":",top);
+        })
+    }
+    window.addEventListener("mousemove",windMoveEv);
+    window.addEventListener("mouseup",windowUpEv);
+
+}
 
 
 
