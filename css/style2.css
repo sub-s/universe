@@ -341,7 +341,8 @@ input[type = text][name = date] {padding-left:30rem; color:#fff; background-imag
 .tab-con-wrap.depth3{height:calc(100vh - 220rem); overflow:auto;}
 
 
-/* satellite */
+/* satellite */ 
+div.satellite .bottom-ruler{padding:35rem 23rem 13rem 23rem;}/* style1 padding값 수정 */
 div.satellite .bottom-ruler > .ruler > ul li{width:auto; flex:1;}
 div.satellite .bottom-ruler > .ruler > ul li:last-child{flex:0;}
 div.satellite .bottom-ruler > .ruler > ul li .time{transform:translate(-50%,0);}
@@ -355,10 +356,12 @@ div.satellite .bottom-ruler > .ruler > ul li.selected:before{top:-3rem; height:c
 .range-time-box > .next:before{right:0; background:#AA7246;}
 .range-time-box > .next{position:absolute; top:0; bottom:0; display:flex; justify-content:center; flex:1; background:#AA7246;}
 .range-time-box > .empty{flex:0;}
+.range-time-box .hidden_bar .tooltip-range-time, .range-time-box .hidden_bar [class ^= btn-]{display:none;}
+.range-time-box .hidden_box{display:none;}
 
 
-.satellite .bottom-ruler .ruler .range-time-box .btn-a{top:0; left:0; right:auto; transform:translate(calc(-50% - 3rem),calc(-100% - 36rem));}
-.satellite .bottom-ruler .ruler .range-time-box .btn-b{top:0; left:0; right:auto; transform:translate(calc(-50% - 3rem),calc(-100% - 36rem));}
+.satellite .bottom-ruler .ruler .range-time-box .btn-a{top:0; left:3rem; right:auto; transform:translate(calc(-50% - 3rem),calc(-100% - 36rem));}
+.satellite .bottom-ruler .ruler .range-time-box .btn-b{top:0; left:2rem; right:auto; transform:translate(calc(-50% - 3rem),calc(-100% - 36rem));}
 .satellite .bottom-ruler .ruler .range-time-box .btn-c{top:0; left:auto; right:0; transform:translate(50%,calc(-100% - 36rem));}
 .satellite .bottom-ruler .ruler .range-time-box .current .btn-c{right:auto; left:0; transform:translate(-50%,calc(-100% - 36rem))}
 .satellite .bottom-ruler .ruler .range-time-box .next .btn-c.l{right:auto; left:0; transform:translate(-50%,calc(-100% - 36rem))}
@@ -377,3 +380,9 @@ div.satellite .bottom-ruler{padding-top:52rem;} */
 
 /* .layer-area .item */
 .drag-item-wrap.moving .item:hover{opacity:0.5}
+
+
+/* .satellite .bottom-ruler */
+.satellite .bottom-ruler.showSwitch{display:flex;}
+.satellite .bottom-ruler.showSwitch .ruler{width:calc(100% - 100rem);}
+.satellite .bottom-ruler.showSwitch .bottom-switch{position:absolute; top:0; right:0; bottom:0; display:flex; align-items:center; justify-content:center; width:100rem; background:#12141C;}

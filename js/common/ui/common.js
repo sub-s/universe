@@ -438,9 +438,11 @@ function getRangeTime(el){
 }
 function timerRangeMouseEv(){
     const _this = event.currentTarget;
-    const checked = _this.parentNode.classList.contains("current")
+    const checked = (_this.parentNode.classList.contains("bottom-ruler"))?true:_this.parentNode.classList.contains("current");
+    const rangeCheck = _this.parentNode.classList.contains("bottom-ruler");
+    const _btnRuler = _this.closest(".bottom-ruler");
     const _rangeGage = _this.closest(".range-time-box");
-    const _ruler = _rangeGage.closest(".ruler");
+    const _ruler = (rangeCheck)?_btnRuler.closest(".ruler"):_rangeGage.closest(".ruler");
     const _grid =  _ruler.querySelectorAll("ul > li");
     const gridLen = (_grid.length - 1) * 2;
     const val = _rangeGage.getAttribute("value").split(",");
@@ -460,11 +462,10 @@ function timerRangeMouseEv(){
     }
     _this.sx = event.pageX;
     _this.unitOnePrice = _ruler.clientWidth / gridLen;
-    _this.moveMax = (checked)?Number(val[0]) + Number(val[1]):gridLen - Number(val[0]) - Number(val[2]);
+    _this.moveMax = (rangeCheck)?(_grid.length - 1):(checked)?Number(val[0]) + Number(val[1]):gridLen - Number(val[0]) - Number(val[2]);
     window.addEventListener("mousemove",windMoveEv);
     window.addEventListener("mouseup",windUpEv);
 }
-
 
 /* 가시화 */
 function itemBoxToggleFn(){
@@ -490,7 +491,7 @@ function itemBoxOpcityToggle(){
 function itemMove(){
     const _this = event.currentTarget;
     const _wrap = _this.closest(".drag-item-wrap");
-    const _item = _this.closest(".item");
+    const _item = _this.closest(".move-item");
     const idx = _item.getIndex();
     const windMoveEv = ()=>{
         _wrap.setAttribute("move-index",idx);
@@ -514,20 +515,12 @@ function itemMoveUpEv(){
     const _items = _wrap.children;
     const idx = _this.getIndex();
     const targetIdx = Number(_wrap.getAttribute("move-index"));
-
-    console.log("----------------------------------------------------")
-    console.log("idx : ",_this.getIndex())
-    console.log("targetIdx : ",targetIdx)
     if(targetIdx === -1) return;
     if(targetIdx > idx){
-        console.log("---  up   ---")
         _wrap.insertBefore(_items[targetIdx],_this);
     }else if(targetIdx < idx){
-        console.log("---   down   ---")
         const max = _items.length - 1;
         const reIndex = idx + 1;
-        console.log("max : ",max);
-        console.log("reIndex : ",reIndex);
         if(reIndex < max){
             _wrap.insertBefore(_items[targetIdx],_items[reIndex]);
         }else{
