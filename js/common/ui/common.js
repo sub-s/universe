@@ -489,32 +489,51 @@ function itemBoxOpcityToggle(){
 /* item move */
 function itemMove(){
     const _this = event.currentTarget;
+    const _wrap = _this.closest(".drag-item-wrap");
     const _item = _this.closest(".item");
     const idx = _item.getIndex();
-    // const _box = document.createElement("div");
-    // _box.classList.add("shadowBox");
-    // document.body.appendChild(_box);
-    // _this.shadowBox = _box;
     const windMoveEv = ()=>{
-        // _this.shadowBox.style.left = event.pageX + "px";
-        // _this.shadowBox.style.top = event.pageY + "px";
+        _wrap.setAttribute("move-index",idx);
+        _wrap.classList.add("moving");
     }
     const windowUpEv = ()=>{
-        console.log("----- mouse up ------")
-        console.log(event.target);
-        console.log(window.scrollY);
         window.removeEventListener("mousemove",windMoveEv);
         window.removeEventListener("mouseup",windowUpEv);
-        const _items = document.querySelectorAll(".item");
-        // _this.shadowBox.parentNode.removeChild(_this.shadowBox);
-        _items.forEach((b,i)=>{
-            const top = b.offsetTop;
-            console.log(i,":",top);
+        _wrap.classList.remove("moving");
+        setTimeout(()=>{
+            _wrap.setAttribute("move-index",-1);
         })
     }
     window.addEventListener("mousemove",windMoveEv);
     window.addEventListener("mouseup",windowUpEv);
 
+}
+function itemMoveUpEv(){
+    const _this = event.currentTarget;
+    const _wrap = _this.closest(".drag-item-wrap");
+    const _items = _wrap.children;
+    const idx = _this.getIndex();
+    const targetIdx = Number(_wrap.getAttribute("move-index"));
+
+    console.log("----------------------------------------------------")
+    console.log("idx : ",_this.getIndex())
+    console.log("targetIdx : ",targetIdx)
+    if(targetIdx === -1) return;
+    if(targetIdx > idx){
+        console.log("---  up   ---")
+        _wrap.insertBefore(_items[targetIdx],_this);
+    }else if(targetIdx < idx){
+        console.log("---   down   ---")
+        const max = _items.length - 1;
+        const reIndex = idx + 1;
+        console.log("max : ",max);
+        console.log("reIndex : ",reIndex);
+        if(reIndex < max){
+            _wrap.insertBefore(_items[targetIdx],_items[reIndex]);
+        }else{
+            _wrap.appendChild(_items[targetIdx]);
+        }
+    }
 }
 
 

@@ -374,3 +374,6 @@ div.satellite .bottom-ruler{padding-top:52rem;} */
 .layer-area .item .opacity{display:none;}
 .layer-area .item.open .opacity{display:block;}
 .shadowBox{position:fixed; width:150px; height:150px; transform:translate(-50%,-50%); background:#000;}
+
+/* .layer-area .item */
+.drag-item-wrap.moving .item:hover{opacity:0.5}
