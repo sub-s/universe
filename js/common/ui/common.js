@@ -438,11 +438,9 @@ function getRangeTime(el){
 }
 function timerRangeMouseEv(){
     const _this = event.currentTarget;
-    const checked = (_this.parentNode.classList.contains("bottom-ruler"))?true:_this.parentNode.classList.contains("current");
-    const rangeCheck = _this.parentNode.classList.contains("bottom-ruler");
-    const _btnRuler = _this.closest(".bottom-ruler");
+    const checked = _this.parentNode.classList.contains("current")
     const _rangeGage = _this.closest(".range-time-box");
-    const _ruler = (rangeCheck)?_btnRuler.closest(".ruler"):_rangeGage.closest(".ruler");
+    const _ruler = _rangeGage.closest(".ruler");
     const _grid =  _ruler.querySelectorAll("ul > li");
     const gridLen = (_grid.length - 1) * 2;
     const val = _rangeGage.getAttribute("value").split(",");
@@ -462,9 +460,20 @@ function timerRangeMouseEv(){
     }
     _this.sx = event.pageX;
     _this.unitOnePrice = _ruler.clientWidth / gridLen;
-    _this.moveMax = (rangeCheck)?(_grid.length - 1):(checked)?Number(val[0]) + Number(val[1]):gridLen - Number(val[0]) - Number(val[2]);
+    _this.moveMax = (checked)?Number(val[0]) + Number(val[1]):gridLen - Number(val[0]) - Number(val[2]);
     window.addEventListener("mousemove",windMoveEv);
     window.addEventListener("mouseup",windUpEv);
+}
+function timelineMoveEv(){
+    const _this = event.currentTarget;
+    const _ruler = _this.closest(".ruler");
+    _this.sx = event.pageX;
+    _this.len = (_ruler.querySelectorAll("ul > li").length - 1) * 2;
+    console.log("------------------------------------------------------------")
+    console.log("_this : ",_this)
+    console.log("_ruler : ",_ruler)
+    console.log("_this.sx : ",_this.sx)
+    console.log("_this.len : ",_this.len)
 }
 
 /* 가시화 */
