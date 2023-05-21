@@ -22,7 +22,7 @@
         <a href="#main_content">본문 바로가기</a>
     </div>
 
-    <div class="satellite active">
+    <div class="satellite">
         <!-- 버튼 -->
         <button type="button" class="menu-btn" onclick="showBtn()">
             <span class="blind">메뉴</span>
@@ -56,9 +56,58 @@
                             </button>
                         </div>
                         <div>
-                            <button type="button" class="menu-zoom">
+                            <button type="button" class="menu-zoom" onclick="toggleClass('active')">
                                 <span class="blind">메뉴</span>
                             </button>
+                            <!-- 검색 팝업 -->
+                            <div class="search-pop">
+                                <ul>
+                                    <li>좌측상단
+                                        <div class="input-item">
+                                            <label>위도
+                                                <input type="text" />
+                                            </label>
+                                            <label>경도
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>우측상단
+                                        <div class="input-item">
+                                            <label>위도
+                                                <input type="text" />
+                                            </label>
+                                            <label>경도
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>좌측하단
+                                        <div class="input-item">
+                                            <label>위도
+                                                <input type="text" />
+                                            </label>
+                                            <label>경도
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>우측하단
+                                        <div class="input-item">
+                                            <label>위도
+                                                <input type="text" />
+                                            </label>
+                                            <label>경도
+                                                <input type="text" />
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button class="btn" type="button" onclick="gnbTopSearchClick()">
+                                    <span>검색</span>
+                                </button>
+                            </div>
+                            <!-- // 검색 팝업 -->
                         </div>
                         <div>
                             <button type="button" class="menu-select">
@@ -78,7 +127,6 @@
                 
             </div>
         </div>
-
         <!-- 좌측 아이템 -->
         <div class="left-item">
           
@@ -86,10 +134,10 @@
             <div class="tab-area">
                 <!-- 텝 메뉴 depth1 -->
                 <div class="outer-menu tab-tit-wrap depth1">
-                    <div class="btn-tab active" onclick="tabClick()">
+                    <div class="btn-tab active" onclick="clickDepth1ev()">
                         <button type="button">대기정보</button>
                     </div>
-                    <div class="btn-tab" onclick="tabClick()">
+                    <div class="btn-tab" onclick="clickDepth1ev()">
                         <button type="button">부가산출물</button>
                     </div>
                 </div>
@@ -99,13 +147,13 @@
                     <div class="tab-con-area active">
                         <!-- 텝 메뉴 depth2 -->
                         <div class="inner-menu tab-tit-wrap depth2">
-                            <div class="btn-tab active" onclick="tabClick()">
+                            <div class="btn-tab active" onclick="clickDepth2ev()">
                                 <button type="button" class="icon-output">산출물</button>
                             </div>
-                            <div class="btn-tab" onclick="tabClick();flyingMenuBtnOpen('.bottom-menu.m1')">
+                            <div class="btn-tab" onclick="clickDepth2ev();">
                                 <button type="button" class="icon-compare">비교</button>
                             </div>
-                            <div class="btn-tab" onclick="tabClick()">
+                            <div class="btn-tab" onclick="clickDepth2ev();">
                                 <button type="button" class="icon-verify">검증</button>
                             </div>
                         </div>
@@ -1392,13 +1440,1139 @@
                                 <!-- // 텝 콘텐츠 depth3 -->
                             </div>
                             <div class="tab-con-area">
-                                Depth2 Content
+                                <div class="layer-area">
+                                    <div class="drag-item-wrap">
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item">
+                                            <div class="text-box">
+                                                에어로솔 광학 두께 
+                                                <p>(AOT)</p>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                    </div>
+                                    <div class="tab-con-area">Depth1-1-2</div>
+                                </div>
                             </div>
                         </div>
                         <!-- // 텝 콘텐츠 depth2 -->
                     </div>
                     <div class="tab-con-area">
-                        Depth2
+                        <!-- 텝 메뉴 depth2 -->
+                        <div class="inner-menu tab-tit-wrap depth2">
+                            <div class="btn-tab active" onclick="clickDepth2ev()">
+                                <button type="button" class="icon-output">가시화</button>
+                            </div>
+                            <div class="btn-tab" onclick="clickDepth2ev();">
+                                <button type="button" class="icon-compare">비교</button>
+                            </div>
+                            <div class="btn-tab" onclick="clickDepth2ev();">
+                                <button type="button" class="icon-verify">검증</button>
+                            </div>
+                        </div>
+                        <!-- // 텝 메뉴 depth2 -->
+                        <!-- 텝 콘텐츠 depth2 -->
+                        <div class="tab-con-wrap depth2">
+                            <div class="tab-con-area">
+                                <div class="left-checked menuArea">
+                                    <div class="menu-wrap">
+                                        <div class="item">
+                                            <div class="checkbox a">
+                                                <input type="checkbox" id="menu1" name="menu1" onchange="checkHandler()">
+                                                <label for="menu1">초소형군집위성</label>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="checkbox b">
+                                                <input type="checkbox" id="menu2" name="menu2" onchange="checkHandler()">
+                                                <label for="menu2">다목적시험위성</label>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="checkbox c">
+                                                <input type="checkbox" id="menu3" name="menu3" onchange="checkHandler()">
+                                                <label for="menu3">GK-2A</label>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="checkbox d">
+                                                <input type="checkbox" id="menu4" name="menu4" onchange="checkHandler()">
+                                                <label for="menu4">MODIS</label>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="checkbox e">
+                                                <input type="checkbox" id="menu5" name="menu5" onchange="checkHandler()">
+                                                <label for="menu5">Plane Scope</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 검색 -->
+                                <div class="layer-area searchArea">
+                                    <div class="layer-top">
+                                        <div class="back-btn">
+                                            <button type="button" class="btn" onclick="searchAreaBack()">
+                                                Back
+                                            </button>
+                                        </div>
+                                        <div class="total">총 <span>60</span> 개</div>
+                                    </div>
+                                    <!-- item -->
+                                    <div class="thum-layer">
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="item" onmouseup="itemMoveUpEv()">
+                                            <div class="pic">
+                                                <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                            </div>
+                                            <div class="txt">
+                                                <ul>
+                                                    <li class="satellite">초소형군집위성</li>
+                                                    <li class="calendar">2023.03.03</li>
+                                                    <li class="time">01:7:35  UTC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="set">
+                                                <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- // item -->
+                                </div>
+                                <!-- // 검색 -->
+                            </div>
+                            <div class="tab-con-area">
+                                <div class="layer-area">
+                                    <div class="drag-item-wrap">
+
+                                        <div class="layer-top">
+                                            <div class="remove-btn">
+                                                <button type="button" class="btn">
+                                                    remove all
+                                                </button>
+                                            </div>
+                                            <div class="total">
+                                                <select>
+                                                    <option>split</option>
+                                                    <option>split</option>
+                                                    <option>split</option>
+                                                </select>
+                                               
+                                            </div>
+                                        </div>
+                                        <!-- item -->
+                                        <div class="thum-layer b-type">
+                                            <div class="item">
+                                                <div class="pic">
+                                                    <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                                </div>
+                                                <div class="txt">
+                                                    <ul>
+                                                        <li>Sentinel-3 OLCI : 4_RGB_17_5</li>
+                                                        <li>-27.69, 147.59 <span class="space"></span>Zoom : 6</li>
+                                                        <li>2023,12,24</li>
+                                                    </ul>
+                                                    <div class="opacity">
+                                                        <p class="tit">Posion</p>
+                                                        <div class="range_area">
+                                                            <input type="text" min="0" max="100" range value="50" style="width:100%"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="set">
+                                                    <button type="button" class="icon-del">
+                                                        <span class="blind">삭제</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="pic">
+                                                    <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                                                </div>
+                                                <div class="txt">
+                                                    <ul>
+                                                        <li>Sentinel-3 OLCI : 4_RGB_17_5</li>
+                                                        <li>-27.69, 147.59 <span class="space"></span>Zoom : 6</li>
+                                                        <li>2023,12,24</li>
+                                                    </ul>
+                                                    <div class="opacity">
+                                                        <p class="tit">Posion</p>
+                                                        <div class="range_area">
+                                                            <input type="text" min="0" max="100" range value="80" style="width:100%"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="set">
+                                                    <button type="button" class="icon-del">
+                                                        <span class="blind">삭제</span>
+                                                    </button>
+                                                </div>
+                                            </div>      
+                                        </div>
+                                        <!-- // item -->
+                                       
+                                    </div>
+                                    <div class="tab-con-area">Depth1-1-2</div>
+                                </div>
+                            </div>
+                            <div class="tab-con-area active">
+                                <h4 class="lnb-tab-sub-tit">GK-2A</h4>
+                                <!-- 텝 메뉴 depth3 -->
+                                <div class="inner-menu tab-tit-wrap depth3 onlyIcon">
+                                    <div class="btn-tab active" onclick="tabClick()">
+                                        <button type="button">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" style="fill:currentcolor; stroke:currentcolor;">
+                                                <g id="그룹_3641" data-name="그룹 3641" transform="translate(-64 -114.999)">
+                                                    <path id="빼기_50" data-name="빼기 50" d="M7312-8156h-3v-1h2v-2h1v3Zm-10,0h-3v-3h1v2h2v1Zm10-10h-1v-2h-2v-1h3v3Zm-12,0h-1v-3h3v1h-2v2Z" transform="translate(-7235 8284)"/>
+                                                    <line id="선_627" data-name="선 627" y2="4" transform="translate(70.5 119.499)" stroke-width="1"/>
+                                                    <line id="선_628" data-name="선 628" x2="4" transform="translate(68.5 121.499)" stroke-width="1"/>
+                                                </g>
+                                                </svg>
+                                        </button>
+                                    </div>
+                                    <div class="btn-tab" onclick="tabClick()">
+                                        <button type="button">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="13.394" height="13.548" viewBox="0 0 13.394 13.548" style="fill:currentColor">
+                                                <g id="그룹_3642" data-name="그룹 3642" transform="translate(-98.802 -114.845)">
+                                                    <path id="합치기_62" data-name="합치기 62" d="M7352.237-11586.242l-1.4,1.4.619.619,1.4-1.4Zm-1.9,1.9-1.4,1.4.619.618,1.4-1.4Zm-1.9,1.9-1.4,1.4.619.618,1.4-1.4Zm-1.9,1.9-1.4,1.4.619.619,1.4-1.4Zm-1.9,1.9-1.4,1.4.619.619,1.4-1.4Zm-1.9,1.9-1.4,1.4.619.618,1.4-1.4Zm-1.9,1.9-1.4,1.4.619.618,1.4-1.4Z" transform="translate(-7240.659 11701.242)"/>
+                                                    <path id="패스_5449" data-name="패스 5449" d="M-7182.306,8296.02h-7.708v-1h5.506l-2.161-2.472.753-.658Z" transform="translate(7294.424 -8168.278)"/>
+                                                    <path id="패스_5450" data-name="패스 5450" d="M-7186.787,8296.02h-6.346l3.61-4.13.753.658-2.161,2.472h4.144Z" transform="translate(7292 -8177.044)"/>
+                                                </g>
+                                            </svg>
+                                        </button>
+                                    </div>  
+                                    <div class="btn-tab" onclick="tabClick()">
+                                        <button type="button">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="12.435" height="8.098" viewBox="0 0 12.435 8.098" style="fill:currentcolor; strocke:currentcolor;">
+                                                <path id="빼기_29" data-name="빼기 29" d="M6.219,8.1a5.307,5.307,0,0,1-2.44-.646L4.41,6.8a3.144,3.144,0,0,0,1.809.57A3.279,3.279,0,0,0,9.445,4.047a3.367,3.367,0,0,0-.556-1.86l.847-.873a12.792,12.792,0,0,1,2.7,2.733,13.043,13.043,0,0,1-1.9,2.082A6.773,6.773,0,0,1,6.219,8.1ZM1.792,6.042h0A13.006,13.006,0,0,1,0,4.047C.116,3.88,2.877,0,6.219,0A4.739,4.739,0,0,1,7.484.178L6.882.8a3.14,3.14,0,0,0-.663-.07A3.278,3.278,0,0,0,2.99,4.047a3.493,3.493,0,0,0,.069.69l-1.266,1.3Z" />
+                                              </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- // 텝 메뉴 depth3 -->
+                                <!-- 텝 콘텐츠 depth3 -->
+                                <div class="tab-con-wrap depth3 area">
+                                    <div class="tab-con-area active">
+                                        <div class="drag-item-wrap">
+                                            <!-- item -->
+                                            <div class="thum-layer c-type">
+                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                    <div class="pic">
+                                                        <img src="../../images/temp/s_temp01.svg" alt="한국항공우주연구원">
+                                                    </div>
+                                                    <div class="txt">
+                                                        <p>True Color</p>
+                                                        <p>Based on brands 4.3.2</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button class="icon-change" onmousedown="itemMove()">
+                                                            <span class="blind">변경</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                    <div class="pic">
+                                                        <img src="../../images/temp/s_temp02.svg" alt="한국항공우주연구원">
+                                                    </div>
+                                                    <div class="txt">
+                                                        <p>True Color</p>
+                                                        <p>Based on brands 4.3.2</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button class="icon-change" onmousedown="itemMove()">
+                                                            <span class="blind">변경</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                    <div class="pic">
+                                                        <img src="../../images/temp/s_temp03.svg" alt="한국항공우주연구원">
+                                                    </div>
+                                                    <div class="txt">
+                                                        <p>True Color</p>
+                                                        <p>Based on brands 4.3.2</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button class="icon-change" onmousedown="itemMove()">
+                                                            <span class="blind">변경</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- // item -->
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="tab-con-area">
+                                        <div class="drag-item-wrap">
+                                            <!-- item -->
+                                            <div class="thum-layer c-type">
+                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                    <div class="pic">
+                                                        <img src="../../images/temp/s_temp01.svg" alt="한국항공우주연구원">
+                                                    </div>
+                                                    <div class="txt">
+                                                        <p>True Color</p>
+                                                        <p>Based on brands 4.3.2</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button class="icon-change" onmousedown="itemMove()">
+                                                            <span class="blind">변경</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                    <div class="pic">
+                                                        <img src="../../images/temp/s_temp02.svg" alt="한국항공우주연구원">
+                                                    </div>
+                                                    <div class="txt">
+                                                        <p>True Color</p>
+                                                        <p>Based on brands 4.3.2</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button class="icon-change" onmousedown="itemMove()">
+                                                            <span class="blind">변경</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                    <div class="pic">
+                                                        <img src="../../images/temp/s_temp03.svg" alt="한국항공우주연구원">
+                                                    </div>
+                                                    <div class="txt">
+                                                        <p>True Color</p>
+                                                        <p>Based on brands 4.3.2</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button class="icon-change" onmousedown="itemMove()">
+                                                            <span class="blind">변경</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- // item -->
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="tab-con-area">
+                                        <div class="drag-item-wrap">
+                                            <!-- item -->
+                                            <div class="thum-layer c-type">
+                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                    <div class="pic">
+                                                        <img src="../../images/temp/s_temp01.svg" alt="한국항공우주연구원">
+                                                    </div>
+                                                    <div class="txt">
+                                                        <p>True Color</p>
+                                                        <p>Based on brands 4.3.2</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button class="icon-change" onmousedown="itemMove()">
+                                                            <span class="blind">변경</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                    <div class="pic">
+                                                        <img src="../../images/temp/s_temp02.svg" alt="한국항공우주연구원">
+                                                    </div>
+                                                    <div class="txt">
+                                                        <p>True Color</p>
+                                                        <p>Based on brands 4.3.2</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button class="icon-change" onmousedown="itemMove()">
+                                                            <span class="blind">변경</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                    <div class="pic">
+                                                        <img src="../../images/temp/s_temp03.svg" alt="한국항공우주연구원">
+                                                    </div>
+                                                    <div class="txt">
+                                                        <p>True Color</p>
+                                                        <p>Based on brands 4.3.2</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button class="icon-change" onmousedown="itemMove()">
+                                                            <span class="blind">변경</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- // item -->
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // 텝 콘텐츠 depth3 -->
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- // 텝 콘텐츠 depth1 -->
@@ -1473,6 +2647,7 @@
                 <div class="bottom-btn">
                     <button type="button" class="btn" onclick="lftDropdownMenuBtnEv()"></button>
                 </div>
+                <div class="popDeemded"></div>
             </div>
             <!-- // 좌측드롭다운 메뉴 -->
             
@@ -1481,15 +2656,15 @@
                 
                 <div class="date-area">
                     <div>
+                        <p class="tit"></p>
                         <div class="calendar">
-                            <p class="tit">Period selection</p>
                             2022.08.12
                         </div>
                     </div>
                     <p class="space">~</p>
                     <div>
+                        <p class="tit"></p>
                         <div class="calendar">
-                            <!-- <p class="tit">Period selection</p> -->
                             2022.08.12
                         </div>
                     </div>
@@ -1639,9 +2814,10 @@
         </div>
 
 
-    </div>
+    </div >
 
-    <div class="fixed-pop"  style="width: 340rem; top: 350rem; ">
+    <!-- -->
+    <div class="fixed-pop"  style="width: 340rem; top: 350rem; display:none; ">
         <div class="down-layer">
             <div class="top">
                 <h3 class="colorWhite">37° 29' 51.1" N  /  127° 01' 44.75" E  </h3>
@@ -1661,7 +2837,216 @@
             </div>
         </div>
     </div>
+
+    <!-- 02_대기정보_산출물 팝업      -->
+    <div class="fixed-pop" style="width: 233rem; display:none">
+        <div class="position-pop">
+            <div class="tit">
+                37° 29' 51.1" N  /  127° 01' 44.75" E  
+            </div>
+            <div class="cont">
+                <ul>
+                    <li>
+                        <p>수증기값</p>
+                        <p>0.</p>
+                    </li>
+                    <li>
+                        <p>구름</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>구름 영역 탐지값</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>레일레이 보정 <br>지표반사도</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>에어로즐 광학 두께</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>대기보정 지표반사도</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>BRDF 지표반사도</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>BAR NDVI</p>
+                        <p>구름</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 05_대기정보_검증 팝업 -->
+    <div class="fixed-pop" style="width: 542rem; height: 320rem; display:none;">
+        <div class="chart-pop">
+            <div class="tit">
+                <div class="flex">
+                    <h3>AOT</h3>
+                    <button class="btn small a" type="button" onclick="popCall()">
+                        <span>Table</span>
+                    </button>
+                </div>
+            </div>
+            <div class="cont">
+                <!-- 차트 그래프 영역 -->
+            </div>
+        </div>
+    </div>
+    <div class="fixed-pop none pop2" style="width: 380rem; display:none;">
+    <div class="table-pop">
+    <div class="thead">
+    <div class="tr">
+        <div class="th">시간</div>
+        <div class="th">관측값 1</div>
+        <div class="th">관측값 2</div>
+    </div>
+    </div>
+    <div class="tbody" style="height: 260rem;">
+    <div class="tr">
+        <div class="td">2022.02.01 11:00</div>
+        <div class="td">16.9861</div>
+        <div class="td">16.9861</div>
+    </div>
+    <div class="tr">
+        <div class="td">2022.02.01 11:00</div>
+        <div class="td">16.9861</div>
+        <div class="td">16.9861</div>
+    </div>
+    <div class="tr">
+        <div class="td">2022.02.01 11:00</div>
+        <div class="td">16.9861</div>
+        <div class="td">16.9861</div>
+    </div>
+    <div class="tr">
+        <div class="td">2022.02.01 11:00</div>
+        <div class="td">16.9861</div>
+        <div class="td">16.9861</div>
+    </div>
+    <div class="tr">
+        <div class="td">2022.02.01 11:00</div>
+        <div class="td">16.9861</div>
+        <div class="td">16.9861</div>
+    </div>
+    <div class="tr">
+        <div class="td">2022.02.01 11:00</div>
+        <div class="td">16.9861</div>
+        <div class="td">16.9861</div>
+    </div>
+    <div class="tr">
+        <div class="td">2022.02.01 11:00</div>
+        <div class="td">16.9861</div>
+        <div class="td">16.9861</div>
+    </div>
+    <div class="tr">
+        <div class="td">2022.02.01 11:00</div>
+        <div class="td">16.9861</div>
+        <div class="td">16.9861</div>
+    </div>
+    <div class="tr">
+        <div class="td">2022.02.01 11:00</div>
+        <div class="td">16.9861</div>
+        <div class="td">16.9861</div>
+    </div>
+    <div class="tr">
+        <div class="td">2022.02.01 11:00</div>
+        <div class="td">16.9861</div>
+        <div class="td">16.9861</div>
+    </div>
+    <div class="tr">
+        <div class="td">2022.02.01 11:00</div>
+        <div class="td">16.9861</div>
+        <div class="td">16.9861</div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- 07_부가산출물 – 위성검색결과 – 1 팝업 -->
+    <div class="fixed-pop" style="width: 330rem; top: 350rem; display:none; ">
+        <div class="down-layer">
+            <div class="top">
+                <h3>위도 : 33.3 / 경도 : 124.5</h3>
+                <button type="button" class="close-btn">
+                    <span class="blind">닫기</span>
+                </button>
+            </div>
+            <div class="cont">
+                <ul>
+                    <li>
+                        KOMPSAT-3A / LSR
+                    </li>
+                    <li>
+                        2020년 5월 1일 14시 20분 ~ 2020년 5월 10일 15시 40분
+                    </li>
+                </ul>
+                <button type="button" class="down-btn">
+                    <span>다운로드</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-pop posi-none" style="width: 238rem; top: 120rem; left: 500rem; display:none;">
+        <div class="thum-layer">
+            <div class="item">
+                <div class="pic">
+                    <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                </div>
+                <div class="txt">
+                    <ul>
+                        <li class="satellite">초소형군집위성</li>
+                        <li class="calendar">2023.03.03</li>
+                        <li class="time">01:7:35  UTC</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="fixed-pop posi-none" style="width: 480rem; top: 200rem; display:none;">
+        <div class="setting open">
+            <div class="innerWrao">
+                <ul>
+                    <li><a href="javascript: void(0)">Download</a></li>
+                    <li><a href="javascript: void(0)">Menu name</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-pop posi-none" style="top: 60rem; right: 60rem; display:none;">
+        <div class="info-layer">
+            <ul>
+                <li>
+                    거리와 면적 측정
+                    <div class="txt-box">
+                        마지막 점 <br><br>
+                        37° 29' 51.1" N  /  127° 01' 44.75" E  <br>
+                        37.497529 / 127.029097
+                    </div>
+                </li>
+                <li>
+                    거리 469 미터(0.47킬로미터)
+                </li>
+                <li>
+                    16.408 평방 미터 (4.963.40 평)
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
     <script>
+        const popCall = () => {
+            document.querySelector('.fixed-pop.pop2').classList.toggle('none')
+        }
         const showBtn = () => {
             let _this = event.currentTarget;
             let wrap = _this.closest('.satellite');
@@ -1685,8 +3070,11 @@
         })
         document.querySelectorAll(".drag-item-wrap .inner p:first-child").forEach((i,n)=>{
             const txt = i.innerText;
-            console.log(i,":",txt)
             i.innerText = txt + n;
+        })
+        const items = document.querySelectorAll("li.satellite")
+        items.forEach((item,index)=>{
+            item.innerText = item.innerText + index;
         })
     </script>
 

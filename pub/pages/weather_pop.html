@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="description" content="한국항공우주연구원">
+    
+    <title>한국항공우주연구원</title>
+
+    <!-- Style -->
+    <!-- <link rel="stylesheet" href="../../../css/ui_common_pub.css"> -->
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <!-- 본문 바로가기 -->
+    <div class="skip-navigation">
+        <a href="#main_content">본문 바로가기</a>
+    </div>
+
+    <div class="satellite">
+
+    </div >
+
+    <!-- -->
+    <div class="fixed-pop"  style="width: 340rem; top: 100rem; left:200rem; ">
+        <div class="down-layer">
+            <div class="top">
+                <h3 class="colorWhite">37° 29' 51.1" N  /  127° 01' 44.75" E  </h3>
+                <button type="button" class="close-btn">
+                    <span class="blind">닫기</span>
+                </button>
+            </div>
+            <div class="cont">
+                <ul class="">
+                    <li>
+                        KOMPSAT-3A / LSR
+                    </li>
+                    <li>
+                        2020년 5월 1일 14시 20분 ~ 2020년 5월 10일 15시 40분
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 02_대기정보_산출물 팝업      -->
+    <div class="fixed-pop" style="width: 233rem; top:230rem; left:550rem;">
+        <div class="position-pop">
+            <div class="tit">
+                37° 29' 51.1" N  /  127° 01' 44.75" E  
+            </div>
+            <div class="cont">
+                <ul>
+                    <li>
+                        <p>수증기값</p>
+                        <p>0.</p>
+                    </li>
+                    <li>
+                        <p>구름</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>구름 영역 탐지값</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>레일레이 보정 <br>지표반사도</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>에어로즐 광학 두께</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>대기보정 지표반사도</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>BRDF 지표반사도</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>BAR NDVI</p>
+                        <p>구름</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 05_대기정보_검증 팝업 -->
+    <div class="fixed-pop" style="width: 542rem; height: 320rem; top: 650rem; left: 300rem;">
+        <div class="chart-pop">
+            <div class="tit">
+                <div class="flex">
+                    <h3>AOT</h3>
+                    <button class="btn small a" type="button" onclick="popCall()">
+                        <span>Table</span>
+                    </button>
+                </div>
+            </div>
+            <div class="cont">
+                <!-- 차트 그래프 영역 -->
+            </div>
+        </div>
+    </div>
+    <div class="fixed-pop pop2" style="width: 380rem; top: 700rem; left: 320rem;">
+        <div class="table-pop">
+            <div class="thead">
+                <div class="tr"> 
+                    <div class="th">시간</div>
+                    <div class="th">관측값 1</div>
+                    <div class="th">관측값 2</div>
+                </div>
+            </div>
+            <div class="tbody" style="height: 260rem;">
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+                <div class="tr">
+                    <div class="td">2022.02.01 11:00</div>
+                    <div class="td">16.9861</div>
+                    <div class="td">16.9861</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 07_부가산출물 – 위성검색결과 – 1 팝업 -->
+    <div class="fixed-pop" style="width: 330rem; top: 100rem; left: 870rem;">
+        <div class="down-layer">
+            <div class="top">
+                <h3>위도 : 33.3 / 경도 : 124.5</h3>
+                <button type="button" class="close-btn">
+                    <span class="blind">닫기</span>
+                </button>
+            </div>
+            <div class="cont">
+                <ul>
+                    <li>
+                        KOMPSAT-3A / LSR
+                    </li>
+                    <li>
+                        2020년 5월 1일 14시 20분 ~ 2020년 5월 10일 15시 40분
+                    </li>
+                </ul>
+                <button type="button" class="down-btn">
+                    <span>다운로드</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-pop posi-none" style="width: 238rem; top: 220rem; left: 700rem;">
+        <div class="thum-layer">
+            <div class="item">
+                <div class="pic">
+                    <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
+                </div>
+                <div class="txt">
+                    <ul>
+                        <li class="satellite">초소형군집위성</li>
+                        <li class="calendar">2023.03.03</li>
+                        <li class="time">01:7:35  UTC</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="fixed-pop posi-none" style="width: 480rem; top: 200rem; left:600rem;">
+        <div class="setting open">
+            <div class="innerWrao">
+                <ul>
+                    <li><a href="javascript: void(0)">Download</a></li>
+                    <li><a href="javascript: void(0)">Menu name</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-pop posi-none" style="top: 360rem; left: 700rem;">
+        <div class="info-layer">
+            <ul>
+                <li>
+                    거리와 면적 측정
+                    <div class="txt-box">
+                        마지막 점 <br><br>
+                        37° 29' 51.1" N  /  127° 01' 44.75" E  <br>
+                        37.497529 / 127.029097
+                    </div>
+                </li>
+                <li>
+                    거리 469 미터(0.47킬로미터)
+                </li>
+                <li>
+                    16.408 평방 미터 (4.963.40 평)
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        const popCall = () => {
+            document.querySelector('.fixed-pop.pop2').classList.toggle('none')
+        }
+        const showBtn = () => {
+            let _this = event.currentTarget;
+            let wrap = _this.closest('.satellite');
+            let check = wrap.classList.contains('active')
+            check ? wrap.classList.remove("active") : wrap.classList.add("active");
+        }
+        
+
+        const checkHandler = () => {
+            let _this = event.currentTarget;
+            let bg = (_this.checked) ? '#434f67' : 'transparent';
+            let _color = (_this.checked) ? '#fff' : '#8B8B97';
+
+            _this.closest('.checkbox').style.background = bg;
+            _this.nextElementSibling.style.color = _color;
+        }
+        const _ranges = document.querySelectorAll("[range]");
+        _ranges.forEach((r,i)=>{
+            const p = Math.floor(Math.random() * 100);
+            r.value = p;
+        })
+        document.querySelectorAll(".drag-item-wrap .inner p:first-child").forEach((i,n)=>{
+            const txt = i.innerText;
+            i.innerText = txt + n;
+        })
+        const items = document.querySelectorAll("li.satellite")
+        items.forEach((item,index)=>{
+            item.innerText = item.innerText + index;
+        })
+    </script>
+
+
+    <script src="../../js/common/ui/common.js"></script>
+</body>
+
+</html>

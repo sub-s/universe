@@ -363,9 +363,13 @@ div.satellite .bottom-ruler > .ruler > ul li.selected:before{top:-3rem; height:c
 
 
 .satellite .bottom-ruler .ruler .time-line-box{position: absolute; top: 12rem; left: 0; z-index: 2;}
+.satellite .bottom-ruler .ruler .time-line-box.hidden_box{display:none;}
+.satellite .bottom-ruler .ruler .time-line-box.hidden_tooltip .tooltip-range-time{display:none;}
 .satellite .bottom-ruler .ruler .ruler-time-line{position:relative; width: 19.49rem; height: 22.28rem; transform: translate(-50%,calc(-100% - 36rem)); background: url(../images/sate/icon_c.svg) no-repeat; background-size: cover;}
 .satellite .bottom-ruler .ruler .ruler-time-line:before{content:""; position:absolute; left:50%; bottom:0; width:1px; height:50rem; transform:translate(0,100%); background:#00FFDC;}
 
+
+div.satellite .bottom-item{z-index:5;}
 /* div.satellite .bottom-item{height:94rem}
 div.satellite .bottom-ruler{padding-top:52rem;} */
 
@@ -373,13 +377,21 @@ div.satellite .bottom-ruler{padding-top:52rem;} */
 
 
 /*  */
+.searchArea{display:none;}
+.searchMode > .searchArea{display:block;}
+.searchMode > .menuArea{display:none;}
 .layer-area .item .opacity{display:none;}
 .layer-area .item.open .opacity{display:block;}
+.layer-area.searchArea{height:100%;}
 .shadowBox{position:fixed; width:150px; height:150px; transform:translate(-50%,-50%); background:#000;}
 
 /* .layer-area .item */
 .drag-item-wrap.moving .item:hover{opacity:0.5}
 
+/* thum-layer */
+.thum-layer.moving .item:hover{opacity:0.5}
+/* .tab-con-wrap.depth2 .tab-con-area .layer-area{height:100%;} */
+.tab-con-wrap.depth2 .tab-con-area .thum-layer{height:calc(100% - 35rem); overflow:auto;}
 
 /* .satellite .bottom-ruler */
 .satellite .bottom-ruler.showSwitch{display:flex;}
@@ -391,6 +403,7 @@ div.satellite .bottom-ruler{padding-top:52rem;} */
 .tab-con-wrap.depth1{height:calc(100% - 109px);}
 .tab-con-wrap.depth2{height:calc(100% - 35px);}
 .tab-con-wrap.depth3{height: calc(100% - 35rem);}
+.tab-con-wrap.depth3.area{height: calc(100% - 65rem);}
 .tab-con-area{display:none; height:100%; overflow:auto;}
 .tab-con-area.active{display:block;}
 .tab-area{height:100%; overflow:auto;}
@@ -399,12 +412,37 @@ div.satellite .bottom-ruler{padding-top:52rem;} */
 /* 좌측드롭다운 메뉴 */
 .satellite .left-item .bottom-menu{z-index:5; display:none;}
 .satellite .left-item .bottom-menu.open{display:block;}
-.menu-wrap{position:relative; z-index:5; height:0rem; overflow:hidden; transition:height ease 0.5s;}
-.menu-wrap > .innerWrap{position:absolute; top:0; left:0; right:0;}
+.bottom-menu .menu-wrap{position:relative; z-index:5; height:0rem; overflow:hidden; transition:height ease 0.5s;}
+.bottom-menu .menu-wrap > .innerWrap{position:absolute; top:0; left:0; right:0;}
+.bottom-menu .bottom-btn{position:relative; z-index:5;}
 .bottom-menu .bottom-btn .btn:before{content:"추가"}
-.bottom-menu.open .bottom-btn .btn:before{content:"비교대상추가 +"}
-.satellite .left-item .bottom-menu:after{content:""; position:absolute; bottom:27rem; left:-10rem; right:-10rem; z-index:1; height:30rem; background:linear-gradient(0,rgba(36,43,56,1), rgba(36,43,56,0)); }
+.bottom-menu.menuOpen .bottom-btn .btn:before{content:"비교대상추가 +"}
+.satellite .left-item .bottom-menu:after{content:""; position:absolute; bottom:-5px; left:-10rem; right:-10rem; z-index:1; height:65rem; background:linear-gradient(0,rgba(36,43,56,1) 0%,rgba(36,43,56,1)50%, rgba(36,43,56,0)) 100%; }
+.popDeemded{position:absolute; bottom:0; left:-10rem; right:-10rem; display:none; opacity:0.89; background:#1D222C;}
+.menuOpen .popDeemded{display:block;}
 
+/*  */
+.lnb-tab-sub-tit{display:flex; align-items:center; height:28rem; font-size:12rem; color:#fff; padding:0 0 0 15rem;}
+
+/* tab icon */
+
+.tab-tit-wrap.onlyIcon > .btn-tab > button{color:#fff;}
+.tab-tit-wrap.onlyIcon > .btn-tab.active > button{color:#49CDC6;}
 
 /* reset */
 .colorWhite{color:#fff !important;}
+
+
+.satellite .left-item .bottom-calendar .date-area > div:first-child .tit:before{content:"Period selectiont"}
+.satellite .left-item .bottom-calendar .date-area > div:last-of-type .tit:before{content:""; display:inline-block; height:9rem;}
+.satellite .left-item .bottom-calendar .date-area.date > div:first-child .tit:before{content:"Start"}
+.satellite .left-item .bottom-calendar .date-area.date > div:last-of-type .tit:before{content:"End";}
+
+
+/*  */
+.satellite .left-item .date-area .btn-play.edit:before{width:13rem; height:13rem; background-image:url(../images/icon/icon_playEdit.svg);}
+.satellite .left-item .date-area .btn-play.hide{display:none;}
+
+
+/* */
+.satellite .bottom-switch.hidden{display:none;}

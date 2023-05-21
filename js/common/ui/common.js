@@ -469,33 +469,109 @@ function timelineMoveEv(){
     const _ruler = _this.closest(".ruler");
     _this.sx = event.pageX;
     _this.len = (_ruler.querySelectorAll("ul > li").length - 1) * 2;
-    console.log("------------------------------------------------------------")
-    console.log("_this : ",_this)
-    console.log("_ruler : ",_ruler)
-    console.log("_this.sx : ",_this.sx)
-    console.log("_this.len : ",_this.len)
 }
 
 function lftDropdownMenuBtnEv(){
     const _this = event.currentTarget;
     const _wrap = _this.closest(".bottom-menu");
     const _menu = _wrap.querySelector(".menu-wrap");
-    const checked = _wrap.classList.contains("open");
+    const _deemed = _wrap.querySelector(".popDeemded");
+    const checked = (_menu.clientHeight > 0)?true:false;
     const h = (checked)?0:_menu.querySelector(".innerWrap").clientHeight;
     if(checked){
-        _wrap.classList.remove("open");
+        _wrap.classList.remove("menuOpen");
     }else{
-        _wrap.classList.add("open");
+        _wrap.classList.add("menuOpen");
     }
+    const deemH = _deemed.getBoundingClientRect().bottom - 41;
     _menu.style.height = h + "rem";
+    _deemed.style.height = deemH + "rem";
 }
-function flyingMenuBtnOpen(c){
+function addClOpen(c){
     const _pop = document.querySelector(c);
-    const checked = _pop.classList.contains("open");
-    if(checked){
-        _pop.classList.remove("open");
+    _pop.classList.add("open");
+}
+function removeClOpen(c){
+    const _pop = document.querySelector(c);
+    _pop.classList.remove("open");
+}
+function clickDepth1ev(){
+    const _this = event.currentTarget;
+    const _tabWrap = _this.closest(".tab-area");
+    this.setTimeout(()=>{
+        const depth2 = _tabWrap.querySelector(".tab-con-wrap.depth1 .tab-con-area.active .tab-tit-wrap.depth2 .btn-tab.active");
+        depth2.click();
+    })
+    tabClick();
+}
+function clickDepth2ev(){
+    const _this = event.currentTarget;
+    const _tabWrap = _this.closest(".tab-area")
+    const depth1 = _tabWrap.querySelector(".tab-tit-wrap.depth1 .active").getIndex();
+    const depth2 = _this.getIndex();
+    const _bothItem = document.querySelector(".bottom-item");
+    const _bar_timeLine = _bothItem.querySelector(".time-line-box");
+    const _bar_current = _bothItem.querySelector(".current");
+    const _bar_next = _bothItem.querySelector(".next");
+    const _playBtn = document.querySelector(".satellite .left-item .date-area .btn-play");
+    const _dateRange = document.querySelector(".left-item .bottom-calendar > .date-area");
+    const _autoBtn = document.querySelector(".satellite .bottom-switch");
+    if((depth1 === 1 && depth2 === 0)){
+        const _target = document.querySelector(".tab-area .tab-con-wrap.depth1 .tab-con-area.active .tab-con-wrap.depth2 > .tab-con-area.active");
+        const checked = _target.classList.contains("searchMode");
+        if(checked){
+            _dateRange.classList.add("date");
+            _playBtn.classList.remove("edit");
+            _playBtn.classList.remove("hide");
+        }else{
+            _dateRange.classList.remove("date");
+            _playBtn.classList.add("edit");
+            _playBtn.classList.remove("hide");
+        }
+        _autoBtn.classList.add("hidden");
+        
+    }else if(depth1 === 0 ){
+        _dateRange.classList.remove("date");
+        _playBtn.classList.remove("edit");
+        _playBtn.classList.remove("hide");
+        _autoBtn.classList.remove("hidden");
     }else{
-        _pop.classList.open("open");
+        _dateRange.classList.add("date");
+        _playBtn.classList.remove("edit");
+        _playBtn.classList.add("hide");
+        _autoBtn.classList.add("hidden");
+    }
+    tabClick();
+    switch(depth2){
+        case 0 :
+            _bar_timeLine.classList.remove("hidden_box");
+            _bar_current.classList.add("hidden_bar");
+            _bar_next.classList.add("hidden_box");
+            removeClOpen('.bottom-menu.m1');
+            break;
+            case 1 :
+            _bar_timeLine.classList.add("hidden_box");
+            if(depth1 === 0){
+                _bar_current.classList.remove("hidden_bar");
+                _bar_next.classList.remove("hidden_box");
+                addClOpen('.bottom-menu.m1');
+            }else{
+                _bar_current.classList.add("hidden_bar");
+                _bar_next.classList.add("hidden_box");
+                removeClOpen('.bottom-menu.m1');
+            }
+            break;
+        default :
+            _bar_timeLine.classList.add("hidden_box");
+            if(depth1 === 0){
+                _bar_current.classList.remove("hidden_bar");
+                _bar_next.classList.remove("hidden_box");
+            }else{
+                _bar_current.classList.add("hidden_bar");
+                _bar_next.classList.add("hidden_box");
+            }
+            removeClOpen('.bottom-menu.m1');
+            break;
     }
 }
 
@@ -522,14 +598,16 @@ function itemBoxOpcityToggle(){
 /* item move */
 function itemMove(){
     const _this = event.currentTarget;
-    const _wrap = _this.closest(".drag-item-wrap");
-    const _item = _this.closest(".move-item");
+    const itemType = (_this.closest(".thum-layer"))?1:0;
+    const _wrap = (itemType === 1)?_this.closest(".thum-layer"):_this.closest(".drag-item-wrap");
+    const _item = (itemType === 1)?_this.closest(".item"):_this.closest(".move-item");
     const idx = _item.getIndex();
     const windMoveEv = ()=>{
         _wrap.setAttribute("move-index",idx);
         _wrap.classList.add("moving");
     }
     const windowUpEv = ()=>{
+        const itemType = (_this.closest(".thum-layer"))?1:0;
         window.removeEventListener("mousemove",windMoveEv);
         window.removeEventListener("mouseup",windowUpEv);
         _wrap.classList.remove("moving");
@@ -543,7 +621,7 @@ function itemMove(){
 }
 function itemMoveUpEv(){
     const _this = event.currentTarget;
-    const _wrap = _this.closest(".drag-item-wrap");
+    const _wrap = (_this.closest(".thum-layer"))?_this.closest(".thum-layer"):_this.closest(".drag-item-wrap");
     const _items = _wrap.children;
     const idx = _this.getIndex();
     const targetIdx = Number(_wrap.getAttribute("move-index"));
@@ -553,13 +631,91 @@ function itemMoveUpEv(){
     }else if(targetIdx < idx){
         const max = _items.length - 1;
         const reIndex = idx + 1;
-        if(reIndex < max){
+        if(idx < max){
             _wrap.insertBefore(_items[targetIdx],_items[reIndex]);
         }else{
             _wrap.appendChild(_items[targetIdx]);
         }
     }
 }
+
+
+function toggleClass(c){
+    let _this = event.currentTarget;
+    _this.classList.toggle(c);
+}
+
+function gnbTopSearchClick(){
+    const _this = event.currentTarget;
+    const _depth1_tit = document.querySelectorAll(".tab-tit-wrap.depth1 > .btn-tab");
+    const _depth1_con = document.querySelectorAll(".tab-con-wrap.depth1 > .tab-con-area");
+    const _depth2_tit = document.querySelectorAll(".tab-con-wrap.depth1 > .tab-con-area:nth-child(2) > .tab-tit-wrap.depth2 > .btn-tab");
+    const _depth2_con = document.querySelectorAll(".tab-con-wrap.depth1 > .tab-con-area:nth-child(2) > .tab-con-wrap.depth2 > .tab-con-area");
+    const _menu = document.querySelector(".tab-con-wrap.depth1 .tab-con-area:nth-child(2) .tab-con-wrap.depth2 .tab-con-area:first-child");
+    const _dateRange = document.querySelector(".left-item .bottom-calendar > .date-area");
+    const _playBtn = document.querySelector(".satellite .left-item .date-area .btn-play");
+    const _bar_timeLine = document.querySelector(".time-line-box");
+    _depth1_tit.forEach((t,i)=>{
+        if(i === 0){
+            _depth1_tit[i].classList.remove("active");
+            _depth1_con[i].classList.remove("active");
+        }else{
+            _depth1_tit[i].classList.add("active");
+            _depth1_con[i].classList.add("active");
+            _depth1_tit[i].click();
+        }
+    })
+    _depth2_tit.forEach((t,i)=>{
+        if(i === 0){
+            _depth2_tit[i].classList.add("active");
+            _depth2_con[i].classList.add("active");
+        }else{
+            _depth2_tit[i].classList.remove("active");
+            _depth2_con[i].classList.remove("active");
+        }
+    })
+    _menu.classList.add("searchMode");
+    setTimeout(()=>{
+        _dateRange.classList.add("date");
+        _playBtn.classList.remove("edit");
+        _playBtn.classList.add("hide");
+        _bar_timeLine.classList.add("hidden_box");
+    })
+}
+
+function searchAreaBack(){
+    const _this = event.currentTarget;
+    const _wrap = _this.closest(".searchMode");
+    _wrap.classList.remove("searchMode");
+    const _dateRange = document.querySelector(".left-item .bottom-calendar > .date-area");
+    const _playBtn = document.querySelector(".satellite .left-item .date-area .btn-play");
+    _playBtn.classList.add("edit");
+    _playBtn.classList.remove("hide");
+    setTimeout(()=>{
+        _dateRange.classList.remove("date");
+    })
+}
+
+// function popCall(){
+//     document.querySelector('.fixed-pop.pop2').classList.toggle('none')
+// }
+
+// function showBtn(){
+//     let _this = event.currentTarget;
+//     let wrap = _this.closest('.satellite');
+//     let check = wrap.classList.contains('active')
+//     check ? wrap.classList.remove("active") : wrap.classList.add("active");
+// }
+
+
+// function checkHandler(){
+//     let _this = event.currentTarget;
+//     let bg = (_this.checked) ? '#434f67' : 'transparent';
+//     let _color = (_this.checked) ? '#fff' : '#8B8B97';
+
+//     _this.closest('.checkbox').style.background = bg;
+//     _this.nextElementSibling.style.color = _color;
+// }
 
 
 

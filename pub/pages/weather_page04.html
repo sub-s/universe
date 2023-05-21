@@ -477,30 +477,6 @@
 
 
     <script>
-        const popCall = () => {
-            document.querySelector('.fixed-pop.pop2').classList.toggle('none')
-        }
-        
-        const showBtn = () => {
-            let _this = event.currentTarget;
-            let wrap = _this.closest('.satellite');
-            let check = wrap.classList.contains('active')
-            check ? wrap.classList.remove("active") : wrap.classList.add("active");
-        }
-        
-
-        const checkHandler = () => {
-            let _this = event.currentTarget;
-            let bg = (_this.checked) ? '#434f67' : 'transparent';
-            let _color = (_this.checked) ? '#fff' : '#8B8B97';
-
-            _this.closest('.checkbox').style.background = bg;
-            _this.nextElementSibling.style.color = _color;
-        }
-        const xx = () => {
-            let _this = event.currentTarget;
-            _this.classList.toggle('active');
-        }
 
     </script>
 
