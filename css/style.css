@@ -1227,7 +1227,8 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .satellite .bottom-ruler .ruler .btn-c {position: absolute; left:170rem; top: -60rem; width: 19.49rem; height: 22.28rem; z-index: 2; background: url(../images/sate/icon_c.svg) no-repeat; background-size: cover;}
 
 
-.satellite .bottom-switch {padding: 0 25rem 0; }
+.satellite .bottom-switch {padding: 0 25rem 0; background: #12141C; height: 100%; display: flex; align-items: center; }
+
 
 
 
