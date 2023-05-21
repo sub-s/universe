@@ -109,21 +109,13 @@
                         </div>
                         <div class="inner-cont tab-con-wrap depth2">
                             <div class="tab-con-area active">
-                                <!-- 텝 메뉴  -->
-                                <div class="date-menu tab-tit-wrap depth3">
-                                    <div class="btn-tab active" onclick="tabClick()">
-                                        <button type="button" class="icon-a">2023.DEC.25</button>
-                                    </div>
-                                    <div class="btn-tab" onclick="tabClick()">
-                                        <button type="button" class="icon-b">2023.DEC.25</button>
-                                    </div>
-                                </div>
                                 <!-- 레이어 -->
                                 <div class="layer-area tab-con-wrap depth3">
-                                    <div class="tab-con-area active">
-                                        <div class="item">
+                                    <div class="tab-con-area drag-item-wrap active">
+                                        <!-- item -->
+                                        <div class="item move-item" onmouseup="itemMoveUpEv()">
                                             <div class="view">
-                                                <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
+                                                <button type="button" onclick="itemBoxToggleFn()"><span class="blind">ON</span></button>
                                             </div>
                                             <div class="info">
                                                 <div class="inner">
@@ -132,22 +124,24 @@
                                                         <p>CLD / GK2A</p>
                                                     </div>
                                                     <div class="set">
-                                                        <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
-                                                        <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
-                                                        <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                                                        <button type="button" class="icon-info" onclick="itemBoxOpcityToggle()"><span class="blind">정보</span></button>
+                                                        <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                                        <button type="button" class="icon-del"><span class="blind">삭제</span></button>
                                                     </div>
                                                 </div>
                                                 <div class="opacity">
                                                     <p class="tit">Opacity</p>
                                                     <div class="range_area">
-                                                        <input type="text" min="0" max="100" range value="0" style="width:100%"/>
+                                                        <input type="text" range value="50" style="width:100%"/>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="item off">
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item move-item" onmouseup="itemMoveUpEv()">
                                             <div class="view">
-                                                <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
+                                                <button type="button" onclick="itemBoxToggleFn()"><span class="blind">ON</span></button>
                                             </div>
                                             <div class="info">
                                                 <div class="inner">
@@ -156,127 +150,24 @@
                                                         <p>CLD / GK2A</p>
                                                     </div>
                                                     <div class="set">
-                                                        <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
-                                                        <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
-                                                        <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="view">
-                                                <button class="off"><span onclick="treeLabelClick()" class="blind"></span></button>
-                                            </div>
-                                            <div class="info">
-                                                <div class="inner">
-                                                    <div class="text">
-                                                        <p>구름 영역 탐지</p>
-                                                        <p>CLD / GK2A</p>
-                                                    </div>
-                                                    <div class="set">
-                                                        <button class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
-                                                        <button class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
-                                                        <button class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 이미지 레이어 -->
-                                        <div class="thum-layer">
-                                            <div class="item">
-                                                <div class="pic">
-                                                    <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
-                                                </div>
-                                                <div class="txt">
-                                                    <ul>
-                                                        <li class="satellite">초소형군집위성</li>
-                                                        <li class="calendar">2023.03.03</li>
-                                                        <li class="time">01:7:35  UTC</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="set">
-                                                    <button type="button" class="icon-change"><span class="blind">변경</span></button>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="pic">
-                                                    <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
-                                                </div>
-                                                <div class="txt">
-                                                    <ul>
-                                                        <li class="satellite">초소형군집위성</li>
-                                                        <li class="calendar">2023.03.03</li>
-                                                        <li class="time">01:7:35  UTC</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="set">
-                                                    <button type="button" class="icon-change"><span class="blind">변경</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 이미지 레이어 -->
-                                        <!-- 체크 메뉴 -->
-                                        <div class="left-checked">
-                                            <div class="menu-wrap">
-                                                <div class="item">
-                                                    <div class="checkbox a">
-                                                        <input type="checkbox" id="menu1" name="menu1" onchange="checkHandler()">
-                                                        <label for="menu1">초소형군집위성</label>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="checkbox b">
-                                                        <input type="checkbox" id="menu2" name="menu2" onchange="checkHandler()">
-                                                        <label for="menu2">다목적시험위성</label>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="checkbox c">
-                                                        <input type="checkbox" id="menu3" name="menu3" onchange="checkHandler()">
-                                                        <label for="menu3">GK-2A</label>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="checkbox d">
-                                                        <input type="checkbox" id="menu4" name="menu4" onchange="checkHandler()">
-                                                        <label for="menu4">MODIS</label>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="checkbox e">
-                                                        <input type="checkbox" id="menu5" name="menu5" onchange="checkHandler()">
-                                                        <label for="menu5">Plane Scope</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="view">
-                                                <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
-                                            </div>
-                                            <div class="info">
-                                                <div class="inner">
-                                                    <div class="text">
-                                                        <p>구름 영역 탐지</p>
-                                                        <p>CLD / GK2A</p>
-                                                    </div>
-                                                    <div class="set">
-                                                        <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
-                                                        <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
-                                                        <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                                                        <button type="button" class="icon-info" onclick="itemBoxOpcityToggle()"><span class="blind">정보</span></button>
+                                                        <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                                        <button type="button" class="icon-del"><span class="blind">삭제</span></button>
                                                     </div>
                                                 </div>
                                                 <div class="opacity">
                                                     <p class="tit">Opacity</p>
                                                     <div class="range_area">
-                                                        <input type="text" min="0" max="100" range value="0" style="width:100%"/>
+                                                        <input type="text" range value="50" style="width:100%"/>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="item off">
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item move-item" onmouseup="itemMoveUpEv()">
                                             <div class="view">
-                                                <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
+                                                <button type="button" onclick="itemBoxToggleFn()"><span class="blind">ON</span></button>
                                             </div>
                                             <div class="info">
                                                 <div class="inner">
@@ -285,127 +176,24 @@
                                                         <p>CLD / GK2A</p>
                                                     </div>
                                                     <div class="set">
-                                                        <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
-                                                        <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
-                                                        <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="view">
-                                                <button class="off"><span onclick="treeLabelClick()" class="blind"></span></button>
-                                            </div>
-                                            <div class="info">
-                                                <div class="inner">
-                                                    <div class="text">
-                                                        <p>구름 영역 탐지</p>
-                                                        <p>CLD / GK2A</p>
-                                                    </div>
-                                                    <div class="set">
-                                                        <button class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
-                                                        <button class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
-                                                        <button class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 이미지 레이어 -->
-                                        <div class="thum-layer">
-                                            <div class="item">
-                                                <div class="pic">
-                                                    <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
-                                                </div>
-                                                <div class="txt">
-                                                    <ul>
-                                                        <li class="satellite">초소형군집위성</li>
-                                                        <li class="calendar">2023.03.03</li>
-                                                        <li class="time">01:7:35  UTC</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="set">
-                                                    <button type="button" class="icon-change"><span class="blind">변경</span></button>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="pic">
-                                                    <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
-                                                </div>
-                                                <div class="txt">
-                                                    <ul>
-                                                        <li class="satellite">초소형군집위성</li>
-                                                        <li class="calendar">2023.03.03</li>
-                                                        <li class="time">01:7:35  UTC</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="set">
-                                                    <button type="button" class="icon-change"><span class="blind">변경</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 이미지 레이어 -->
-                                        <!-- 체크 메뉴 -->
-                                        <div class="left-checked">
-                                            <div class="menu-wrap">
-                                                <div class="item">
-                                                    <div class="checkbox a">
-                                                        <input type="checkbox" id="menu1" name="menu1" onchange="checkHandler()">
-                                                        <label for="menu1">초소형군집위성</label>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="checkbox b">
-                                                        <input type="checkbox" id="menu2" name="menu2" onchange="checkHandler()">
-                                                        <label for="menu2">다목적시험위성</label>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="checkbox c">
-                                                        <input type="checkbox" id="menu3" name="menu3" onchange="checkHandler()">
-                                                        <label for="menu3">GK-2A</label>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="checkbox d">
-                                                        <input type="checkbox" id="menu4" name="menu4" onchange="checkHandler()">
-                                                        <label for="menu4">MODIS</label>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="checkbox e">
-                                                        <input type="checkbox" id="menu5" name="menu5" onchange="checkHandler()">
-                                                        <label for="menu5">Plane Scope</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="view">
-                                                <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
-                                            </div>
-                                            <div class="info">
-                                                <div class="inner">
-                                                    <div class="text">
-                                                        <p>구름 영역 탐지</p>
-                                                        <p>CLD / GK2A</p>
-                                                    </div>
-                                                    <div class="set">
-                                                        <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
-                                                        <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
-                                                        <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                                                        <button type="button" class="icon-info" onclick="itemBoxOpcityToggle()"><span class="blind">정보</span></button>
+                                                        <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                                        <button type="button" class="icon-del"><span class="blind">삭제</span></button>
                                                     </div>
                                                 </div>
                                                 <div class="opacity">
                                                     <p class="tit">Opacity</p>
                                                     <div class="range_area">
-                                                        <input type="text" min="0" max="100" range value="0" style="width:100%"/>
+                                                        <input type="text" range value="50" style="width:100%"/>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="item off">
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item move-item" onmouseup="itemMoveUpEv()">
                                             <div class="view">
-                                                <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
+                                                <button type="button" onclick="itemBoxToggleFn()"><span class="blind">ON</span></button>
                                             </div>
                                             <div class="info">
                                                 <div class="inner">
@@ -414,127 +202,24 @@
                                                         <p>CLD / GK2A</p>
                                                     </div>
                                                     <div class="set">
-                                                        <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
-                                                        <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
-                                                        <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="view">
-                                                <button class="off"><span onclick="treeLabelClick()" class="blind"></span></button>
-                                            </div>
-                                            <div class="info">
-                                                <div class="inner">
-                                                    <div class="text">
-                                                        <p>구름 영역 탐지</p>
-                                                        <p>CLD / GK2A</p>
-                                                    </div>
-                                                    <div class="set">
-                                                        <button class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
-                                                        <button class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
-                                                        <button class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 이미지 레이어 -->
-                                        <div class="thum-layer">
-                                            <div class="item">
-                                                <div class="pic">
-                                                    <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
-                                                </div>
-                                                <div class="txt">
-                                                    <ul>
-                                                        <li class="satellite">초소형군집위성</li>
-                                                        <li class="calendar">2023.03.03</li>
-                                                        <li class="time">01:7:35  UTC</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="set">
-                                                    <button type="button" class="icon-change"><span class="blind">변경</span></button>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="pic">
-                                                    <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
-                                                </div>
-                                                <div class="txt">
-                                                    <ul>
-                                                        <li class="satellite">초소형군집위성</li>
-                                                        <li class="calendar">2023.03.03</li>
-                                                        <li class="time">01:7:35  UTC</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="set">
-                                                    <button type="button" class="icon-change"><span class="blind">변경</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 이미지 레이어 -->
-                                        <!-- 체크 메뉴 -->
-                                        <div class="left-checked">
-                                            <div class="menu-wrap">
-                                                <div class="item">
-                                                    <div class="checkbox a">
-                                                        <input type="checkbox" id="menu1" name="menu1" onchange="checkHandler()">
-                                                        <label for="menu1">초소형군집위성</label>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="checkbox b">
-                                                        <input type="checkbox" id="menu2" name="menu2" onchange="checkHandler()">
-                                                        <label for="menu2">다목적시험위성</label>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="checkbox c">
-                                                        <input type="checkbox" id="menu3" name="menu3" onchange="checkHandler()">
-                                                        <label for="menu3">GK-2A</label>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="checkbox d">
-                                                        <input type="checkbox" id="menu4" name="menu4" onchange="checkHandler()">
-                                                        <label for="menu4">MODIS</label>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="checkbox e">
-                                                        <input type="checkbox" id="menu5" name="menu5" onchange="checkHandler()">
-                                                        <label for="menu5">Plane Scope</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="view">
-                                                <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
-                                            </div>
-                                            <div class="info">
-                                                <div class="inner">
-                                                    <div class="text">
-                                                        <p>구름 영역 탐지</p>
-                                                        <p>CLD / GK2A</p>
-                                                    </div>
-                                                    <div class="set">
-                                                        <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
-                                                        <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
-                                                        <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                                                        <button type="button" class="icon-info" onclick="itemBoxOpcityToggle()"><span class="blind">정보</span></button>
+                                                        <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                                        <button type="button" class="icon-del"><span class="blind">삭제</span></button>
                                                     </div>
                                                 </div>
                                                 <div class="opacity">
                                                     <p class="tit">Opacity</p>
                                                     <div class="range_area">
-                                                        <input type="text" min="0" max="100" range value="0" style="width:100%"/>
+                                                        <input type="text" range value="50" style="width:100%"/>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="item off">
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item move-item" onmouseup="itemMoveUpEv()">
                                             <div class="view">
-                                                <button type="button"><span onclick="treeLabelClick()" class="blind">ON</span></button>
+                                                <button type="button" onclick="itemBoxToggleFn()"><span class="blind">ON</span></button>
                                             </div>
                                             <div class="info">
                                                 <div class="inner">
@@ -543,16 +228,24 @@
                                                         <p>CLD / GK2A</p>
                                                     </div>
                                                     <div class="set">
-                                                        <button type="button" class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
-                                                        <button type="button" class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
-                                                        <button type="button" class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                                                        <button type="button" class="icon-info" onclick="itemBoxOpcityToggle()"><span class="blind">정보</span></button>
+                                                        <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                                        <button type="button" class="icon-del"><span class="blind">삭제</span></button>
+                                                    </div>
+                                                </div>
+                                                <div class="opacity">
+                                                    <p class="tit">Opacity</p>
+                                                    <div class="range_area">
+                                                        <input type="text" range value="50" style="width:100%"/>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="item">
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item move-item" onmouseup="itemMoveUpEv()">
                                             <div class="view">
-                                                <button class="off"><span onclick="treeLabelClick()" class="blind"></span></button>
+                                                <button type="button" onclick="itemBoxToggleFn()"><span class="blind">ON</span></button>
                                             </div>
                                             <div class="info">
                                                 <div class="inner">
@@ -561,83 +254,280 @@
                                                         <p>CLD / GK2A</p>
                                                     </div>
                                                     <div class="set">
-                                                        <button class="icon-info"><span onclick="treeLabelClick()" class="blind">정보</span></button>
-                                                        <button class="icon-change"><span onclick="treeLabelClick()" class="blind">변경</span></button>
-                                                        <button class="icon-del"><span onclick="treeLabelClick()" class="blind">삭제</span></button>
+                                                        <button type="button" class="icon-info" onclick="itemBoxOpcityToggle()"><span class="blind">정보</span></button>
+                                                        <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                                        <button type="button" class="icon-del"><span class="blind">삭제</span></button>
+                                                    </div>
+                                                </div>
+                                                <div class="opacity">
+                                                    <p class="tit">Opacity</p>
+                                                    <div class="range_area">
+                                                        <input type="text" range value="50" style="width:100%"/>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- 이미지 레이어 -->
-                                        <div class="thum-layer">
-                                            <div class="item">
-                                                <div class="pic">
-                                                    <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
-                                                </div>
-                                                <div class="txt">
-                                                    <ul>
-                                                        <li class="satellite">초소형군집위성</li>
-                                                        <li class="calendar">2023.03.03</li>
-                                                        <li class="time">01:7:35  UTC</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="set">
-                                                    <button type="button" class="icon-change"><span class="blind">변경</span></button>
-                                                </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item move-item" onmouseup="itemMoveUpEv()">
+                                            <div class="view">
+                                                <button type="button" onclick="itemBoxToggleFn()"><span class="blind">ON</span></button>
                                             </div>
-                                            <div class="item">
-                                                <div class="pic">
-                                                    <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
-                                                </div>
-                                                <div class="txt">
-                                                    <ul>
-                                                        <li class="satellite">초소형군집위성</li>
-                                                        <li class="calendar">2023.03.03</li>
-                                                        <li class="time">01:7:35  UTC</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="set">
-                                                    <button type="button" class="icon-change"><span class="blind">변경</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 이미지 레이어 -->
-                                        <!-- 체크 메뉴 -->
-                                        <div class="left-checked">
-                                            <div class="menu-wrap">
-                                                <div class="item">
-                                                    <div class="checkbox a">
-                                                        <input type="checkbox" id="menu1" name="menu1" onchange="checkHandler()">
-                                                        <label for="menu1">초소형군집위성</label>
+                                            <div class="info">
+                                                <div class="inner">
+                                                    <div class="text">
+                                                        <p>구름 영역 탐지</p>
+                                                        <p>CLD / GK2A</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button type="button" class="icon-info" onclick="itemBoxOpcityToggle()"><span class="blind">정보</span></button>
+                                                        <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                                        <button type="button" class="icon-del"><span class="blind">삭제</span></button>
                                                     </div>
                                                 </div>
-                                                <div class="item">
-                                                    <div class="checkbox b">
-                                                        <input type="checkbox" id="menu2" name="menu2" onchange="checkHandler()">
-                                                        <label for="menu2">다목적시험위성</label>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="checkbox c">
-                                                        <input type="checkbox" id="menu3" name="menu3" onchange="checkHandler()">
-                                                        <label for="menu3">GK-2A</label>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="checkbox d">
-                                                        <input type="checkbox" id="menu4" name="menu4" onchange="checkHandler()">
-                                                        <label for="menu4">MODIS</label>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="checkbox e">
-                                                        <input type="checkbox" id="menu5" name="menu5" onchange="checkHandler()">
-                                                        <label for="menu5">Plane Scope</label>
+                                                <div class="opacity">
+                                                    <p class="tit">Opacity</p>
+                                                    <div class="range_area">
+                                                        <input type="text" range value="50" style="width:100%"/>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- // 체크 메뉴 -->
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item move-item" onmouseup="itemMoveUpEv()">
+                                            <div class="view">
+                                                <button type="button" onclick="itemBoxToggleFn()"><span class="blind">ON</span></button>
+                                            </div>
+                                            <div class="info">
+                                                <div class="inner">
+                                                    <div class="text">
+                                                        <p>구름 영역 탐지</p>
+                                                        <p>CLD / GK2A</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button type="button" class="icon-info" onclick="itemBoxOpcityToggle()"><span class="blind">정보</span></button>
+                                                        <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                                        <button type="button" class="icon-del"><span class="blind">삭제</span></button>
+                                                    </div>
+                                                </div>
+                                                <div class="opacity">
+                                                    <p class="tit">Opacity</p>
+                                                    <div class="range_area">
+                                                        <input type="text" range value="50" style="width:100%"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item move-item" onmouseup="itemMoveUpEv()">
+                                            <div class="view">
+                                                <button type="button" onclick="itemBoxToggleFn()"><span class="blind">ON</span></button>
+                                            </div>
+                                            <div class="info">
+                                                <div class="inner">
+                                                    <div class="text">
+                                                        <p>구름 영역 탐지</p>
+                                                        <p>CLD / GK2A</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button type="button" class="icon-info" onclick="itemBoxOpcityToggle()"><span class="blind">정보</span></button>
+                                                        <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                                        <button type="button" class="icon-del"><span class="blind">삭제</span></button>
+                                                    </div>
+                                                </div>
+                                                <div class="opacity">
+                                                    <p class="tit">Opacity</p>
+                                                    <div class="range_area">
+                                                        <input type="text" range value="50" style="width:100%"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item move-item" onmouseup="itemMoveUpEv()">
+                                            <div class="view">
+                                                <button type="button" onclick="itemBoxToggleFn()"><span class="blind">ON</span></button>
+                                            </div>
+                                            <div class="info">
+                                                <div class="inner">
+                                                    <div class="text">
+                                                        <p>구름 영역 탐지</p>
+                                                        <p>CLD / GK2A</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button type="button" class="icon-info" onclick="itemBoxOpcityToggle()"><span class="blind">정보</span></button>
+                                                        <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                                        <button type="button" class="icon-del"><span class="blind">삭제</span></button>
+                                                    </div>
+                                                </div>
+                                                <div class="opacity">
+                                                    <p class="tit">Opacity</p>
+                                                    <div class="range_area">
+                                                        <input type="text" range value="50" style="width:100%"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item move-item" onmouseup="itemMoveUpEv()">
+                                            <div class="view">
+                                                <button type="button" onclick="itemBoxToggleFn()"><span class="blind">ON</span></button>
+                                            </div>
+                                            <div class="info">
+                                                <div class="inner">
+                                                    <div class="text">
+                                                        <p>구름 영역 탐지</p>
+                                                        <p>CLD / GK2A</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button type="button" class="icon-info" onclick="itemBoxOpcityToggle()"><span class="blind">정보</span></button>
+                                                        <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                                        <button type="button" class="icon-del"><span class="blind">삭제</span></button>
+                                                    </div>
+                                                </div>
+                                                <div class="opacity">
+                                                    <p class="tit">Opacity</p>
+                                                    <div class="range_area">
+                                                        <input type="text" range value="50" style="width:100%"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item move-item" onmouseup="itemMoveUpEv()">
+                                            <div class="view">
+                                                <button type="button" onclick="itemBoxToggleFn()"><span class="blind">ON</span></button>
+                                            </div>
+                                            <div class="info">
+                                                <div class="inner">
+                                                    <div class="text">
+                                                        <p>구름 영역 탐지</p>
+                                                        <p>CLD / GK2A</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button type="button" class="icon-info" onclick="itemBoxOpcityToggle()"><span class="blind">정보</span></button>
+                                                        <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                                        <button type="button" class="icon-del"><span class="blind">삭제</span></button>
+                                                    </div>
+                                                </div>
+                                                <div class="opacity">
+                                                    <p class="tit">Opacity</p>
+                                                    <div class="range_area">
+                                                        <input type="text" range value="50" style="width:100%"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item move-item" onmouseup="itemMoveUpEv()">
+                                            <div class="view">
+                                                <button type="button" onclick="itemBoxToggleFn()"><span class="blind">ON</span></button>
+                                            </div>
+                                            <div class="info">
+                                                <div class="inner">
+                                                    <div class="text">
+                                                        <p>구름 영역 탐지</p>
+                                                        <p>CLD / GK2A</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button type="button" class="icon-info" onclick="itemBoxOpcityToggle()"><span class="blind">정보</span></button>
+                                                        <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                                        <button type="button" class="icon-del"><span class="blind">삭제</span></button>
+                                                    </div>
+                                                </div>
+                                                <div class="opacity">
+                                                    <p class="tit">Opacity</p>
+                                                    <div class="range_area">
+                                                        <input type="text" range value="50" style="width:100%"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item move-item" onmouseup="itemMoveUpEv()">
+                                            <div class="view">
+                                                <button type="button" onclick="itemBoxToggleFn()"><span class="blind">ON</span></button>
+                                            </div>
+                                            <div class="info">
+                                                <div class="inner">
+                                                    <div class="text">
+                                                        <p>구름 영역 탐지</p>
+                                                        <p>CLD / GK2A</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button type="button" class="icon-info" onclick="itemBoxOpcityToggle()"><span class="blind">정보</span></button>
+                                                        <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                                        <button type="button" class="icon-del"><span class="blind">삭제</span></button>
+                                                    </div>
+                                                </div>
+                                                <div class="opacity">
+                                                    <p class="tit">Opacity</p>
+                                                    <div class="range_area">
+                                                        <input type="text" range value="50" style="width:100%"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item move-item" onmouseup="itemMoveUpEv()">
+                                            <div class="view">
+                                                <button type="button" onclick="itemBoxToggleFn()"><span class="blind">ON</span></button>
+                                            </div>
+                                            <div class="info">
+                                                <div class="inner">
+                                                    <div class="text">
+                                                        <p>구름 영역 탐지</p>
+                                                        <p>CLD / GK2A</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button type="button" class="icon-info" onclick="itemBoxOpcityToggle()"><span class="blind">정보</span></button>
+                                                        <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                                        <button type="button" class="icon-del"><span class="blind">삭제</span></button>
+                                                    </div>
+                                                </div>
+                                                <div class="opacity">
+                                                    <p class="tit">Opacity</p>
+                                                    <div class="range_area">
+                                                        <input type="text" range value="50" style="width:100%"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
+                                        <!-- item -->
+                                        <div class="item move-item" onmouseup="itemMoveUpEv()">
+                                            <div class="view">
+                                                <button type="button" onclick="itemBoxToggleFn()"><span class="blind">ON</span></button>
+                                            </div>
+                                            <div class="info">
+                                                <div class="inner">
+                                                    <div class="text">
+                                                        <p>구름 영역 탐지</p>
+                                                        <p>CLD / GK2A</p>
+                                                    </div>
+                                                    <div class="set">
+                                                        <button type="button" class="icon-info" onclick="itemBoxOpcityToggle()"><span class="blind">정보</span></button>
+                                                        <button type="button" class="icon-change" onmousedown="itemMove()"><span class="blind">변경</span></button>
+                                                        <button type="button" class="icon-del"><span class="blind">삭제</span></button>
+                                                    </div>
+                                                </div>
+                                                <div class="opacity">
+                                                    <p class="tit">Opacity</p>
+                                                    <div class="range_area">
+                                                        <input type="text" range value="50" style="width:100%"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- // item -->
                                     </div>
                                     <div class="tab-con-area">Depth1-1-2</div>
                                 </div>
@@ -760,8 +650,6 @@
                 <div class="data"><span>2023. 04. 17. 15:30</span></div>
                 <div class="copy"><span>Leaflet | Map data © 항공우주연구원</span></div>
             </div>
-            
-          
             <div class="bottom-ruler showSwitch">
                 <div class="ruler">
                     <ul>
@@ -878,11 +766,54 @@
                     <p>Auto update</p>
                 </div>
             </div>
-
-
         </div>
 
 
+    </div>
+
+    <!-- 좌표 팝업 -->
+    <div class="fixed-pop" style="width: 233rem;">
+        <div class="position-pop">
+            <div class="tit">
+                37° 29' 51.1" N  /  127° 01' 44.75" E  
+            </div>
+            <div class="cont">
+                <ul>
+                    <li>
+                        <p>수증기값</p>
+                        <p>0.</p>
+                    </li>
+                    <li>
+                        <p>구름</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>구름 영역 탐지값</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>레일레이 보정 <br>지표반사도</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>에어로즐 광학 두께</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>대기보정 지표반사도</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>BRDF 지표반사도</p>
+                        <p>구름</p>
+                    </li>
+                    <li>
+                        <p>BAR NDVI</p>
+                        <p>구름</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <script>

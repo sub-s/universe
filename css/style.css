@@ -1286,3 +1286,16 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .fixed-pop .down-layer .cont .down-btn {border: 1px solid #00d1c7; margin-top: 15rem; border-radius: 3rem; font-size:11rem; display: flex; justify-content: center; align-items: center; height: 27rem; color:#49CDC6;}
 .fixed-pop .down-layer .cont .down-btn span {display: flex; justify-content: center; align-items: center;}
 .fixed-pop .down-layer .cont .down-btn span::after {display: block; content:''; width: 14rem; height: 10.5rem;; background: url(../images/common/icon_down.svg) no-repeat; background-size: cover; margin-left: 10rem;}
+
+
+
+
+.fixed-pop .position-pop {background: #252b37; width: 100%; height: 100%; padding: 22rem; position: relative;}
+.fixed-pop .position-pop::after {display: block; content: ''; width: 26rem; height: 26rem; background: #252b37; position: absolute; bottom:-10px; left: calc(50% - 13rem); transform: rotate(45deg); }
+.fixed-pop .position-pop .tit {font-size: 11rem; padding-bottom: 20rem; border-bottom: 1px solid #3b414b; margin-bottom : 20px;}
+
+
+.fixed-pop .position-pop .cont > ul > li {position: relative; font-size: 12rem; padding-left: 10rem; margin-top: 10rem; display: flex; justify-content: space-between; align-items: center; margin-top: 20px;}
+.fixed-pop .position-pop .cont > ul > li p + p {color: #49CDC6}
+.fixed-pop .position-pop .cont > ul > li:first-of-type {margin-top: 0rem;}
+.fixed-pop .position-pop .cont > ul > li::before {display: block; content: ''; width: 3rem; height: 3rem; background: #fff; position: absolute; top: 5rem; left:0;z}
