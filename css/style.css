@@ -727,7 +727,7 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 /* 레이어  */
 .layer-area {background: #242b38;}
-.layer-area .item {border-top: 1px solid #1d222c; display: flex; align-items: center; height: 100%;}
+.layer-area .item {border-bottom: 1px solid #1d222c; display: flex; align-items: center; height: 100%;}
 .layer-area .item:first-of-type {border-top: 0;}
 .layer-area .item .view {width: 38rem; height: 100%; display: flex; justify-content: center; align-items: center; }
 .layer-area .item .view button {display: block; width: 10.48rem; height: 6.63rem; background: url(../images/icon/eye.svg) no-repeat; }
@@ -750,6 +750,9 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .layer-area .item.off .info .set .icon-info {opacity: 0.7;}
 .layer-area .item.off .info .set .icon-change {opacity: 0.7;}
 .layer-area .item.off .info .set .icon-del {opacity: 0.7;}
+
+
+.layer-area .item .text-box {width: 100%; padding: 15rem 20rem 15rem; font-size: 12rem}
 
 
 
@@ -1048,7 +1051,7 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .satellite .header-item .btn-menu {display: flex; justify-content: flex-start; align-items: center; margin-left: 50rem;}
 .satellite .header-item .btn-menu > div {position: relative;}
 
-.satellite .header-item .btn-menu > div .search-pop {display: none; position: absolute; top:41rem; left: 0; transform:translate(-50%, 0); background: #252b37; z-index: 2; padding: 20rem; width: 220rem;  border: 1px solid #1d222c; }
+.satellite .header-item .btn-menu > div .search-pop {display: none; position: absolute; top:41rem; left: 0; transform:translate(-50%, 0); background: #252b37; z-index: 2; padding: 20rem; width: 220rem;  border: 1px solid #1d222c; z-index: 3;}
 .satellite .header-item .btn-menu > div .search-pop .input-item {display: flex; justify-content: space-between; align-items: center; margin-top: 10rem;}
 .satellite .header-item .btn-menu > div .search-pop .input-item label {color: #707070; font-size: 12rem;display: flex; justify-content: flex-start; align-items: center;}
 .satellite .header-item .btn-menu > div .search-pop .input-item input {width: 50rem; background: transparent; border-bottom: 1px solid #999; border-radius: 0; font-size: 12rem; padding: 0 5rem 0; color: #fff; height: 20rem;}
@@ -1140,6 +1143,16 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 .satellite .left-item .bottom-menu {position: absolute; bottom: 80rem; left: 10rem; right: 10rem;}
 .satellite .left-item .bottom-menu .bottom-btn .btn {height: 27rem; font-size: 11rem; border-radius: 3rem;}
+
+
+
+.total-box  {display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1d222c; padding: 3rem;}
+.total-box .back-btn {border:1px solid #000}
+.total-box .back-btn button {width: 61rem; height: 24rem; font-size: 11rem; color:#fff; background: #333b4a url(../images/icon/icon_back.svg) no-repeat 7rem 5rem; padding-left: 10rem}
+.total-box .back-btn button:hover {background-color: #576071; transition: all 0.5s; }
+.total-box .total {font-size: 11rem; color:#8b8b97;}
+.total-box .total span {font-size: 11rem; color:#fff;}
+
 
 
 /* 이미지 레이어 */
@@ -1235,7 +1248,7 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 /* 팝업 */
-.fixed-pop {position: fixed;   top: 50%; left: 50%; transform:translate(-50%, -50%)}
+.fixed-pop {position: fixed; top: 50%; left: 50%; transform:translate(-50%, -50%); z-index: 2;}
 .fixed-pop.posi-none {top: auto; left: auto; transform:none}
 .fixed-pop.none {display: none;}
 
