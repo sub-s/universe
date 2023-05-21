@@ -457,30 +457,7 @@
                                     <div class="situation"></div>
                                     <div class="situation"></div>
                                     <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
-                                    <div class="situation"></div>
+
                                 </div>
                             </div>
                         </div>
@@ -801,6 +778,9 @@
                                     <div class="situation"></div>
                                     <div class="situation"></div>
                                     <div class="situation"></div>
+
+
+                                    
                                 </div>
                             </div>
                         </div>
@@ -913,6 +893,44 @@
     </div>
 
     <script src="../../js/common/ui/common.js"></script>
+    <script>
+        
+        
+        // const heightFn = () => {
+        //     const contHeight = document.querySelectorAll('.main-tap .content .inner .cont');
+        //     const wrapH = document.querySelector('.main');
+        //     const topH = document.querySelector('.top-wrap');
+        //     const menuH = document.querySelector('.main-tap .menu');
+        //     const contH = document.querySelector('.main-tap .content .inner .cont .top');
+
+        //     let minusHeight = topH.clientHeight + menuH.clientHeight + contH.clientHeight + 15;
+        //     let _height = wrapH.clientHeight;
+            
+        //     contHeight.forEach((item, index)=> {
+        //         item.style.height = _height - minusHeight + 'px'  ;
+        //     });
+        // }
+        // heightFn();
+
+
+        const heightFn = () => {
+            const _contents = document.querySelectorAll('.main-tap .content .inner .cont');
+            const top = document.querySelector('.main-tap > .content').offsetTop;
+            const h = window.innerHeight;
+            const p = Number(window.getComputedStyle(document.querySelector(".main"))['padding-bottom'].replace(/\D/g,''));
+            const calc = h - top - p;
+
+            _contents.forEach((item, index)=> {
+                item.style.height = calc + "rem";
+                console.log(item.offsetTop , "item.offsetTop")
+            });
+
+        }
+        heightFn();
+
+
+
+    </script>
 </body>
 
 </html>
