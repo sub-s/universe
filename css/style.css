@@ -1147,8 +1147,8 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 
 
 .total-box  {display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1d222c; padding: 3rem;}
-.total-box .back-btn {border:1px solid #000}
-.total-box .back-btn button {width: 61rem; height: 24rem; font-size: 11rem; color:#fff; background: #333b4a url(../images/icon/icon_back.svg) no-repeat 7rem 5rem; padding-left: 10rem}
+.total-box .back-btn {}
+.total-box .back-btn button {border:1px solid #000; border-radius: 3rem;width: 61rem; height: 24rem; font-size: 11rem; color:#fff; background: #333b4a url(../images/icon/icon_back.svg) no-repeat 7rem 5rem; padding-left: 10rem}
 .total-box .back-btn button:hover {background-color: #576071; transition: all 0.5s; }
 .total-box .total {font-size: 11rem; color:#8b8b97;}
 .total-box .total span {font-size: 11rem; color:#fff;}
