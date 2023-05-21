@@ -1298,4 +1298,4 @@ select { height: 33rem; border-radius: 4rem; font-size: 12rem; color: #9BA5B9; b
 .fixed-pop .position-pop .cont > ul > li {position: relative; font-size: 12rem; padding-left: 10rem; margin-top: 10rem; display: flex; justify-content: space-between; align-items: center; margin-top: 20px;}
 .fixed-pop .position-pop .cont > ul > li p + p {color: #49CDC6}
 .fixed-pop .position-pop .cont > ul > li:first-of-type {margin-top: 0rem;}
-.fixed-pop .position-pop .cont > ul > li::before {display: block; content: ''; width: 3rem; height: 3rem; background: #fff; position: absolute; top: 5rem; left:0;z}
+.fixed-pop .position-pop .cont > ul > li::before {display: block; content: ''; width: 3rem; height: 3rem; background: #fff; position: absolute; top: 5rem; left:0;}
