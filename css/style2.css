@@ -367,6 +367,11 @@ div.satellite .bottom-ruler > .ruler > ul li.selected:before{top:-3rem; height:c
 .satellite .bottom-ruler .ruler .range-time-box .next .btn-c.l{right:auto; left:0; transform:translate(-50%,calc(-100% - 36rem))}
 .satellite .bottom-ruler .ruler .range-time-box .next .btn-c.r,.satellite .bottom-ruler .ruler .range-time-box .next .btn-b.r{right:0; left:auto; transform:translate(50%,calc(-100% - 36rem))}
 
+
+.satellite .bottom-ruler .ruler .range-time-box .time-line-box{position: absolute; top: 0; left: 0; z-index: 2;}
+.satellite .bottom-ruler .ruler .range-time-box .ruler-time-line{position:relative; width: 19.49rem; height: 22.28rem; transform: translate(-50%,calc(-100% - 36rem)); background: url(../images/sate/icon_c.svg) no-repeat; background-size: cover;}
+.satellite .bottom-ruler .ruler .range-time-box .ruler-time-line:before{content:""; position:absolute; left:50%; bottom:0; width:1px; height:50rem; transform:translate(0,100%); background:#00FFDC;}
+
 /* div.satellite .bottom-item{height:94rem}
 div.satellite .bottom-ruler{padding-top:52rem;} */
 
