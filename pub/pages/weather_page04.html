@@ -160,7 +160,7 @@
                                 <!-- 레이어 -->
                                 <div class="layer-area tab-con-wrap depth3">
                                     <div class="tab-con-area drag-item-wrap active">
-                                        
+
                                         <div class="layer-top">
                                             <div class="back-btn">
                                                 <button type="button" class="btn">
@@ -171,20 +171,29 @@
                                         </div>
 
                                         <!-- item -->
-                                        <div class="thum-layer">
+                                        <div class="thum-layer b-type">
                                             <div class="item">
                                                 <div class="pic">
                                                     <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
                                                 </div>
                                                 <div class="txt">
                                                     <ul>
-                                                        <li class="satellite">초소형군집위성</li>
-                                                        <li class="calendar">2023.03.03</li>
-                                                        <li class="time">01:7:35  UTC</li>
+                                                        <li>Sentinel-3 OLCI : 4_RGB_17_5</li>
+                                                        <li>-27.69, 147.59 <span class="space"></span>Zoom : 6</li>
+                                                        <li>2023,12,24</li>
                                                     </ul>
+                                                    <div class="opacity">
+                                                        <p class="tit">Posion</p>
+                                                        <div class="range_area">
+                                                            <input type="text" min="0" max="100" range value="50" style="width:100%"/>
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                                
                                                 <div class="set">
-                                                    <button type="button" class="icon-change"><span class="blind">변경</span></button>
+                                                    <button type="button" class="icon-del">
+                                                        <span class="blind">삭제</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                             <div class="item">
@@ -193,15 +202,26 @@
                                                 </div>
                                                 <div class="txt">
                                                     <ul>
-                                                        <li class="satellite">초소형군집위성</li>
-                                                        <li class="calendar">2023.03.03</li>
-                                                        <li class="time">01:7:35  UTC</li>
+                                                        <li>Sentinel-3 OLCI : 4_RGB_17_5</li>
+                                                        <li>-27.69, 147.59 <span class="space"></span>Zoom : 6</li>
+                                                        <li>2023,12,24</li>
                                                     </ul>
+                                                    <div class="opacity">
+                                                        <p class="tit">Posion</p>
+                                                        <div class="range_area">
+                                                            <input type="text" min="0" max="100" range value="80" style="width:100%"/>
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                                
                                                 <div class="set">
-                                                    <button type="button" class="icon-change"><span class="blind">변경</span></button>
+                                                    <button type="button" class="icon-del">
+                                                        <span class="blind">삭제</span>
+                                                    </button>
                                                 </div>
                                             </div>
+                                            
+                                            
                                         </div>
                                         <!-- // item -->
                                        
@@ -446,82 +466,8 @@
         </div>
     </div>
 
-    <div class="fixed-pop posi-none" style="top: 60rem; right: 60rem;">
-        <div class="info-layer">
-            <ul>
-                <li>
-                    거리와 면적 측정
-                    <div class="txt-box">
-                        마지막 점 <br><br>
-                        37° 29' 51.1" N  /  127° 01' 44.75" E  <br>
-                        37.497529 / 127.029097
-                    </div>
-                </li>
-                <li>
-                    거리 469 미터(0.47킬로미터)
-                </li>
-                <li>
-                    16.408 평방 미터 (4.963.40 평)
-                </li>
-            </ul>
-        </div>
-    </div>
+    
 
-
-
-    <div class="fixed-pop posi-none" style="width: 238rem; top: 120rem; left: 500rem;">
-        <div class="thum-layer">
-            <div class="item">
-                <div class="pic">
-                    <img src="../../images/temp/temp01.svg" alt="한국항공우주연구원">
-                </div>
-                <div class="txt">
-                    <ul>
-                        <li class="satellite">초소형군집위성</li>
-                        <li class="calendar">2023.03.03</li>
-                        <li class="time">01:7:35  UTC</li>
-                    </ul>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-
-    <div class="fixed-pop" style="width: 320rem; top: 350rem; ">
-        <div class="down-layer">
-            <div class="top">
-                <h3>위도 : 33.3 / 경도 : 124.5</h3>
-                <button type="button" class="close-btn">
-                    <span class="blind">닫기</span>
-                </button>
-            </div>
-            <div class="cont">
-                <ul>
-                    <li>
-                        KOMPSAT-3A / LSR
-                    </li>
-                    <li>
-                        2020년 5월 1일 14시 20분 ~ 2020년 5월 10일 15시 40분
-                    </li>
-                </ul>
-                <button type="button" class="down-btn">
-                    <span>다운로드</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="fixed-pop posi-none" style="width: 480rem; top: 200rem; ">
-        <div class="setting open">
-            <div class="innerWrao">
-                <ul>
-                    <li><a href="javascript: void(0)">Download</a></li>
-                    <li><a href="javascript: void(0)">Menu name</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
     <script>
         const popCall = () => {
