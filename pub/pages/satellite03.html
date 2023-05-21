@@ -618,15 +618,15 @@
                 
                 <div class="date-area">
                     <div>
-                        <p class="tit">Period selection</p>
                         <div class="calendar">
+                            <p class="tit">Period selection</p>
                             2022.08.12
                         </div>
                     </div>
                     <p class="space">~</p>
                     <div>
-                        <p class="tit">Period selection</p>
                         <div class="calendar">
+                            <!-- <p class="tit">Period selection</p> -->
                             2022.08.12
                         </div>
                     </div>
@@ -737,7 +737,7 @@
                         </li>
                     </ul>
                     <div class="range-time-box" date="2022.08.10" value="3,10,6">
-                        <div class="current">
+                        <div class="current hidden_bar">
                             <div class="tooltip-range-time">2022.08.10 12:20</div>
                             <div class="btn-a" onmousedown="timerRangeMouseEv()">
                                 <button type="button"><span class="blind">A</span></button>
@@ -752,7 +752,7 @@
                     </div>
                     <div class="time-line-box">
                         <div class="ruler-time-line" onmousedown="timelineMoveEv()">
-                            <div class="tooltip-range-time">2022.08.10 12:20</div>
+                            <div class="tooltip-range-time">2022.08.10 08:00</div>
                             <button type="button"><span class="blind">C</span></button>
                         </div>
                     </div>
@@ -778,6 +778,26 @@
 
     </div>
 
+    <div class="fixed-pop"  style="width: 340rem; top: 350rem; ">
+        <div class="down-layer">
+            <div class="top">
+                <h3 class="colorWhite">37° 29' 51.1" N  /  127° 01' 44.75" E  </h3>
+                <button type="button" class="close-btn">
+                    <span class="blind">닫기</span>
+                </button>
+            </div>
+            <div class="cont">
+                <ul>
+                    <li>
+                        KOMPSAT-3A / LSR
+                    </li>
+                    <li>
+                        2020년 5월 1일 14시 20분 ~ 2020년 5월 10일 15시 40분
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <script>
         const showBtn = () => {
             let _this = event.currentTarget;

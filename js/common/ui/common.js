@@ -476,6 +476,29 @@ function timelineMoveEv(){
     console.log("_this.len : ",_this.len)
 }
 
+function lftDropdownMenuBtnEv(){
+    const _this = event.currentTarget;
+    const _wrap = _this.closest(".bottom-menu");
+    const _menu = _wrap.querySelector(".menu-wrap");
+    const checked = _wrap.classList.contains("open");
+    const h = (checked)?0:_menu.querySelector(".innerWrap").clientHeight;
+    if(checked){
+        _wrap.classList.remove("open");
+    }else{
+        _wrap.classList.add("open");
+    }
+    _menu.style.height = h + "rem";
+}
+function flyingMenuBtnOpen(c){
+    const _pop = document.querySelector(c);
+    const checked = _pop.classList.contains("open");
+    if(checked){
+        _pop.classList.remove("open");
+    }else{
+        _pop.classList.open("open");
+    }
+}
+
 /* 가시화 */
 function itemBoxToggleFn(){
     const _this = event.currentTarget;

@@ -304,7 +304,7 @@ input[type="text"]:-webkit-autofill:active{
 .range-box > .thumb:after{content:""; position:absolute; top:calc(50% - 13rem); left:calc(50% - 13rem); width:26rem; height:26rem; border-radius:100%; box-shadow:inset 0 0 4px 1px #49CDC6;}
 .range-box > input[type = text]{position:absolute; top:0; right:20rem; transform:translate(100%,0); width:20rem; height:26rem; padding:0; font-size:10rem; color:#49CDC6; font-weight:bold; background:transparent; opacity:0;}
 .tooltip-range-time{position:absolute; top:-100%; left:0; padding:5rem 10rem; font-size:10rem; color:#000; border:1rem solid #D8D8D8; border-radius:15rem; white-space:nowrap; transform:translate(-50%,calc(-100% - 50rem)); background:#fff;}
-.ruler-time-line .tooltip-range-time{top:0;}
+.ruler-time-line .tooltip-range-time{top:0; left:50%; transform:translate(-50%, -35rem);}
 .tooltip-range-time:after{content:""; position:absolute; bottom:-3rem; left:50%; width:9rem; height:6rem; border:1rem solid #D8D8D8; border-width:0 0 1rem 1rem; transform:translate(-50%,0) rotate(-45deg); background:#fff;}
 
 div.satellite .bottom-ruler > .ruler > ul li .time.selected{color:#00d1c7;}
@@ -334,13 +334,6 @@ input[type = text][name = date] {padding-left:30rem; color:#fff; background-imag
 .input-checkbox-layout > .menu-wrap > .item{width:calc(100% / 3);}
 .input-checkbox-layout > .menu-wrap > .item .checkbox input[type="checkbox"] + label{white-space:pre-wrap; word-break:break-all;}
 .input-checkbox-layout > .menu-wrap > .item:nth-child(1n + 4){margin-top:11rem;}
-
-
-/* tab add */
-.tab-con-area{display:none;}
-.tab-con-area.active{display:block;}
-.tab-con-wrap.depth3{height: calc(100vh - 185rem); overflow:auto;}
-
 
 /* satellite */ 
 div.satellite .bottom-ruler{padding:35rem 23rem 13rem 23rem;}/* style1 padding값 수정 */
@@ -392,3 +385,26 @@ div.satellite .bottom-ruler{padding-top:52rem;} */
 .satellite .bottom-ruler.showSwitch{display:flex;}
 .satellite .bottom-ruler.showSwitch .ruler{width:calc(100% - 100rem);}
 .satellite .bottom-ruler.showSwitch .bottom-switch{position:absolute; top:0; right:0; bottom:0; display:flex; align-items:center; justify-content:center; width:100rem; background:#12141C;}
+
+/* left tab */
+.tab-con-wrap{height:100%;}
+.tab-con-wrap.depth1{height:calc(100% - 109px);}
+.tab-con-wrap.depth2{height:calc(100% - 35px);}
+.tab-con-wrap.depth3{height: calc(100% - 35rem);}
+.tab-con-area{display:none; height:100%; overflow:auto;}
+.tab-con-area.active{display:block;}
+.tab-area{height:100%; overflow:auto;}
+.drag-item-wrap.addFlyingBtn{padding-bottom:40rem;}
+
+/* 좌측드롭다운 메뉴 */
+.satellite .left-item .bottom-menu{z-index:5; display:none;}
+.satellite .left-item .bottom-menu.open{display:block;}
+.menu-wrap{position:relative; z-index:5; height:0rem; overflow:hidden; transition:height ease 0.5s;}
+.menu-wrap > .innerWrap{position:absolute; top:0; left:0; right:0;}
+.bottom-menu .bottom-btn .btn:before{content:"추가"}
+.bottom-menu.open .bottom-btn .btn:before{content:"비교대상추가 +"}
+.satellite .left-item .bottom-menu:after{content:""; position:absolute; bottom:27rem; left:-10rem; right:-10rem; z-index:1; height:30rem; background:linear-gradient(0,rgba(36,43,56,1), rgba(36,43,56,0)); }
+
+
+/* reset */
+.colorWhite{color:#fff !important;}
