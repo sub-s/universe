@@ -56,7 +56,18 @@ input[type="text"]:-webkit-autofill:active{
 .wrap .main .content{/*height:calc(100% - 47rem);*/}
 .wrap .main .content > .inner{height:100%;}
 .wrap .main .content > .inner .cont div.situation-box {display: block;  position: relative; padding:0; border-right: 1rem solid #14171e; height: calc(100% - 38.61rem); box-sizing: border-box;}
-.wrap .main .content > .inner .cont .situation-box > .inner{ position: relative; display: flex; flex-wrap : wrap; align-items: flex-start; align-content:flex-start; flex-direction: row; max-height:100%; padding:7rem 7rem 0; overflow:auto; box-sizing: border-box;}
+.wrap .main .content > .inner .cont .situation-box > .inner{ position: relative; display: flex; flex-wrap : wrap; align-items: flex-start; align-content:flex-start; flex-direction: row; max-height:100%; padding:7rem 7rem 0; overflow:auto; box-sizing: border-box; }
+.wrap .main .content > .inner .cont .situation-box > .inner::-webkit-scrollbar {
+    display: block;
+    width:1rem;
+    background:#000;
+  }
+  .wrap .main .content > .inner .cont .situation-box > .inner::-webkit-scrollbar-thumb {
+    background-color: #49CDC6;
+  }
+  .wrap .main .content > .inner .cont .situation-box > .inner::-webkit-scrollbar-track {
+    background-color: #000;
+  }
 
 .wrap .main .main-tap .menu div{cursor:pointer;}
 

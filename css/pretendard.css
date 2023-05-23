@@ -69,3 +69,5 @@ http://scripts.sil.org/OFL
 	font-display: swap;
 	src: local('Pretendard Thin'), url('../font/woff2/Pretendard-Thin.woff2') format('woff2'), url('../font/woff/Pretendard-Thin.woff') format('woff');
 } */
+
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);

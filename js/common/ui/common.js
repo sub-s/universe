@@ -206,14 +206,13 @@ function treeDelClick(){
 function calendarPopupClick(){
     const _pop = document.querySelector(".leftFlayingpopUp");
     const w = _pop.scrollWidth;
-    const checked = _pop.classList.contains("open");
-    if(!checked){
-        _pop.style.width = w + "px";
-    }else{
-        _pop.style.width = "0px";
-
-    }
-    _pop.classList.toggle("open")
+    _pop.style.width = w + "px";
+    _pop.classList.add("open")
+}
+function calendarPopupClickClose(){
+    const _pop = document.querySelector(".leftFlayingpopUp");
+    _pop.style.width = "0px";
+    _pop.classList.remove("open")
 }
 function toggleModal(el){
     const _this = (el)?el:event.currentTarget.parent(".modal-popup");
@@ -341,19 +340,30 @@ function getRange(){
 /* calendar day */
 function logPopOpen(){
     const _this = event.currentTarget;
+    const _calWrap = _this.closest(".calendar-wrap");
     const _pop = document.querySelector(".calendar-pop");
+    const _activeTds = _calWrap.querySelectorAll("td.active");
     _pop.style.display = "block";
     const style = _this.getBoundingClientRect();
     const popStyle = _pop.getBoundingClientRect();
     const dis = (_pop.style.display === "block")?"none":"block";
     const l = ((style.left + popStyle.width) >= window.innerWidth)?style.right - popStyle.width:style.left;
     const t = ((style.bottom + popStyle.height) >= window.innerHeight)?style.top - popStyle.height:style.bottom;
+    _activeTds.forEach((t,i)=>{
+        if(_this !== t) t.classList.remove("active");
+    })
+    _this.classList.add("active");
     _pop.style.left = l + "rem";
     _pop.style.top = t + "rem";
 }
 function logPopClose(){
     const _this = event.currentTarget;
     const _pop = document.querySelector(".calendar-pop");
+    const _calWrap = document.querySelector(".calendar-wrap");
+    const _activeTds = _calWrap.querySelectorAll("td.active");
+    _activeTds.forEach((t,i)=>{
+        if(_this !== t) t.classList.remove("active");
+    })
     _pop.style.display = "none";
 }
 function segmentClick(){
@@ -717,6 +727,11 @@ function searchAreaBack(){
 //     _this.nextElementSibling.style.color = _color;
 // }
 
+
+/* calendar */
+function calendarCellClick(){
+
+}
 
 
 /* init */
