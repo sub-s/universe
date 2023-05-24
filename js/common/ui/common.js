@@ -361,9 +361,9 @@ function logPopClose(){
     const _pop = document.querySelector(".calendar-pop");
     const _calWrap = document.querySelector(".calendar-wrap");
     const _activeTds = _calWrap.querySelectorAll("td.active");
-    _activeTds.forEach((t,i)=>{
-        if(_this !== t) t.classList.remove("active");
-    })
+    // _activeTds.forEach((t,i)=>{
+    //     if(_this !== t) t.classList.remove("active");
+    // })
     _pop.style.display = "none";
 }
 function segmentClick(){

@@ -2,9 +2,6 @@
 @import url(./swiper8.4.4.min.css);
 @import url(style2.css);
 
-
-
-
 /* @import url(./pretendard.css); */
 /* @import url(./used.css); */
 
@@ -197,7 +194,8 @@ input[type="password"],
 input[type="email"],
 input[type="tel"],
 select { height: 33rem; border-radius: 4rem; font-size: 16rem; color: #fff; background-color: #333A48;} 
-
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear{background:url(../images/common/icon_clear.svg);}
 
 
 
@@ -505,8 +503,8 @@ select { height: 33rem; border-radius: 4rem; font-size: 16rem; color: #fff; back
 
 .wrap .main .content > .inner .cont {width: calc(100% - 316rem);}
 .wrap .main .content > .inner .cont .situation-box {display: flex; flex-wrap : wrap; align-items: flex-start; align-content:flex-start; flex-direction: row;  position: relative; padding:7rem 7rem 0; border-right: 1px solid #14171e; height: calc(100% - 38.61rem); box-sizing: border-box;}
-.wrap .main .content > .inner .cont .situation-box::before {content: ''; position: absolute; left:0; top:0; right:0; z-index: -1;  height: 40rem; background: linear-gradient(180deg, rgba(20,23,30, 1) 0%, rgba(0,0,0,0) 100%);}
-.wrap .main .content > .inner .cont .situation-box::after {content: ''; position: absolute; left:0; bottom:0; right:0; z-index: -1; height: 40rem; background: linear-gradient(0deg, rgba(20,23,30, 1) 0%, rgba(0,0,0,0) 100%);}
+.wrap .main .content > .inner .cont .situation-box::before {content: ''; position: absolute; left:0; top:0; right:0; z-index: 1;  height: 40rem; background: linear-gradient(180deg, rgba(20,23,30, 1) 0%, rgba(0,0,0,0) 100%);}
+.wrap .main .content > .inner .cont .situation-box::after {content: ''; position: absolute; left:0; bottom:0; right:0; z-index: 1; height: 40rem; background: linear-gradient(0deg, rgba(20,23,30, 1) 0%, rgba(0,0,0,0) 100%);}
 .wrap .main .content > .inner .cont .situation-box .situation {width: calc(100% / 4 - 7rem); margin-right: 7rem; margin-bottom: 7rem}
 /* .wrap .main .content .inner .situation-box .situation:nth-child(3n + 1) { background: red;} */
 /* .wrap .main .content .inner .situation-box .situation + .situation {margin-left: 7rem;} */
@@ -852,8 +850,10 @@ select { height: 33rem; border-radius: 4rem; font-size: 16rem; color: #fff; back
 
 .calendar-wrap .month table tbody td .active::after {display: block; content:''; border-radius: 10rem;  border: 2px solid #8cff80; position: absolute; top:0; right: 0; bottom:0; left:0; }
 .calendar-wrap .month table tbody td .day {border-radius: 10rem;  background: #252b37; width: 100%; height: 100%; line-height: 24rem; font-size: 12rem; text-align: left; }
-.calendar-wrap .month table tbody td:hover .day::after, .calendar-wrap .month table tbody td .day.click::after {display: block; content:''; border-radius: 10rem;  border: 2px solid #49cdc6; position: absolute; top:0; right: 0; bottom:0; left:0; }
-.calendar-wrap .month table tbody td:hover .active::after {display: block; content:''; border-radius: 10rem;  border: 2px solid #8cff80; position: absolute; top:0; right: 0; bottom:0; left:0; }
+.calendar-wrap .month table tbody td:hover .day.on::after, 
+.calendar-wrap .month table tbody td .day.click::after 
+{display: block; content:''; border-radius: 10rem;  border: 2px solid #49cdc6; position: absolute; top:0; right: 0; bottom:0; left:0; }
+.calendar-wrap .month table tbody td:hover .active::after, .calendar-wrap .month table tbody td:hover .day.on.active::after  {display: block; content:''; border-radius: 10rem;  border: 2px solid #8cff80; position: absolute; top:0; right: 0; bottom:0; left:0; }
 
 /* .calendar-wrap .month table tbody td .day:hover {border: 2px solid #49cdc6; position: absolute; top:-2rem; right: -2rem; bottom:-2rem; left:-2rem; } */
 .calendar-wrap .month table tbody td .day.on {background: #195f78; border: 1px solid #195f78;}
@@ -908,7 +908,7 @@ select { height: 33rem; border-radius: 4rem; font-size: 16rem; color: #fff; back
 
 .calendar-wrap .day table tbody tr .fail {color: #fc6060; display: flex; justify-content: center; align-items: center;}
 .calendar-wrap .day table tbody tr .fail::before {display: inline-flex; vertical-align: middle; margin-right: 10rem; content: ''; background: url(../images/common/icon_fail.svg) no-repeat; background-size: cover; width: 13rem; height: 13rem;}
-.calendar-wrap .day table tbody tr td.active .fail {background: #fc6060 !important; color:#12141C; display: flex; justify-content: center; align-items: center;}
+.calendar-wrap .day table tbody tr td:hover .fail , .calendar-wrap .day table tbody tr td.active .fail {background: #fc6060 !important; color:#12141C; display: flex; justify-content: center; align-items: center;}
 .calendar-wrap .day table tbody tr td.active .fail::before  {display: inline-flex; vertical-align: middle; margin-right: 10rem; content: ''; background: url(../images/common/icon_fail.svg) no-repeat; background-size: cover; width: 13rem; height: 13rem;}
 
 
@@ -950,7 +950,7 @@ select { height: 33rem; border-radius: 4rem; font-size: 16rem; color: #fff; back
 
 
 /* 대기 정보 */
-.atmospheric-info {height: calc(100% - 100rem); position: relative;} 
+.atmospheric-info {height: calc(100% - 70rem);/*height: calc(100% - 100rem);*/ position: relative;} 
 .atmospheric-info .sc {border: 1px solid #19191b; height: 100%; overflow-y: auto; }
 
 
