@@ -505,7 +505,7 @@ input[type="password"]::-ms-clear{background:url(../images/common/icon_clear.svg
 .wrap .main .content > .inner .cont .situation-box {display: flex; flex-wrap : wrap; align-items: flex-start; align-content:flex-start; flex-direction: row;  position: relative; padding:7rem 7rem 0; border-right: 1px solid #14171e; height: calc(100% - 38.61rem); box-sizing: border-box;}
 .wrap .main .content > .inner .cont .situation-box::before {content: ''; position: absolute; left:0; top:0; right:0; z-index: 1;  height: 40rem; background: linear-gradient(180deg, rgba(20,23,30, 1) 0%, rgba(0,0,0,0) 100%);}
 .wrap .main .content > .inner .cont .situation-box::after {content: ''; position: absolute; left:0; bottom:0; right:0; z-index: 1; height: 40rem; background: linear-gradient(0deg, rgba(20,23,30, 1) 0%, rgba(0,0,0,0) 100%);}
-.wrap .main .content > .inner .cont .situation-box .situation {width: calc(100% / 4 - 7rem); margin-right: 7rem; margin-bottom: 7rem}
+.wrap .main .content > .inner .cont .situation-box .situation {width: calc(100% / 4 - 7rem); margin-right: 7rem; margin-bottom: 7rem; box-shadow:0px 8px 15px rgb(0 0 0 / 30%);}
 /* .wrap .main .content .inner .situation-box .situation:nth-child(3n + 1) { background: red;} */
 /* .wrap .main .content .inner .situation-box .situation + .situation {margin-left: 7rem;} */
 
@@ -563,14 +563,14 @@ input[type="password"]::-ms-clear{background:url(../images/common/icon_clear.svg
 
 
 /* 현황 디폴트 */
-.situation {border: 1px solid #11151D; width: 100%; height: 109rem; overflow: hidden;}
-.situation .inner {background: linear-gradient(0deg, rgba(39,45,60,1) 0%, rgba(42,50,66,1) 28%,  rgba(47,58,78,1) 100%); padding: 10rem 10rem 0; height: 100%;}
-.situation .inner .tit {font-size: 14rem; margin-bottom: 10rem;}
+.situation {border: 1px solid #11151D; width: 100%; height: 139rem; overflow: hidden;}
+.situation .inner {background: linear-gradient(0deg, rgba(39,45,60,1) 0%, rgba(42,50,66,1) 28%,  rgba(47,58,78,1) 100%); padding: 15rem 10rem 0; height: 100%;}
+.situation .inner .tit {font-size: 14rem; margin-bottom: 10rem; font-weight:600;}
 .situation .inner .current {}
 .situation .inner .current ul {display: flex; justify-content: space-between; align-items: center; margin-top: -2rem;}
 .situation .inner .current li {width: 100%; margin-left: 5rem; padding-left: 5rem; border-left: 1px solid transparent; border-image: linear-gradient(180deg, rgba(31,38,52,1) 0%, rgba(39,45,60,1) 100%); border-image-slice: 1; box-sizing: border-box;}
-.situation .inner .current li .tit {font-size: 11rem; color: var(--c-gray-01); background: #242836; text-align: center; padding: 1rem 0 0;  box-shadow: 1rem 1rem 0 0rem #1d202b inset; border-radius: 2rem; overflow: hidden; height: 14rem;}
-.situation .inner .current li .count {font-family: 'Spoqa Han Sans Neo', 'sans-serif'; text-align: center; font-size: var(--fs-h2); font-weight: 500; padding: 0rem 0 10rem; box-sizing: border-box}
+.situation .inner .current li .tit {font-size: 12rem; color: var(--c-gray-01); background: #242836; text-align: center; padding: 1rem 0 0;  box-shadow: 1rem 1rem 0 0rem #1d202b inset; border-radius: 2rem; overflow: hidden; height: 18rem;}
+.situation .inner .current li .count {font-family: 'Spoqa Han Sans Neo', 'sans-serif'; text-align: center; font-size: 30rem; font-weight: 500; padding: 0rem 0 10rem; box-sizing: border-box}
 
 /* 현황 진행중 */
 .situation.progress .inner {background: linear-gradient(180deg, rgba(97,143,209,1) 0%, rgba(79,119,180,1) 28%, rgba(69,107,166,1) 100%); }
@@ -959,6 +959,7 @@ input[type="password"]::-ms-clear{background:url(../images/common/icon_clear.svg
 .atmospheric-info .table.a table {width: 100%;} 
 .atmospheric-info .table.a th {border: 1px solid #19191b; text-align: center; color:#d9d8f1; font-size: 10rem; padding: 8rem 10rem 8rem;} 
 .atmospheric-info .table.a tbody tr {position: relative;}
+.atmospheric-info .table.a tbody tr.active {background:#434F67;}
 
 .atmospheric-info .table.a tbody tr:hover td:after{content:""; position:absolute; top:0; left:0; right:0; height:1px; background:#49cdc6;}
 .atmospheric-info .table.a tbody tr:hover td:first-child{border-left:1px solid #49cdc6;}

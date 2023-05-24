@@ -204,8 +204,14 @@ function treeDelClick(){
 
 /* calendar */
 function calendarPopupClick(){
+    const _this = event.currentTarget;
     const _pop = document.querySelector(".leftFlayingpopUp");
     const w = _pop.scrollWidth;
+    const _trOn = document.querySelectorAll(".atmospheric-info .table.a tbody tr.active");
+    _trOn.forEach((t,i)=>{
+        t.classList.remove("active");
+    })
+    _this.classList.add("active");
     _pop.style.width = w + "px";
     _pop.classList.add("open")
 }

@@ -139,7 +139,7 @@ input[type="text"]:-webkit-autofill:active{
 
 
 .tree-area .tree input[type="checkbox"] { -moz-appearance: none; -webkit-appearance: none; -ms-appearance: none; appearance: none; display: inline-flex; margin-right: -2em; opacity: 0; width: 1em; z-index: -1; } 
-.tree-area .tree input[type="checkbox"] + span {position: relative; top:3rem; display:inline-block; white-space:pre-line; word-break:break-all; color: #fff; cursor: pointer;} 
+.tree-area .tree input[type="checkbox"] + span {position: relative; top:3rem; display:inline-block; white-space:pre-line; word-break:break-all; color: #C2C2DB; cursor: pointer;} 
 .tree-area .tree input[type="checkbox"] + span:before {content:""; position:absolute; top:0; left:0; display: inline-flex; width: 13rem; height: 13rem; background: rgba(0, 0, 0, 0.05) url(../images/icon/tree_chk.svg) no-repeat;}
 .tree-area .tree input[type="checkbox"]:checked + span:before {color: #fff; border: none; background: url(../images/icon/tree_chked.svg) no-repeat;} 
 
@@ -157,19 +157,19 @@ input[type="text"]:-webkit-autofill:active{
 /* .tree-area .tree li:hover > .tree_arr_btn:after{background-color:#1F242F;} */
 
 /* 트리 왼쪽 라인 */
-.tree-area .tree li::before {content: ''; position: absolute; top:23rem; left:21rem; bottom:0; z-index:10; border-left: 1rem dotted #fff;}
-.tree-area .tree ul li.file > .tree_arr_btn:before{content:""; position:absolute; top:-2rem; bottom:-7rem; left:6rem; border-left:1rem dotted #fff;}
+.tree-area .tree li::before {content: ''; position: absolute; top:23rem; left:21rem; bottom:0; z-index:10; border-left: 1rem dotted #C2C2DB;}
+.tree-area .tree ul li.file > .tree_arr_btn:before{content:""; position:absolute; top:-2rem; bottom:-7rem; left:6rem; border-left:1rem dotted #C2C2DB;}
 .tree-area .tree ul li.file:first-child > .tree_arr_btn:before{top:-3rem}
 .tree-area .tree ul li.file:last-child > .tree_arr_btn:before,
 .tree-area .tree ul li.file:last-child > .tree_arr_btn:after{
     content:"";
     position:absolute;
 }
-.tree-area .tree ul li.file:last-child > .tree_arr_btn:before{top:-3rem; bottom:7rem; left:6rem; border-left:1rem dotted #fff;}
-.tree-area .tree ul li.file:last-child > .tree_arr_btn:after{top:50%; right:0; left:6rem; border-top:1rem dotted #fff;}
+.tree-area .tree ul li.file:last-child > .tree_arr_btn:before{top:-3rem; bottom:7rem; left:6rem; border-left:1rem dotted #C2C2DB;}
+.tree-area .tree ul li.file:last-child > .tree_arr_btn:after{top:50%; right:0; left:6rem; border-top:1rem dotted #C2C2DB;}
 
 .addDottedLine::after{content:""; position:absolute; top:22rem; bottom:0; border-left:1px dotted #fff;}
-.tree-area .tree ul li:not(.closed):not(.file) > label::after{content:""; position:absolute; top:22rem; bottom:0; border-left:1px dotted #fff;}
+.tree-area .tree ul li:not(.closed):not(.file) > label::after{content:""; position:absolute; top:22rem; bottom:0; border-left:1px dotted #C2C2DB;}
 
 /* 트리 삭제 */
 .tree-area .tree .tree_del_btn{position:absolute; top:0; right:0; display:none; width:23rem; height:23rem; font-size:0; background:url(../../images/icon/tree_del_btn.svg) no-repeat center center;}
