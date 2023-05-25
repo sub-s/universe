@@ -195,7 +195,7 @@ input[type="email"],
 input[type="tel"],
 select { height: 33rem; border-radius: 4rem; font-size: 16rem; color: #fff; background-color: #333A48;} 
 input[type="password"]::-ms-reveal,
-input[type="password"]::-ms-clear{background:url(../images/common/icon_clear.svg);}
+input[type="password"]::-ms-clear{background-color:red;}
 
 
 
