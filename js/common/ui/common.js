@@ -532,6 +532,7 @@ function clickDepth2ev(){
     const _playBtn = document.querySelector(".satellite .left-item .date-area .btn-play");
     const _dateRange = document.querySelector(".left-item .bottom-calendar > .date-area");
     const _autoBtn = document.querySelector(".satellite .bottom-switch");
+    const _dragImg = document.querySelector(".drag_horizontal_wrap");
     if((depth1 === 1 && depth2 === 0)){
         const _target = document.querySelector(".tab-area .tab-con-wrap.depth1 .tab-con-area.active .tab-con-wrap.depth2 > .tab-con-area.active");
         const checked = _target.classList.contains("searchMode");
@@ -545,13 +546,16 @@ function clickDepth2ev(){
             _playBtn.classList.remove("hide");
         }
         _autoBtn.classList.add("hidden");
+        console.log("1")
         
     }else if(depth1 === 0 ){
+        console.log("2")
         _dateRange.classList.remove("date");
         _playBtn.classList.remove("edit");
         _playBtn.classList.remove("hide");
         _autoBtn.classList.remove("hidden");
     }else{
+        console.log("3")
         _dateRange.classList.add("date");
         _playBtn.classList.remove("edit");
         _playBtn.classList.add("hide");
@@ -564,6 +568,7 @@ function clickDepth2ev(){
             _bar_current.classList.add("hidden_bar");
             _bar_next.classList.add("hidden_box");
             removeClOpen('.bottom-menu.m1');
+            _dragImg.classList.remove("active");
             break;
             case 1 :
             _bar_timeLine.classList.add("hidden_box");
@@ -571,6 +576,7 @@ function clickDepth2ev(){
                 _bar_current.classList.remove("hidden_bar");
                 _bar_next.classList.remove("hidden_box");
                 addClOpen('.bottom-menu.m1');
+                _dragImg.classList.add("active");
             }else{
                 _bar_current.classList.add("hidden_bar");
                 _bar_next.classList.add("hidden_box");
@@ -587,6 +593,7 @@ function clickDepth2ev(){
                 _bar_next.classList.add("hidden_box");
             }
             removeClOpen('.bottom-menu.m1');
+            _dragImg.classList.remove("active");
             break;
     }
 }

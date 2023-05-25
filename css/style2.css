@@ -375,6 +375,24 @@ div.satellite .bottom-ruler > .ruler > ul li.selected:before{top:-3rem; height:c
 
 .satellite .bottom-ruler .ruler .time-line-box{position: absolute; top: 12rem; left: 0; z-index: 2;}
 .satellite .bottom-ruler .ruler .time-line-box.hidden_box{display:none;}
+
+
+.satellite .bottom-ruler .ruler .range-time-box .btn-a,
+.satellite .bottom-ruler .ruler .range-time-box .btn-b,
+.satellite .bottom-ruler .ruler .range-time-box .btn-c,
+.tooltip-range-time,
+.satellite .bottom-ruler .ruler .time-line-box{
+  opacity:0; transition:opacity ease 0.5s;
+}
+.satellite.active .bottom-ruler .ruler .range-time-box .btn-a,
+.satellite.active .bottom-ruler .ruler .range-time-box .btn-b,
+.satellite.active .bottom-ruler .ruler .range-time-box .btn-c,
+.satellite.active .tooltip-range-time,
+.satellite.active .bottom-ruler .ruler .time-line-box{
+  opacity:1;
+}
+
+
 .satellite .bottom-ruler .ruler .time-line-box.hidden_tooltip .tooltip-range-time{display:none;}
 .satellite .bottom-ruler .ruler .ruler-time-line{position:relative; width: 19.49rem; height: 22.28rem; transform: translate(-50%,calc(-100% - 36rem)); background: url(../images/sate/icon_c.svg) no-repeat; background-size: cover;}
 .satellite .bottom-ruler .ruler .ruler-time-line:before{content:""; position:absolute; left:50%; bottom:0; width:1px; height:50rem; transform:translate(0,100%); background:#00FFDC;}
@@ -457,3 +475,14 @@ div.satellite .bottom-ruler{padding-top:52rem;} */
 
 /* */
 .satellite .bottom-switch.hidden{display:none;}
+
+
+/**/
+
+.drag_horizontal_wrap.active{display:block;}
+.drag_horizontal_wrap{position:fixed; top:41rem; bottom:75rem; left:0; z-index:1; display:none; width:300px;}
+.drag_horizontal_line{position:absolute; top:0; bottom:0; right:0; width:1rem; cursor:col-resize; background:#00FFFF;}
+.drag_horizontal_line:after{content:""; position:absolute; top:0; bottom:0; left:-5rem; width:10px; cursor:col-resize;}
+.drag_horizontal_wrap .map{position:absolute; top:0; right:0;}
+.drag_horizontal_wrap .map.temp_bg{width:942rem; height:100%;background:url(../images/weather_bg2.svg) no-repeat; background-size:auto 110%;}
+/* .satellite.active .drag_horizontal_line{opacity:1; z-index:30;} */
