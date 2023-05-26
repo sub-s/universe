@@ -642,6 +642,79 @@ function itemMove(){
     window.addEventListener("mouseup",windowUpEv);
 
 }
+function itemActiveMove(){
+    event.preventDefault();
+    const _this = event.currentTarget;
+    const checked = (_this.closest(".thum-layer"))?false:true;
+    const _wrap = _this.closest(".thum-layer") || _this.closest(".drag-item-wrap");
+    const _items = _wrap.querySelectorAll(".item");
+    _this.idx = _this.closest(".item").getIndex();
+    const _clone = _items[_this.idx].cloneNode(true);
+    const _dummyBox = document.createElement("div");
+    const d_width = _items[_this.idx].clientWidth;
+    const d_height = _items[_this.idx].clientHeight;
+    const d_diffTop = event.pageY - _items[_this.idx].getBoundingClientRect().top;
+    const d_diffLeft = event.pageX - _items[_this.idx].getBoundingClientRect().left;
+    const dummyClass = (checked)?"layer-area":"thum-layer";
+    _dummyBox.classList.add("dummy-box");
+    _dummyBox.classList.add(dummyClass);
+    _dummyBox.style.width = d_width + "px";
+    _dummyBox.style.height = d_height + "px";
+    _dummyBox.appendChild(_clone);
+    _dummyBox.style.top = (event.pageY - d_diffTop) + "px";
+    _dummyBox.style.left = (event.pageX - d_diffLeft) + "px";
+    document.body.appendChild(_dummyBox);
+    _items[_this.idx].classList.add("hidden");
+    const winMove = ()=>{
+        const pageY = event.pageY;
+        _this.endIdx = -1;
+        _dummyBox.style.top = (event.pageY - d_diffTop) + "px";
+        _dummyBox.style.left = (event.pageX - d_diffLeft) + "px";
+        for(let i=0; i<_items.length; i++){
+            const m = _items[i];
+            const min = m.getBoundingClientRect().top;
+            const max = m.clientHeight + min;
+            if(min <= pageY && max >= pageY){
+                _this.endIdx = i;
+                _wrap.querySelectorAll(".currentTarget").forEach((m,i)=>{
+                    m.classList.remove("currentTarget");
+                })
+                _items[i].classList.add("currentTarget");
+                break;
+            }
+        }
+    }
+    const winUp = ()=>{
+        _dummyBox.classList.add('t');
+        let _target = null;
+        _items[_this.idx].classList.remove("hidden");
+        if(_this.endIdx !== (_items.length - 1) && _this.endIdx > -1){
+            const varNum = (_this.endIdx > _this.idx)?1:0
+            _wrap.insertBefore(_items[_this.idx],_items[_this.endIdx + varNum])
+            _target = _items[_this.endIdx + varNum];
+        }else if(_this.endIdx === (_items.length - 1) && _this.endIdx > -1){
+            _wrap.appendChild(_items[_this.idx]);
+            _target = _items[_items.length - 1];
+        }
+        const targetTop = _items[_this.idx].getBoundingClientRect().top;
+        const targetLeft = _items[_this.idx].getBoundingClientRect().left;
+        _dummyBox.style.top = targetTop + "px";
+        _dummyBox.style.left = targetLeft + "px";
+        _dummyBox.style.opacity = 0;
+        _wrap.querySelectorAll(".currentTarget").forEach((m,i)=>{
+            m.classList.remove("currentTarget");
+        })
+        setTimeout(()=>{
+            _dummyBox.parentNode.removeChild(_dummyBox);
+        },400)
+
+
+        window.removeEventListener("mousemove",winMove);
+        window.removeEventListener("mouseup",winUp);
+    }
+    window.addEventListener("mousemove",winMove);
+    window.addEventListener("mouseup",winUp);
+}
 function itemMoveUpEv(){
     const _this = event.currentTarget;
     const _wrap = (_this.closest(".thum-layer"))?_this.closest(".thum-layer"):_this.closest(".drag-item-wrap");

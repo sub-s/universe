@@ -487,3 +487,12 @@ div.satellite .bottom-ruler{padding-top:52rem;} */
 .drag_horizontal_wrap .map img{position:absolute; top:0; left:0; bottom:0; width:100vw;}
 .drag_horizontal_wrap .map.temp_bg{width:942rem; height:100%;background:url(../images/weather_bg2.svg) no-repeat; background-size:auto 110%;}
 /* .satellite.active .drag_horizontal_line{opacity:1; z-index:30;} */
+
+
+/**/
+.dummy-box{position:fixed; opacity:1; z-index:100;}
+.dummy-box.t{transition:all ease 0.3s;}
+
+.dummy-box.thum-layer > .item{height:100%;}
+.dummy-box.thum-layer > .item .pic{height:100%;}
+.dummy-box.thum-layer > .item .pic img{height:100%;}

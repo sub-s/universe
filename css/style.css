@@ -749,7 +749,8 @@ input[type="password"]::-ms-clear{background-color:red;}
 .drag-item-wrap{background:#1d222c;}
 .layer-area {background: #242b38;}
 .layer-area .item {/*border-bottom: 1px solid #1d222c;*/border:1px solid transparent; display: flex; align-items: center; background:#252B37;}
-.layer-area .item:hover{border-color:#49CDC6;}
+.layer-area .item.hidden{opacity:0;}
+.layer-area .item:hover, .layer-area .item.currentTarget{border-color:#49CDC6;}
 /* .layer-area .item:first-of-type {border-top: 0;} */
 .layer-area .item .view {width: 38rem; height: 100%; display: flex; justify-content: center; align-items: center; }
 .layer-area .item .view button {display: block; width: 10.48rem; height: 6.63rem; background: url(../images/icon/eye.svg) no-repeat; }
@@ -1072,7 +1073,7 @@ input[type="password"]::-ms-clear{background-color:red;}
 
 
 /* 헤더 */
-.satellite .header-item {position: absolute; top:-41rem; left:0; right:0; z-index:10; background: #12141c; width: 100%; height: 41rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.5s;}
+.satellite .header-item {position: absolute; top:-41rem; left:0; right:0; z-index:50; background: #12141c; width: 100%; height: 41rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.5s;}
 .satellite .header-item .left {display: flex; justify-content: flex-start; align-items: center; padding: 0 10rem 0; height: 100%; }
 .satellite .header-item .left .item {margin-left: 10rem; border-left: 1rem solid #1D222C;  display: flex; justify-content: flex-start; align-items: center;  height: 100%;}
 .satellite .header-item .left .item .tit {font-size: 12rem; padding-left: 10rem;}
@@ -1194,7 +1195,10 @@ input[type="password"]::-ms-clear{background-color:red;}
 
 /* 이미지 레이어 */
 .thum-layer {}
-.thum-layer .item {padding: 15rem; width: 100%; display: flex; justify-content: flex-start; align-items: flex-start; background: #252b37; border-bottom: 1px solid #1d222c; position: relative;}
+.thum-layer .item {padding: 15rem; width: 100%; display: flex; justify-content: flex-start; align-items: flex-start; background: #252b37; border:1px solid transparent; position: relative;}
+.thum-layer .item + .item{margin-top:1px;}
+.thum-layer .item.hidden{opacity:0;}
+.thum-layer .item.currentTarget{border-color:#49CDC6;}
 .thum-layer .item .pic {width: 77rem; height: 77rem; margin-right: 15rem; }
 .thum-layer .item .txt {}
 .thum-layer .item .txt li {font-size: 11rem; margin-bottom: 5rem; display: flex; justify-content: flex-start; }
@@ -1255,10 +1259,10 @@ input[type="password"]::-ms-clear{background-color:red;}
 */
 
 /* 하단 캘린더 */
-.satellite .left-item .bottom-calendar {position: absolute; bottom:0; left:0; right:0; height: 75rem; border-right: 1px solid #323844; border-top: 1px solid #323844; padding: 15rem; width: 300rem;  box-sizing: border-box; }
+.satellite .left-item .bottom-calendar {position: absolute; bottom:0; left:0; right:0; height: 75rem; border-right: 1px solid #323844; border-top: 1px solid #323844; padding: 20rem 15rem 15rem 15rem; width: 300rem;  box-sizing: border-box; }
 .satellite .left-item .bottom-calendar .tit {font-size: 10rem; margin-bottom: 5rem;}
-.satellite .left-item .date-area {display: flex; justify-content: flex-start; align-items: center; position: relative; flex:1;}
-.satellite .left-item .date-area .btn-play {width: 27rem; height: 27rem; position: absolute; top: calc(50% - 13.5rem); right: 0; border-radius: 3rem; border: 1px solid #000; display: flex; justify-content: center; align-items: center; background: linear-gradient(180deg, rgba(100,104,128,1) 0%, rgba(56,59,75,1) 100%);}
+.satellite .left-item .date-area {display: flex; justify-content: space-between; align-items: center; position: relative; flex:1; padding-right:60px;}
+.satellite .left-item .date-area .btn-play {position: absolute; top: 13px; right: 7PX; width: 27rem; height: 27rem; border-radius: 3rem; border: 1px solid #000; display: flex; justify-content: center; align-items: center; background: linear-gradient(180deg, rgba(100,104,128,1) 0%, rgba(56,59,75,1) 100%);}
 .satellite .left-item .date-area .btn-play:hover {border-color: #49cdc6; background: linear-gradient(180deg, rgba(72,76,92,1) 0%, rgba(52,55,68,1) 100%);}
 .satellite .left-item .date-area .btn-play::before {display: block; content:''; width: 8rem; height: 9rem; background: url(../images/sate/icon_play.svg) no-repeat; background-size: cover;}
 .satellite .left-item .date-area .space {margin: 20remg 24rem 0;}
