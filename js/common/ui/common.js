@@ -746,6 +746,74 @@ function calendarCellClick(){
 
 }
 
+function mouseImgMove(){
+    event.preventDefault();
+    const _this = event.currentTarget;
+    const _wrap = _this.closest(".drag_horizontal_wrap");
+    const _map = _wrap.querySelector(".map");
+    const min = 10;
+    const max = 98;
+    _this.sx = event.pageX;
+    _this.left = (_this.style.left === '')?50:_this.style.left.match(/(\d+\.\d+|\d+)/g)[0];
+    _this.unit = window.innerWidth * 0.01;
+    const winMove = ()=>{
+        _this.diffX = event.pageX - _this.sx;
+        _this.calcX = _this.diffX / _this.unit;
+        _this.applyX = (Number(_this.left) + Number(_this.calcX) <= min)?min:(Number(_this.left) + Number(_this.calcX) >= max)?max:Number(_this.left) + Number(_this.calcX);
+        _this.style.left = _this.applyX + "%";
+        _map.style.right = (100 - _this.applyX) + "%";
+    }
+    const winUp = ()=>{
+        window.removeEventListener("mousemove",winMove);
+        window.removeEventListener("mouseup",winUp);
+    }
+    window.addEventListener("mousemove",winMove);
+    window.addEventListener("mouseup",winUp);
+    console.log("_this.left : ",_this.left);
+}
+
+/* */
+const showBtn = () => {
+    let _this = event.currentTarget;
+    let wrap = _this.closest('.satellite');
+    let check = wrap.classList.contains('active');
+    const _dragImg = document.querySelector(".drag_horizontal_wrap");
+    _dragImg.classList.remove("active");
+    check ? wrap.classList.remove("active") : wrap.classList.add("active");
+}
+
+
+const checkHandler = () => {
+    let _this = event.currentTarget;
+    let bg = (_this.checked) ? '#434f67' : 'transparent';
+    let _color = (_this.checked) ? '#fff' : '#8B8B97';
+
+    _this.closest('.checkbox').style.background = bg;
+    _this.nextElementSibling.style.color = _color;
+}
+
+const closedFixedPop = (c)=>{
+    const _pop = document.querySelector(c);
+    _pop.classList.remove("show");
+}
+const openFixedPop = (c)=>{
+    const _pop = document.querySelector(c);
+    _pop.classList.add("show");
+    const l = (window.innerWidth + 150) * 0.5 + _pop.clientWidth * 0.05;
+    const t = window.innerHeight * 0.5 + _pop.clientHeight * 0.05;
+    _pop.style.top = t+"px";
+    _pop.style.left = l+"px";
+}
+const toggleFixedPop = (c)=>{
+    const _pop = document.querySelector(c);
+    const checked = _pop.classList.contains("show");
+    if(checked){
+        closedFixedPop(c);
+    }else{
+        openFixedPop(c);
+    }
+
+}
 
 /* init */
 function init(){

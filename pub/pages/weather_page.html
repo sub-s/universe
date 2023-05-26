@@ -25,11 +25,11 @@
     <div class="satellite">
 
         <div class="back_map" style="width:100%; height:100%;">
-            <div class="drag_horizontal_wrap" style="width:700px;">
-                <div class="map temp_bg">
-                    <!-- <img src="../../images/weather_bg2.svg" class="map"/> -->
+            <div class="drag_horizontal_wrap">
+                <div class="map">
+                    <img src="../../images/weather_bg2.svg" class="map"/>
                 </div>
-                <span class="drag_horizontal_line"></span>
+                <span class="drag_horizontal_line" onmousedown="mouseImgMove()"></span>
             </div>
             <img src="../../images/weather_bg.svg" style="position:absolute; left:-200rem; width:auto; height:100%" />
         </div>
@@ -2430,7 +2430,7 @@
                                         <div class="drag-item-wrap">
                                             <!-- item -->
                                             <div class="thum-layer c-type">
-                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                <div class="item" onclick="openFixedPop('.fixed-pop.f3')">
                                                     <div class="pic">
                                                         <img src="../../images/temp/s_temp01.svg" alt="한국항공우주연구원">
                                                     </div>
@@ -2444,7 +2444,7 @@
                                                         </button>
                                                     </div>
                                                 </div>
-                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                <div class="item" onclick="openFixedPop('.fixed-pop.f3')">
                                                     <div class="pic">
                                                         <img src="../../images/temp/s_temp02.svg" alt="한국항공우주연구원">
                                                     </div>
@@ -2458,7 +2458,7 @@
                                                         </button>
                                                     </div>
                                                 </div>
-                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                <div class="item" onclick="openFixedPop('.fixed-pop.f3')">
                                                     <div class="pic">
                                                         <img src="../../images/temp/s_temp03.svg" alt="한국항공우주연구원">
                                                     </div>
@@ -2481,7 +2481,7 @@
                                         <div class="drag-item-wrap">
                                             <!-- item -->
                                             <div class="thum-layer c-type">
-                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                <div class="item" onclick="openFixedPop('.fixed-pop.f3')">
                                                     <div class="pic">
                                                         <img src="../../images/temp/s_temp01.svg" alt="한국항공우주연구원">
                                                     </div>
@@ -2495,7 +2495,7 @@
                                                         </button>
                                                     </div>
                                                 </div>
-                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                <div class="item" onclick="openFixedPop('.fixed-pop.f3')">
                                                     <div class="pic">
                                                         <img src="../../images/temp/s_temp02.svg" alt="한국항공우주연구원">
                                                     </div>
@@ -2509,7 +2509,7 @@
                                                         </button>
                                                     </div>
                                                 </div>
-                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                <div class="item" onclick="openFixedPop('.fixed-pop.f3')">
                                                     <div class="pic">
                                                         <img src="../../images/temp/s_temp03.svg" alt="한국항공우주연구원">
                                                     </div>
@@ -2532,7 +2532,7 @@
                                         <div class="drag-item-wrap">
                                             <!-- item -->
                                             <div class="thum-layer c-type">
-                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                <div class="item" onclick="openFixedPop('.fixed-pop.f3')">
                                                     <div class="pic">
                                                         <img src="../../images/temp/s_temp01.svg" alt="한국항공우주연구원">
                                                     </div>
@@ -2546,7 +2546,7 @@
                                                         </button>
                                                     </div>
                                                 </div>
-                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                <div class="item" onclick="openFixedPop('.fixed-pop.f3')">
                                                     <div class="pic">
                                                         <img src="../../images/temp/s_temp02.svg" alt="한국항공우주연구원">
                                                     </div>
@@ -2560,7 +2560,7 @@
                                                         </button>
                                                     </div>
                                                 </div>
-                                                <div class="item" onmouseup="itemMoveUpEv()">
+                                                <div class="item" onclick="openFixedPop('.fixed-pop.f3')">
                                                     <div class="pic">
                                                         <img src="../../images/temp/s_temp03.svg" alt="한국항공우주연구원">
                                                     </div>
@@ -2827,7 +2827,7 @@
     </div >
 
     <!-- -->
-    <div class="fixed-pop"  style="width: 340rem; top: 350rem; display:none; ">
+    <div class="fixed-pop f1"  style="width: 340rem; top: 350rem; ">
         <div class="down-layer">
             <div class="top">
                 <h3 class="colorWhite">37° 29' 51.1" N  /  127° 01' 44.75" E  </h3>
@@ -2849,7 +2849,7 @@
     </div>
 
     <!-- 02_대기정보_산출물 팝업      -->
-    <div class="fixed-pop" style="width: 233rem; display:none">
+    <div class="fixed-pop f2" style="width: 233rem; display:none">
         <div class="position-pop">
             <div class="tit">
                 37° 29' 51.1" N  /  127° 01' 44.75" E  
@@ -2894,22 +2894,22 @@
     </div>
 
     <!-- 05_대기정보_검증 팝업 -->
-    <div class="fixed-pop" style="width: 542rem; height: 320rem; display:none;">
+    <div class="fixed-pop f3" style="width: 542rem; height: 320rem;">
         <div class="chart-pop">
             <div class="tit">
                 <div class="flex">
                     <h3>AOT</h3>
-                    <button class="btn small a" type="button" onclick="popCall()">
+                    <button class="btn small a" type="button" onclick="toggleFixedPop('.fixed-pop.f4')">
                         <span>Table</span>
                     </button>
                 </div>
             </div>
-            <div class="cont">
+            <div class="cont" onclick="closedFixedPop('.fixed-pop.f3')">
                 <!-- 차트 그래프 영역 -->
             </div>
         </div>
     </div>
-    <div class="fixed-pop none pop2" style="width: 380rem; display:none;">
+    <div class="fixed-pop f4" style="width: 380rem;">
     <div class="table-pop">
     <div class="thead">
     <div class="tr">
@@ -2979,7 +2979,7 @@
     </div>
 
     <!-- 07_부가산출물 – 위성검색결과 – 1 팝업 -->
-    <div class="fixed-pop" style="width: 330rem; top: 350rem; display:none; ">
+    <div class="fixed-pop f5" style="width: 330rem; top: 350rem; ">
         <div class="down-layer">
             <div class="top">
                 <h3>위도 : 33.3 / 경도 : 124.5</h3>
@@ -3002,7 +3002,7 @@
             </div>
         </div>
     </div>
-    <div class="fixed-pop posi-none" style="width: 238rem; top: 120rem; left: 500rem; display:none;">
+    <div class="fixed-pop f6" style="width: 238rem; top: 120rem; left: 500rem;">
         <div class="thum-layer">
             <div class="item">
                 <div class="pic">
@@ -3019,7 +3019,7 @@
             
         </div>
     </div>
-    <div class="fixed-pop posi-none" style="width: 480rem; top: 200rem; display:none;">
+    <div class="fixed-pop f7" style="width: 480rem; top: 200rem;">
         <div class="setting open">
             <div class="innerWrao">
                 <ul>
@@ -3029,7 +3029,7 @@
             </div>
         </div>
     </div>
-    <div class="fixed-pop posi-none" style="top: 60rem; right: 60rem; display:none;">
+    <div class="fixed-pop f8" style="top: 60rem; right: 60rem;">
         <div class="info-layer">
             <ul>
                 <li>
@@ -3054,27 +3054,6 @@
 
 
     <script>
-        const popCall = () => {
-            document.querySelector('.fixed-pop.pop2').classList.toggle('none')
-        }
-        const showBtn = () => {
-            let _this = event.currentTarget;
-            let wrap = _this.closest('.satellite');
-            let check = wrap.classList.contains('active');
-            const _dragImg = document.querySelector(".drag_horizontal_wrap");
-            _dragImg.classList.remove("active");
-            check ? wrap.classList.remove("active") : wrap.classList.add("active");
-        }
-        
-
-        const checkHandler = () => {
-            let _this = event.currentTarget;
-            let bg = (_this.checked) ? '#434f67' : 'transparent';
-            let _color = (_this.checked) ? '#fff' : '#8B8B97';
-
-            _this.closest('.checkbox').style.background = bg;
-            _this.nextElementSibling.style.color = _color;
-        }
         const _ranges = document.querySelectorAll("[range]");
         _ranges.forEach((r,i)=>{
             const p = Math.floor(Math.random() * 100);
