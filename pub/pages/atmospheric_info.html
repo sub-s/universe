@@ -1190,7 +1190,7 @@
             const top = document.querySelector('.main-tap > .content').offsetTop;
             const h = window.innerHeight;
             const p = Number(window.getComputedStyle(document.querySelector(".main"))['padding-bottom'].replace(/\D/g,''));
-            const calc = h - top - p;
+            const calc = h - top - p - 1;
 
             _contents.forEach((item, index)=> {
                 item.style.height = calc + "rem";

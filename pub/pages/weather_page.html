@@ -23,6 +23,16 @@
     </div>
 
     <div class="satellite">
+
+        <div class="back_map" style="width:100%; height:100%;">
+            <div class="drag_horizontal_wrap" style="width:700px;">
+                <div class="map temp_bg">
+                    <!-- <img src="../../images/weather_bg2.svg" class="map"/> -->
+                </div>
+                <span class="drag_horizontal_line"></span>
+            </div>
+            <img src="../../images/weather_bg.svg" style="position:absolute; left:-200rem; width:auto; height:100%" />
+        </div>
         <!-- 버튼 -->
         <button type="button" class="menu-btn" onclick="showBtn()">
             <span class="blind">메뉴</span>
@@ -3050,7 +3060,9 @@
         const showBtn = () => {
             let _this = event.currentTarget;
             let wrap = _this.closest('.satellite');
-            let check = wrap.classList.contains('active')
+            let check = wrap.classList.contains('active');
+            const _dragImg = document.querySelector(".drag_horizontal_wrap");
+            _dragImg.classList.remove("active");
             check ? wrap.classList.remove("active") : wrap.classList.add("active");
         }
         
