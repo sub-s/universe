@@ -496,3 +496,31 @@ div.satellite .bottom-ruler{padding-top:52rem;} */
 .dummy-box.thum-layer > .item{height:100%;}
 .dummy-box.thum-layer > .item .pic{height:100%;}
 .dummy-box.thum-layer > .item .pic img{height:100%;}
+
+
+
+
+/* calendar */
+.dummy_create_area{position:fixed; top:-1000%; left:-1000%;}
+.pop-calendar{position:fixed; z-index:100;}
+.pop-calendar.both .component-calendar{position:absolute; bottom:0;}
+.component-calendar{/*position:fixed; bottom:75rem; z-index:10000;*/position:relative;  width:300rem; background:#323844;}
+.component-calendar > .top{height:58rem;}
+.component-calendar > .top > ul{display:flex; justify-content:center; align-items:center; height:100%;}
+.component-calendar > .top > ul > li{position:relative; display:flex; justify-content:center; align-items:stretch; height:100%;}
+.component-calendar > .top .year{flex:0 0 60%; padding:0 10rem 0 0;}
+.component-calendar > .top .month{flex:0 0 40%; padding:0 0 0 10rem;}
+.component-calendar > .top .month:after{content:""; position:absolute; top:calc(50% - 7rem); left:0; width:1rem; height:15rem; background:#888A8F;}
+.component-calendar > .top .arr{width:30rem; height:100%; background:url(../images/icon/icon_calArr_l.svg) no-repeat center;}
+.component-calendar > .top .arr.r{background-image:url(../images/icon/icon_calArr_r.svg);}
+.component-calendar > .top input{width:calc(100% - 30rem); height:100%; text-align:center;}
+.component-calendar > .content > ol{display:flex; align-items:flex-start; justify-content:flex-start; flex-wrap:wrap;}
+.component-calendar > .content > ol > li{display:flex; align-items:center; justify-content:center; flex:0 0 calc(100% / 7); height:42rem; font-size:12rem;}
+.component-calendar > .content > ol > li.p,.component-calendar > .content > ol > li.n{color:#696D75;}
+.component-calendar > .content > ol > li > div{display:flex; justify-content:center; align-items:center; width:100%; height:100%; border-radius:100%; cursor:pointer;}
+.component-calendar > .content > ol > li:hover > div{background:rgba(255,255,255,0.15);}
+.component-calendar > .content > ol > li.today{color:#1D222C;}
+.component-calendar > .content > ol > li.today > div{background:#49CDC6;}
+.component-calendar > .content > ol > li.selected{color:#1D222C;}
+.component-calendar > .content > ol > li.selected > div{background:#49CDC6;}
+.component-calendar > .content > ol > li.p.today > div,.component-calendar > .content > ol > li.n.today > div{background:rgba(73,205,198,0.15);}

@@ -43,6 +43,7 @@
                         <li>
                             <div class="field error"> <!-- error 클래스 추가시 에러 체크 -->
                                 <input type="password" name="password" id="password" placeholder="PW" onkeyup="inputClearBtn()" />
+                                <button class="eye" onclick="eyeClicEv()"></button>
                                 <p>비밀번호를 잘못 입력했습니다. </p>
                                 <button class="clear-btn" type="button" onclick="clearBtn()">
                                     <span class="blind">삭제</span>
@@ -69,28 +70,9 @@
 
 
     <script>
-        const inputClearBtn = () => {
-            let _this = event.currentTarget;
-            let val = event.target.value;
-            let clear = _this.closest('.field').querySelector('.clear-btn');
-            
-            let _display = val ? 'block' : 'none'
-            clear.style.display = _display;
-
-            
-        }
-
-        const clearBtn = () => {
-            let _this = event.currentTarget;
-            let _input = _this.closest('.field').querySelector('input');
-
-            _input.value = '';
-            _input.focus()
-            _this.style.display = 'none';
-        }
 
     </script>
-    <!-- <script src="../../js/common/ui/common.js"></script> -->
+    <script src="../../js/common/ui/common.js"></script>
 </body>
 
 </html>
