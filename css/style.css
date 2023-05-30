@@ -658,6 +658,7 @@ input[type="password"]::-ms-clear{display:none;}
 
 /* 테이블 */
 .table.a{} 
+.table.scroll-body{height:calc(100% - 32px); overflow:auto;} 
 .table.a table {width: 100%;} 
 .table.a th {border: 1px solid #19191b; text-align: center; color:#d9d8f1; font-size: 10rem; padding: 8rem 10rem 8rem;} 
 .table.a td {border: 1px solid #19191b; text-align: center; color:#fff; font-size: 11rem; padding: 8rem 10rem 8rem;} 
@@ -759,7 +760,7 @@ input[type="password"]::-ms-clear{display:none;}
 .layer-area {background: #242b38;}
 .layer-area .item {/*border-bottom: 1px solid #1d222c;*/border:1px solid transparent; display: flex; align-items: center; background:#252B37;}
 .layer-area .item.hidden{opacity:0;}
-.layer-area .item:hover, .layer-area .item.currentTarget{border-color:#49CDC6;}
+.dummy-box .item:hover, .layer-area .item:hover, .layer-area .item.currentTarget{border-color:#49CDC6;}
 /* .layer-area .item:first-of-type {border-top: 0;} */
 .layer-area .item .view {width: 38rem; height: 100%; display: flex; justify-content: center; align-items: center; }
 .layer-area .item .view button {display: block; width: 10.48rem; height: 6.63rem; background: url(../images/icon/eye.svg) no-repeat; }
@@ -1210,11 +1211,15 @@ input[type="password"]::-ms-clear{display:none;}
 .thum-layer .item.currentTarget{border-color:#49CDC6;}
 .thum-layer .item .pic {width: 77rem; height: 77rem; margin-right: 15rem; }
 .thum-layer .item .txt {}
-.thum-layer .item .txt li {font-size: 11rem; margin-bottom: 5rem; display: flex; justify-content: flex-start; }
-.thum-layer .item .txt li::before {display: block; content: ''; margin-right: 5rem; }
+.thum-layer .item .txt li {position:relative; font-size: 11rem; margin-bottom: 5rem; display: flex; justify-content: flex-start; padding:0 20px 0 15px;}
+.thum-layer .item .txt li::before {position:absolute; top:0; left:0;  display: block; content: '';}
 .thum-layer .item .txt li.satellite::before {width: 10.51rem; height: 10.67rem; background: url(../images/sate/icon_satellite.svg) no-repeat; background-size: cover;}
 .thum-layer .item .txt li.calendar::before {width: 11rem; height: 9.5rem; background: url(../images/sate/icon_calendar.svg) no-repeat; background-size: cover}
 .thum-layer .item .txt li.time::before {width: 11rem; height: 11rem; background: url(../images/sate/icon_time.svg) no-repeat; background-size: cover}
+
+.thum-layer.search .item .txt {width:calc(100% - 77rem);}
+.thum-layer.search .item .txt li{white-space:pre-wrap; word-break:break-all;}
+
 
 .thum-layer .item .set {display: flex; justify-content: center; align-items: center; position: absolute; top: 15rem; right: 15rem;}
 .thum-layer .item .set button {width: 20rem; height: 20rem;}
@@ -1238,7 +1243,7 @@ input[type="password"]::-ms-clear{display:none;}
 
 .thum-layer.c-type .pic {width: 30rem; height: 30rem; margin-right: 10rem; }
 .thum-layer.c-type .pic img {width: 100%; height: 100%;}
-.thum-layer.c-type .item .txt  {width: 100%; padding:0 25rem 0 0; font-size: 11rem;}
+.thum-layer.c-type .item .txt  {flex:1; padding:0 25rem 0 0; font-size: 11rem;}
 .thum-layer.c-type .item .txt p + p {margin-top: 2rem}
 
 

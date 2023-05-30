@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11.034" height="12.001" viewBox="0 0 11.034 12.001">
+  <g id="삭제_ico" transform="translate(-122.5 -382)">
+    <path id="nomal" d="M3827.5-6072.5v-9h-1v-1h3v-1a1,1,0,0,1,1-1h3a1,1,0,0,1,1,1v1h3.034v1H3836.5v9Zm1-1h7v-8h-7Zm5-9v-1h-3v1Zm0,7.5v-5h1v5Zm-2,0v-5h1v5Zm-2,0v-5h1v5Z" transform="translate(-3704 6466.5)" fill="#7d8595"/>
+    <path id="over.click" d="M3827.5-6072.5v-9h-1v-1h3v-1a1,1,0,0,1,1-1h3a1,1,0,0,1,1,1v1h3.034v1H3836.5v9Zm1-1h7v-8h-7Zm5-9v-1h-3v1Zm0,7.5v-5h1v5Zm-2,0v-5h1v5Zm-2,0v-5h1v5Z" transform="translate(-3704 6466.5)" fill="#fff"/>
+  </g>
+</svg>

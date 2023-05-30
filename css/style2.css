@@ -147,6 +147,24 @@ input[type="text"]:-webkit-autofill:active{
 .tree-area .tree input[type="checkbox"] {display: none;}
 .tree-area .tree input[type="checkbox"]:checked ~ ul {display: none;}
 
+.tree-top-check-area{display:flex; align-items:center; justify-content:flex-start; height:30rem; border-style:solid; border-color:#141921; border-width:1px 1px 0 1px; padding:0 0 0 15rem;}
+.tree-top-check-area + .tree{height:calc(100% - 30rem);}
+
+
+.checkbox-type{display:inline-block;}
+.checkbox-type label span{padding:0 0 0 33rem;}
+.checkbox-type input[type="checkbox"]{position:fixed; top:-1000%; left:-1000%;}
+.checkbox-type input[type="checkbox"] { -moz-appearance: none; -webkit-appearance: none; -ms-appearance: none; appearance: none; display: inline-flex; margin-right: -2em; opacity: 0; width: 1em; z-index: -1; } 
+.checkbox-type input[type="checkbox"] + span {position: relative; display:inline-block; padding:0; white-space:pre-line; word-break:break-all; color: #C2C2DB; vertical-align:top; cursor: pointer;} 
+.checkbox-type input[type="checkbox"] + span:before {content:""; position:relative; display: inline-flex; width: 13rem; height: 13rem; vertical-align:middle;  background: rgba(0, 0, 0, 0.05) url(../images/icon/tree_chk.svg) no-repeat;}
+.checkbox-type input[type="checkbox"]:checked + span:before {color: #fff; border: none; background: url(../images/icon/tree_chked.svg) no-repeat;} 
+
+.checkbox-type input[type="checkbox"] + label {padding:0;}
+.checkbox-type input[type="checkbox"] {display: none;}
+.checkbox-type input[type="checkbox"]:checked ~ ul {display: none;}
+
+.checkbox-type .icon_wastebaskt{margin-left:10px; vertical-align:middle;}
+
 
 /* hover */
 /* .tree-area .tree li:hover:after{background-color:#1F242F;} */
@@ -495,7 +513,7 @@ div.satellite .bottom-ruler{padding-top:52rem;} */
 
 .dummy-box.thum-layer > .item{height:100%;}
 .dummy-box.thum-layer > .item .pic{height:100%;}
-.dummy-box.thum-layer > .item .pic img{height:100%;}
+.dummy-box.thum-layer > .item .pic img{height:auto;}
 
 
 
@@ -524,3 +542,7 @@ div.satellite .bottom-ruler{padding-top:52rem;} */
 .component-calendar > .content > ol > li.selected{color:#1D222C;}
 .component-calendar > .content > ol > li.selected > div{background:#49CDC6;}
 .component-calendar > .content > ol > li.p.today > div,.component-calendar > .content > ol > li.n.today > div{background:rgba(73,205,198,0.15);}
+
+
+/**/
+.icon_wastebaskt{display:inline-block; width:11px; height:12px; vertical-align:top;  background:url(../images/icon/icon_wasterbasket.svg) no-repeat center;}

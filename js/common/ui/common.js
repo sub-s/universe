@@ -658,21 +658,25 @@ function itemMove(){
 function itemActiveMove(){
     event.preventDefault();
     const _this = event.currentTarget;
-    const checked = (_this.closest(".thum-layer"))?false:true;
+    const dummyClass = (_this.closest(".thum-layer.c-type"))?"thum-layer c-type":(_this.closest(".thum-layer.search"))?"thum-layer search":(_this.closest(".thum-layer"))?"thum-layer":"layer-area ex";
+    const h_borde = (dummyClass === "thum-layer search")?2:0;
+    // console.log("-----------------------------------------------");
+    // console.log("dummyClass :",dummyClass);
+    // const checked = (_this.closest(".thum-layer"))?"thum-layer":(_this.closest(".thum-layer.c-type"))?"thum-layer c-type":(_this.closest(".layer-area.searchArea"))?"layer-area":"layer-area";
     const _wrap = _this.closest(".thum-layer") || _this.closest(".drag-item-wrap");
     const _items = _wrap.querySelectorAll(".item");
     _this.idx = _this.closest(".item").getIndex();
     const _clone = _items[_this.idx].cloneNode(true);
     const _dummyBox = document.createElement("div");
-    const d_width = _items[_this.idx].clientWidth;
+    const d_width = _items[_this.idx].clientWidth + 2;
     const d_height = _items[_this.idx].clientHeight;
     const d_diffTop = event.pageY - _items[_this.idx].getBoundingClientRect().top;
     const d_diffLeft = event.pageX - _items[_this.idx].getBoundingClientRect().left;
-    const dummyClass = (checked)?"layer-area":"thum-layer";
+    // const dummyClass = (checked)?"layer-area":"thum-layer";
+    _dummyBox.setAttribute("class",dummyClass)
     _dummyBox.classList.add("dummy-box");
-    _dummyBox.classList.add(dummyClass);
     _dummyBox.style.width = d_width + "px";
-    _dummyBox.style.height = d_height + "px";
+    _dummyBox.style.height = (d_height + h_borde) + "px";
     _dummyBox.appendChild(_clone);
     _dummyBox.style.top = (event.pageY - d_diffTop) + "px";
     _dummyBox.style.left = (event.pageX - d_diffLeft) + "px";
