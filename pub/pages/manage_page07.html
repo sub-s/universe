@@ -897,6 +897,11 @@
                     <li>
                         <!-- 트리메뉴 -->
                         <div class="tree-area">
+                            <div class="tree-top-check-area">
+                                <div class="checkbox-type">
+                                    <label><input type="checkbox"><span></span><i class="icon_wastebaskt"></i></label>
+                                </div>
+                            </div>
                             <ul class="tree">
                                 <li>
                                     <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
@@ -927,9 +932,8 @@
                                         </li>
                                         <li>
                                             <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
-                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">MPS
+                                            <label onclick="treeLabelClick()"><input type="checkbox"><span onclick="treeLabelClick()">MPS1</span></label>
                                             <button class="tree_del_btn" onclick="treeDelClick()">del</button>
-                                            </span></label>
                                             <ul>
                                                 <li class="closed">
                                                     <button class="tree_arr_btn" onclick="treeArrClick()">arr</button>
@@ -1160,7 +1164,7 @@
     </div>
     <!-- modal -->
     <div class="modal-popup m3">
-        <div class="modal_innerWrap" style="width:320rem;">
+        <div class="modal_innerWrap" style="width:340rem;">
             <h3 class="modal-tit">
                 조회 기간 설정
             </h3>
@@ -1336,10 +1340,6 @@
         const m = _cal_input.value.substring(5,7);
         const mm = String(Number(m) - 1).getDuble();
         const d = _cal_input.value.substring(8,10);
-        console.log(y)
-        console.log(mm)
-        console.log(m)
-        console.log(d)
         drawCalendar(_cal,y,mm,y+m+d);
     </script>
 </body>

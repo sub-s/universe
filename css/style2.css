@@ -354,6 +354,10 @@ div.satellite .bottom-ruler > .ruler > ul li .time.selected{color:#00d1c7;}
 .range-input input[type = text][name = date]{width:calc(50% - 7rem);}
 input[type = text][name = date] {padding-left:30rem; color:#fff; background-image: url(../images/sate/icon_calendar2.svg); background-repeat:no-repeat; background-position:13rem center;}
 .range-input input[type = text][name = date]{border:1px solid transparent;}
+input[type = text][calendar]{border:1px solid transparent;}
+input[type = text][calendar]:hover,
+input[type = text][name = date]:hover,
+input[type = text][calendar].ehceked_calendar,
 input[type = text][name = date].ehceked_calendar{border:1px solid #00FFDC;}
 
 /* 안내 글씨 */
@@ -525,6 +529,7 @@ div.satellite .bottom-ruler{padding-top:52rem;} */
 .dummy_create_area{position:fixed; top:-1000%; left:-1000%;}
 .pop-calendar{position:fixed; z-index:100;}
 .pop-calendar.both .component-calendar{position:absolute; bottom:0;}
+.cal .component-calendar{width:auto;}
 .component-calendar{/*position:fixed; bottom:75rem; z-index:10000;*/position:relative;  width:300rem; background:#323844;}
 .component-calendar > .top{height:58rem;}
 .component-calendar > .top > ul{display:flex; justify-content:center; align-items:center; height:100%;}

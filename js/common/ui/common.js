@@ -558,17 +558,13 @@ function clickDepth2ev(){
             _playBtn.classList.add("edit");
             _playBtn.classList.remove("hide");
         }
-        _autoBtn.classList.add("hidden");
-        console.log("1")
-        
+        _autoBtn.classList.add("hidden");        
     }else if(depth1 === 0 ){
-        console.log("2")
         _dateRange.classList.remove("date");
         _playBtn.classList.remove("edit");
         _playBtn.classList.remove("hide");
         _autoBtn.classList.remove("hidden");
     }else{
-        console.log("3")
         _dateRange.classList.add("date");
         _playBtn.classList.remove("edit");
         _playBtn.classList.add("hide");
@@ -859,7 +855,6 @@ function mouseImgMove(){
     }
     window.addEventListener("mousemove",winMove);
     window.addEventListener("mouseup",winUp);
-    console.log("_this.left : ",_this.left);
 }
 
 /* */
@@ -1105,7 +1100,6 @@ const drawCalendar = (el,y,m,v)=>{
     /* con event */
     const dayClick = ()=>{
         const _this = event.currentTarget;
-        console.log(_this);
         const _days = _this.closest("ol").children;
         const _cal = _this.closest(".component-calendar");
         const _input_y = _cal.querySelector(".year input");
@@ -1129,6 +1123,7 @@ const drawCalendar = (el,y,m,v)=>{
             const mm = String(Number(m) - 1).getDuble();
             drawCalendar(el,y,mm,y+m+d);
         }else{
+            document.querySelector("input[type = text][calendar].ehceked_calendar").classList.remove("ehceked_calendar");
             deleteComponentCal();
         }
     }
@@ -1148,7 +1143,6 @@ const drawCalendar = (el,y,m,v)=>{
     _name.classList.add("week_name");
     _con.appendChild(_name);
     _con.appendChild(_day);
-    console.log("selectedDate : ",selectedDate)
     // names
     for(let i=0; i<7; i++){
         const n = document.createTextNode(defaultData.weekName[i]);
@@ -1175,8 +1169,6 @@ const drawCalendar = (el,y,m,v)=>{
         const li = document.createElement("li");
         const div = document.createElement("div");
         const price = Number(day1.getFullYear() + String(day1.getMonth()+1).getDuble() + String((i+1)).getDuble());
-        console.log("price : ",price)
-        console.log("selectedDate : ",selectedDate)
         if(price === todayPrice) li.classList.add("today");
         if(price === selectedDate) li.classList.add("selected");
         div.appendChild(n);
@@ -1228,6 +1220,21 @@ const applyCalendar = ()=>{
     const _cal =  _wrap.querySelector(".cal");
     const mm = String(Number(m) - 1).getDuble();
     drawCalendar(_cal,y,mm,y+m+d);
+}
+
+
+const bothCalendarEv = ()=>{
+    const _this = event.currentTarget;
+    const _calendar = document.querySelectorAll("input[calendar]");
+    for(let i=0; i<_calendar.length; i++){
+        const _c =  _calendar[i];
+        if(_this === _c){
+            _c.classList.add("ehceked_calendar");
+        }else{
+            _c.classList.remove("ehceked_calendar");
+        }
+    }
+
 }
 
 /* init */
