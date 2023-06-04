@@ -353,6 +353,8 @@ div.satellite .bottom-ruler > .ruler > ul li .time.selected{color:#00d1c7;}
 .range-input:after{content:"~"; position:absolute; top:50%; left:50%; font-size:12rem; transform:translate(-50%,-50%)}
 .range-input input[type = text][name = date]{width:calc(50% - 7rem);}
 input[type = text][name = date] {padding-left:30rem; color:#fff; background-image: url(../images/sate/icon_calendar2.svg); background-repeat:no-repeat; background-position:13rem center;}
+.range-input input[type = text][name = date]{border:1px solid transparent;}
+input[type = text][name = date].ehceked_calendar{border:1px solid #00FFDC;}
 
 /* 안내 글씨 */
 .info-text-right{height:25rem; padding:7rem 0; font-size:11rem; color:#49CDC6; text-align:right;}

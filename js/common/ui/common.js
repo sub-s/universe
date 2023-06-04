@@ -967,16 +967,68 @@ const deleteComponentCal = ()=>{
         delete c.popupCalendar;
     })
 }
+const addEventCalendarFocusEvent = ()=>{
+    document.querySelectorAll("input[calendar]").forEach((c,i)=>{
+        if(c.getAttribute("readonly")) return;
+        c.setAttribute("readonly","");
+        c.addEventListener("focus",()=>{
+            deleteComponentCal();
+            event.preventDefault();
+            if(c.popupCalendar) return;
+            const _this = event.currentTarget;
+            const today = new Date();
+            const val = (_this.value.match(/\d{4}(\-|\.)\d{1,2}(\-|\.)\d{1,2}/g))?_this.value.match(/\d{4}(\-|\.)\d{1,2}(\-|\.)\d{1,2}/g)[0]:false;
+            const _fixedPosition = (c.getAttribute('fixedPosition'))?document.querySelector(c.getAttribute('fixedPosition')):null;
+            let y = today.getFullYear();
+            let m = today.getMonth();
+            let selectdDate = -1;
+            if(val){
+                y = val.replace(/(\d{4})(\-|\.)\d{1,2}(\-|\.)\d{1,2}/g,'$1');
+                m = Number(val.replace(/\d{4}(\-|\.)(\d{1,2})(\-|\.)\d{1,2}/g,'$2')) - 1;
+                selectdDate = Number(val.replace(/\D/g,''));
+            }
+            const _dummy = document.createElement("div");
+            const _pop = document.createElement("div");
+            const top = (_fixedPosition)?_fixedPosition.getBoundingClientRect().top:_this.getBoundingClientRect().top;
+            const bottom = _this.getBoundingClientRect().bottom;
+            const left = (_fixedPosition)?_fixedPosition.getBoundingClientRect().left:_this.getBoundingClientRect().left;
+            const window_h = window.innerHeight;
+            _dummy._input = _this;
+            const _draw_cal = drawCalendar(_dummy,y,m,selectdDate);
+            _dummy.classList.add("dummy_create_area");
+            document.body.appendChild(_dummy);
+            const calc_bottom = bottom + _dummy.scrollHeight;
+            _pop._input = _this;
+            _pop.classList.add("pop-calendar");
+            _pop.style.left = left + "px";
+            document.body.appendChild(_pop);
+            if(calc_bottom >= window_h || _fixedPosition){
+                _pop.style.top = top + "px";
+                _pop.classList.add("both");
+            }else{
+                _pop.style.top = bottom + "px";
+            }
+            _pop.appendChild(_dummy);
+            _dummy.classList.remove("dummy_create_area");
+            c.popupCalendar = _pop;
+        })
+        c.addEventListener("click",cancleBubble);
+        c.addEventListener("mousedown",cancleBubble)
+    })
+    
+}
+
 
 const drawCalendar = (el,y,m,v)=>{
     el.innerHTML = "";
+    el.addEventListener("click",function(){if(event.stopPropagation){event.stopPropagation();}else{event.cancleBubble = true;}});
     const today = new Date();
-    const day1 = new Date(y,(m + 1),0);
-    const day0 = new Date(y,(m),1);
-    const day2 = new Date(y,(m),0);
-    const day3 = new Date(y,(m+1),1);
+    const day1 = new Date(y,(Number(m) + 1),0);
+    const day0 = new Date(y,(Number(m)),1);
+    const day2 = new Date(y,(Number(m)),0);
+    const day3 = new Date(y,(Number(m)+1),1);
     const todayPrice = Number(today.getFullYear() + String(today.getMonth()+1).getDuble() + String(today.getDate()).getDuble());
-    const selectedDate = (v)?v:000000;
+    const selectedDate = (v)?Number(v):000000;
 
     const defaultData = {
         weekName : ["일","월","화","수","목","금","토"]
@@ -1053,15 +1105,32 @@ const drawCalendar = (el,y,m,v)=>{
     /* con event */
     const dayClick = ()=>{
         const _this = event.currentTarget;
+        console.log(_this);
+        const _days = _this.closest("ol").children;
         const _cal = _this.closest(".component-calendar");
         const _input_y = _cal.querySelector(".year input");
         const _input_m = _cal.querySelector(".month input");
         const y = _input_y.value;
         const m = _input_m.value;
         const d = _this.innerText.getDuble();
-        const _input = _cal._input;
+        const _input = (!_cal._input)?_cal.closest(".outer-calendar-wrap").querySelector(".ehceked_calendar"):_cal._input;
+        const checked = (_this.closest(".outer-calendar-wrap"))?true:false;
         _input.value = y+"-"+m+"-"+d;
-        deleteComponentCal()
+        for(let i=0; i < _days.length; i++){
+            const _d = _days[i];
+            if(_d !== _this){
+                _d.classList.remove("today");
+                _d.classList.remove("selected");
+            }else{
+                _d.classList.add("selected");
+            }
+        }
+        if(checked){
+            const mm = String(Number(m) - 1).getDuble();
+            drawCalendar(el,y,mm,y+m+d);
+        }else{
+            deleteComponentCal();
+        }
     }
     const reDrawCalendar = ()=>{
         const _this = event.currentTarget;
@@ -1079,6 +1148,7 @@ const drawCalendar = (el,y,m,v)=>{
     _name.classList.add("week_name");
     _con.appendChild(_name);
     _con.appendChild(_day);
+    console.log("selectedDate : ",selectedDate)
     // names
     for(let i=0; i<7; i++){
         const n = document.createTextNode(defaultData.weekName[i]);
@@ -1105,6 +1175,8 @@ const drawCalendar = (el,y,m,v)=>{
         const li = document.createElement("li");
         const div = document.createElement("div");
         const price = Number(day1.getFullYear() + String(day1.getMonth()+1).getDuble() + String((i+1)).getDuble());
+        console.log("price : ",price)
+        console.log("selectedDate : ",selectedDate)
         if(price === todayPrice) li.classList.add("today");
         if(price === selectedDate) li.classList.add("selected");
         div.appendChild(n);
@@ -1137,55 +1209,25 @@ const drawCalendar = (el,y,m,v)=>{
 
     return _cal;
 }
-const addEventCalendarFocusEvent = ()=>{
-    document.querySelectorAll("input[calendar]").forEach((c,i)=>{
-        if(c.getAttribute("readonly")) return;
-        c.setAttribute("readonly","");
-        c.addEventListener("focus",()=>{
-            deleteComponentCal();
-            event.preventDefault();
-            if(c.popupCalendar) return;
-            const _this = event.currentTarget;
-            const today = new Date();
-            const val = (_this.value.match(/\d{4}(\-|\.)\d{1,2}(\-|\.)\d{1,2}/g))?_this.value.match(/\d{4}(\-|\.)\d{1,2}(\-|\.)\d{1,2}/g)[0]:false;
-            const _fixedPosition = (c.getAttribute('fixedPosition'))?document.querySelector(c.getAttribute('fixedPosition')):null;
-            let y = today.getFullYear();
-            let m = today.getMonth();
-            let selectdDate = -1;
-            if(val){
-                y = val.replace(/(\d{4})(\-|\.)\d{1,2}(\-|\.)\d{1,2}/g,'$1');
-                m = Number(val.replace(/\d{4}(\-|\.)(\d{1,2})(\-|\.)\d{1,2}/g,'$2')) - 1;
-                selectdDate = Number(val.replace(/\D/g,''));
-            }
-            const _dummy = document.createElement("div");
-            const _pop = document.createElement("div");
-            const top = (_fixedPosition)?_fixedPosition.getBoundingClientRect().top:_this.getBoundingClientRect().top;
-            const bottom = _this.getBoundingClientRect().bottom;
-            const left = (_fixedPosition)?_fixedPosition.getBoundingClientRect().left:_this.getBoundingClientRect().left;
-            const window_h = window.innerHeight;
-            _dummy._input = _this;
-            const _draw_cal = drawCalendar(_dummy,y,m,selectdDate);
-            _dummy.classList.add("dummy_create_area");
-            document.body.appendChild(_dummy);
-            const calc_bottom = bottom + _dummy.scrollHeight;
-            _pop._input = _this;
-            _pop.classList.add("pop-calendar");
-            _pop.style.left = left + "px";
-            document.body.appendChild(_pop);
-            if(calc_bottom >= window_h || _fixedPosition){
-                _pop.style.top = top + "px";
-                _pop.classList.add("both");
-            }else{
-                _pop.style.top = bottom + "px";
-            }
-            _pop.appendChild(_dummy);
-            _dummy.classList.remove("dummy_create_area");
-            c.popupCalendar = _pop;
-        })
-        c.addEventListener("click",cancleBubble);
-        c.addEventListener("mousedown",cancleBubble)
-    })
-    
+
+const applyCalendar = ()=>{
+    const _this = event.currentTarget;
+    const _children = _this.parentNode.children;
+    const y = _this.value.substring(0,4);
+    const m = _this.value.substring(5,7);
+    const d = _this.value.substring(8,10);
+    for(let i=0; i<_children.length; i++){
+        const _c = _children[i];
+        if(_c !== _this){
+            _c.classList.remove("ehceked_calendar");
+        }else{
+            _c.classList.add("ehceked_calendar");
+        }
+    }
+    const _wrap = _this.closest(".outer-calendar-wrap");
+    const _cal =  _wrap.querySelector(".cal");
+    const mm = String(Number(m) - 1).getDuble();
+    drawCalendar(_cal,y,mm,y+m+d);
 }
 
 /* init */

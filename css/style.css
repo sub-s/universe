@@ -797,7 +797,8 @@ input[type="password"]::-ms-clear{display:none;}
 .bottom-menu {}
 .bottom-menu .menu-wrap {}
 
-.bottom-menu .menu-wrap .item {display: flex; align-items: center; width:100%; height: 38rem; background: #333A48; margin-top: 2rem; padding: 12rem; }
+.bottom-menu .menu-wrap .item {display: flex; align-items: center; width:100%; height: 38rem; background: #333A48; margin-top: 2rem; padding: 12rem; border:1px solid transparent;}
+.bottom-menu .menu-wrap .item:hover{border-color:#49CDC6;}
 .menu-wrap .item {} 
 .menu-wrap .item .checkbox input[type="checkbox"] { -moz-appearance: none; -webkit-appearance: none; -ms-appearance: none; appearance: none; display: block; opacity: 0; width: 1rem; z-index: -1; } 
 .menu-wrap .item .checkbox input[type="checkbox"] + label { text-decoration: none; color: #C2C2DB; cursor: pointer; display: inline-block; font-size: 12rem; position: relative; } 
@@ -824,6 +825,9 @@ input[type="password"]::-ms-clear{display:none;}
 .title-box .year-wrap .box .btn-next {width: 30rem; height: 30rem; display: flex; justify-content: center; align-items: center;}
 .title-box .year-wrap .box .btn-next::after {width: 6rem; height: 5rem; display: block; content: ''; background: url(../images/common/year_arrow.svg) no-repeat; transform: rotate( -180deg )}
 .title-box .year-wrap .btn {width: 84rem; height: 31rem; border-radius: 3rem; font-size: 11rem; font-weight: 700;}
+.title-box .year-wrap .box .btn-next:hover, .title-box .year-wrap .box .btn-prev:hover{
+    border:1px solid #00d1c7;
+}
 
 
 
