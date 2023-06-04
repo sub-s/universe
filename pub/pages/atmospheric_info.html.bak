@@ -784,7 +784,7 @@
                                     </div>
 									<div class="situation">
                                         <div class="inner"> 
-                                            <p class="tit">MPS3A</p>
+                                            <p class="tit">CMS6</p>
                                             <div class="current">
                                                 <ul>
                                                     <li>
@@ -801,7 +801,7 @@
                                     </div>
 									<div class="situation">
                                         <div class="inner"> 
-                                            <p class="tit">PS</p>
+                                            <p class="tit">CMS6</p>
                                             <div class="current">
                                                 <ul>
                                                     <li>
@@ -953,13 +953,6 @@
         //     });
         // }
         // heightFn();
-
-
-
-        window.addEventListener('resize', function(){
-            heightFn();
-        });
-
 
 
         const heightFn = () => {

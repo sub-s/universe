@@ -251,14 +251,13 @@ input[type="text"]:-webkit-autofill:active{
 
 .slide-pop .popup .cont {overflow-y: auto; height: calc( 100% - 55rem);}
 /* .slide-pop .popup .cont ul li:nth-child(odd) {background: #1f242f;} */
-.slide-pop .popup .cont ul li {background: #313a4c; color:#fff; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #12141c; min-height: 55rem; padding: 5rem 15rem 5rem;}
+.slide-pop .popup .cont ul li {background: #313a4c; color:#fff; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #12141c; height: 55rem; padding: 5rem 15rem 5rem;}
 .slide-pop .popup .cont ul li.active {background: #434f67;}
 .slide-pop .popup .cont ul li:hover {box-shadow: 0 0 0 2px #33797a inset; transition: all 0.5s;}
 
 /* .slide-pop .popup .cont .txt {display: flex; align-items: center; justify-content: space-between;} */
-.slide-pop .popup .cont .txt {width: 200px; }
 .slide-pop .popup .cont .txt p {font-size: 12rem;}
-.slide-pop .popup .cont .txt p + p {overflow: auto;  min-height: 18rem; word-break: break-all;}
+/* .slide-pop .popup .cont .txt p + p {margin-left: 10rem;} */
 .slide-pop .popup .cont .icon-fail {display: block; background: url(../images/common/icon_fail.svg) no-repeat; background-size: cover; width: 23rem; height: 23rem;}
 .slide-pop .popup .cont .icon-success {display: block; background: url(../images/common/icon_success.svg) no-repeat; background-size: cover; width: 23rem; height: 23rem;}
 .slide-pop .popup .cont .btn {width: 67rem; height: 30rem; border-radius: 3rem; font-size: 12rem;;}
@@ -266,7 +265,7 @@ input[type="text"]:-webkit-autofill:active{
 
 /* 세그멘트 */
 .segment{display:inline-block; width:100%; height:33rem;}
-.segment > ul{display:flex; height:100%; font-size: 12rem;}
+.segment > ul{display:flex; height:100%;}
 .segment > ul > li{flex:1; display:flex; align-items:center; justify-content:center; cursor:pointer; background:#333A48;}
 .segment > ul > li.active{ color: #000; background: #49CDC6;}
 .segment > ul > li:first-child{border-radius:5rem 0 0 5rem;}
