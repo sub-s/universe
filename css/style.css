@@ -1186,7 +1186,7 @@ input[type="password"]::-ms-clear{display:none;}
 .satellite .left-item .tab-area .outer-cont .date-menu > .btn-tab .icon-a::before {display: block; content:'A'; font-size: 10rem; margin-right: 5rem; width: 14rem; height: 14rem; border: 1px solid #49CDC6;}
 .satellite .left-item .tab-area .outer-cont .date-menu > .btn-tab .icon-b::before {display: block; content:'B'; font-size: 10rem; margin-right: 5rem; width: 14rem; height: 14rem; border: 1px solid #49CDC6;}
 
-.satellite .left-item .bottom-menu {position: absolute; bottom: 80rem; left: 10rem; right: 10rem;}
+.satellite .left-item .bottom-menu {position: absolute; bottom: 80rem; left: 10rem; right: 10rem; z-index:10;}
 .satellite .left-item .bottom-menu .bottom-btn .btn {height: 27rem; font-size: 11rem; border-radius: 3rem;}
 
 
