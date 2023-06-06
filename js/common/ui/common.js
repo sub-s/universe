@@ -957,9 +957,13 @@ const setEventRevmoveCalendar = ()=>{
 
 const deleteComponentCal = ()=>{
     const _cal = document.querySelectorAll("input[calendar]");
+    const _input_cal = document.querySelectorAll(".ehceked_calendar[calendar]");
     _cal.forEach((c,i)=>{
         if(c.popupCalendar) c.popupCalendar.parentNode.removeChild(c.popupCalendar);
         delete c.popupCalendar;
+    })
+    _input_cal.forEach((c,i)=>{
+        c.classList.remove("ehceked_calendar");
     })
 }
 const addEventCalendarFocusEvent = ()=>{
@@ -1123,7 +1127,7 @@ const drawCalendar = (el,y,m,v)=>{
             const mm = String(Number(m) - 1).getDuble();
             drawCalendar(el,y,mm,y+m+d);
         }else{
-            document.querySelector("input[type = text][calendar].ehceked_calendar").classList.remove("ehceked_calendar");
+            if(document.querySelector("input[type = text][calendar].ehceked_calendar")) document.querySelector("input[type = text][calendar].ehceked_calendar").classList.remove("ehceked_calendar");
             deleteComponentCal();
         }
     }
@@ -1201,6 +1205,17 @@ const drawCalendar = (el,y,m,v)=>{
 
     return _cal;
 }
+
+const fixedCalendarDraw = ()=>{
+    const _cal  = document.querySelector(".cal");
+    const _cal_input = document.querySelector(".ehceked_calendar");
+    const y = _cal_input.value.substring(0,4);
+    const m = _cal_input.value.substring(5,7);
+    const mm = String(Number(m) - 1).getDuble();
+    const d = _cal_input.value.substring(8,10);
+    drawCalendar(_cal,y,mm,y+m+d);
+}
+
 
 const applyCalendar = ()=>{
     const _this = event.currentTarget;

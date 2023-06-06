@@ -1169,7 +1169,7 @@
                 조회 기간 설정
             </h3>
             <!-- input area -->
-            <div class="input-area-layout outer-calendar-wrap">
+            <div class="input-area-layout">
                 <div class="sub-tit">조회 기간</div>
                 <div class="segment">
                     <ul>
@@ -1179,8 +1179,8 @@
                     </ul>
                 </div>
                 <div class="range-input">
-                    <input type="text" name="date" readonly class="ehceked_calendar" value="2023.02.22" onfocus="applyCalendar()" />
-                    <input type="text" name="date" readonly value="2023.02.22" onfocus="applyCalendar()"/>
+                    <input type="text" name="date" readonly calendar onclick="bothCalendarEv()" value="2023.02.22" />
+                    <input type="text" name="date" readonly calendar onclick="bothCalendarEv()" value="2023.02.22" />
                 </div>
                 <div class="info-text-right">*최대 1달까지 가능</div>
                 <div class="cal">
@@ -1188,7 +1188,7 @@
                 </div>
             </div>
             <!-- input area -->
-            <!-- <div class="input-area-layout">
+            <div class="input-area-layout">
                 <div class="sub-tit">조회 기간</div>
                 <div class="segment">
                     <ul>
@@ -1198,9 +1198,9 @@
                         <li onclick="segmentClick()">실패</li>
                     </ul>
                 </div>
-            </div> -->
+            </div>
             <!-- input area -->
-            <!-- <div class="input-area-layout">
+            <div class="input-area-layout">
                 <div class="sub-tit">위성</div>
                 <div class="input-checkbox-layout">
                     <div class="menu-wrap">
@@ -1290,7 +1290,7 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
             <!-- both btn -->
             <div class="btn-set">
                 <!-- default btn -->
@@ -1334,13 +1334,6 @@
     <script src="../../js/common/ui/common.js"></script>
     <script type="text/javascript">
         // toggleModal(document.querySelector('.modal-popup.m1'));
-        const _cal  = document.querySelector(".cal");
-        const _cal_input = document.querySelector(".ehceked_calendar");
-        const y = _cal_input.value.substring(0,4);
-        const m = _cal_input.value.substring(5,7);
-        const mm = String(Number(m) - 1).getDuble();
-        const d = _cal_input.value.substring(8,10);
-        drawCalendar(_cal,y,mm,y+m+d);
     </script>
 </body>
 
