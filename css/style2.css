@@ -39,6 +39,7 @@ input[type="text"]:-webkit-autofill:active{
 
 
 /* tab content */
+/* .wrap .main .content > .inner{display:none !important;} */
 .wrap .main .content > .inner{display:none !important;}
 .wrap .main .content > .inner.on{display:flex !important;}
 

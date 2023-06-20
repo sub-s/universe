@@ -1424,3 +1424,59 @@ input[type="password"]::-ms-clear{display:none;}
 .fixed-pop .position-pop .cont > ul > li p + p {color: #49CDC6}
 .fixed-pop .position-pop .cont > ul > li:first-of-type {margin-top: 0rem;}
 .fixed-pop .position-pop .cont > ul > li::before {display: block; content: ''; width: 3rem; height: 3rem; background: #fff; position: absolute; top: 5rem; left:0;}
+
+
+
+
+
+.outer-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+}
+
+.inner-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid white;
+    position: absolute;
+    top: calc(50%);
+    left: calc(50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.line {
+    width: 1px;
+    height: 140px;
+    background-color: white;
+    position: absolute;
+    top: calc(50%);
+    left: calc(50%);
+    transform-origin: top;
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
