@@ -935,8 +935,8 @@ input[type="password"]::-ms-clear{display:none;}
 
 
 /* 캘린더 팝업 */
-.calendar-pop {position: absolute; background: #252B37; top:25rem; left:0; border: 1px solid #12151d; width: 490rem; z-index: 2; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5)}
-.calendar-pop .top {background: #232b38; display: flex; justify-content: space-between; align-items: center; height: 28rem; padding:0 10rem; position: relative;border-bottom: 1px solid #12141c; }
+.calendar-pop {position: absolute; background: #313a4c; top:25rem; left:0; border: 1px solid #12151d; width: 490rem; z-index: 2; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5)}
+.calendar-pop .top {background: #313a4c; display: flex; justify-content: space-between; align-items: center; height: 28rem; padding:0 10rem; position: relative;border-bottom: 1px solid #12141c; }
 .calendar-pop .top .tit {color:#00d1c7; font-size: 12rem;}
 .calendar-pop .top .btn-closed {display: flex; justify-content: center; align-items: center; width: 26rem; height: 26rem; position: absolute; top:0; right: 0;}
 .calendar-pop .top .btn-closed::before {display: block; content: ''; width: 10rem; height: 10rem; background: url(../images/common/closed.svg) no-repeat; background-size: cover;}
@@ -948,8 +948,8 @@ input[type="password"]::-ms-clear{display:none;}
 .calendar-pop .result .icon-success {font-size: 10rem; color:#00d1c7;}
 .calendar-pop .result .icon-success::before {display: inline-flex; vertical-align: middle; margin-right: 5rem; content: ''; background: url(../images/common/icon_success.svg) no-repeat; background-size: cover; width: 13rem; height: 13rem;}
 .calendar-pop .cont {overflow-y: scroll; height: 200rem;}
-.calendar-pop .cont ul li:nth-child(odd) {background: #1f242f;}
-.calendar-pop .cont ul li {background: #252b37; color:#fff; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #12141c;  padding: 5rem 10rem 5rem;}
+.calendar-pop .cont ul li:nth-child(odd) {background: #313a4c;}
+.calendar-pop .cont ul li {background: #313a4c; color:#fff; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #12141c;  padding: 5rem 10rem 5rem;}
 .calendar-pop .cont ul li.active {background: #434f67;}
 .calendar-pop .cont ul li:hover {box-shadow: 0 0 0 2px #33797a inset; transition: all 0.5s;}
 
