@@ -527,7 +527,7 @@ input[type="password"]::-ms-clear{display:none;}
 .wrap .main .content > .inner .cont .situation-box {display: flex; flex-wrap : wrap; align-items: flex-start; align-content:flex-start; flex-direction: row;  position: relative; padding:7rem 7rem 0; border-right: 1px solid #14171e; height: calc(100% - 38.61rem); box-sizing: border-box;}
 .wrap .main .content > .inner .cont .situation-box::before {content: ''; position: absolute; left:0; top:0; right:0; z-index: 1;  height: 20rem; background: linear-gradient(180deg, rgba(20 23 30 / 46%) 0%, rgba(0,0,0,0) 100%);}
 .wrap .main .content > .inner .cont .situation-box::after {content: ''; position: absolute; left:0; bottom:0; right:0; z-index: 1; height: 40rem; background: linear-gradient(0deg, rgba(20,23,30, 1) 0%, rgba(0,0,0,0) 100%);}
-.wrap .main .content > .inner .cont .situation-box .situation {width: calc(100% / 4 - 7rem); margin-right: 7rem; margin-bottom: 7rem;}
+.wrap .main .content > .inner .cont .situation-box .situation {width: calc(100% / 4 - 7rem); margin-right: 7rem; margin-bottom: 7rem; box-shadow: 0 8px 15px rgba(0,0,0,0.3);}
 .wrap .main .content > .inner .cont .situation-box .situation.failed {box-shadow: 0 8px 15px rgba(0,0,0,0.3);}
 .wrap .main .content > .inner .cont .situation-box .situation.progress {box-shadow: 0 8px 15px rgba(0,0,0,0.3);}
 /* .wrap .main .content .inner .situation-box .situation:nth-child(3n + 1) { background: red;} */
