@@ -252,7 +252,7 @@ function toggleModal(el){
         if(checked){
             _this.classList.toggle("open");
         }
-    },1000)
+    },300)
 }
 // setting
 function onSettingClick(){
@@ -956,10 +956,14 @@ const setEventRevmoveCalendar = ()=>{
 
 
 const deleteComponentCal = ()=>{
+    const _this = event.currentTarget;
     const _cal = document.querySelectorAll("input[calendar]");
     _cal.forEach((c,i)=>{
         if(c.popupCalendar) c.popupCalendar.parentNode.removeChild(c.popupCalendar);
         delete c.popupCalendar;
+    })
+    document.querySelectorAll(".ehceked_calendar").forEach(c=>{
+        if(_this !== c) c.classList.remove("ehceked_calendar");
     })
 }
 const addEventCalendarFocusEvent = ()=>{
@@ -974,6 +978,7 @@ const addEventCalendarFocusEvent = ()=>{
             const today = new Date();
             const val = (_this.value.match(/\d{4}(\-|\.)\d{1,2}(\-|\.)\d{1,2}/g))?_this.value.match(/\d{4}(\-|\.)\d{1,2}(\-|\.)\d{1,2}/g)[0]:false;
             const _fixedPosition = (c.getAttribute('fixedPosition'))?document.querySelector(c.getAttribute('fixedPosition')):null;
+            const both = c.getAttribute('fixedPosition')?true:false;
             let y = today.getFullYear();
             let m = today.getMonth();
             let selectdDate = -1;
@@ -997,7 +1002,7 @@ const addEventCalendarFocusEvent = ()=>{
             _pop.classList.add("pop-calendar");
             _pop.style.left = left + "px";
             document.body.appendChild(_pop);
-            if(calc_bottom >= window_h || _fixedPosition){
+            if(calc_bottom >= window_h || _fixedPosition && !both){
                 _pop.style.top = top + "px";
                 _pop.classList.add("both");
             }else{
@@ -1018,10 +1023,10 @@ const drawCalendar = (el,y,m,v)=>{
     el.innerHTML = "";
     el.addEventListener("click",function(){if(event.stopPropagation){event.stopPropagation();}else{event.cancleBubble = true;}});
     const today = new Date();
-    const day1 = new Date(y,(Number(m) + 1),0);
-    const day0 = new Date(y,(Number(m)),1);
-    const day2 = new Date(y,(Number(m)),0);
-    const day3 = new Date(y,(Number(m)+1),1);
+    const day1 = new Date(y,(Number(m) + 1),0); // 타겟 말일
+    const day0 = new Date(y,(Number(m)),1);     // 타겟 일일
+    const day2 = new Date(y,(Number(m)),0);     // 전달 말일
+    const day3 = new Date(y,(Number(m)+1),1);   // 다음달 일일
     const todayPrice = Number(today.getFullYear() + String(today.getMonth()+1).getDuble() + String(today.getDate()).getDuble());
     const selectedDate = (v)?Number(v):000000;
 
@@ -1091,6 +1096,152 @@ const drawCalendar = (el,y,m,v)=>{
     _top_li_m_arr_l.addEventListener("click",clickArr);
     _top_li_m_arr_r.addEventListener("click",clickArr);
 
+    /* new Top */
+    const _newTop = document.createElement("div");
+    const _newTop_y = document.createElement("span");
+    const _newTop_y_u = document.createElement("span");
+    const _newTop_m = document.createElement("span");
+    const _newTop_m_u = document.createElement("span");
+    const _newTop_close = document.createElement("button");
+    const _newTop_selWrap = document.createElement("div");
+    const _newTop_sel_y = document.createElement("div");
+    const _newTop_sel_y_box = document.createElement("div");
+    const _newTop_sel_y_box_ul = document.createElement("ul");
+    const _newTop_sel_m = document.createElement("div");
+    const _newTop_sel_m_box = document.createElement("div");
+    const _newTop_sel_m_box_ul = document.createElement("ul");
+
+    _newTop.classList.add("top_new");
+    _newTop.appendChild(_newTop_y);
+    _newTop.appendChild(_newTop_y_u);
+    _newTop.appendChild(_newTop_m);
+    _newTop.appendChild(_newTop_m_u);
+    _newTop.appendChild(_newTop_close);
+    _newTop.appendChild(_newTop_selWrap);
+
+
+    /* text */
+    _newTop_y.classList.add("y");
+    _newTop_y.innerText = day0.getFullYear();
+    _newTop_y_u.innerText = "년";
+    _newTop_m.classList.add("m");
+    _newTop_m.innerText = String(day0.getMonth()+1).getDuble();
+    _newTop_m_u.innerText = "월";
+    _newTop_close.classList.add("close");
+
+    /* text event */
+    _newTop_y.addEventListener("click",()=>{
+        const checked = _newTop_sel_y.classList.contains("open");
+        if(checked){
+            _newTop_sel_y.classList.add("open");
+            if(_newTop_sel_m.classList.contains("open")) _cal.classList.remove("dim");
+        }else{
+            _newTop_sel_y.classList.add("open");
+            _cal.classList.add("dim");
+            _newTop_sel_y.scrollTop = _newTop_sel_y_box.querySelector(".selected").offsetTop;
+        }
+    })
+    _newTop_m.addEventListener("click",()=>{
+        const checked = _newTop_sel_m.classList.contains("open");
+        if(checked){
+            _newTop_sel_m.classList.remove("open");
+            if(!_newTop_sel_y.classList.contains("open")) _cal.classList.remove("dim");
+        }else{
+            _newTop_sel_m.classList.add("open");
+            _cal.classList.add("dim");
+            _newTop_sel_m.scrollTop = _newTop_sel_m_box.querySelector(".selected").offsetTop;
+        }
+    })
+
+    /* clase event */
+    _newTop_close.addEventListener("click",()=>{
+        document.querySelector("input[type = text][calendar].ehceked_calendar").classList.remove("ehceked_calendar");
+        deleteComponentCal();
+    })
+
+    /* select */
+    _newTop_selWrap.classList.add("sel-area");
+    _newTop_sel_y.classList.add("calendar-sel");
+    _newTop_sel_m.classList.add("calendar-sel");
+
+    _newTop_selWrap.appendChild(_newTop_sel_y);
+    _newTop_selWrap.appendChild(_newTop_sel_m);
+
+    _newTop_sel_m.appendChild(_newTop_sel_m_box);
+    _newTop_sel_m_box.appendChild(_newTop_sel_m_box_ul);
+    
+    _newTop_sel_y.appendChild(_newTop_sel_y_box);
+    _newTop_sel_y_box.appendChild(_newTop_sel_y_box_ul);
+
+    const selYearClick = ()=>{
+        event.preventDefault();
+        const _this = event.currentTarget;
+        const _children = _this.closest("ul").querySelectorAll("li");
+        const _yTxt = _this.closest(".top_new").querySelector(".y");
+        const y = Number(_this.innerText.replace(/\D/g,''));
+        const m = Number(_newTop_m.innerText) - 1;
+        _children.forEach((_y,i)=>{
+            if(_y === _this){
+                _y.classList.add("selected");
+            }else{
+                _y.classList.remove("selected");
+            }
+        })
+        _yTxt.innerText = y;
+        const d1 = new Date(y,(Number(m) + 1),0); // 타겟 말일
+        const d0 = new Date(y,(Number(m)),1);     // 타겟 일일
+        const d2 = new Date(y,(Number(m)),0);     // 전달 말일
+        const d3 = new Date(y,(Number(m)+1),1);   // 다음달 일일
+        drawDays(d0,d1,d2,d3);
+        drawYearSel(d0);
+        _newTop_sel_y.classList.remove("open");
+        if(!_newTop_sel_m.classList.contains("open")) _cal.classList.remove("dim");
+    }
+    const selMonthClick = ()=>{
+        event.preventDefault();
+        const _this = event.currentTarget;
+        const _children = _this.closest("ul").querySelectorAll("li");
+        const y = _newTop_y.innerText;
+        const m = Number(_this.innerText.replace(/\D/g,'') - 1);
+        const _mTxt = _this.closest(".top_new").querySelector(".m");
+        _children.forEach((y,i)=>{
+            if(y === _this){
+                y.classList.add("selected");
+            }else{
+                y.classList.remove("selected");
+            }
+        })
+        _mTxt.innerText = (Number(m + 1) > 9)?(m + 1):"0"+(m + 1);
+        const d1 = new Date(y,(Number(m) + 1),0); // 타겟 말일
+        const d0 = new Date(y,(Number(m)),1);     // 타겟 일일
+        const d2 = new Date(y,(Number(m)),0);     // 전달 말일
+        const d3 = new Date(y,(Number(m)+1),1);   // 다음달 일일
+        drawDays(d0,d1,d2,d3);
+        _newTop_sel_m.classList.remove("open");
+        if(!_newTop_sel_y.classList.contains("open")) _cal.classList.remove("dim");
+
+    }
+    function drawYearSel(date){
+        const start_y = date.getFullYear() - 20;
+        const end_y = date.getFullYear() + 19;
+        _newTop_sel_y_box_ul.innerHTML = "";
+        for(let i=start_y; i<= end_y; i++){
+            const _li = document.createElement("li");
+            _li.innerText = i + "년";
+            _newTop_sel_y_box_ul.appendChild(_li);
+            if(i === date.getFullYear()) _li.classList.add("selected");
+            _li.addEventListener("click",selYearClick)
+        }
+    }
+    for(let i=1; i<13; i++){
+        const _li = document.createElement("li");
+        _li.innerText = i + "월";
+        _newTop_sel_m_box_ul.appendChild(_li);
+        if(i === (day0.getMonth()+1)) _li.classList.add("selected");
+        _li.addEventListener("click",selMonthClick);
+    }
+    drawYearSel(day0);
+
 
     /* con */
     const _con = document.createElement("div");
@@ -1102,10 +1253,10 @@ const drawCalendar = (el,y,m,v)=>{
         const _this = event.currentTarget;
         const _days = _this.closest("ol").children;
         const _cal = _this.closest(".component-calendar");
-        const _input_y = _cal.querySelector(".year input");
-        const _input_m = _cal.querySelector(".month input");
-        const y = _input_y.value;
-        const m = _input_m.value;
+        const _input_y = (_cal.querySelector(".year input"))?_cal.querySelector(".year input"):_cal.querySelector(".top_new .y");
+        const _input_m = (_cal.querySelector(".month input"))?_cal.querySelector(".month input"):_cal.querySelector(".top_new .m");
+        const y = (_input_y.value)?_input_y.value:_input_y.innerText;
+        const m = (_input_m.value)?_input_m.value:_input_m.innerText;
         const d = _this.innerText.getDuble();
         const _input = (!_cal._input)?_cal.closest(".outer-calendar-wrap").querySelector(".ehceked_calendar"):_cal._input;
         const checked = (_this.closest(".outer-calendar-wrap"))?true:false;
@@ -1129,13 +1280,23 @@ const drawCalendar = (el,y,m,v)=>{
     }
     const reDrawCalendar = ()=>{
         const _this = event.currentTarget;
-        const _cal = _this.closest(".component-calendar");
-        const _input_y = _cal.querySelector(".year input");
-        const _input_m = _cal.querySelector(".month input");
+        // const _cal = _this.closest(".component-calendar");
+        // const _input_y = _cal.querySelector(".year input");
+        // const _input_m = _cal.querySelector(".month input");
         const checked = _this.classList.contains("p");
-        const y = _input_y.value;
-        const m = (checked)?Number(_input_m.value) - 2:Number(_input_m.value);
-        drawCalendar(el,y,m,v);
+        // const y = (_input_y.value)?_input_y.value:Number(_newTop_y.innerText);
+        // const m = (checked)?Number(_input_m.value) - 2:Number(_input_m.value);
+        const y = Number(_newTop_y.innerText);
+        const m = (checked)?Number(_newTop_m.innerText) - 2:Number(_newTop_m.innerText);
+        // drawCalendar(el,y,m,v);
+
+        const d1 = new Date(y,(Number(m) + 1),0); // 타겟 말일
+        const d0 = new Date(y,(Number(m)),1);     // 타겟 일일
+        const d2 = new Date(y,(Number(m)),0);     // 전달 말일
+        const d3 = new Date(y,(Number(m)+1),1);   // 다음달 일일
+        drawDays(d0,d1,d2,d3);
+        _newTop_y.innerText = d0.getFullYear();
+        _newTop_m.innerText = ((d0.getMonth() + 1) > 9)?(d0.getMonth() + 1):"0"+(d0.getMonth() + 1);
     }
 
     /* draw content */
@@ -1151,47 +1312,53 @@ const drawCalendar = (el,y,m,v)=>{
         _name.appendChild(li);
     }
     // dasy
-    for(let i=0, j=day2.getDate() - (day0.getDay() - 1); i<day0.getDay(); i++,j++){
-        const n = document.createTextNode(j);
-        const li = document.createElement("li");
-        const div = document.createElement("div");
-        const price = Number(day2.getFullYear() + String(day2.getMonth()+1).getDuble() + String(j).getDuble());
-        if(price === todayPrice) li.classList.add("today");
-        if(price === selectedDate) li.classList.add("selected");
-        li.classList.add("p");
-        div.appendChild(n);
-        li.appendChild(div);
-        li.addEventListener("click",reDrawCalendar);
-        _day.appendChild(li);
-    }
-    for(let i=0; i<day1.getDate(); i++){
-        const n = document.createTextNode((i+1));
-        const li = document.createElement("li");
-        const div = document.createElement("div");
-        const price = Number(day1.getFullYear() + String(day1.getMonth()+1).getDuble() + String((i+1)).getDuble());
-        if(price === todayPrice) li.classList.add("today");
-        if(price === selectedDate) li.classList.add("selected");
-        div.appendChild(n);
-        li.appendChild(div);
-        li.addEventListener("click",dayClick)
-        _day.appendChild(li);
-    }
-    for(let i=0; i<(6-day1.getDay()); i++){
-        const n = document.createTextNode((i+1));
-        const li = document.createElement("li");
-        const div = document.createElement("div");
-        const price = Number(day3.getFullYear() + String(day3.getMonth()+1).getDuble() + String((i+1)).getDuble());
-        if(price === todayPrice) li.classList.add("today");
-        if(price === selectedDate) li.classList.add("selected");
-        div.appendChild(n);
-        li.appendChild(div);
-        li.classList.add("n");
-        li.addEventListener("click",reDrawCalendar);
-        _day.appendChild(li);
+    drawDays(day0,day1,day2,day3);
+    function drawDays(d0,d1,d2,d3){
+        _day.innerHTML = "";
+        for(let i=0, j=d2.getDate() - (d0.getDay() - 1); i<d0.getDay(); i++,j++){
+            const n = document.createTextNode(j);
+            const li = document.createElement("li");
+            const div = document.createElement("div");
+            const price = Number(d2.getFullYear() + String(d2.getMonth()+1).getDuble() + String(j).getDuble());
+            if(price === todayPrice) li.classList.add("today");
+            if(price === selectedDate) li.classList.add("selected");
+            li.classList.add("p");
+            div.appendChild(n);
+            li.appendChild(div);
+            li.addEventListener("click",reDrawCalendar);
+            _day.appendChild(li);
+        }
+        for(let i=0; i<d1.getDate(); i++){
+            const n = document.createTextNode((i+1));
+            const li = document.createElement("li");
+            const div = document.createElement("div");
+            const price = Number(d1.getFullYear() + String(d1.getMonth()+1).getDuble() + String((i+1)).getDuble());
+            if(price === todayPrice) li.classList.add("today");
+            if(price === selectedDate) li.classList.add("selected");
+            div.appendChild(n);
+            li.appendChild(div);
+            li.addEventListener("click",dayClick)
+            _day.appendChild(li);
+        }
+        const variableDayCount = (7 * 6) - _day.children.length;
+        for(let i=0; i<variableDayCount; i++){
+            const n = document.createTextNode((i+1));
+            const li = document.createElement("li");
+            const div = document.createElement("div");
+            const price = Number(d3.getFullYear() + String(d3.getMonth()+1).getDuble() + String((i+1)).getDuble());
+            if(price === todayPrice) li.classList.add("today");
+            if(price === selectedDate) li.classList.add("selected");
+            div.appendChild(n);
+            li.appendChild(div);
+            li.classList.add("n");
+            li.addEventListener("click",reDrawCalendar);
+            _day.appendChild(li);
+        }
     }
     
     
-    _cal.appendChild(_top);
+    // _cal.appendChild(_top);
+    _cal.appendChild(_newTop);
     _cal.appendChild(_con);
 
 
