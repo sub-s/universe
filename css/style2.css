@@ -547,7 +547,7 @@ div.satellite .bottom-ruler{padding-top:52rem;} */
 .component-calendar > .top .arr.r{background-image:url(../images/icon/icon_calArr_r.svg);}
 .component-calendar > .top input{width:calc(100% - 30rem); height:100%; text-align:center;}
 .component-calendar > .top_new{position:relative; display:flex; align-items:center; justify-content:center; height:25px; font-size:12rem; color:#fff;  border:1px solid #252B3A;}
-.component-calendar > .top_new .close{position:absolute; top:0; }
+.component-calendar > .top_new .close{position:absolute; top:50%; right:10px; width:15px; height:15px; font-size:0; transform:translate(0,-50%); background:url(../images/icon/calendar_close.svg) no-repeat center;}
 .component-calendar > .top_new .sel-area{position:absolute; top:0; left:0; right:0;}
 
 
