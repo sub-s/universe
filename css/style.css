@@ -668,6 +668,12 @@ input[type="password"]::-ms-clear{display:none;}
 .graph-area .graph p {position: absolute; left: 0; right: 0; bottom: 0; width: 100%; border-radius:3rem; background: #49cdc6;}
 .graph-area .graph p + p {background: #fd817d;}
 
+.graph-area.b-type {}
+.graph-area.b-type table td {height: 40.1rem; vertical-align: middle;}
+
+
+
+
 
 /* 테이블 */
 .table.a{} 
@@ -722,8 +728,8 @@ input[type="password"]::-ms-clear{display:none;}
 
 /* 도넛 그래프 */
 .donut-chart {width: 190rem; height: 190rem; background: url(../images/common/donut_chartBg.svg) no-repeat; }
-.donut-chart .chart {position: relative; top: calc(50% - 75rem);  left: calc(50% - 75rem);  width: 150px; height: 150px; border-radius: 50%; transition: 0.3s; background:lightgray; display:inline-flex;}
-.donut-chart .chart:after{content:''; background: #202531; position: absolute; top: 50%; left: 50%; width:90px; height:90px; border-radius: 50%; transform: translate(-50%, -50%);}
+.donut-chart .chart {position: relative; top: 50%;  left: 50%;  transform: translate(-50%, -50%); width: 160px; height: 160px; border-radius: 50%; transition: 0.3s; background:lightgray; display:inline-flex;}
+.donut-chart .chart:after{content:''; background: #202531; position: absolute; top: 50%; left: 50%; width:100px; height:100px; border-radius: 50%; transform: translate(-50%, -50%);}
 .donut-chart .chart-bar{width: inherit; height: inherit; border-radius: 50%; background: conic-gradient(#db4e59 160deg, #57DED2 50deg); /* 차트 설정 */}
 
 
