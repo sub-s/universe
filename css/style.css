@@ -504,8 +504,17 @@ input[type="password"]::-ms-clear{display:none;}
 /* main */
 .wrap .main {height: calc(100% - 44rem); padding: 20rem; box-sizing: border-box;}
 .wrap .main .main-tap .menu{display: flex; justify-content: space-around; align-items: center;}
-.wrap .main .main-tap .menu div {font-size: 16rem; color:#fff; border: 1px solid transparent; border-bottom: 1px solid #49DCCF;  border-left: 0; width: 100%; text-align: center; padding: 12rem; box-sizing: border-box;}
-.wrap .main .main-tap .menu div.on { border: 1px solid #49DCCF;  border-bottom: 1px solid #14171e;}
+.wrap .main .main-tap .menu div {font-size: 16rem; color:#fff; border: 1px solid transparent; border-bottom: 1px solid #49DCCF;  border-left: 0; width: 100%; text-align: center; padding: 12rem; box-sizing: border-box; transition: opacity 0.5s ease; opacity: 0.7;}
+.wrap .main .main-tap .menu div.on { border: 1px solid #49DCCF;  border-bottom: 1px solid #14171e; opacity: 1;transition: opacity 0.5s ease;}
+.wrap .main .content > .inner{display:none !important;}
+.wrap .main .content > .inner.on{display:flex !important; opacity: 1; animation-name: fadeIn; animation-duration: 0.5s;}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
 .wrap .main .content {border: 1px solid #49DCCF; border-top: 0;}
 .wrap .main .content > .inner {display: flex; justify-content: space-between;}
 .wrap .main .content > .inner .cont .top {position: relative;}
