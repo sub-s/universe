@@ -39,9 +39,14 @@ input[type="text"]:-webkit-autofill:active{
 
 
 /* tab content */
+<<<<<<< HEAD
+.wrap .main .content > .inner{display:none !important;}
+.wrap .main .content > .inner.on{display:flex !important;}
+=======
 /* .wrap .main .content > .inner{display:none !important;} */
 /* .wrap .main .content > .inner{display:none !important;}
 .wrap .main .content > .inner.on{display:flex !important;} */
+>>>>>>> f3865a5b7876bdaebd94ee70932b6c3ae6817af9
 
 /* icon */
 .icon-circle-type{display:inline-block; width:13rem; height:13rem; background: url(../../images/icon/icon_shape_x.svg) no-repeat; background-size:cover}
