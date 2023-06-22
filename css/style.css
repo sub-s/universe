@@ -1217,7 +1217,7 @@ input[type="password"]::-ms-clear{display:none;}
 .layer-top .total {font-size: 11rem; color:#8b8b97;}
 .layer-top .total span {font-size: 11rem; color:#fff;}
 .layer-top .total select {
-    background-color: red;
+    background-color: #252b37;
     color: white;
   }
 
