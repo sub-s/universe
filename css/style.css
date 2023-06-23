@@ -1217,7 +1217,10 @@ input[type="password"]::-ms-clear{display:none;}
 .layer-top .back-btn button:hover {background-color: #576071; transition: all 0.5s; }
 .layer-top .total {font-size: 11rem; color:#8b8b97;}
 .layer-top .total span {font-size: 11rem; color:#fff;}
-
+.layer-top .total select {
+    background-color: #252b37;
+    color: white;
+  }
 
 .layer-top .remove-btn button {color: #fff; font-size: 11rem; width: auto; height: auto; background: url(../images/icon/icon_remove.svg) no-repeat 7rem center; padding-left:24rem; opacity: 0.6;transition: all 0.5s;}
 .layer-top .remove-btn button:hover {  opacity: 1}
