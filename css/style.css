@@ -107,6 +107,7 @@ button {display: block; width: 100%; height: 100%; z-index: 1;}
 button::after {cursor: pointer;}
 
 input[type=text][calendar]{padding-left:30rem; padding-right:0; background: url(../images/sate/icon_calendar.svg) no-repeat 10rem center;}
+input[type=text][calendar][noicon]{padding:0; text-align:center; background:none;}
 input[calendar][disabled], input[type=text][calendar][disabled]{opacity:0.35;}
 
 

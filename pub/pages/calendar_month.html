@@ -64,18 +64,19 @@
 
                 <div class="year-wrap">
                     <div class="box">
-                        <button type="button" class="btn-prev">
+                        <button type="button" class="btn-prev" onclick="scheduleCalArr()">
                             <span class="blind">이전</span>
                         </button>
                         <div class="year">
-                            <span>January 2023</span>
+                            <!-- <span>January 2023</span> -->
+                            <input type="text" calendar month verticalCenter noicon value="January 2023" format="mw yn" onfocus="bothCalendarEv()" readonly class="ehceked_calendar">
                         </div>
-                        <button type="button" class="btn-next">
+                        <button type="button" class="btn-next" onclick="scheduleCalArr()">
                             <span class="blind">다음</span>
                         </button>
                     </div>
                     <div>
-                        <button type="button" class="btn">
+                        <button type="button" class="btn" onclick="scheduleThiMonth()">
                             <span>this month</span>
                         </button>
                     </div>

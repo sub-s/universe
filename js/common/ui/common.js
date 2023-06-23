@@ -3,6 +3,12 @@ var _chartBar = document.querySelectorAll('.chart-bar');
 var color = ['#9986dd','#fbb871','#bd72ac','#f599dc'] //색상
 var newDeg = []; //차트 deg
 
+const monthName = {
+    en : ["January","February","March","April","May","June","July","Agust","September","October","November","December"],
+    e : ["Jan","Feb","Mar","Apr","May","Jun","Jul","Agu","Sep","Oct","Nov","Dec"],
+    ko : ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"]
+}
+
 
 
 const cancleBubble = ()=>{
@@ -656,8 +662,6 @@ function itemActiveMove(){
     const _this = event.currentTarget;
     const dummyClass = (_this.closest(".thum-layer.c-type"))?"thum-layer c-type":(_this.closest(".thum-layer.search"))?"thum-layer search":(_this.closest(".thum-layer"))?"thum-layer":"layer-area ex";
     const h_borde = (dummyClass === "thum-layer search")?2:0;
-    // console.log("-----------------------------------------------");
-    // console.log("dummyClass :",dummyClass);
     // const checked = (_this.closest(".thum-layer"))?"thum-layer":(_this.closest(".thum-layer.c-type"))?"thum-layer c-type":(_this.closest(".layer-area.searchArea"))?"layer-area":"layer-area";
     const _wrap = _this.closest(".thum-layer") || _this.closest(".drag-item-wrap");
     const _items = _wrap.querySelectorAll(".item");
@@ -973,28 +977,73 @@ const addEventCalendarFocusEvent = ()=>{
         c.addEventListener("focus",()=>{
             deleteComponentCal();
             event.preventDefault();
+            const calType = (c.getAttribute("month") === undefined || c.getAttribute("month") === null || c.getAttribute("month") === false )?'d':'m';
+            const vCenter = (c.getAttribute("verticalCenter") === null || c.getAttribute("verticalCenter") === undefined  || c.getAttribute("verticalCenter") === false)?false:true;
             if(c.popupCalendar) return;
             const _this = event.currentTarget;
             const today = new Date();
-            const val = (_this.value.match(/\d{4}(\-|\.)\d{1,2}(\-|\.)\d{1,2}/g))?_this.value.match(/\d{4}(\-|\.)\d{1,2}(\-|\.)\d{1,2}/g)[0]:false;
+            const val = (calType === 'm')?_this.value.match(/\w+ \d{4}/g):(_this.value.match(/\d{4}(\-|\.)\d{1,2}(\-|\.)\d{1,2}/g))?_this.value.match(/\d{4}(\-|\.)\d{1,2}(\-|\.)\d{1,2}/g)[0]:false;
             const _fixedPosition = (c.getAttribute('fixedPosition'))?document.querySelector(c.getAttribute('fixedPosition')):null;
             const both = c.getAttribute('fixedPosition')?true:false;
             let y = today.getFullYear();
             let m = today.getMonth();
+            let selectYear = -1;
+            let selectMonth = -1;
             let selectdDate = -1;
             if(val){
-                y = val.replace(/(\d{4})(\-|\.)\d{1,2}(\-|\.)\d{1,2}/g,'$1');
-                m = Number(val.replace(/\d{4}(\-|\.)(\d{1,2})(\-|\.)\d{1,2}/g,'$2')) - 1;
-                selectdDate = Number(val.replace(/\D/g,''));
+                if(calType === 'm'){
+                    const mtypeDate = _this.value.match(/\w+ \d{4}/g)[0].split(" ");
+                    selectYear = mtypeDate[1];
+                    selectMonth = (monthName.en.indexOf(mtypeDate[0]) + 1 > 9)?monthName.en.indexOf(mtypeDate[0]) + 1:"0"+(monthName.en.indexOf(mtypeDate[0]) + 1);
+                    selectdDate = selectYear + selectMonth + "01";
+                }else{
+                    y = val.replace(/(\d{4})(\-|\.)\d{1,2}(\-|\.)\d{1,2}/g,'$1');
+                    m = Number(val.replace(/\d{4}(\-|\.)(\d{1,2})(\-|\.)\d{1,2}/g,'$2')) - 1;
+                    selectdDate = Number(val.replace(/\D/g,''));
+                }
+            }else if(_this.value !== ''){
+                let format_m = "";
+                let format_d = "";
+                let apply_y = -1;
+                let apply_m = -1;
+                let apply_d = -1;
+                for(let i=0; i<monthName.en.length; i++){
+                    const enWord = monthName.en[i];
+                    if(_this.value.indexOf(enWord) > -1){
+                        format_m = "mw";
+                        apply_m = String(i + 1).getDuble();
+                        break;
+                    }
+                }
+                for(let i=0; i<monthName.en.length && format_m === ""; i++){
+                    const enWord = monthName.e[i];
+                    if(_this.value.indexOf(enWord) > -1){
+                        format_m = "ma";
+                        apply_m = String(i + 1).getDuble();
+                        break;
+                    }
+                }
+                if(_this.value.match(/(1st)|(2nd)|(3rd)|(\d+th)/)){
+                    format_d = "da";
+                }else{
+                    format_d = "dn";
+                }
+                if(format_d === "da"){
+                    apply_d = _this.value.match(/(1st)|(2nd)|(3rd)|(\d+th)/)[0].replace(/\D/g,'').getDuble();
+                }
+                apply_y = _this.value.match(/\d{4}$|^\d{4}/g)[0];
+                selectdDate = apply_y + apply_m + apply_d;
+                y = apply_y;
+                m = Number(apply_m) - 1;
             }
             const _dummy = document.createElement("div");
             const _pop = document.createElement("div");
             const top = (_fixedPosition)?_fixedPosition.getBoundingClientRect().top:_this.getBoundingClientRect().top;
             const bottom = _this.getBoundingClientRect().bottom;
-            const left = (_fixedPosition)?_fixedPosition.getBoundingClientRect().left:_this.getBoundingClientRect().left;
+            const left = (vCenter)?(_this.getBoundingClientRect().left + (_this.clientWidth * 0.5)) - 150:(_fixedPosition)?_fixedPosition.getBoundingClientRect().left:_this.getBoundingClientRect().left;
             const window_h = window.innerHeight;
             _dummy._input = _this;
-            const _draw_cal = drawCalendar(_dummy,y,m,selectdDate);
+            const _draw_cal = drawCalendar(_dummy,y,m,selectdDate,calType);
             _dummy.classList.add("dummy_create_area");
             document.body.appendChild(_dummy);
             const calc_bottom = bottom + _dummy.scrollHeight;
@@ -1019,7 +1068,8 @@ const addEventCalendarFocusEvent = ()=>{
 }
 
 
-const drawCalendar = (el,y,m,v)=>{
+const drawCalendar = (el,y,m,v,t)=>{
+    const type = (t)?t:'d';
     el.innerHTML = "";
     el.addEventListener("click",function(){if(event.stopPropagation){event.stopPropagation();}else{event.cancleBubble = true;}});
     const today = new Date();
@@ -1028,12 +1078,16 @@ const drawCalendar = (el,y,m,v)=>{
     const day2 = new Date(y,(Number(m)),0);     // 전달 말일
     const day3 = new Date(y,(Number(m)+1),1);   // 다음달 일일
     const todayPrice = Number(today.getFullYear() + String(today.getMonth()+1).getDuble() + String(today.getDate()).getDuble());
-    const selectedDate = (v)?Number(v):000000;
+    const spareYear = day0.getFullYear();
+    const spareMonth = ((day0.getMonth() + 1) > 9)?(day0.getMonth() + 1):"0"+(day0.getMonth() + 1);
+    const spareDate = (day0.getDate() > 9)?day0.getDate():"0"+day0.getDate();
+    const selectedDate = (String(v).length === 8)?Number(v):spareYear+spareMonth+spareDate;
+    const selectYear = String(selectedDate).substring(0,4);
+    const selectMonth = String(selectedDate).substring(4,6);
 
     const defaultData = {
         weekName : ["일","월","화","수","목","금","토"]
     }
-    
     const _cal = document.createElement("div");
     _cal.classList.add("component-calendar");
     _cal._input = el._input;
@@ -1110,6 +1164,7 @@ const drawCalendar = (el,y,m,v)=>{
     const _newTop_sel_m = document.createElement("div");
     const _newTop_sel_m_box = document.createElement("div");
     const _newTop_sel_m_box_ul = document.createElement("ul");
+    const _newTop_MonthMode_apply_bt = document.createElement("button");
 
     _newTop.classList.add("top_new");
     _newTop.appendChild(_newTop_y);
@@ -1118,14 +1173,16 @@ const drawCalendar = (el,y,m,v)=>{
     _newTop.appendChild(_newTop_m_u);
     _newTop.appendChild(_newTop_close);
     _newTop.appendChild(_newTop_selWrap);
+    _newTop_MonthMode_apply_bt.classList.add("month_btn_apply")
+    _newTop_MonthMode_apply_bt.innerHTML = "확인";
 
 
     /* text */
     _newTop_y.classList.add("y");
-    _newTop_y.innerText = day0.getFullYear();
+    _newTop_y.innerText = selectYear;
     _newTop_y_u.innerText = "년";
     _newTop_m.classList.add("m");
-    _newTop_m.innerText = String(day0.getMonth()+1).getDuble();
+    _newTop_m.innerText = selectMonth;
     _newTop_m_u.innerText = "월";
     _newTop_close.classList.add("close");
 
@@ -1151,6 +1208,16 @@ const drawCalendar = (el,y,m,v)=>{
             _cal.classList.add("dim");
             _newTop_sel_m.scrollTop = _newTop_sel_m_box.querySelector(".selected").offsetTop;
         }
+    })
+
+    /* 월 확인 버튼 이벤트  */
+    _newTop_MonthMode_apply_bt.addEventListener("click",()=>{
+        document.querySelector("input[type = text][calendar].ehceked_calendar").classList.remove("ehceked_calendar");
+        deleteComponentCal();
+        const y = _newTop_y.innerText;
+        const m = _newTop_m.innerText;
+        const monthTxt = monthName.en[Number(m) - 1];
+        _cal._input.value = monthTxt + " " + y;
     })
 
     /* clase event */
@@ -1237,10 +1304,11 @@ const drawCalendar = (el,y,m,v)=>{
         const _li = document.createElement("li");
         _li.innerText = i + "월";
         _newTop_sel_m_box_ul.appendChild(_li);
-        if(i === (day0.getMonth()+1)) _li.classList.add("selected");
+        if(i === Number(selectMonth)) _li.classList.add("selected");
         _li.addEventListener("click",selMonthClick);
     }
-    drawYearSel(day0);
+    const spareYearDate = new Date(selectYear,Number(selectMonth - 1),1)
+    drawYearSel(spareYearDate);
 
 
     /* con */
@@ -1259,8 +1327,64 @@ const drawCalendar = (el,y,m,v)=>{
         const m = (_input_m.value)?_input_m.value:_input_m.innerText;
         const d = _this.innerText.getDuble();
         const _input = (!_cal._input)?_cal.closest(".outer-calendar-wrap").querySelector(".ehceked_calendar"):_cal._input;
+        const format = _input.getAttribute("format");
         const checked = (_this.closest(".outer-calendar-wrap"))?true:false;
-        _input.value = y+"-"+m+"-"+d;
+        if(format === null){
+            _input.value = y+"-"+m+"-"+d;
+        }else{
+            const formatArr = format.split(" ");
+            let infoY = {
+                format : formatArr.find(i => i.indexOf("y") > -1).replace(/[\,\-\.\\]/g,''),
+                apply : "",
+            };
+            let infoM = {
+                format : formatArr.find(i => i.indexOf("m") > -1).replace(/[\,\-\.\\]/g,''),
+                apply : "",
+            }
+            let infoD = {
+                format : formatArr.find(i => i.indexOf("d") > -1).replace(/[\,\-\.\\]/g,''),
+                apply : "",
+            }
+            const applyDate = [];
+            if(infoY.format === "yn"){
+                infoY.apply = y;
+            }
+            if(infoM.format === "mn"){
+                infoM.apply = m;
+            }else if(infoM.format === "mw"){
+                infoM.apply = monthName.en[Number(m - 1)];
+            }else if(infoM.format === "ma"){
+                infoM.apply = monthName.e[Number(m - 1)];
+            };
+            
+            if(infoD.format === "dn"){
+                infoD.apply = d;
+            }else if(infoD.format.indexOf("da") > -1){
+                let w = "";
+                switch (Number(d)){
+                    case 1 :
+                        w = "1st";
+                        break;
+                    case 2 :
+                        w = "2nd";
+                        break;
+                    case 3 : 
+                        w = "3rd";
+                        break;
+                    default :
+                        w = Number(d)+"th";
+                        break;
+                }
+                infoD.apply = w;
+            };
+            const regExpY = new RegExp(infoY.format,"gi");
+            let word = format.replace(regExpY,infoY.apply);
+            const regExpM = new RegExp(infoM.format,"gi");
+            word = word.replace(regExpM,infoM.apply);
+            const regExpD = new RegExp(infoD.format,"gi");
+            word = word.replace(regExpD,infoD.apply);
+            _input.value = word;
+        }
         for(let i=0; i < _days.length; i++){
             const _d = _days[i];
             if(_d !== _this){
@@ -1359,7 +1483,11 @@ const drawCalendar = (el,y,m,v)=>{
     
     // _cal.appendChild(_top);
     _cal.appendChild(_newTop);
-    _cal.appendChild(_con);
+    if(type === 'd'){
+        _cal.appendChild(_con);
+    }else{
+        _cal.appendChild(_newTop_MonthMode_apply_bt);
+    }
 
 
 
@@ -1402,6 +1530,45 @@ const bothCalendarEv = ()=>{
         }
     }
 
+}
+
+const scheduleCalArr = ()=>{
+    const _this = event.currentTarget;
+    const checked = _this.classList.contains("btn-prev")?'p':'n';
+    const _input = _this.closest(".box").querySelector("input[calendar]");
+    const y = _input.value.match(/\d+/g)[0];
+    const m = monthName.en.indexOf(_input.value.match(/\w+/g)[0]);
+    const mm = (checked === 'n')?m+1:m-1;
+    const spareDate = new Date(y,mm,1);
+    _input.value = monthName.en[Number(spareDate.getMonth())] + " " + spareDate.getFullYear();
+}
+
+const scheduleThiMonth = ()=>{
+    const _this = event.currentTarget;
+    const _input = _this.closest(".year-wrap").querySelector("input[calendar]");
+    const spareDate = new Date();
+    _input.value = monthName.en[Number(spareDate.getMonth())] + " " + spareDate.getFullYear();
+}
+
+const scheduleCalDayArr = ()=>{
+    const _this = event.currentTarget;
+    const checked = _this.classList.contains("btn-prev")?'p':'n';
+    const _input = _this.closest(".box").querySelector("input[calendar]");
+    const y = _input.value.match(/\d+$/g)[0];
+    const m = Number(monthName.en.indexOf(_input.value.match(/^\w+/g)[0]));
+    let d = String(_input.value.match(/\d+(st|nd|rd|th)/g)[0]).replace(/\D/g,'');
+    d = (checked === 'n')?Number(d) + 1:Number(d) - 1
+    // const mm = (checked === 'n')?m+1:m-1;
+    const spareDate = new Date(y,m,d);
+    const apply_d = (spareDate.getDate() == 1)?"1st":(spareDate.getDate() == 2)?"2nd":(spareDate.getDate() == 3)?"3rd":spareDate.getDate()+"th";
+    _input.value = monthName.en[Number(spareDate.getMonth())] + " " + apply_d  + ", " + spareDate.getFullYear();
+}
+const scheduleThiDay = ()=>{
+    const _this = event.currentTarget;
+    const _input = _this.closest(".year-wrap").querySelector("input[calendar]");
+    const spareDate = new Date();
+    const day = (spareDate.getDate() === 1)?"1st":(spareDate.getDate() === 2)?"2nd":(spareDate.getDate() === 3)?"3rd":spareDate.getDate()+"th";
+    _input.value = monthName.en[Number(spareDate.getMonth())] + " " + day + ", " + spareDate.getFullYear();
 }
 
 /* init */
