@@ -12,6 +12,7 @@ const monthName = {
 
 
 const cancleBubble = ()=>{
+    event.preventDefault();
     if(event.stopPropagation){
         event.stopPropagation();
     }else{
@@ -1570,6 +1571,94 @@ const scheduleThiDay = ()=>{
     const day = (spareDate.getDate() === 1)?"1st":(spareDate.getDate() === 2)?"2nd":(spareDate.getDate() === 3)?"3rd":spareDate.getDate()+"th";
     _input.value = monthName.en[Number(spareDate.getMonth())] + " " + day + ", " + spareDate.getFullYear();
 }
+
+const drawPoint = (el)=>{
+    const _screen = document.createElement("div");
+    const html_source = "";
+
+    
+
+}
+
+const addLineSvg = ()=>{
+    cancleBubble();
+    const _this = event.currentTarget;
+    const _screen = _this.closest(".draqw_screen");
+    const _svg = _screen.querySelector("svg");
+    let source = "<svg>" + _svg.innerHTML.replace(/polyline/g,'polygon') + "<polyline points='' fill='rgba(73,205,198,0.4)' stroke='#41FFE5' stroke-width='2' /></svg>";
+    _svg.innerHTML = source;
+}
+
+const clearSvg = ()=>{
+    const reset_source = "<polyline points='' fill='rgba(73,205,198,0.4)' stroke='#41FFE5' stroke-width='2' />";
+    document.querySelectorAll(".map_point").forEach((item,index)=>{
+        item.parentNode.removeChild(item);
+    })
+    document.querySelector(".draqw_screen svg").innerHTML = reset_source;
+}
+
+const drawSvg = ()=>{
+    const _screen = event.currentTarget;
+    const _p = _screen.querySelector("polyline");
+    const type = (_screen.querySelector(".polygon_handler_box .switch input").checked)?"line":"circle";
+    const x = event.pageX;
+    const y = event.pageY;
+    if(type === "line"){
+        let points = _p.getAttribute("points");
+        const _c = document.createElement("div");
+        _c.classList.add("map_point");
+        points += " "+x+","+y;
+        _p.setAttribute("points",points)
+        _c.style.left = x + "px";
+        _c.style.top = y + "px";
+        _screen.appendChild(_c);
+    }else{
+        const x2 = x;
+        const y2 = y;
+        const _point = document.createElement("div");
+        const _innerLine = document.createElement("i");
+        const winMove = ()=>{
+            const diff = Math.abs(event.pageX - x);
+            const diffx = event.pageX - x2;
+            const diffy = event.pageY - y2;
+            const distance = (Math.sqrt(diffx * diffx + diffy * diffy) * 2);
+            const applyX = x2 - (distance / 2);
+            const applyY = y2 - (distance / 2);
+            const angle = (Math.atan2(y - event.pageY, x - event.pageX) * 180) / Math.PI;
+            _point.style.width = distance + "px";
+            _point.style.height = distance + "px";
+            _point.style.left = applyX + "px";
+            _point.style.top = applyY + "px";
+            _innerLine.style.transform = "rotate(" + (angle + 180) + "deg)";
+        }
+        const winUp = ()=>{
+            window.removeEventListener("mousemove",winMove);
+            window.removeEventListener("mouseup",winUp);
+            _innerLine.parentNode.removeChild(_innerLine);
+        }
+        _point.classList.add("map_point");
+        _point.classList.add("circle");
+        _point.style.top = y + "px";
+        _point.style.left = x + "px";
+        _point.appendChild(_innerLine);
+        _screen.appendChild(_point);
+        window.addEventListener("mousemove",winMove);
+        window.addEventListener("mouseup",winUp);
+
+    }
+}
+
+const drawTypeChange = ()=>{
+    const _this = event.currentTarget;
+    const checked = _this.checked;
+    const lineBtn = document.querySelector(".donedrawBtn.line");
+    if(checked){
+        lineBtn.style.display = "block";
+    }else{
+        lineBtn.style.display = "none";
+    }
+}
+
 
 /* init */
 function init(){

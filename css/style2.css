@@ -500,7 +500,7 @@ div.satellite .bottom-ruler{padding-top:52rem;} */
 /**/
 
 .drag_horizontal_wrap.active{display:block;}
-.drag_horizontal_wrap{position:fixed; top:0; bottom:0; left:0; right:0; z-index:1; display:none;}
+.drag_horizontal_wrap{position:fixed; top:0; bottom:0; left:0; right:0; z-index:2; display:none;}
 .drag_horizontal_line{position:absolute; top:0; bottom:0; left:50%; width:1rem; cursor:col-resize; background:#00FFFF;}
 .drag_horizontal_line:after{content:""; position:absolute; top:0; bottom:0; left:-5rem; width:10px; cursor:col-resize;}
 .drag_horizontal_wrap .map{position:absolute; top:0; bottom:0; left:0; right:50%; overflow:hidden;}
@@ -567,3 +567,25 @@ div.satellite .bottom-ruler{padding-top:52rem;} */
 
 /**/
 .icon_wastebaskt{display:inline-block; width:11px; height:12px; vertical-align:top;  background:url(../images/icon/icon_wasterbasket.svg) no-repeat center;}
+
+
+
+.map_point{position:absolute; z-index:1; display:flex;}
+.map_point.circle{border:1px solid #41FFE5; border-radius:100%; background:rgba(73,205,198,0.4);}
+.map_point:before{content:""; position:absolute; top:50%; left:50%; z-index:10; width:23px; height:23px; border-radius:100%; transform:translate(-50%,-50%); background:#41FFE5;}
+.map_point:after{content:""; position:absolute; top:50%; left:50%; z-index:10; display:block; width:12px; height:12px; border-radius:100%; transform:translate(-50%,-50%); background:#fff;}
+.map_point > i{position:absolute; top:50%; left:50%; z-index:1; display:none; width:50%; height:1px; transform-origin:0; background:#41FFE5;}
+.map_point.circle > i{display:block;}
+
+
+.draqw_screen{position:fixed; top:0; left:0; bottom:0; right:0; z-index:2;}
+.draqw_screen svg{width:100%; height:100%;}
+
+.polygon_handler_box{position:absolute; top:50px; right:50px; z-index:10;}
+.polygon_handler_box .switch div:after{width:100%;}
+.polygon_handler_box .switch label{width:100px;}
+.polygon_handler_box .switch label > div{width:100px;}
+.polygon_handler_box .switch input:checked ~ i{left:calc(100% - 25px);}
+.donedrawBtn{width:100px; height:30px; border:1px solid #ddd; color:#333; border-radius:5px; background:#fff; }
+
+.donedrawBtn + .donedrawBtn{margin-top:5px;}

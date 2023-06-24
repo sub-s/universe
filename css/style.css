@@ -1093,7 +1093,7 @@ input[type="password"]::-ms-clear{display:none;}
 
 
 /* 메뉴 버튼 */
-.satellite .menu-btn {border: 1px solid #000;     background: rgb(29 34 44 / 82%); width: 37rem; height: 37rem; display: flex; justify-content: center; align-items: center; position: absolute; top: 20rem; left:20rem; border-radius: 3rem; transition: all 0.5s;}
+.satellite .menu-btn {border: 1px solid #000;     background: rgb(29 34 44 / 82%); width: 37rem; height: 37rem; display: flex; justify-content: center; align-items: center; position: absolute; top: 20rem; left:20rem; z-index:10; border-radius: 3rem; transition: all 0.5s;}
 .satellite .menu-btn::after {display: block; content:''; width: 15.16rem; height: 14rem; background: url(../images/sate/icon_btn.svg) no-repeat; background-size: cover;}
 .satellite .menu-btn:hover {background: rgba(0, 0, 0, 0.7);}
 
