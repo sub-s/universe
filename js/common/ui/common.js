@@ -12,7 +12,7 @@ const monthName = {
 
 
 const cancleBubble = ()=>{
-    event.preventDefault();
+    // event.preventDefault();
     if(event.stopPropagation){
         event.stopPropagation();
     }else{
