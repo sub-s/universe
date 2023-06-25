@@ -1153,8 +1153,10 @@ const drawCalendar = (el,y,m,v,t)=>{
 
     /* new Top */
     const _newTop = document.createElement("div");
+    const _newTop_y_wrap = document.createElement("div");
     const _newTop_y = document.createElement("span");
     const _newTop_y_u = document.createElement("span");
+    const _newTop_m_wrap = document.createElement("div");
     const _newTop_m = document.createElement("span");
     const _newTop_m_u = document.createElement("span");
     const _newTop_close = document.createElement("button");
@@ -1168,10 +1170,12 @@ const drawCalendar = (el,y,m,v,t)=>{
     const _newTop_MonthMode_apply_bt = document.createElement("button");
 
     _newTop.classList.add("top_new");
-    _newTop.appendChild(_newTop_y);
-    _newTop.appendChild(_newTop_y_u);
-    _newTop.appendChild(_newTop_m);
-    _newTop.appendChild(_newTop_m_u);
+    _newTop_y_wrap.appendChild(_newTop_y);
+    _newTop_y_wrap.appendChild(_newTop_y_u);
+    _newTop.appendChild(_newTop_y_wrap);
+    _newTop_m_wrap.appendChild(_newTop_m);
+    _newTop_m_wrap.appendChild(_newTop_m_u);
+    _newTop.appendChild(_newTop_m_wrap);
     _newTop.appendChild(_newTop_close);
     _newTop.appendChild(_newTop_selWrap);
     _newTop_MonthMode_apply_bt.classList.add("month_btn_apply")
@@ -1188,7 +1192,7 @@ const drawCalendar = (el,y,m,v,t)=>{
     _newTop_close.classList.add("close");
 
     /* text event */
-    _newTop_y.addEventListener("click",()=>{
+    _newTop_y_wrap.addEventListener("click",()=>{
         const checked = _newTop_sel_y.classList.contains("open");
         if(checked){
             _newTop_sel_y.classList.add("open");
@@ -1199,7 +1203,7 @@ const drawCalendar = (el,y,m,v,t)=>{
             _newTop_sel_y.scrollTop = _newTop_sel_y_box.querySelector(".selected").offsetTop;
         }
     })
-    _newTop_m.addEventListener("click",()=>{
+    _newTop_m_wrap.addEventListener("click",()=>{
         const checked = _newTop_sel_m.classList.contains("open");
         if(checked){
             _newTop_sel_m.classList.remove("open");
